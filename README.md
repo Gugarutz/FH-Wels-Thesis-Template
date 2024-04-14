@@ -10,15 +10,15 @@ The template uses the following software/libraries as a basis:
 
 To properly use this template, you must first understand how TeX or LaTeX works. Must also understand the fundamental ideas behind Github or Git in general. Basic knowledge of the KOMA scripts is recommended. Many answers online work differently or not at all with KOMA.
 
-Usage of other software is not supported. TeX Live is preffered over MikTex for faster compilation and wider package support. We will be working on a Windows system, there is no support for Linux or Mac as of yet. 
+Usage of other software is not supported. TeX Live is preferred over MikTex for faster compilation and wider package support. We will be working on a Windows system, there is no support for Linux or Mac as of yet. 
 
-For german users this [YouTube Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTg5XgHXhNPUJNib6gW_Zpi) is taken as a basis. The settings for TeXstudio used here overlap with the ones set there. However, perform the insallation as described here and not the way it is done in the tutorial. Whether you use de_DE or de_AT or any other language is up to you. Also exercise your way through the [Extended Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTEasZqICLLwTjk80rAP2GQ).
+For German users this [YouTube Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTg5XgHXhNPUJNib6gW_Zpi) is taken as a basis. The settings for TeXstudio used here overlap with the ones set there. However, perform the installation as described here and not the way it is done in the tutorial. Whether you use de_DE or de_AT or any other language is up to you. Also exercise your way through the [Extended Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTEasZqICLLwTjk80rAP2GQ).
 
 Links to English TeX resources will follow soon.
 
 If no dictionaries are available check [here](https://tex.stackexchange.com/questions/87650/dictionary-for-texstudio-no-dictionary-available)
 
-## Intallation
+## Installation
 The total time to install can vary a lot. Plan for at least 2 hours with a decent internet connection (>50Mb/s). Do NOT use the WiFi at the university, do this at home. The TeX Live installer takes its time. All software is to be installed in ENGLISH.
 
 ### TeX Live
@@ -31,7 +31,7 @@ In the TeX Live installer:
 3. Click `Install`
 4. A second window will open
 5. You may choose a mirror (location)
-6. Or ignore, selecton will be automatic (recommended)
+6. Or ignore, selection will be automatic (recommended)
 5. Ensure `Default paper size` is set to `A4`
 6. Click `Install`
 7. You may install the other software in the meantime
@@ -64,24 +64,24 @@ In Github Desktop:
 * Click `File > New Repository`
 * Choose a name and ensure compliance
 * Choose a description if you like
-* Set the path to `C:\GitHub` [See note below]
+* Set the path to `C:\Github` [See note below]
 * Ensure `initialise this repository with a README` is checked off
 * Ensure `License` and `Gitignore` are set to `none`
 
 [Note] IMPORTANT: Choose `C:\Github` as your directory. Do not use long directory paths or OneDrive folders. This will lead to syncing issues with any other systems and will cause a lot of syncing from OneDrive. You may still use a cloud service for backing up your work.
 
-Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template.git) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\GitHub\[reponame]`. Ensure the result is NOT 
+Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template.git) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\Github\[reponame]`. Ensure the result is NOT 
 ```
-C:\GitHub\[reponame]\FH-Wels-Thesis-Template\thesis.tex	or
-C:\GitHub\[reponame]\FH-Wels-Thesis-Template-main\thesis.tex
+C:\Github\[reponame]\FH-Wels-Thesis-Template\thesis.tex	or
+C:\Github\[reponame]\FH-Wels-Thesis-Template-main\thesis.tex
 ```
 Ensure a flat directory, like this:
 ```
-C:\GitHub\[reponame]\thesis.tex
+C:\Github\[reponame]\thesis.tex
 ```
 Now go back to Github Desktop. You should see all the new files in the left pane. Click `Publish repository` at the top of the window. Ensure you have no mistakes in the name. Ensure your code will be kept private. Click `Publish repository`. 
 
-On the lower left, give this version (commit) a name in the summary field. You may call this "original" or "base" for example. Click on `commit to main` and `Push origin` in the center pane. Only this last part actually uploads to Github.
+On the lower left, give this version (commit) a name in the summary field. You may call this "original" or "base" for example. Click on `commit to main` and `Push origin` in the centre pane. Only this last part actually uploads to Github.
 
 ### TeXstudio
 
@@ -93,9 +93,11 @@ See Prerequisites for the assumed basics of using TeX and Git.
 
 The template is built in a modular way for faster compilation and fewer errors/warnings. If you you need any additional features, check if they are implemented already, and enable them. 
 
-Close TS if it is currently opened. Open `thesis.txss2` from Github Desktop or the file exlorer. This will set the `thesis.tex` file as the root file, so it does not matter whcih file you have open when you compile. this will also set the open tabs and panes. If you wish to restore the order 
+Close TS if it is currently opened. Open `thesis.txss2` from Github Desktop or the file explorer. This will set the `thesis.tex` file as the root file, so it does not matter which file you have open when you compile. this will also set the open tabs and panes. If you wish to restore the order simply reopen the session file through `File > Session > Load` or one of the suggestions under `Load` 
 
 Ensure GD is running in the background. 
 The `thesis.tex` file is the main file
 
-First of all right click on `\input{frontmatter/frontpage` and click Open. Fill out all the data 
+First of all, compile the template. There should be no errors. Create a copy of the `thesis.pdf` and rename it to `template.pdf` or whatever suits you. Keep this copy as a backup 
+
+Click on `\input{preamble/author}` and click Open. Fill out all the data. You can do this later as well, of course. 
