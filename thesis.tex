@@ -1,17 +1,60 @@
-\documentclass[ngerman,12pt,a4paper]{scrbook}
+% !TeX spellcheck = en_GB
+\documentclass[ngerman,12pt,a4paper,oneside]{scrbook}
 
 
-
-\input{preamble/basics}
+\input{preamble/layout}
+\input{preamble/typesetting}
 \input{preamble/math}
-\input{preamble/koma}
 \input{preamble/visual}
 
-%% Fill this out
-\input{preamble/author}
+% TODO Fill this out
+\input{preamble/titlepage}
 
-
+%% for testing
+	\usepackage{blindtext}
 
 \begin{document}
-	a
+	
+%% FRONTMATTER is everything before the actual content of the thesis starts
+\frontmatter
+	\include{frontmatter/titlepage}
+
+
+%% MAINMATTER is the main part of the thesis, from the introduction to the conclusion/summary
+%------------------------------------------------------------%
+% recommended: subfolders for chapters
+\mainmatter
+	% Introduction
+		\include{mainmatter/introduction}
+	
+	\chapter{Main Chapter 1}
+	\blindtext[5]
+		\include{mainmatter/ch1/sec1}
+
+
+
+%% BACKMATTER includes the lists of figures, tables,... , the glossary, the Bibliography/References, the Appendix/Addendum
+%------------------------------------------------------------%
+% TODO choose the page numbering style
+\backmatter
+
+	% Lists
+	\listoffigures
+	\listoftables
+	
+	\appendix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
