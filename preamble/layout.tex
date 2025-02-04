@@ -1,0 +1,17 @@
+\usepackage{scrlayer-scrpage}
+
+\KOMAoptions{%
+	sfdefaults=false,%
+	headsepline = true,%
+	autooneside=true,%
+	automark%
+	}%
+
+% configure \rightmark to call section and include section number
+	\renewcommand{\sectionmark}[1]{\markright{\thesection~ #1}}
+
+
+\clearpairofpagestyles		% Clear default settings
+	\ihead{\leftmark}		% Leftmark (chapter title) on the left header
+	\ohead{\rightmark}		% Rightmark (section title) on the right header
+	\ofoot[\pagemark]{\pagemark} % Page number on the bottom right
