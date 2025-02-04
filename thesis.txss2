@@ -1,6 +1,6 @@
 {
     "InternalPDFViewer": {
-        "Embedded": true,
+        "Embedded": false,
         "File": "thesis.pdf"
     },
     "Session": {
@@ -10,12 +10,44 @@
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 0,
+                "Col": 23,
                 "EditorGroup": 0,
                 "FileName": "thesis.tex",
                 "FirstLine": 0,
                 "FoldedLines": "",
-                "Line": 0
+                "Line": 13
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "mainmatter/introduction.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 2
+            },
+            {
+                "Col": 1,
+                "EditorGroup": 0,
+                "FileName": "mainmatter/ch1/sec1.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 12
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 1,
+                "FileName": "preamble/layout.tex",
+                "FirstLine": 7,
+                "FoldedLines": "",
+                "Line": 47
+            },
+            {
+                "Col": 21,
+                "EditorGroup": 1,
+                "FileName": "preamble/typesetting.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 8
             }
         ],
         "MasterFile": "thesis.tex",
