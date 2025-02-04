@@ -1,3 +1,4 @@
+%------------------------------------------------------------%
 %% KOMA
 
 \usepackage{scrlayer-scrpage}
@@ -10,9 +11,9 @@
 	automark,
 	}%
 
-%\KOMAoptions{DIV=16}  % Adjusts the type area
-%\recalctypearea       % Recalculates the layout
 
+%------------------------------------------------------------%
+%% Header & Footer setup
 
 % configure \rightmark to call section and include section number
 	\renewcommand{\sectionmark}[1]{\markright{\thesection~ #1}}
@@ -23,9 +24,13 @@
 	\ohead{\rightmark}		% Rightmark (section title) on the right header
 	\ofoot[\pagemark]{\pagemark} % Page number on the bottom right
 
-	
+
+
+%------------------------------------------------------------%
+%% page spacing and margin setup
+
 \usepackage{setspace}
-\onehalfspacing		% 1.5 lines of line spacing  
+	\onehalfspacing		% 1.5 lines of line spacing  
 
 \usepackage{geometry}
 	\geometry{
@@ -40,7 +45,7 @@
 		\setlength{\headheight}{\baselinestretch\baselineskip}
 		\setlength{\footheight}{\baselinestretch\baselineskip} 
 	
-%	\setlength{\topmargin}{-0.5cm}
+%\frenchspacing
 
-	
-\frenchspacing
+%------------------------------------------------------------%
+%% 
