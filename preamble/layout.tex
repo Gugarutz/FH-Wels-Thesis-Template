@@ -1,11 +1,18 @@
+%% KOMA
+
 \usepackage{scrlayer-scrpage}
 
-\KOMAoptions{%
-	sfdefaults=false,%
-	headsepline = true,%
-	autooneside=true,%
-	automark%
+\KOMAoptions{
+	fontsize=12pt,
+	sfdefaults=false,
+	headsepline = true,
+	autooneside=true,
+	automark,
 	}%
+
+%\KOMAoptions{DIV=16}  % Adjusts the type area
+%\recalctypearea       % Recalculates the layout
+
 
 % configure \rightmark to call section and include section number
 	\renewcommand{\sectionmark}[1]{\markright{\thesection~ #1}}
@@ -15,3 +22,25 @@
 	\ihead{\leftmark}		% Leftmark (chapter title) on the left header
 	\ohead{\rightmark}		% Rightmark (section title) on the right header
 	\ofoot[\pagemark]{\pagemark} % Page number on the bottom right
+
+	
+\usepackage{setspace}
+\onehalfspacing		% 1.5 lines of line spacing  
+
+\usepackage{geometry}
+	\geometry{
+		a4paper,
+		left=3.50cm,
+		right=2.50cm,
+		top=2.5cm,
+		bottom=3.5cm}
+	
+	% make sizes dynamically depend on the current line spacing settings
+		\setlength{\footskip}  {\baselinestretch\baselineskip}
+		\setlength{\headheight}{\baselinestretch\baselineskip}
+		\setlength{\footheight}{\baselinestretch\baselineskip} 
+	
+%	\setlength{\topmargin}{-0.5cm}
+
+	
+\frenchspacing
