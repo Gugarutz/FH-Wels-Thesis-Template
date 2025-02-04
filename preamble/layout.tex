@@ -9,6 +9,7 @@
 	headsepline = true,
 	autooneside	= true,
 	automark,
+	appendixprefix= true
 	}%
 
 
@@ -43,7 +44,8 @@
 		top=2.5cm,
 		bottom=3.5cm}
 	
-	% make sizes dynamically depend on the current line spacing settings
+	% define head + foot sizes
+	% \baselinestretch: dynamically depend on the current line spacing setting
 		\setlength{\footskip}  {\baselinestretch\baselineskip}
 		\setlength{\headheight}{\baselinestretch\baselineskip}
 		\setlength{\footheight}{\baselinestretch\baselineskip} 

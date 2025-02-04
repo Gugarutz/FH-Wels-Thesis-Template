@@ -5,19 +5,21 @@
 \input{preamble/layout}
 \input{preamble/typesetting}
 \input{preamble/math}
-\input{preamble/visual}
+\input{preamble/graphics}
 
 % TODO Fill this out
 \input{preamble/titlepage}
 
 %% for testing
 	\usepackage{blindtext}
-	\usepackage{showframe}
+		\blindmathtrue
+%	\usepackage{showframe}
 \begin{document}
 	
 %% FRONTMATTER is everything before the actual content of the thesis starts
 \frontmatter
 	\include{frontmatter/titlepage}
+	\tableofcontents
 
 
 %% MAINMATTER is the main part of the thesis, from the introduction to the conclusion/summary
@@ -27,11 +29,12 @@
 	% Introduction
 		\include{mainmatter/introduction}
 	
-	\include{mainmatter/ch1}
-		\include{mainmatter/ch1/sec1}
-		e.g. e,g, \\
-		1,5 1.5 \\
-		$ 1,5 \, 1.5 $ 
+%	\include{mainmatter/ch1}
+%		\include{mainmatter/ch1/sec1}
+
+\blinddocument
+\blindmathpaper
+
 		
 		
 
@@ -46,7 +49,8 @@
 	\listoffigures
 	\listoftables
 	
-	\appendix
+\appendix
+	\blinddocument
 
 
 
