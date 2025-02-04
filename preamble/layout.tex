@@ -4,10 +4,10 @@
 \usepackage{scrlayer-scrpage}
 
 \KOMAoptions{
-	fontsize=12pt,
-	sfdefaults=false,
+	fontsize	= 12pt,
+	sfdefaults	= false,
 	headsepline = true,
-	autooneside=true,
+	autooneside	= true,
 	automark,
 	}%
 
@@ -15,8 +15,11 @@
 %------------------------------------------------------------%
 %% Header & Footer setup
 
-% configure \rightmark to call section and include section number
-	\renewcommand{\sectionmark}[1]{\markright{\thesection~ #1}}
+% TODO give options to choose from
+% Modify \chaptermark to include the chapter title in \leftmark
+	\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter: #1}{}}
+% Modify \sectionmark to include the section title in \rightmark (without number for \addsec)
+	\renewcommand{\sectionmark}[1]{\markright{\ifnum\value{section}=0 #1\else\thesection~ #1\fi}}
 
 
 \clearpairofpagestyles		% Clear default settings
