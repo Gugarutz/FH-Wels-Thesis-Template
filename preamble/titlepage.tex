@@ -1,12 +1,13 @@
-\renewcommand{\titlepage}{%
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+% Define the custom title page macro
+\makeatletter
+\newcommand{\titlepageEN}{%
+	\begin{titlepage}
+		{\Large\bfseries Author: \@author \par} % Display author
+		\vspace{1cm}
+		{\LARGE\bfseries \@title \par} % Display title
+		\vspace{1cm}
+		{\large \@date \par} % Display date
+	\end{titlepage}
 }
+\makeatother
+
