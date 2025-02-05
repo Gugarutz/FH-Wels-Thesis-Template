@@ -1,68 +1,70 @@
 % !TeX spellcheck = en_GB
 \documentclass[english,oneside]{scrbook}
 
+%------------------------------------------------------------%
+	%% Settings and Packages
+		\input{preamble/layout}
+		\input{preamble/typesetting}
+		\input{preamble/math}
+		\input{preamble/graphics}
+			\graphicspath{{graphics},{images}}
 
-\input{preamble/layout}
-\input{preamble/typesetting}
-\input{preamble/math}
-\input{preamble/graphics}
+%------------------------------------------------------------%
+	%% FOR TESTING
+		\usepackage{showframe}
+		\usepackage{blindtext}
+			\blindmathtrue
 
-% TODO Fill this out
-\input{preamble/titlepage}
+%------------------------------------------------------------%
 
-%% for testing
-	\usepackage{blindtext}
-		\blindmathtrue
-%	\usepackage{showframe}
+	%% FRONT PAGE
+%		\input{preamble/titlepage-data}		% TODO Fill this out, right click to open
+%		\input{preamble/titlepage}
+%		\input{preamble/declaration}	
+
+
+		
+
+%------------------------------------------------------------%
+%															 %
+%						   DOCUMENT							 %
+%															 %
+%------------------------------------------------------------%
 \begin{document}
 	
-%% FRONTMATTER is everything before the actual content of the thesis starts
-\frontmatter
-	\include{frontmatter/titlepage}
-	\tableofcontents
-
-
-%% MAINMATTER is the main part of the thesis, from the introduction to the conclusion/summary
 %------------------------------------------------------------%
-% recommended: subfolders for each chapter
-\mainmatter
-	% Introduction
-		\include{mainmatter/introduction}
+	\frontmatter	% is everything before the actual content of the thesis starts
+		\titlepage
+		\tableofcontents
 	
-%	\include{mainmatter/ch1}
-%		\include{mainmatter/ch1/sec1}
-
-\blinddocument
-\blindmathpaper
-
-		
-		
-
-
-
-%% BACKMATTER includes the lists of figures, tables,... , the glossary, the Bibliography/References, the Appendix/Addendum
+	
 %------------------------------------------------------------%
-% TODO choose the page numbering style
-\backmatter
-
-	% Lists
-	\listoffigures
-	\listoftables
+	\mainmatter % is the main part of the thesis, from the introduction to the conclusion/summary
+		% recommended: subfolders for each chapter
+		% Introduction
+			\include{mainmatter/introduction}
+		
+		%% CHAPTER I
+	%	\include{mainmatter/ch1}
+	%		\include{mainmatter/ch1/sec1}
 	
-\appendix
-	\blinddocument
+		
+		%% TESTING
+			\blinddocument
+			\blindmathpaper
+			
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+%------------------------------------------------------------%
+	\backmatter % includes the lists of figures, tables,... , the glossary, the Bibliography/References
+	
+		% Lists
+		\listoffigures
+		\listoftables
+	
+	
+%------------------------------------------------------------%
+	\appendix	% add additional tables, figures, source code, transcripts,...
+	\chapter{Appendix}
+		\blinddocument
+%------------------------------------------------------------%
 \end{document}
