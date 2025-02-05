@@ -11,16 +11,16 @@
 
 %------------------------------------------------------------%
 	%% FOR TESTING
-		\usepackage{showframe}
+%		\usepackage{showframe}
 		\usepackage{blindtext}
 			\blindmathtrue
 
 %------------------------------------------------------------%
-
 	%% FRONT PAGE
-%		\input{preamble/titlepage-data}		% TODO Fill this out, right click to open
-%		\input{preamble/titlepage}
-%		\input{preamble/declaration}	
+		\input{preamble/titlepage-fields}
+		\input{preamble/titlepage-data}		% TODO Fill this out, right click to open
+		\input{preamble/titlepage}
+		\input{preamble/declaration}	
 
 
 		
@@ -33,9 +33,22 @@
 \begin{document}
 	
 %------------------------------------------------------------%
-	\frontmatter	% is everything before the actual content of the thesis starts
-		\titlepage
-		\tableofcontents
+	\frontmatter			% everything before the content of the thesis starts
+	\pagenumbering{Roman} 	% uppercase roman numerals
+	
+		\titlepageEN
+		
+		\setSectioning\tableofcontents
+		
+		
+		% Write you Preface, acknowledgements, thanks etc here
+			\include{frontmatter/preface}
+		
+		\declaration
+		
+		% a general summary of the contents in German and English
+			\include{frontmatter/abstractEN}
+			\include{frontmatter/abstractDE}
 	
 	
 %------------------------------------------------------------%
