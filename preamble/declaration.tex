@@ -1,6 +1,11 @@
 \newcommand{\declaration}{%
+	
+%------------------------------------------------------------%
 	\renewcommand*\chapterheadstartvskip{\vspace*{6.5\topskip}}
 	\chapter{Sworn declaration}	
+	
+%------------------------------------------------------------%
+	%% TOP Part: Logo, Wels Campus
 	\begin{textblock*}{15cm}(3.5cm,1.25cm)
 		\begin{flushright}
 			\includegraphics[width=6.25cm]{FH.png}
@@ -11,7 +16,41 @@
 			Wels Campus
 		\end{flushright}
 	\end{textblock*}
+
+%------------------------------------------------------------%
+	%% Declaration Text
+	\vfill
+	\begin{minipage}[t]{0.33\textwidth}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.66\textwidth}
+		{\parskip 1.5ex		% local parksip change
+			I hereby declare that I prepared this work independently and without help from third parties, that I did not use sources other than the ones referenced and that I have indicated passages taken from those sources.
+			
+			This thesis was not previously submitted in identical or similar form to any other examination board, nor was it published.
+			
+			This printed thesis is identical with the electronic version submitted.
+		}
+		\vspace{25mm}
+		
+		\begin{minipage}[t]{7.5cm}
+			\centering \dotfill \\
+		\end{minipage}
+%		\vskip 0mm
+%		\@author
+%		\vskip 0mm
+%		\@stdort, {\@damnt\ \@dajhr}
+		% Unterschrift anzeigen:
+%		\ifthenelse{\equal{\@showSig}{Yes}}
+%		{%
+%			\vskip \@posSigY
+%			\hskip \@posSigX
+%			\includegraphics[scale=\@scaleSig]{Grafik/Signature.png}%
+%		}%
+%		{}
 	
+	\end{minipage}
+	\vfill
 	
 	
 	
