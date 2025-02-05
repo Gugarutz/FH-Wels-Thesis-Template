@@ -1,0 +1,62 @@
+%------------------------------------------------------------%
+	% Step 1: Define the custom variable \field and its internal counterpart \@field
+	\makeatletter
+		\newcommand{\course}		[1]{\global\def\@course			{#1}}
+		\newcommand{\coursestype}	[1]{\global\def\@coursetype		{#1}}
+		\newcommand{\location}		[1]{\global\def\@location		{#1}}
+		\newcommand{\supervisor}	[1]{\global\def\@supervisor		{#1}}
+		\newcommand{\submonth}		[1]{\global\def\@submonth		{#1}}
+		\newcommand{\subyear}		[1]{\global\def\@subyear		{#1}}
+		\newcommand{\doctype}		[1]{\global\def\@doctype		{#1}}
+		\newcommand{\keywords}		[1]{\global\def\@keywords		{#1}}
+		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
+%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
+%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
+%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
+%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
+%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
+%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
+	\makeatother
+
+%------------------------------------------------------------%
+% Step 2: Initialize \@field
+	\makeatletter
+		\global\def\@degree			{?? degree ??}
+		\global\def\@course			{?? course ??}
+		\global\def\@coursetype		{?? course type ??}
+		\global\def\@location		{?? location ??}
+		\global\def\@supervisor		{?? supervisor ??}
+		\global\def\@submonth		{?? submission month ??}
+		\global\def\@subyear		{?? submission year ??}
+		\global\def\@doctype		{?? document type ??}
+		\global\def\@degree			{?? keywords ??}
+		\global\def\@degree			{?? degree ??}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	\makeatother
+
+%------------------------------------------------------------%
+% Step 3: Define a command to print the field
+	\makeatletter
+		\newcommand{\printdegree}{\@degree}
+	\makeatother
+
+
+
+
+
+
+
+
+
+
+%------------------------------------------------------------%
+% Set the fields
+\degree{Master of Science}
