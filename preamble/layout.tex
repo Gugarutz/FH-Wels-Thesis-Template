@@ -4,19 +4,19 @@
 	\usepackage{scrlayer-scrpage}
 	
 	\KOMAoptions{
-		fontsize	= 12pt,
-		sfdefaults	= false,
-		headsepline = true,
-		autooneside	= true,
-		manualmark,
-		appendixprefix= true
+		fontsize	 = 12pt
+		,sfdefaults	 = false
+		,headsepline = true
+		,autooneside = true
+		,manualmark,
+%		,appendixprefix = true,
 	}%
 	
 %------------------------------------------------------------%
 %% Header & Footer setup
 
 	% TODO give options to choose from
-	% Modify \chaptermark to include the chapter title in \leftmark
+	% Modify \chaptermark to include the chapter title in \leftmark  (without number for \addchap)
 		\renewcommand{\chaptermark}[1]{\markleft {\ifnum\value{chapter}=0 #1\else\thechapter~ #1\fi}}
 		
 	% Modify \sectionmark to include the section title in \rightmark (without number for \addsec)
