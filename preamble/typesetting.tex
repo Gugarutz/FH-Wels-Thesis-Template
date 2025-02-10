@@ -1,0 +1,70 @@
+\usepackage[ngerman,naustrian,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+	
+%------------------------------------------------------------%
+%% PARAGRAPH SPACING
+	\parskip 1.5ex plus0.5ex minus0.5ex	% flexible paragraph spacing
+	\setlength{\parindent}{0pt}			% remove indent
+	\raggedbottom 						% no vertical stretching
+	
+%% Chapter Top Spacing
+	\renewcommand*\chapterheadstartvskip{\vspace*{-0.8\topskip}}
+	
+%------------------------------------------------------------%
+%% APPENDIX NUMBERING
+	% Automatically change numbering format only after \appendix
+	\AtBeginDocument{%
+		\let\oldappendix\appendix
+		\renewcommand{\appendix}{%
+			\oldappendix % Call the original \appendix command
+			\renewcommand{\thesection}{\Alph{section}}%
+			\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}%
+			\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}%
+		}%
+	}
+
+%------------------------------------------------------------%
+%% TABLE OF CONTENTS
+	\usepackage{tocbasic}
+	%%
+	\setcounter{secnumdepth}{4}	% depth of section numbering
+	\setcounter{tocdepth}{3}	% depth of sections displayed in TOC
+	\newcommand{\setSectioning}%
+	{%
+		\RedeclareSectionCommand[%
+			tocnumwidth	= 4em,	% Width reserved for the section number
+			indent		= 0pt,%
+			beforeskip	= -3.5ex, 	% Adjust this value as needed
+			afterskip	= 2.3ex,%
+			tocindent	= 1.5em]%
+		{section}%
+		\RedeclareSectionCommand[%
+			tocnumwidth	= 4em,	% Width reserved for the section number
+			indent		= 0pt,%
+			beforeskip	= 3.5ex, 	% Adjust this value as needed
+			afterskip	= 0.1ex,	%
+			tocindent	= 1.5em]%
+		{subsection}%
+		\RedeclareSectionCommand[%
+			tocnumwidth	= 4em,	% Width reserved for the section number
+			indent		= 0pt,%
+			beforeskip	= -3.25ex, % Adjust this value as needed
+			afterskip	= 0.1ex,%
+			tocindent	= 1.5em]%
+		{subsubsection}%
+		\RedeclareSectionCommand[%
+			tocnumwidth	= 4em,	% Width reserved for the section number
+			indent		= 0pt,%
+			beforeskip	= -3.25ex, % Adjust this value as needed
+			afterskip	= 0.1ex,%
+			tocindent	= 1.5em]%
+		{paragraph}%
+		\RedeclareSectionCommand[%
+			tocnumwidth	= 4em,	% Width reserved for the section number
+			indent		= 0pt,%
+			beforeskip	=-3.25ex, % Adjust this value as needed
+			afterskip	= 0.1ex,%
+			tocindent	= 1.5em]%
+		{subparagraph}%
+	}

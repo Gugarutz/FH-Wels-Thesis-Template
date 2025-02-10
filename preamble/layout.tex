@@ -1,0 +1,59 @@
+%------------------------------------------------------------%
+%% KOMA
+
+	\usepackage{scrlayer-scrpage}
+	
+	\KOMAoptions{
+		fontsize	= 12pt,
+		sfdefaults	= false,
+		headsepline = true,
+		autooneside	= true,
+		automark,
+		appendixprefix= true
+	}%
+
+
+%------------------------------------------------------------%
+%% Header & Footer setup
+
+	% TODO give options to choose from
+	% Modify \chaptermark to include the chapter title in \leftmark
+		\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter: #1}{}}
+	% Modify \sectionmark to include the section title in \rightmark (without number for \addsec)
+		\renewcommand{\sectionmark}[1]{\markright{\ifnum\value{section}=0 #1\else\thesection~ #1\fi}}
+	
+	
+	\clearpairofpagestyles		% Clear default settings
+		\ihead{\leftmark}		% Leftmark (chapter title) on the left header
+		\ohead{\rightmark}		% Rightmark (section title) on the right header
+		\ofoot[\pagemark]{\pagemark} % Page number on the bottom right
+
+
+
+%------------------------------------------------------------%
+%% page spacing and margin setup
+
+	\usepackage{setspace}
+		\onehalfspacing		% 1.5 lines of line spacing  
+	
+	\usepackage{geometry}
+		\geometry{
+			a4paper,
+			left=3.50cm,
+			right=2.50cm,
+			top=2.5cm,
+			bottom=3cm}
+		
+		% define head + foot sizes
+		% \baselinestretch: dynamically depend on the current line spacing setting
+			\setlength{\footskip}  {\baselinestretch\baselineskip}
+			\setlength{\headheight}{\baselinestretch\baselineskip}
+			\setlength{\footheight}{\baselinestretch\baselineskip} 
+		
+
+
+%------------------------------------------------------------%
+%% 
+
+
+	\usepackage[absolute]{textpos} % absolute textposition for \declaration > \textblock envirionment

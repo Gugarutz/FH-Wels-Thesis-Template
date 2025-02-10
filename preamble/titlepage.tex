@@ -1,0 +1,52 @@
+% Define the custom title page macro
+\makeatletter
+\newcommand{\titlepageEN}{%
+	\begin{titlepage}
+		\centering
+		%%%%%%%%%%%%%%%%%%%%%%%%%
+		\includegraphics[width=9.5cm]{FH} \par
+			\vskip 6mm
+		\textsc{\Large \@coursetype}
+			\vskip 2mm
+		{\Large \@course}
+			\vskip 0mm
+			
+		%-----------------
+		\rule{15cm}{0.3mm}
+		\vskip 10mm
+			\vfill
+			
+		\textbf{\LARGE \@title}
+			\vfill
+		submitted as a {\textsc \@doctype}
+			\vskip 2mm
+		
+		to obtain the academic degree of
+			\vskip 6mm
+		\@degree 
+			\vskip 6mm
+			
+		by
+			\vskip 6mm
+		\textbf{\large \@author}
+			\vskip 6mm
+		
+		\@location, {\large \@submonth\ \@subyear}
+			\vskip 10mm
+			
+		%-----------------
+		\rule{15cm}{0.3mm}
+			\vskip 5mm
+		Thesis supervisor
+			\vskip 0mm
+		\@supervisor
+%		{\Large\bfseries Author: \@author \par} % Display author
+%			\vspace{1cm}
+%		{\LARGE\bfseries \@title \par} % Display title
+%			\vspace{1cm}
+%		{\large Degree: \@degree \par} % Display degree
+%			\vspace{1cm}
+%		{\large \@date \par} % Display date
+	\end{titlepage}
+}
+\makeatother
