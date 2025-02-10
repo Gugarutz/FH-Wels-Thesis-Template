@@ -22,7 +22,7 @@
 		% citing and referencing
 			\usepackage[backend=biber,maxcitenames=3,sorting=nyt]{biblatex}
 			\bibliography{bibliography.bib}
-%			\bibliographystyle{FHWelsISO690Numeric}
+%			\bibliographystyle{FHWelsISO690Numeric}  % no worky?
 
 %------------------------------------------------------------%
 	%% FOR TESTING
@@ -37,7 +37,6 @@
 		\input{preamble/titlepage}
 		\input{preamble/declaration}
 			% TODO open preamble/signature to enable/diable digital signature and adjust position
-%		\input{preamble/listoffixes}
 
 %==============================================================================================%
 %==============================================================================================%
@@ -46,24 +45,24 @@
 %==============================================================================================%
 
 \begin{document}
-	\selectlanguage{english}	% Set language -> naustrian or ngerman for new austrian or new german
+	\selectlanguage{ngerman}	% Set language -> naustrian or ngerman for new austrian or new german
 %------------------------------------------------------------%
 	\frontmatter			% everything before the content of the thesis starts
 	\pagenumbering{Roman} 	% uppercase roman numerals, only frontmatter
 	
 		% Select Titlepage language
-			\titlepageEN
-			%\titlepageDE
+			%\titlepageEN
+			\titlepageDE
 
 		% Write you Preface, acknowledgements, thanks etc here
 			\include{frontmatter/preface}
 			
-		% Declaration, choose German or English
+		% Select Declaration language
 			%\input{preamble/declarationEN}
 			\input{preamble/declarationDE}
 			\declaration
 		
-		% a general summary of the contents in German and English
+		% a general summary of the contents in German AND English
 			\include{frontmatter/abstractEN}
 			\include{frontmatter/abstractDE}
 			
@@ -75,16 +74,15 @@
 			
 %------------------------------------------------------------%
 	\mainmatter % is the main part of the thesis, from the introduction to the conclusion/summary
-		% recommended: subfolders for each chapter, this is YOUR choice!
-%			\pagestyle{scrheadings}
+		% recommended: subfolders for each chapter; this is YOUR choice!
+
 		% Introduction
 			\include{mainmatter/introduction}
 			
-			
 		%% CHAPTER I - THEORY
 		\include{mainmatter/ch1/ch1}		% introduction for the chapter
-			\include{mainmatter/ch1/sec1}
-		
+			\include{mainmatter/ch1/tabletest}
+			\include{mainmatter/ch1/graphictest}
 		%% CHAPTER II - PRACTICE
 	
 		%% TESTING --------
