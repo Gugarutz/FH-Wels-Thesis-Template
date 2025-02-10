@@ -1,5 +1,5 @@
 % !TeX spellcheck = en_GB
-\documentclass[oneside]{scrbook}
+\documentclass[oneside,toc=listofnumbered,listof=entryprefix]{scrbook}
 
 %------------------------------------------------------------%
 	%% Settings and Packages
@@ -18,7 +18,7 @@
 %------------------------------------------------------------%
 	%% FRONT PAGE
 		\input{preamble/titlepage-fields}
-		\input{preamble/titlepage-data}		% TODO Fill this out, right click to open
+		\input{preamble/titlepage-data}		% TODO Fill this out, right click to open (texstudio)
 		\input{preamble/titlepage}
 		\input{preamble/declaration}
 			% TODO open preamble/signature to enable/diable digital signature and adjust position
@@ -37,7 +37,9 @@
 	\frontmatter			% everything before the content of the thesis starts
 	\pagenumbering{Roman} 	% uppercase roman numerals
 	
-		\titlepageEN
+		% Select Titlepage language
+			\titlepageEN
+%			\titlepageDE
 		
 		\setSectioning\tableofcontents
 		
@@ -58,12 +60,14 @@
 	
 %------------------------------------------------------------%
 	\mainmatter % is the main part of the thesis, from the introduction to the conclusion/summary
-		% recommended: subfolders for each chapter
+		% recommended: subfolders for each chapter, this is YOUR choise!
+		
+		
 		% Introduction
 			\include{mainmatter/introduction}
 		
 		%% CHAPTER I
-	%	\include{mainmatter/ch1}
+	%	\include{mainmatter/ch1/ch1}		% introduction for the chapter
 	%		\include{mainmatter/ch1/sec1}
 	
 		%% TESTING
