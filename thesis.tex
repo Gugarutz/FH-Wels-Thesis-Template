@@ -1,5 +1,9 @@
 % !TeX spellcheck = en_GB
-\documentclass[oneside,toc=listofnumbered,listof=entryprefix]{scrbook}
+\documentclass[	oneside,
+				bibliography=totocnumbered,
+				toc=listofnumbered,
+				listof=entryprefix
+				]{scrbook}
 
 %------------------------------------------------------------%
 	%% Settings and Packages
@@ -35,40 +39,41 @@
 	\selectlanguage{english}	% Set language -> naustrian or ngerman for new austrian or new german
 %------------------------------------------------------------%
 	\frontmatter			% everything before the content of the thesis starts
-	\pagenumbering{Roman} 	% uppercase roman numerals
+	\pagenumbering{Roman} 	% uppercase roman numerals, only frontmatter
 	
 		% Select Titlepage language
 			\titlepageEN
-%			\titlepageDE
-		
-		\setSectioning\tableofcontents
-		
-		
+			%\titlepageDE
+
 		% Write you Preface, acknowledgements, thanks etc here
 			\include{frontmatter/preface}
-		
+			
 		% Declaration, choose German or English
-%			\input{preamble/declarationEN}
+			%\input{preamble/declarationEN}
 			\input{preamble/declarationDE}
 			\declaration
-		
 		
 		% a general summary of the contents in German and English
 			\include{frontmatter/abstractEN}
 			\include{frontmatter/abstractDE}
-	
-	
+			
+		% Table of contents
+			\markleft{\contentsname}
+			\setSectioning	
+			\tableofcontents
+			
+			
 %------------------------------------------------------------%
 	\mainmatter % is the main part of the thesis, from the introduction to the conclusion/summary
 		% recommended: subfolders for each chapter, this is YOUR choise!
-		
-		
+%			\pagestyle{scrheadings}
 		% Introduction
 			\include{mainmatter/introduction}
-		
+			
+			
 		%% CHAPTER I
-	%	\include{mainmatter/ch1/ch1}		% introduction for the chapter
-	%		\include{mainmatter/ch1/sec1}
+		\include{mainmatter/ch1/ch1}		% introduction for the chapter
+			\include{mainmatter/ch1/sec1}
 	
 		%% TESTING
 			\blinddocument
