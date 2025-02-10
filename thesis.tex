@@ -1,5 +1,12 @@
 % !TeX spellcheck = en_GB
-\documentclass[oneside,toc=listofnumbered,listof=entryprefix]{scrbook}
+\documentclass[
+	oneside,
+	bibliography=totocnumbered,
+	toc=listofnumbered,
+	listof=numbered,
+	listof=totocnumbered,
+	numbers=noenddot
+]{scrbook}
 
 %------------------------------------------------------------%
 	%% Settings and Packages
@@ -7,7 +14,9 @@
 		\input{preamble/typesetting}
 		\input{preamble/math}
 		\input{preamble/graphics}
-			\graphicspath{{graphics},{images}}
+			\graphicspath{{graphics},{images}}	
+			% set figure counter to include chapter, analogous for tables, etc
+				%\counterwithin{figure}{chapter} 
 
 %------------------------------------------------------------%
 	%% FOR TESTING
@@ -22,7 +31,7 @@
 		\input{preamble/titlepage}
 		\input{preamble/declaration}
 			% TODO open preamble/signature to enable/diable digital signature and adjust position
-
+		\input{preamble/listoffixes}
 
 %==============================================================================================%
 %==============================================================================================%
@@ -30,60 +39,64 @@
 %==============================================================================================%
 %==============================================================================================%
 
-
 \begin{document}
 	\selectlanguage{english}	% Set language -> naustrian or ngerman for new austrian or new german
 %------------------------------------------------------------%
 	\frontmatter			% everything before the content of the thesis starts
-	\pagenumbering{Roman} 	% uppercase roman numerals
+	\pagenumbering{Roman} 	% uppercase roman numerals, only frontmatter
 	
 		% Select Titlepage language
 			\titlepageEN
-%			\titlepageDE
-		
-		\setSectioning\tableofcontents
-		
-		
+			%\titlepageDE
+
 		% Write you Preface, acknowledgements, thanks etc here
 			\include{frontmatter/preface}
-		
+			
 		% Declaration, choose German or English
-%			\input{preamble/declarationEN}
+			%\input{preamble/declarationEN}
 			\input{preamble/declarationDE}
 			\declaration
-		
 		
 		% a general summary of the contents in German and English
 			\include{frontmatter/abstractEN}
 			\include{frontmatter/abstractDE}
-	
-	
+			
+		% Table of contents
+			\markleft{\contentsname}	% adds "Contents" or equivalent to header
+			\setSectioning				% sets indents and seperation for TOC
+			\tableofcontents
+			
+			
 %------------------------------------------------------------%
 	\mainmatter % is the main part of the thesis, from the introduction to the conclusion/summary
-		% recommended: subfolders for each chapter, this is YOUR choise!
-		
-		
+		% recommended: subfolders for each chapter, this is YOUR choice!
+%			\pagestyle{scrheadings}
 		% Introduction
 			\include{mainmatter/introduction}
+			
+			
+		%% CHAPTER I - THEORY
+		\include{mainmatter/ch1/ch1}		% introduction for the chapter
+			\include{mainmatter/ch1/sec1}
 		
-		%% CHAPTER I
-	%	\include{mainmatter/ch1/ch1}		% introduction for the chapter
-	%		\include{mainmatter/ch1/sec1}
+		%% CHAPTER II - PRACTICE
 	
-		%% TESTING
+		%% TESTING --------
 			\blinddocument
 			\blindmathpaper
+		%% ----------------
 			
-	
-
 %------------------------------------------------------------%
 	\backmatter % includes the lists of figures, tables,... , the glossary, the Bibliography/References
+		
+		
+%		\bibliography{bibliography.bib}
 		\listoffigures
 		\listoftables
-	
 %------------------------------------------------------------%
 	\appendix	% add additional tables, figures, source code, transcripts,...
 	\chapter{Appendix}
-		\blinddocument
+		\section{first appendix section}
+		\blindtext[10]	
 %------------------------------------------------------------%
 \end{document}
