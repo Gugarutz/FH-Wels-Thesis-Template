@@ -1,6 +1,7 @@
 %------------------------------------------------------------%
 	% Step 1: Define the custom variable \field and its internal counterpart \@field
 	\makeatletter
+		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
 		\newcommand{\course}		[1]{\global\def\@course			{#1}}
 		\newcommand{\coursestype}	[1]{\global\def\@coursetype		{#1}}
 		\newcommand{\location}		[1]{\global\def\@location		{#1}}
@@ -9,13 +10,6 @@
 		\newcommand{\subyear}		[1]{\global\def\@subyear		{#1}}
 		\newcommand{\doctype}		[1]{\global\def\@doctype		{#1}}
 		\newcommand{\keywords}		[1]{\global\def\@keywords		{#1}}
-		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
-%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
-%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
-%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
-%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
-%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
-%		\newcommand{\degree}		[1]{\global\def\@degree			{#1}}
 	\makeatother
 
 %------------------------------------------------------------%
@@ -29,34 +23,20 @@
 		\global\def\@submonth		{?? submission month ??}
 		\global\def\@subyear		{?? submission year ??}
 		\global\def\@doctype		{?? document type ??}
-		\global\def\@degree			{?? keywords ??}
-		\global\def\@degree			{?? degree ??}
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		\global\def\@keywords		{?? keywords ??}
 	\makeatother
 
 %------------------------------------------------------------%
 % Step 3: Define a command to print the field
 	\makeatletter
-		\newcommand{\printdegree}{\@degree}
+		\newcommand{\printdegree}		{\@degree}
+		\newcommand{\printcourse}		{\@course}
+		\newcommand{\printcoursetype}	{\@coursetype}
+		\newcommand{\printlocation}		{\@location}
+		\newcommand{\printsupervisor}	{\@supervisor}
+		\newcommand{\printsubmonth}		{\@submonth}
+		\newcommand{\printsubyear}		{\@subyear}
+		\newcommand{\printdoctype}		{\@doctype}
+		% for defult fields
+		\newcommand{\printauthor}		{\@author}
 	\makeatother
-
-
-
-
-
-
-
-
-
-
-%------------------------------------------------------------%
-% Set the fields
-\degree{Master of Science}
