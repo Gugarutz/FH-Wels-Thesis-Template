@@ -1,6 +1,9 @@
 \usepackage[ngerman,naustrian,english]{babel}
+\usepackage{cmap}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
 	
 %------------------------------------------------------------%
 %% PARAGRAPH SPACING
@@ -11,19 +14,6 @@
 %% Chapter Top Spacing
 	\renewcommand*\chapterheadstartvskip{\vspace*{-0.8\topskip}}
 	
-%------------------------------------------------------------%
-%% APPENDIX NUMBERING
-	% Automatically change numbering format only after \appendix
-	\AtBeginDocument{%
-		\let\oldappendix\appendix
-		\renewcommand{\appendix}{%
-			\oldappendix % Call the original \appendix command
-			\renewcommand{\thesection}{\Alph{section}}%
-			\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}%
-			\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}%
-		}%
-	}
-
 %------------------------------------------------------------%
 %% TABLE OF CONTENTS
 	\usepackage{tocbasic}

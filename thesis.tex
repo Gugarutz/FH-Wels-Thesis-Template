@@ -5,7 +5,8 @@
 	toc=listofnumbered,
 	listof=numbered,
 	listof=totocnumbered,
-	numbers=noenddot
+	numbers=noenddot,
+	appendixprefix = true	% makes Appendix A... First appendix chapter, disable for one appendix
 ]{scrbook}
 
 %------------------------------------------------------------%
@@ -15,8 +16,13 @@
 		\input{preamble/math}
 		\input{preamble/graphics}
 			\graphicspath{{graphics},{images}}	
-			% set figure counter to include chapter, analogous for tables, etc
-				%\counterwithin{figure}{chapter} 
+		% set figure counter to include chapter; analogous for tables, etc
+			%\counterwithin{figure}{chapter}
+		
+		% citing and referencing
+			\usepackage[backend=biber,maxcitenames=3,sorting=nyt]{biblatex}
+			\bibliography{bibliography.bib}
+%			\bibliographystyle{FHWelsISO690Numeric}  % no worky?
 
 %------------------------------------------------------------%
 	%% FOR TESTING
@@ -31,7 +37,6 @@
 		\input{preamble/titlepage}
 		\input{preamble/declaration}
 			% TODO open preamble/signature to enable/diable digital signature and adjust position
-		\input{preamble/listoffixes}
 
 %==============================================================================================%
 %==============================================================================================%
@@ -40,24 +45,24 @@
 %==============================================================================================%
 
 \begin{document}
-	\selectlanguage{english}	% Set language -> naustrian or ngerman for new austrian or new german
+	\selectlanguage{ngerman}	% Set language -> naustrian or ngerman for new austrian or new german
 %------------------------------------------------------------%
 	\frontmatter			% everything before the content of the thesis starts
 	\pagenumbering{Roman} 	% uppercase roman numerals, only frontmatter
 	
 		% Select Titlepage language
-			\titlepageEN
-			%\titlepageDE
+			%\titlepageEN
+			\titlepageDE
 
 		% Write you Preface, acknowledgements, thanks etc here
 			\include{frontmatter/preface}
 			
-		% Declaration, choose German or English
+		% Select Declaration language
 			%\input{preamble/declarationEN}
 			\input{preamble/declarationDE}
 			\declaration
 		
-		% a general summary of the contents in German and English
+		% a general summary of the contents in German AND English
 			\include{frontmatter/abstractEN}
 			\include{frontmatter/abstractDE}
 			
@@ -69,34 +74,44 @@
 			
 %------------------------------------------------------------%
 	\mainmatter % is the main part of the thesis, from the introduction to the conclusion/summary
-		% recommended: subfolders for each chapter, this is YOUR choice!
-%			\pagestyle{scrheadings}
+		% recommended: subfolders for each chapter; this is YOUR choice!
+
 		% Introduction
 			\include{mainmatter/introduction}
 			
-			
 		%% CHAPTER I - THEORY
 		\include{mainmatter/ch1/ch1}		% introduction for the chapter
-			\include{mainmatter/ch1/sec1}
-		
+			\include{mainmatter/ch1/tabletest}
+			\include{mainmatter/ch1/graphictest}
 		%% CHAPTER II - PRACTICE
 	
 		%% TESTING --------
 			\blinddocument
 			\blindmathpaper
+			\cite{WWW:MenschlicherEinflussKlima}
+			\cite{Norm:ISO690:2021}
+			\cite{Lehrndorfer:KontrollierteSprache}
+			\cite{Meier:Globalisierung}
+			\cite{Mueller:Meier}
+			\cite{Mueller:Meier:Huber}
+			\cite{Mueller:Meier:Huber:Tausch}
+			\cite{Norm:ONR12658:2013}
+			\cite{Norm:OENORMA2662:2023}
+			\cite{OpenAI:2023}
+			\cite{Schulz:NormPraxis}
+%			\cite{jabref-meta: databaseType:biblatex}
 		%% ----------------
 			
 %------------------------------------------------------------%
-	\backmatter % includes the lists of figures, tables,... , the glossary, the Bibliography/References
+%	\backmatter % if you do not want chapter numbers 
 		
-		
-%		\bibliography{bibliography.bib}
+		\printbibliography
 		\listoffigures
 		\listoftables
 %------------------------------------------------------------%
-	\appendix	% add additional tables, figures, source code, transcripts,...
-	\chapter{Appendix}
-		\section{first appendix section}
-		\blindtext[10]	
+	% add additional tables, figures, source code, transcripts,...
+	\appendix	% changes chapter numbering to Alphabetic
+		\include{appendices/append1}	% create (sub)folders as necessary
+		
 %------------------------------------------------------------%
 \end{document}
