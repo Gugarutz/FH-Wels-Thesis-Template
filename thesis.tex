@@ -20,18 +20,19 @@
 		\input{preamble/titlepage-fields}
 		\input{preamble/titlepage-data}		% TODO Fill this out, right click to open
 		\input{preamble/titlepage}
-		\input{preamble/declaration}	
+		\input{preamble/declaration}
+			% TODO open preamble/signature to enable/diable digital signature and adjust position
 
 
-		
+%==============================================================================================%
+%==============================================================================================%
+%                                      DOCUMENT                                                %
+%==============================================================================================%
+%==============================================================================================%
 
-%------------------------------------------------------------%
-%															 %
-%						   DOCUMENT							 %
-%															 %
-%------------------------------------------------------------%
+
 \begin{document}
-	\selectlanguage{english}	% Sets the language	
+	\selectlanguage{english}	% Set language -> naustrian or ngerman for new austrian or new german
 %------------------------------------------------------------%
 	\frontmatter			% everything before the content of the thesis starts
 	\pagenumbering{Roman} 	% uppercase roman numerals
@@ -44,7 +45,11 @@
 		% Write you Preface, acknowledgements, thanks etc here
 			\include{frontmatter/preface}
 		
-		\declaration
+		% Declaration, choose German or English
+%			\input{preamble/declarationEN}
+			\input{preamble/declarationDE}
+			\declaration
+		
 		
 		% a general summary of the contents in German and English
 			\include{frontmatter/abstractEN}
@@ -61,19 +66,16 @@
 	%	\include{mainmatter/ch1}
 	%		\include{mainmatter/ch1/sec1}
 	
-		
 		%% TESTING
 			\blinddocument
 			\blindmathpaper
 			
+	
 
 %------------------------------------------------------------%
 	\backmatter % includes the lists of figures, tables,... , the glossary, the Bibliography/References
-	
-		% Lists
 		\listoffigures
 		\listoftables
-	
 	
 %------------------------------------------------------------%
 	\appendix	% add additional tables, figures, source code, transcripts,...

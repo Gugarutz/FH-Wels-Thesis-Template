@@ -1,3 +1,4 @@
+\newcommand{\signature}{\input{preamble/signature}}
 \newcommand{\declaration}{%
 	
 %------------------------------------------------------------%
@@ -27,11 +28,7 @@
 	\hfill
 	\begin{minipage}[t]{0.66\textwidth}
 		{\parskip 1.5ex		% local parksip change
-			I hereby declare that I prepared this work independently and without help from third parties, that I did not use sources other than the ones referenced and that I have indicated passages taken from those sources.
-			
-			This thesis was not previously submitted in identical or similar form to any other examination board, nor was it published.
-			
-			This printed thesis is identical with the electronic version submitted.
+			\declarationText	% Text chosen in main file via declarationDE or de
 		}
 		\vspace{25mm}
 		
@@ -42,15 +39,7 @@
 		\printauthor
 		\vskip 0mm
 		\printlocation, {\printsubmonth\ \printsubyear}
-		% Unterschrift anzeigen:
-%		\ifthenelse{\equal{\@showSig}{Yes}}
-%		{%
-%			\vskip \@posSigY
-%			\hskip \@posSigX
-%			\includegraphics[scale=\@scaleSig]{Grafik/Signature.png}%
-%		}%
-%		{}
-	
+		\signature
 	\end{minipage}
 	\vfill
 }
