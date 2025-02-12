@@ -1,11 +1,9 @@
 % !TeX spellcheck = en_GB
 \documentclass[
 	oneside,
-	bibliography=totocnumbered,
-	toc=listofnumbered,
-	listof=numbered,
-	listof=totocnumbered,
-	numbers=noenddot,
+	bibliography=totocnumbered,	% incluse bibliography in TOC with number
+	listof=totocnumbered,	% include List of Tables/Figures in TOC with number
+	numbers=noenddot,		% changes heading numbering from 1.1. to 1.1
 	appendixprefix = true	% makes Appendix A... First appendix chapter, disable for one appendix
 ]{scrbook}
 
@@ -16,13 +14,14 @@
 		\input{preamble/math}
 		\input{preamble/graphics}
 			\graphicspath{{graphics},{images}}	
-		% set figure counter to include chapter; analogous for tables, etc
-			%\counterwithin{figure}{chapter}
 		
-		% citing and referencing
-			\usepackage[backend=biber,maxcitenames=3,sorting=nyt]{biblatex}
-			\bibliography{bibliography.bib}
-%			\bibliographystyle{FHWelsISO690Numeric}  % no worky?
+			
+		
+	% citing and referencing
+		\usepackage[backend=biber,maxcitenames=3,sorting=nyt]{biblatex}
+		\bibliography{bibliography.bib}			 % file(s) with all sources 
+%		\bibliographystyle{FHWelsISO690Numeric}  % no worky?
+%		\counterwithin{figure}{chapter} % set figure counter to include chapter; analogous for tables, etc
 
 %------------------------------------------------------------%
 	%% FOR TESTING
@@ -75,6 +74,7 @@
 %------------------------------------------------------------%
 	\mainmatter % is the main part of the thesis, from the introduction to the conclusion/summary
 		% recommended: subfolders for each chapter; this is YOUR choice!
+		% TODO you need to understand (look up) the difference between \input and \include
 
 		% Introduction
 			\include{mainmatter/introduction}
@@ -99,7 +99,6 @@
 			\cite{Norm:OENORMA2662:2023}
 			\cite{OpenAI:2023}
 			\cite{Schulz:NormPraxis}
-%			\cite{jabref-meta: databaseType:biblatex}
 		%% ----------------
 			
 %------------------------------------------------------------%
@@ -111,7 +110,7 @@
 %------------------------------------------------------------%
 	% add additional tables, figures, source code, transcripts,...
 	\appendix	% changes chapter numbering to Alphabetic
-		\include{appendices/append1}	% create (sub)folders as necessary
+		\include{appendices/append1}	% create folders as necessary
 		
 %------------------------------------------------------------%
 \end{document}
