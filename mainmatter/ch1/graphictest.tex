@@ -1,0 +1,113 @@
+\section{Figures}
+\label{sec:Figures}
+The figure environment has to be used for inserting and referencing figures. Figures and tables are inserted as floats, this means they will be moved where there is space (but in the order they are called in the text). To prevent this, use \texttt{[h]} or \texttt{[H]} when calling the figure environment.
+It is often best to define the width of the graphic as a multiple of the the textwidth.
+See source code.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.50\textwidth]{FH.png}
+	\caption{Example of inserting a figure}
+	\label{fig:ExampleFigure-1}
+\end{figure}
+
+\subsection{Multiple figures}
+You can insert two graphics files into a single figure environment by just calling the \texttt{includegraphics} command twice. They will only have one caption. They spacing between them will be 0. You can use \texttt{hskip, hspace, hfill, hfil} to separate them. \texttt{hfil} is generally the best option here
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{FH.png}
+    \hfil
+    \includegraphics[width=0.4\textwidth]{FH.png}
+    \caption{Example of inserting two figures}
+    \label{fig:ExampleFigure-2}
+\end{figure}
+
+The better approach will be using the \texttt{subfigure} environment:
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{FH.png}
+    \end{subfigure}
+    \hfil
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{FH.png}
+    \end{subfigure}
+    \caption{Example of inserting a figure with subfigures}
+    \label{fig:ExampleFigure-3}
+\end{figure}
+
+You will still need to separate the images manually, but you can reference and caption the subfigures as well, like here:
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{FH.png}
+        \caption{First Image}
+        \label{fig:subfig1}
+    \end{subfigure}
+    \hfil
+    \begin{subfigure}{0.55\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{FH.png}
+        \caption{Second Image}
+        \label{fig:subfig2}
+    \end{subfigure}
+    \caption{Example of inserting a figure with differently sized subfigures with subcaption}
+    \label{fig:ExampleFigure-4}
+\end{figure}
+
+The total amount of width of subfigures or when using \texttt{includegraphics} multiple times, should not be or exceed one. Use 0.49 for both left and right images for example. The above example uses 0.4 for \ref{fig:subfig1} and 0.55 for \ref{fig:subfig2}.
+
+%-------------------------------------------------------------------------
+\subsection{Usage of the overpic package}
+
+    The overpic package is too big to be explained here. Please refer to its own documentation. You can use the grid option to help with positioning.
+    \begin{figure}[H]
+        \centering\vskip5mm
+        \begin{overpic}[width=0.5\textwidth,grid,tics=20]{FH.png}
+            \put(40,35){\color{red} \Large Example Annotation}
+        \end{overpic}
+        \caption{Example using the overpic package}
+        \label{fig:overpic_example}
+    \end{figure}
+
+
+%-------------------------------------------------------------------------
+    \clearpage
+\subsection{Usage of wrapfig package}
+
+%\setlength{\intextsep}{0pt}   % Removes space above & below the figure
+%\setlength{\columnsep}{5pt}   % Adjusts space between figure and text
+
+
+\begin{wrapfigure}{r}{0.4\textwidth}  % 'r' for right placement
+    \vspace{-10pt}  % Reduce space above the figure
+    \centering
+    \includegraphics[width=\linewidth]{FH.png}
+    \caption{A wrapped figure with reduced spacing.}
+    \label{fig:wrapfig}
+\end{wrapfigure}
+
+
+
+This is an example of a paragraph with a wrapped figure. The text will flow around the image automatically. You can adjust the figure width, placement, and spacing to optimize the layout. If the text is too short, you might see issues with overlapping or strange formatting.
+This is an example of a paragraph with a wrapped figure. The text will flow around the image automatically. You can adjust the figure width, placement, and spacing to optimize the layout. If the text is too short, you might see issues with overlapping or strange formatting.
+This is an example of a paragraph with a wrapped figure. The text will flow around the image automatically. You can adjust the figure width, placement, and spacing to optimize the layout. If the text is too short, you might see issues with overlapping or strange formatting.
+
+The spacing of the image has been adjusted to move it further upwards.
+
+\subsection{On using figures}
+Consider the following points when using figures:
+\begin{itemize}
+    \item Figures must be referenced within or linked to the text; otherwise they are superfluous. To do this, use the command \verb|\ref{}|
+    [see Fig.~\ref{fig:ExampleFigure-1}]\\
+    An additional page reference can be added with the command \verb|\pageref{}| \newline
+    [see Fig.~\ref{fig:ExampleFigure-1} on page \pageref{fig:ExampleFigure-1}]
+    \item Not every figure needs to be in the text. Analyses, tables, backup information, etc.~can be collected in the appendix. However, the text should reference them.
+    \item If necessary, add a legend in the figures and the necessary references.
+\end{itemize}
