@@ -1,16 +1,132 @@
-\section{table test}
+\section{Insert a table}
 
-\begin{table}[h]
+\blindtext
+
+\begin{table}[H]
 	\centering
 	\caption{Testtabelle 2}
-	\begin{tabular}{c|c||c|}
-		Spaltenüberschrift & Spaltenüberschrift & Spaltenüberschrift \\
-		\midrule[2pt]
-		1 & Test-1 & Test-2\\ 
-		\hline 2 & 0 & 0  \\ 
-		3 & 0 & 0  \\ 
-		4 & 0 & 1  \\
-		\hline 
+	\begin{tabular}{c|c||c}
+		Heading column 1 & Heading column 2 & Heading column 3 \\ \headrule
+		       1         &      Test-1      &      Test-2      \\ \hline
+		       2         &        0         &        0         \\
+		       3         &        0         &        0         \\
+		       4         &        0         &        1         \\
 	\end{tabular}
-	\label{tab:Testtabelle-2} 
+	\label{tab:Testtabelle-2}
 \end{table}
+
+\blindtext
+
+\begin{table}[H]
+    \centering
+    \caption{Table with alternating row colors}
+    \rowcolors{2}{gray!20}{white}  % Alternating row colors (light gray and white)
+    \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|}
+        \hline
+          size   &  size 1  &  size 2  \\ \midrule
+          unit   & [unit 1] & [unit 2] \\ \hline
+        object 1 &    5     &    6     \\
+        object 2 &    8     &    9     \\
+        object 3 &    11    &    12    \\ \hline
+    \end{tabular}
+\end{table}
+
+The following table uses \texttt{tabularx}, a package for automatic column width. The compatibility with \texttt{rowcolors} is limited
+\begin{table}[H]
+    \centering
+    \caption{Table with alternating colours and automatic column width (B) using tabularx, fixed size (C) and standard centred (A)}
+    \rowcolors{2}{white}{gray!15}
+    \begin{tabularx}{0.8\linewidth}{c|XX p{2cm}}
+        \hline
+        A  & B  & B  & C  \\ \hline
+        1  & 2  & 2  & 3  \\
+        4  & 5  & 5  & 6  \\
+        7  & 8  & 8  & 9  \\
+        10 & 11 & 11 & 12 \\ \hline
+    \end{tabularx}
+\end{table}
+
+\texttt{tabulary} is an extended version of \texttt{tabularx} with support for Right, Centred, Left aligned and justified text. The compatibility with \texttt{rowcolors} is limited
+
+\begin{table}[H]
+    \centering
+    \caption{Example using tabulary, smaller text to save space}
+    \small
+    \begin{tabulary}{\linewidth}{|L|C|R|J|}
+        \hline
+        Left-aligned & Centered & Right-aligned & Justified text \\ \hline
+        Apple  & 10   & 5.99  & This is some longer text that will wrap properly. \\
+        Banana & 20   & 3.49  & Another line with text to test justification. \\
+        Cherry & 15   & 7.99  & Yet another example. \\ \hline
+    \end{tabulary}
+\end{table}
+
+
+
+
+
+
+
+%------------------------------------------------------------------------
+\section{Longtable and importing data}
+
+
+The following uses a simple csv file.
+
+\DTLloaddb{data2}{data/sample_data.csv}
+\begin{table}[H]
+    \centering
+    \caption{Table from an imported CSV}
+    \begin{tabular}{l*{3}{r}}
+    \toprule
+    \textbf{Col1} &\textbf{Col2} &\textbf{Col3} &\textbf{ColPct}
+    \DTLforeach*{data2}{\1=Col1, \2=Col2, \3=Col3, \4=ColPct}
+    {%
+        \DTLiffirstrow{\\ \midrule}{\\}%
+        \1 & \2 & \3 & \4 %
+    }
+    \\ \hline
+    \end{tabular}
+\end{table}
+
+For the next two tables the same csv file is used. It is located in \texttt{./data/}
+
+\DTLloaddb{data}{data/sales_data.csv}
+
+This table is displayed straight up, with the longtable option. This is easy, but it is not decorated and uses the csv headings.
+
+\begingroup\rowcolors{2}{gray!15}{white}
+    \DTLdisplaylongdb{data}
+\endgroup
+
+The table displayed in a specific format. The syntax for this is looks intimidating but is not that hard.
+
+\begingroup\small\rowcolors{2}{gray!15}{white}
+\begin{longtable}{|l|*{4}{r|}}
+    \caption{Longtable from a CSV file}\cr
+    \hline
+    \textbf{Date} & \textbf{Product} & \textbf{Units Sold} & \textbf{Price (€)} & \textbf{Total (€)} \\
+    \midrule
+    \endfirsthead
+
+    \multicolumn{5}{c}{\textit{Continued from previous page(opt.)}} \\ \hline
+    \textbf{Date} & \textbf{Product} & \textbf{Units Sold} & \textbf{Price (€)} & \textbf{Total (€)} \\
+    \midrule
+    \endhead
+
+    \hline
+    \multicolumn{5}{|r|}{\textit{(Continued on next page)}} \\
+    \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    % Data from your CSV file
+    \DTLforeach*{data}{\1=Date, \2=Product, \3=Quantity Sold, \4=Price (€), \5=Total (€)}{%
+        \DTLiffirstrow{}{\\} % No extra line before the first row
+        \1 & \2 & \3 & \4 & \5 %
+    }
+
+\end{longtable}
+\endgroup
