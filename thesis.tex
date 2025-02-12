@@ -12,16 +12,25 @@
 		\input{preamble/layout}
 		\input{preamble/typesetting}
 		\input{preamble/math}
-		\input{preamble/graphics}
-			\graphicspath{{graphics},{images}}	
-		
-			
-		
+		\input{preamble/graphics}	% graphics, colour, tables packages and settings
+			\graphicspath{{graphics},{images}}
+        \input{preamble/data}       % reading data, making diagrams & plots
+
+
+
 	% citing and referencing
 		\usepackage[backend=biber,maxcitenames=3,sorting=nyt]{biblatex}
-		\bibliography{bibliography.bib}			 % file(s) with all sources 
+		\bibliography{bibliography.bib}			 % file(s) with all sources
 %		\bibliographystyle{FHWelsISO690Numeric}  % no worky?
 %		\counterwithin{figure}{chapter} % set figure counter to include chapter; analogous for tables, etc
+
+%------------------------------------------------------------%
+%% FRONT PAGE
+    \input{preamble/titlepage-fields}
+    \input{preamble/titlepage-data}		% TODO Fill this out, right click to open (texstudio)
+    \input{preamble/titlepage}
+    \input{preamble/declaration}
+        % TODO open preamble/signature to enable/diable digital signature and adjust position
 
 %------------------------------------------------------------%
 	%% FOR TESTING
@@ -29,13 +38,9 @@
 		\usepackage{blindtext}
 			\blindmathtrue
 
-%------------------------------------------------------------%
-	%% FRONT PAGE
-		\input{preamble/titlepage-fields}
-		\input{preamble/titlepage-data}		% TODO Fill this out, right click to open (texstudio)
-		\input{preamble/titlepage}
-		\input{preamble/declaration}
-			% TODO open preamble/signature to enable/diable digital signature and adjust position
+
+
+
 
 %==============================================================================================%
 %==============================================================================================%
@@ -48,29 +53,29 @@
 %------------------------------------------------------------%
 	\frontmatter			% everything before the content of the thesis starts
 	\pagenumbering{Roman} 	% uppercase roman numerals, only frontmatter
-	
+
 		% Select Titlepage language
 			%\titlepageEN
 			\titlepageDE
 
 		% Write you Preface, acknowledgements, thanks etc here
 			\include{frontmatter/preface}
-			
+
 		% Select Declaration language
 			%\input{preamble/declarationEN}
 			\input{preamble/declarationDE}
 			\declaration
-		
+
 		% a general summary of the contents in German AND English
 			\include{frontmatter/abstractEN}
 			\include{frontmatter/abstractDE}
-			
+
 		% Table of contents
 			\markleft{\contentsname}	% adds "Contents" or equivalent to header
 			\setSectioning				% sets indents and seperation for TOC
 			\tableofcontents
-			
-			
+
+
 %------------------------------------------------------------%
 	\mainmatter % is the main part of the thesis, from the introduction to the conclusion/summary
 		% recommended: subfolders for each chapter; this is YOUR choice!
@@ -78,13 +83,13 @@
 
 		% Introduction
 			\include{mainmatter/introduction}
-			
+
 		%% CHAPTER I - THEORY
 		\include{mainmatter/ch1/ch1}		% introduction for the chapter
 			\include{mainmatter/ch1/tabletest}
 			\include{mainmatter/ch1/graphictest}
 		%% CHAPTER II - PRACTICE
-	
+
 		%% TESTING --------
 			\blinddocument
 			\blindmathpaper
@@ -100,10 +105,10 @@
 			\cite{OpenAI:2023}
 			\cite{Schulz:NormPraxis}
 		%% ----------------
-			
+
 %------------------------------------------------------------%
-%	\backmatter % if you do not want chapter numbers 
-		
+%	\backmatter % if you do not want chapter numbers
+
 		\printbibliography
 		\listoffigures
 		\listoftables
@@ -111,6 +116,6 @@
 	% add additional tables, figures, source code, transcripts,...
 	\appendix	% changes chapter numbering to Alphabetic
 		\include{appendices/append1}	% create folders as necessary
-		
+
 %------------------------------------------------------------%
 \end{document}
