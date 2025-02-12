@@ -10,8 +10,9 @@ See source code.
 	\label{fig:ExampleFigure-1}
 \end{figure}
 
+%-------------------------------------------------------------------------
 \subsection{Multiple figures}
-You can insert two graphics files into a single figure environment by just calling the \texttt{includegraphics} command twice. They will only have one caption. They spacing between them will be 0. You can use \texttt{hskip, hspace, hfill, hfil} to separate them. \texttt{hfil} is generally the best option here
+You can insert two graphics files into a single figure environment by just calling the \verb|\includegraphics[]{}| command twice. They will only have one caption. They spacing between them will be 0. You can use \texttt{hskip, hspace, hfill, hfil} to separate them. \texttt{hfil} is generally the best option here
 
 \begin{figure}[h]
     \centering
@@ -22,7 +23,7 @@ You can insert two graphics files into a single figure environment by just calli
     \label{fig:ExampleFigure-2}
 \end{figure}
 
-The better approach will be using the \texttt{subfigure} environment:
+The better approach will be using the \verb|subfigure| environment:
 
 \begin{figure}[h]
     \centering
