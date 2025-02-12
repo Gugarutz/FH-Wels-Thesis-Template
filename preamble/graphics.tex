@@ -1,17 +1,51 @@
-\usepackage{graphicx}   % Graphics package, easily include  images (see Insert Graphic Wizard)
-\usepackage{xcolor}     % Sophistacated package for colours, with table option to use colors in tables
+
+
+%-------------------------------------------------------
+%% general graphics and float packages
+    \usepackage{graphicx}   % Graphics package, easily include  images (see Insert Graphic Wizard)
+    \usepackage{xcolor}     % Sophistacated package for colours, with table option to use colors in tables
+    \usepackage{float}		% more control for placing floats (tables, figures,...)
+    \usepackage{caption}    % better captioning control
+    \usepackage{subcaption} % allows subfigures etc
+    \usepackage{overpic}    % allows drawing inside images
+    \usepackage{wrapfig}    % allows wrapping text around an image
+    \usepackage{rotating}
 
 
 %-------------------------------------------------------
 %% Table packages
-	\usepackage{array}				% Provides advanced table formatting options
-	\usepackage{longtable}			% Allows tables to span multiple pages
-	\usepackage{booktabs}			% Provides professional-looking table rules
-	\usepackage{colortbl}			% Enables colored table cells
-	\usepackage{multicol}			% Allows multi-column cells in tables
-	\usepackage{multirow}			% Allows multi-row cells in tables
-%	\usepackage{nicematrix}			% custom table rules and decorations
+	\usepackage{array}			% Provides advanced table formatting options
+	\usepackage{longtable}		% Allows tables to span multiple pages
+	\usepackage{booktabs}		% Provides professional-looking table rules
+	\usepackage{colortbl}		% Enables colored table cells
+	\usepackage{multicol}		% Allows multi-column cells in tables
+	\usepackage{multirow}		% Allows multi-row cells in tables
+	\usepackage{nicematrix}		% custom table rules and decorations
+    \usepackage{tabularx}       % equal distribution of columns
+    \usepackage{tabulary}       % expanded version of tabularx
 
 
 
-%% Settings for the packages above
+
+%-------------------------------------------------------
+%% settings for tables
+	% cellheight increased
+	\renewcommand{\arraystretch}{1.2}
+
+	% column spacing increased
+	\setlength{\tabcolsep}{1mm}
+
+	% thicker seperation line \specialrule{thickness}{abovespace}{belowspace}
+	\newcommand{\headrule}{\specialrule{2pt}{0pt}{0pt}}
+    % this is so the column align in texstudio recognises \midrule
+    \renewcommand{\midrule}{\specialrule{2pt}{0pt}{0pt}}
+
+    % settings for caption package, use \captionsetup[float type]{options} for individual control
+    \captionsetup{
+        font=small,
+        labelfont=bf,
+        aboveskip=10pt,
+        belowskip=5pt,
+        margin=5mm,
+        justification=raggedright
+        }
