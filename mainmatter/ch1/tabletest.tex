@@ -91,16 +91,12 @@ The following uses a simple csv file.
 
 For the next two tables the same csv file is used. It is located in \texttt{./data/}
 
-\DTLloaddb{data}{data/sales_data.csv}
 
-This table is displayed straight up, with the longtable option. This is easy, but it is not decorated and uses the csv headings.
 
-\begingroup\rowcolors{2}{gray!15}{white}
-    \DTLdisplaylongdb{data}
-\endgroup
 
 The table displayed in a specific format. The syntax for this is looks intimidating but is not that hard.
 
+\DTLloaddb{data}{data/sales_data.csv}
 \begingroup\small\rowcolors{2}{gray!15}{white}
 \begin{longtable}{|l|*{4}{r|}}
     \caption{Longtable from a CSV file}\cr
