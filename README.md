@@ -4,6 +4,10 @@ This a re-created template for writing scientific texts and thesis at the Univer
 
 Deviation to these instructions is of course permitted, I cannot stop you, but you will be on your own.
 
+## Features
+
+
+
 ## Prerequisites
 
 The template uses the following software/libraries as a basis:
