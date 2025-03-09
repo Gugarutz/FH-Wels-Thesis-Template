@@ -69,11 +69,11 @@ Create a [Github](https://github.com/) account. Use your private email address, 
 
 
 %%%%%%%%%%%%%%%%% this needs a rewrite
+
 In Github Desktop: 
 * Click `File > New Repository`
 * Choose a name and ensure compliance
 * Choose a description if you like
-@ -68,7 +91,7 @@ In Github Desktop:
 * Ensure `initialise this repository with a README` is checked off
 * Ensure `License` and `Gitignore` are set to `none`
 
