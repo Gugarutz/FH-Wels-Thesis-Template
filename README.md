@@ -1,9 +1,13 @@
 # FH-Wels-Thesis-Template
+
 This a re-created template for writing scientific texts and thesis at the University of Applied Science Upper Austria - Campus Wels. It may be freely used by anyone outside of that as well.
 
 Deviation to these instructions is of course permitted, I cannot stop you, but you will be on your own.
+
 ## Prerequisites
+
 The template uses the following software/libraries as a basis:
+
 * TeX Live
 * TeX studio
 * Github Desktop
@@ -12,7 +16,7 @@ To properly use this template, you must first understand how TeX or LaTeX works.
 
 When asking ChatGPT, Copilot or other similar, ensure to provide context that you are using KOMA or scrbook (the specific KOMA doucment class used here). As of February 2025 Github Copilot with the Claude Sonnet Model is recommended for LaTeX help. For research purposes it is you decicion.
 
-Usage of other software is not supported. TeX Live is preferred over MikTex for faster compilation and wider package support. We will be working on a Windows system, there is no official support for Linux or Mac as of yet. 
+Usage of other software is not supported. TeX Live is preferred over MikTex for faster compilation and wider package support. We will be working on a Windows system, there is no official support for Linux or Mac as of yet.
 
 For German users this [YouTube Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTg5XgHXhNPUJNib6gW_Zpi) is taken as a basis. The settings for TeXstudio used here overlap with the ones set there. However, perform the installation as described here and not the way it is done in the tutorial. Whether you use de_DE or de_AT or any other language is up to you. Also exercise your way through the [Extended Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTEasZqICLLwTjk80rAP2GQ).
 
@@ -20,43 +24,49 @@ Links to English TeX resources will follow soon.
 If no dictionaries are available check [here](https://tex.stackexchange.com/questions/87650/dictionary-for-texstudio-no-dictionary-available)
 
 ## Installation
+
 The total time to install can vary a lot. Plan for at least 2 hours with a good internet connection, this is not due to the size of the installation but rather because it downloads all packages individually. Do *not* use the WiFi at the university, do this at home. The TeXLive installer takes its time. All software is to be installed in ENGLISH.
 
 ### TeX Live
+
 Start by downloading the [install-tl-windows.exe](https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe) directly through this link or from [here](https://mirror.ctan.org/systems/texlive/tlnet) if you are using a different OS. Double click the exe file in you downloads folder. Windows will prompt you that "Windows protected your PC", click `More info` then `Run Anyway`.
 
 In the TeX Live installer:
-9. Close both windows
-10. Click the Windows icon in the lower left
-11. And search for `TLShell TeX Live Manager`
-12. Open it*
-12. Wait for it to establish a connection
-13. Click on `All`; you should see many packages
-14. Click on `Not installed`; you should see no packages. Otherwise install all
-14. Click on `Updateable`; you should see no packages. Otherwise Update all
-15. Close the  manager
 
+1. Close both windows
+2. Click the Windows icon in the lower left
+3. And search for `TLShell TeX Live Manager`
+4. Open it*
+5. Wait for it to establish a connection
+6. Click on `All`; you should see many packages
+7. Click on `Not installed`; you should see no packages. Otherwise install all
+8. Click on `Updateable`; you should see no packages. Otherwise Update all
+9. Close the manager
 
 [NOTE] If Windows search does not find the TLShell, open a cmd window (search for cmd, open), and type `tlshell`. This will open the 
-[NOTE] If this fails too, head to or paste `C:\texlive\2024\bin\windows\tlshell.exe`. The year may vary. You may want to create a desktop shortcut for future use.
+
+If this fails too, head to or paste `C:\texlive\2024\bin\windows\tlshell.exe`. The year may vary. You may want to create a desktop shortcut for future use.
 
 ### MikTex
+
 I cannot enforce the usage of TeXLive. You can use MikTex if you are not comfortable with the TeXLive website or the install process. It *should* work just fine. Know that TeXLive is 20-30% faster during compilation, which will save you a lot of time in the long run. It also has support for more packages.
 
 ### TeXstudio
+
 This install is simple. You can either
-- open powershell, preferrably as admin
-- `winget install texstudio.texstudio`
-- while you are here, you can skip ahead:
-- `winget install github.githubdesktop`
+
+* open powershell, preferrably as admin
+* `winget install texstudio.texstudio`
+* while you are here, you can skip ahead:
+* `winget install github.githubdesktop`
 
 or 
 
-- head to [texstudio.org](https://www.texstudio.org/)
-- Click the big `Download now` button
-- Click through the installer
-- **set the language to English**. German is not supported and not recommended
-- Leave everything to the default settings otherwise
+* head to [texstudio.org](https://www.texstudio.org/)
+* Click the big `Download now` button
+* Click through the installer
+* **set the language to English**. German is not supported and not recommended
+* Leave everything to the default settings otherwise
 
 ### Github Desktop
 This install is also simple. You can use `winget install github.githubdesktop` or head to their [website](https://desktop.github.com/). Same as TeXstudio: Click the big `Download` button and click through the installer. Leave everything to the default settings but **set the language to English**. German is not supported here.
@@ -65,6 +75,7 @@ This install is also simple. You can use `winget install github.githubdesktop` o
 We will need to configure TeXstudio and Github for us to be able to use it properly and fully.
 
 ### Github (Desktop)
+
 Create a [Github](https://github.com/) account. Use your private email address, do not use the university or work/internship address. You will not have access to them after leaving those institutions.
 
 
@@ -74,14 +85,16 @@ In Github Desktop:
 - Click `File > Clone Repository`
 - switch to the URL tab
 - add this link
-```
+
+``` link
 https://github.com/Gugarutz/FH-Wels-Thesis-Template
 ```
+
 - Let the Local path be `C:\Github`
 
 [Note] IMPORTANT: Choose `C:\Github` as your directory. **Do not use long directory paths or especially OneDrive folders.** This will lead to syncing issues with any other systems and will cause a lot of syncing from OneDrive. You may still use a cloud service for backing up your work. Look into FreeFileSync for automatic replication of your thesis to a cloud folder or other medium (e.g. USB stick, external hard drive).
 
-Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\Github\[reponame]`. Ensure the result is NOT 
+Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\Github\[reponame]`.
 
 Now go back to Github Desktop. You should see all the new files in the left pane
 
@@ -93,25 +106,28 @@ While this is very much not recommended, it is up to you. If you have not admin 
  
 Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template.git) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\Github\[reponame]`. Ensure the result is **not** something like this:
 
-```
-C:\Github\[mainfolder]\FH-Wels-Thesis-Template\thesis.tex	or
+``` bash
+C:\Github\[mainfolder]\FH-Wels-Thesis-Template\thesis.tex
 C:\Github\[mainfolder]\FH-Wels-Thesis-Template-main\thesis.tex
 ```
+
 Ensure a shallow directory, like this:
-```
-C:\Github\[mainfolder]\thesis.tex or
+
+``` bash
+C:\Github\[mainfolder]\thesis.tex
 C:\[mainfolder]\thesis.tex
 ```
+
 The same goes if you are using Overleaf, ensure that thesis.tex is at the very front and not in a subfolder.
 
 [NOTE] delete the README.md LICENSE.md and .gitignore files, if not using Git. They will be unused.
-
 
 ### TeXstudio
 
 You need to run Biber under `Tools>Commands>Biber` in TeXstudio.
 
-## using Git and Github Desktop
+## Using Git and Github Desktop
+
 Since you will be using this alone, you do not need to fuss about with git too much.
 - When working on your thesis, make small and local commits, this way you will be able to go back to very specific points if things break
 - Document each commit at least somewhat
