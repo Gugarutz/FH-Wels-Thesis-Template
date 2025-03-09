@@ -1,13 +1,7 @@
 # FH-Wels-Thesis-Template
 This a re-created template for writing scientific texts and thesis at the University of Applied Science Upper Austria - Campus Wels. It may be freely used by anyone outside of that as well.
 
-<<<<<<< Updated upstream
-The logo of the university of Upper Austria is not my property and is exempt from the LICENSE.
-
-Deviation to these instructions is of course permitted, but you will be on your own.
-=======
 Deviation to these instructions is of course permitted, I cannot stop you, but you will be on your own.
->>>>>>> Stashed changes
 ## Prerequisites
 The template uses the following software/libraries as a basis:
 * TeX Live
@@ -22,8 +16,7 @@ Usage of other software is not supported. TeX Live is preferred over MikTex for 
 
 For German users this [YouTube Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTg5XgHXhNPUJNib6gW_Zpi) is taken as a basis. The settings for TeXstudio used here overlap with the ones set there. However, perform the installation as described here and not the way it is done in the tutorial. Whether you use de_DE or de_AT or any other language is up to you. Also exercise your way through the [Extended Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTEasZqICLLwTjk80rAP2GQ).
 
-Links to English TeX resources will follow soon.
-
+@ -19,7 +21,7 @@ Links to English TeX resources will follow soon.
 If no dictionaries are available check [here](https://tex.stackexchange.com/questions/87650/dictionary-for-texstudio-no-dictionary-available)
 
 ## Installation
@@ -31,20 +24,7 @@ The total time to install can vary a lot. Plan for at least 2 hours with a good 
 
 ### TeX Live
 Start by downloading the [install-tl-windows.exe](https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe) directly through this link or from [here](https://mirror.ctan.org/systems/texlive/tlnet) if you are using a different OS. Double click the exe file in you downloads folder. Windows will prompt you that "Windows protected your PC", click `More info` then `Run Anyway`.
-
-In the TeX Live installer:
-
-1. Ensure option `Install` is enabled. 
-2. Click `Next`
-3. Click `Install`
-4. A second window will open
-5. You may choose a mirror (location)
-6. Or ignore, selection will be automatic (recommended)
-5. Ensure `Default paper size` is set to `A4`
-6. Click `Install`
-7. You may install the other software in the meantime
-7. Let the installer finish (this is the long part)
-8. Ensure it installed with no errors
+@ -40,27 +42,48 @@ In the TeX Live installer:
 9. Close both windows
 10. Click the Windows icon in the lower left
 11. And search for `TLShell TeX Live Manager`
@@ -93,7 +73,7 @@ In Github Desktop:
 * Click `File > New Repository`
 * Choose a name and ensure compliance
 * Choose a description if you like
-* Set the path to `C:\Github` [See note below]
+@ -68,7 +91,7 @@ In Github Desktop:
 * Ensure `initialise this repository with a README` is checked off
 * Ensure `License` and `Gitignore` are set to `none`
 
@@ -101,14 +81,7 @@ In Github Desktop:
 
 Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template.git) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\Github\[reponame]`. Ensure the result is NOT 
 ```
-C:\Github\[reponame]\FH-Wels-Thesis-Template\thesis.tex	or
-C:\Github\[reponame]\FH-Wels-Thesis-Template-main\thesis.tex
-```
-Ensure a flat directory, like this:
-```
-C:\Github\[reponame]\thesis.tex
-```
-Now go back to Github Desktop. You should see all the new files in the left pane. Click `Publish repository` at the top of the window. Ensure you have no mistakes in the name. Ensure your code will be kept private. Click `Publish repository`. 
+@ -83,21 +106,84 @@ Now go back to Github Desktop. You should see all the new files in the left pane
 
 On the lower left, give this version (commit) a name in the summary field. You may call this "original" or "base" for example. Click on `commit to main` and `Push origin` in the centre pane. Only this last part actually uploads to Github.
 
@@ -191,5 +164,4 @@ All language selection is made after `\begin{document}`. No selection/changes ne
 - This is used in the two abstract files
 - {the contents inside loose curly brackets (meaning not part of a command) are a group}
 ---
-
 
