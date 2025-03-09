@@ -1,0 +1,62 @@
+\section{Mathematics and units}
+
+
+\subsection{Variables \& constants}
+	
+	It is common practice to write variables in \textit{italics} and constants upright. For example $e$ might be used for eccentricity and $\mathrm{e} $ is used for Euler's constant $(=\num{2.718281}\dots)$. 
+
+
+\subsection{The  \texttt{siunitx} package}
+
+	This package is useful for automatic typesetting of numbers and/or units. You will need to choose the some setting in % todo path of \sisetup{...}
+	
+	\paragraph*{Only units}
+	The \verb|\si| command is used for unit formatting. It ensures proper spacing and styling for standalone units:  \\
+	- \verb|\si{\kilogram\metre\per\second}| produces \si{\kilogram\metre\per\second}.  \\
+	- \verb|\si{\kg\per\m\per\s\squared}| produces \si{\kg\per\m\per\s\squared}.  \\
+	- \verb|\si{\degreeCelsius}| correctly handles special symbols: \si{\degreeCelsius}.  \\
+	- \verb|\si{\ohm}| ensures correct typesetting of units like ohms: \si{\ohm}.  
+	
+	\paragraph*{Only numbers}
+	The \verb|\num| command formats numbers consistently, handling spacing, digit grouping, and scientific notation:  \\
+	- \verb|\num{12345.678}| formats large numbers: \num{12345.678}. \\ 
+	- \verb|\num{6.022e23}| correctly formats scientific notation: \num{6.022e23}.  \\
+	- \verb|\num{000.000123}| removes leading zeros where necessary: \num{000.000123}.  
+	
+	\paragraph*{Numbers and units}
+	The \verb|\SI| command combines numbers and units seamlessly:  \\
+	- \verb|\SI{9.81}{\metre\per\second\squared}| represents acceleration:\\ \SI{9.81}{\metre\per\second\squared}.  \\
+	- \verb|\SI{1.5}{\mega\hertz}| correctly applies SI prefixes: \SI{1.5}{\mega\hertz}.  \\
+	- \verb|\SI{500}{\milli\liter}| handles subunits properly: \SI{500}{\milli\liter}.
+	
+	\paragraph*{Uncertainty}
+	- The \verb|\num{1.23(45)}| command shows uncertainty in parentheses, producing \num{1.23(45)}. \\
+	- The \verb|\SI{1.23(45)}{\metre}| command combines uncertainty with units, producing \SI{1.23(45)}{\metre}.  \\
+	- The \verb|\num{1.23(4)e5}| command formats the number in scientific notation with uncertainty, producing \num{1.23(4)e5}.  
+	
+	\paragraph*{Display options}
+	Many different display options for the units and numeric notations can be configured in \verb|\sisetup{...}| globally or locally for each command.
+	
+	The \verb|\num| command can be forced into scientific notation using the \\ 
+	\verb|scientific-notation=true| option:\\  
+	- \verb|\num[exponent-mode=scientific]{000.000123}| produces \num[exponent-mode=scientific]{000.000123}.  
+	
+	The \verb|\si| command can also format units as fractions:  \\
+	- \verb|\si[per-mode=fraction]{\kg\per\m\per\s\squared}| produces \si[per-mode=fraction]{\kg\per\m\per\s\squared}.\\
+	- \verb|\si[per-mode=symbol]{\kg\per\m\per\s\squared}| produces \si[per-mode=symbol]{\kg\per\m\per\s\squared}.  
+	
+	- The \verb|\SI[separate-uncertainty=false]{1.23(0.05)}{\metre}| command combines uncertainty with units and displays it separately, producing \SI[separate-uncertainty=false]{1.23(0.05)}{\metre}.  
+	
+	
+	
+	
+	
+	
+	
+$\set{10}$
+
+$\set[10]$
+
+$\set(10) \qquad \qty(10)$
+
+$\pdv{\psi}{t} = \set[ \frac{\partial \psi}{\partial t} ]$
