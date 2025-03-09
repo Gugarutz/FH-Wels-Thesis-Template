@@ -1,3 +1,4 @@
+% !TeX root = thesis.tex
 % !TeX spellcheck = en_GB
 \documentclass[
 	oneside,
@@ -15,24 +16,31 @@
 		\input{preamble/graphics}	% graphics, colour, tables packages and settings
 			\graphicspath{{graphics},{images}}
         \input{preamble/data}       % reading data, making diagrams & plots
+        
+    %% choose how units and numbers are displayed
+        \sisetup
+       		{locale = US, 		% localisation US or DE recommended
+        	%per-mode=symbol,	% display as fractions
+        	separate-uncertainty,
+        	%exponent-product=\cdot
+        	}
 
 	% citing and referencing
 		\usepackage[backend=biber,maxcitenames=3,sorting=nyt]{biblatex}
 		\bibliography{bibliography.bib}			 % file(s) with all sources
-%		\bibliographystyle{FHWelsISO690Numeric}  % no worky?
 %		\counterwithin{figure}{chapter} % set figure counter to include chapter; analogous for tables, etc
 
 %------------------------------------------------------------%
 %% FRONT PAGE
     \input{preamble/titlepage-fields}
-    \input{preamble/titlepage-data}		% TODO Fill this out, right click to open (texstudio)
+    \input{preamble/titlepage-data}		% TODO Fill this out
     \input{preamble/titlepage}
     \input{preamble/declaration}
         % TODO open preamble/signature to enable/diable digital signature and adjust position
 
 %------------------------------------------------------------%
 	%% FOR TESTING
-%		\usepackage{showframe}
+		\usepackage{showframe}
 		\usepackage{blindtext}
 			\blindmathtrue
 
@@ -47,21 +55,21 @@
 %==============================================================================================%
 
 \begin{document}
-	\selectlanguage{ngerman}	% Set language -> naustrian or ngerman for new austrian or new german
+	\selectlanguage{english}	% Set language -> naustrian or ngerman for new austrian or new german
 %------------------------------------------------------------%
 	\frontmatter			% everything before the content of the thesis starts
 	\pagenumbering{Roman} 	% uppercase roman numerals, only frontmatter
 
 		% Select Titlepage language
-			%\titlepageEN
-			\titlepageDE
+			\titlepageEN
+			%\titlepageDE
 
 		% Write you Preface, acknowledgements, thanks etc here
 			\include{frontmatter/preface}
 
 		% Select Declaration language
-			%\input{preamble/declarationEN}
-			\input{preamble/declarationDE}
+			\input{preamble/declarationEN}
+			%\input{preamble/declarationDE}
 			\declaration
 
 		% a general summary of the contents in German AND English
@@ -86,6 +94,7 @@
 		\include{mainmatter/ch1/ch1}		% introduction for the chapter
 			\include{mainmatter/ch1/tabletest}
 			\include{mainmatter/ch1/graphictest}
+			\include{mainmatter/ch1/mathtest}
 		%% CHAPTER II - PRACTICE
 
 		%% TESTING --------
