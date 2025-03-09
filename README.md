@@ -1,6 +1,8 @@
 # FH-Wels-Thesis-Template
 This a newly created template for writing scientific texts and thesis at the University of Applied Science Upper Austria - Campus Wels. It may be freely used by anyone outside of that as well.
 
+The logo of the university of Upper Austria is not my property and is exempt from the LICENSE.
+
 Deviation to these instructions is of course permitted, but you will be on your own.
 ## Prerequisites
 The template uses the following software/libraries as a basis:
