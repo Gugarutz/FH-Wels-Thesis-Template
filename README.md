@@ -16,7 +16,7 @@ Usage of other software is not supported. TeX Live is preferred over MikTex for 
 
 For German users this [YouTube Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTg5XgHXhNPUJNib6gW_Zpi) is taken as a basis. The settings for TeXstudio used here overlap with the ones set there. However, perform the installation as described here and not the way it is done in the tutorial. Whether you use de_DE or de_AT or any other language is up to you. Also exercise your way through the [Extended Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTEasZqICLLwTjk80rAP2GQ).
 
-@ -19,7 +21,7 @@ Links to English TeX resources will follow soon.
+Links to English TeX resources will follow soon.
 If no dictionaries are available check [here](https://tex.stackexchange.com/questions/87650/dictionary-for-texstudio-no-dictionary-available)
 
 ## Installation
@@ -24,7 +24,8 @@ The total time to install can vary a lot. Plan for at least 2 hours with a good 
 
 ### TeX Live
 Start by downloading the [install-tl-windows.exe](https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe) directly through this link or from [here](https://mirror.ctan.org/systems/texlive/tlnet) if you are using a different OS. Double click the exe file in you downloads folder. Windows will prompt you that "Windows protected your PC", click `More info` then `Run Anyway`.
-@ -40,27 +42,48 @@ In the TeX Live installer:
+
+In the TeX Live installer:
 9. Close both windows
 10. Click the Windows icon in the lower left
 11. And search for `TLShell TeX Live Manager`
@@ -35,7 +36,6 @@ Start by downloading the [install-tl-windows.exe](https://mirror.ctan.org/system
 14. Click on `Updateable`; you should see no packages. Otherwise Update all
 15. Close the  manager
 
-We are done here.
 
 [NOTE] If Windows search does not find the TLShell, open a cmd window (search for cmd, open), and type `tlshell`. This will open the 
 [NOTE] If this fails too, head to or paste `C:\texlive\2024\bin\windows\tlshell.exe`. The year may vary. You may want to create a desktop shortcut for future use.
@@ -69,19 +69,21 @@ Create a [Github](https://github.com/) account. Use your private email address, 
 
 
 %%%%%%%%%%%%%%%%% this needs a rewrite
+
 In Github Desktop: 
-* Click `File > New Repository`
-* Choose a name and ensure compliance
-* Choose a description if you like
-@ -68,7 +91,7 @@ In Github Desktop:
-* Ensure `initialise this repository with a README` is checked off
-* Ensure `License` and `Gitignore` are set to `none`
+- Click `File > Clone Repository`
+- switch to the URL tab
+- add this link
+```
+https://github.com/Gugarutz/FH-Wels-Thesis-Template
+```
+- Let the Local path be `C:\Github`
 
 [Note] IMPORTANT: Choose `C:\Github` as your directory. **Do not use long directory paths or especially OneDrive folders.** This will lead to syncing issues with any other systems and will cause a lot of syncing from OneDrive. You may still use a cloud service for backing up your work. Look into FreeFileSync for automatic replication of your thesis to a cloud folder or other medium (e.g. USB stick, external hard drive).
 
-Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template.git) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\Github\[reponame]`. Ensure the result is NOT 
-```
-@ -83,21 +106,84 @@ Now go back to Github Desktop. You should see all the new files in the left pane
+Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\Github\[reponame]`. Ensure the result is NOT 
+
+Now go back to Github Desktop. You should see all the new files in the left pane
 
 On the lower left, give this version (commit) a name in the summary field. You may call this "original" or "base" for example. Click on `commit to main` and `Push origin` in the centre pane. Only this last part actually uploads to Github.
 
@@ -90,23 +92,24 @@ On the lower left, give this version (commit) a name in the summary field. You m
 While this is very much not recommended, it is up to you. If you have not admin rights on the PC/laptop you have at work/intership, you can use [Overleaf](https://www.overleaf.com). ensure to extract
  
 Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template.git) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\Github\[reponame]`. Ensure the result is **not** something like this:
+
 ```
 C:\Github\[mainfolder]\FH-Wels-Thesis-Template\thesis.tex	or
 C:\Github\[mainfolder]\FH-Wels-Thesis-Template-main\thesis.tex
 ```
 Ensure a shallow directory, like this:
 ```
-C:\Github\[mainfolder]\thesis.tex
+C:\Github\[mainfolder]\thesis.tex or
 C:\[mainfolder]\thesis.tex
 ```
 The same goes if you are using Overleaf, ensure that thesis.tex is at the very front and not in a subfolder.
 
-[NOTE] delete the README.md LICENSE.md and .gitignore files, if not using Git. They will be unused
+[NOTE] delete the README.md LICENSE.md and .gitignore files, if not using Git. They will be unused.
 
 
 ### TeXstudio
 
-% Biber 
+You need to run Biber under `Tools>Commands>Biber` in TeXstudio.
 
 ## using Git and Github Desktop
 Since you will be using this alone, you do not need to fuss about with git too much.
