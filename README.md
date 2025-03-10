@@ -6,7 +6,14 @@ Deviation to these instructions is of course permitted, I cannot stop you, but y
 
 ## Features
 
+Comparison to/Imoprvements over provided version from FHOOE
 
+* faster
+  * especially relevant for Overleaf (free tier has 20s compile limit)
+* backwards compatible with provided template (to be verified)
+* TikZ support by default (todo)
+  * template for continuous plots (todo)
+  * template for discrete plots (todo)
 
 ## Prerequisites
 
