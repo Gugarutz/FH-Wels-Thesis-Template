@@ -1,207 +1,172 @@
 # FH-Wels-Thesis-Template
 
-This a re-created template for writing scientific texts and thesis at the University of Applied Science Upper Austria - Campus Wels. It may be freely used by anyone outside of that as well.
+This is a re-created template for writing scientific texts and theses at the University of Applied Sciences Upper Austria - Campus Wels. It may be freely used by anyone outside of that institution as well.
 
-Deviation to these instructions is of course permitted, I cannot stop you, but you will be on your own.
+Deviation from these instructions is permitted, but support will not be provided for non-standard modifications.
 
 ## Features
 
-Comparison to/Imoprvements over provided version from FHOOE
+Improvements over the provided version from FHOOE:
 
-* faster
-  * especially relevant for Overleaf (free tier has 20s compile limit)
-* backwards compatible with provided template (to be verified)
-* TikZ support by default (todo)
-  * template for continuous plots (todo)
-  * template for discrete plots (todo)
+- Faster compilation
+  - Particularly beneficial for Overleaf (free tier has a 20s compile limit)
+- Backwards compatibility with the provided template (to be verified)
+- Default TikZ support (TODO)
+  - Template for continuous plots (TODO)
+  - Template for discrete plots (TODO)
 
 ## Prerequisites
 
-The template uses the following software/libraries as a basis:
+This template requires the following software:
 
-* TeX Live
-* TeX studio
-* Github Desktop
+- TeX Live
+- TeXstudio
+- GitHub Desktop
 
-To properly use this template, you must first understand how TeX or LaTeX works. Must also understand the fundamental ideas behind Github or Git in general. Basic knowledge of the KOMA scripts is recommended, you do not need to read all of almost 600 pages of the KOMA documentation. Many answers online work differently or not at all with KOMA.
+To effectively use this template, familiarity with TeX/LaTeX is necessary. Basic knowledge of Git and KOMA-Script is recommended. Many solutions found online may not work correctly with KOMA-Script.
 
-When asking ChatGPT, Copilot or others, ensure to provide context that you are using KOMA or scrbook (the specific KOMA doucment class used here). As of February 2025 Github Copilot with the Claude Sonnet Model is recommended for LaTeX help. For research purposes it is you decicion.
+When seeking AI-generated assistance (e.g., ChatGPT, Copilot), specify that you are using KOMA-Script or the `scrbook` document class. As of February 2025, GitHub Copilot with the Claude Sonnet Model is recommended for LaTeX help.
 
-Usage of other software is not supported. TeX Live is preferred over MikTex for faster compilation and wider package support. We will be working on a Windows system, there is no official support for Linux or Mac as of yet.
+TeX Live is preferred over MiKTeX due to faster compilation and broader package support. This guide assumes a Windows system; official support for Linux and macOS is not provided.
 
-For German users this [YouTube Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTg5XgHXhNPUJNib6gW_Zpi) is taken as a basis. The settings for TeXstudio used here overlap with the ones set there. However, perform the installation as described here and not the way it is done in the tutorial. Whether you use de_DE or de_AT or any other language is up to you. Also exercise your way through the [Extended Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTEasZqICLLwTjk80rAP2GQ).
+For German users, this [YouTube Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTg5XgHXhNPUJNib6gW_Zpi) serves as a reference. The recommended TeXstudio settings align with those in the playlist, but follow the installation instructions here instead. Whether to use `de_DE`, `de_AT`, or another dictionaries in TeXstudio is up to the user. If dictionaries are unavailable, check [this resource](https://tex.stackexchange.com/questions/87650/dictionary-for-texstudio-no-dictionary-available).
 
-Links to English TeX resources will follow soon.
-If no dictionaries are available check [here](https://tex.stackexchange.com/questions/87650/dictionary-for-texstudio-no-dictionary-available)
+See the [Extended Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTEasZqICLLwTjk80rAP2GQ) for further guidance.
+
+Links to English TeX resources will be added soon.
 
 ## Installation
 
-The total time to install can vary a lot. Plan for at least 2 hours with a good internet connection, this is not due to the size of the installation but rather because it downloads all packages individually. Do *not* use the WiFi at the university, do this at home. The TeXLive installer takes its time. All software is to be installed in ENGLISH.
+Installation time varies, but plan for at least three hours. Avoid using university WiFi; install at home instead. All software must be installed in English.
 
 ### TeX Live
 
-Start by downloading the [install-tl-windows.exe](https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe) directly through this link or from [here](https://mirror.ctan.org/systems/texlive/tlnet) if you are using a different OS. Double click the exe file in you downloads folder. Windows will prompt you that "Windows protected your PC", click `More info` then `Run Anyway`.
+Download the [TeX Live installer](https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe) and run it. If prompted with "Windows protected your PC," click `More info`, then `Run Anyway`.
 
 In the TeX Live installer:
 
 1. Close both windows
-2. Click the Windows icon in the lower left
-3. And search for `TLShell TeX Live Manager`
-4. Open it*
-5. Wait for it to establish a connection
-6. Click on `All`; you should see many packages
-7. Click on `Not installed`; you should see no packages. Otherwise install all
-8. Click on `Updateable`; you should see no packages. Otherwise Update all
-9. Close the manager
+2. Click the Windows icon and search for `TLShell TeX Live Manager`; (see tip below for alternatives)
+3. Open it and wait for it to establish a connection
+4. Click `All` (should show many packages)
+5. Click `Not installed` (should show no packages; otherwise, install all)
+6. Click `Updateable` (should show no packages; otherwise, update all)
+7. Close the manager
 
-[NOTE] If Windows search does not find the TLShell, open a cmd window (search for cmd, open), and type `tlshell`. This will open the
+>[!tip]
+>If `TLShell` does not appear in Windows search, open `cmd` and type `tlshell`. Alternatively, navigate to `C:\texlive\2024\bin\windows\tlshell.exe` (adjust year if needed) and create a desktop shortcut.
 
-If this fails too, head to or paste `C:\texlive\2024\bin\windows\tlshell.exe`. The year may vary. You may want to create a desktop shortcut for future use.
+### MiKTeX
 
-### MikTex
+TeX Live is recommended, but MiKTeX can be used if preferred. Note that TeX Live compiles 20-30% faster and has better package support. 
 
-I cannot enforce the usage of TeXLive. You can use MikTex if you are not comfortable with the TeXLive website or the install process. It *should* work just fine. Know that TeXLive is 20-30% faster during compilation, which will save you a lot of time in the long run. It also has support for more packages.
+>[!warning]
+>Do not install more than one TeX distribution.
 
 ### TeXstudio
 
-This install is simple. You can either
+Installation options:
 
-* open powershell, preferrably as admin
-* `winget install texstudio.texstudio`
-* while you are here, you can skip ahead:
-* `winget install github.githubdesktop`
+- Open PowerShell (preferably as admin) and run:
 
-or
+  ```powershell
+  winget install texstudio.texstudio --locale en-US
+  ```
 
-* head to [texstudio.org](https://www.texstudio.org/)
-* Click the big `Download now` button
-* Click through the installer
-* **set the language to English**. German is not supported and not recommended
-* Leave everything to the default settings otherwise
+- Alternatively, download from [texstudio.org](https://www.texstudio.org/) and install manually.
 
-### Github Desktop
+Set the language to English. Other settings can remain at default.
 
-This install is also simple. You can use `winget install github.githubdesktop` or head to their [website](https://desktop.github.com/). Same as TeXstudio: Click the big `Download` button and click through the installer. Leave everything to the default settings but **set the language to English**. German is not supported here.
+### GitHub Desktop
+
+Installation options:
+
+- Use PowerShell (preferably as admin) and run:
+  
+  ```powershell
+  winget install github.githubdesktop --locale en-US
+  ```
+
+- Alternatively, download from [github.com](https://desktop.github.com/) and install manually.
+
+Set the language to English.
 
 ## Configuration
 
-We will need to configure TeXstudio and Github for us to be able to use it properly and fully.
+### GitHub Desktop
 
-### Configure Github Desktop
+1. Create a [GitHub account](https://github.com/) (use a private email, not a university/work address).
+2. In GitHub Desktop:
+3. Visit the [GitHub repository](https://github.com/Gugarutz/FH-Wels-Thesis-Template) or scroll to the top
+4. Click `<> Code` > `Open with GitHub Desktop`
+5. Click allow in the browser pop
+6. A popup in GitHub Desktop will open
+7. Set the local path to `C:\Github\[reponame]`
 
-Create a [Github](https://github.com/) account. Use your private email address, do not use the university or work/internship address. You will not have access to them after leaving those institutions.
+>[!Important]
+> Do not use long directory paths or OneDrive folders to avoid syncing issues. Use a separate backup solution (e.g., FreeFileSync) for replication to a cloud folder or external storage.
 
-%%%%%%%%%%%%%%%%% this needs a rewrite
+To manually download the template:
 
-In Github Desktop:
+1. Visit the [GitHub repository](https://github.com/Gugarutz/FH-Wels-Thesis-Template)
+2. Click `<> Code` > `Download ZIP`
+3. Extract to `C:\Github\[reponame]`
 
-* Click `File > Clone Repository`
-* switch to the URL tab
-* add this link
+Ensure the file structure is not nested:
 
-``` link
-https://github.com/Gugarutz/FH-Wels-Thesis-Template
+```bash
+C:\Github\[reponame]\thesis.tex
 ```
 
-* Let the Local path be `C:\Github`
+Delete `README.md`, `LICENSE.md`, and `.gitignore` if not using Git.
 
->[!important]
->Choose `C:\Github` as your directory. **Do not use long directory paths or especially OneDrive folders.** This will lead to syncing issues with any other systems and will cause a lot of syncing from OneDrive. You may still use a cloud service for backing up your work. Look into FreeFileSync for automatic replication of your thesis to a cloud folder or other medium (e.g. USB stick, external hard drive).
+### TeXstudio Configuration
 
-Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\Github\[reponame]`.
+Run `Biber` under `Tools > Commands > Biber`.
 
-Now go back to Github Desktop. You should see all the new files in the left pane
+## Using Git and GitHub Desktop
 
-On the lower left, give this version (commit) a name in the summary field. You may call this "original" or "base" for example. Click on `commit to main` and `Push origin` in the centre pane. Only this last part actually uploads to Github.
+- Make small, documented commits
+- Commit selectively, especially for non-text elements (plots, graphics, tables)
+- Before modifying anything, create a branch for the original template
+- Create a new branch for writing your thesis
+- Leave the main branch as a reference
+- If you rename the thesis.pdf, make sure to adjust the .gitignore file
+  - Git and binary files (here: PDFs) do not mix
 
-### Overleaf or not using Github Desktop
+## Using the Template
 
-While this is very much not recommended, it is up to you. If you have not admin rights on the PC/laptop you have at work/intership, you can use [Overleaf](https://www.overleaf.com). ensure to extract
+The main file is `thesis.tex`. Set it as root manually or by opening `thesis.txss2` from GitHub Desktop or File Explorer.
 
-Now head to the [Github repo of this template](https://github.com/Gugarutz/FH-Wels-Thesis-Template.git) or scroll up. Click the bright green button that says `<> Code` and click `Download ZIP`. It will download to your usual download folder, navigate the and extract the files to your new repo in `C:\Github\[reponame]`. Ensure the result is **not** something like this:
+The template is modular for faster compilation. Disable unused modules by commenting out `\input[modulename]` under `MODULES`. 
 
-``` bash
-C:\Github\[mainfolder]\FH-Wels-Thesis-Template\thesis.tex
-C:\Github\[mainfolder]\FH-Wels-Thesis-Template-main\thesis.tex
-```
+Use `\include{}` for chapters and sections. Use `\input` for everything else, it is a "dumb" 
+Use `\includeonly{}` to only compile selected sections for faster compiles.
 
-Ensure a shallow directory, like this:
 
-``` bash
-C:\Github\[mainfolder]\thesis.tex
-C:\[mainfolder]\thesis.tex
-```
+First, compile the template. Check the `Log` below for errors, warnings, or info messages. Save a copy of `thesis.pdf` as `template.pdf` for reference.
 
-The same goes if you are using Overleaf, ensure that thesis.tex is at the very front and not in a subfolder.
+### First Steps
 
-[NOTE] delete the README.md LICENSE.md and .gitignore files, if not using Git. They will be unused.
+#### Data Entry
 
-### Configure TeXstudio
+Edit `preamble/titlepage-data.tex` with relevant details.
 
->[!note] info
-Documentation needed
+#### Digital Signature
 
-You need to run Biber under `Tools>Commands>Biber` in TeXstudio.
+Enable/disable the digital signature in `preamble/signature.tex` by following the instructions in the comments.
 
-## Using Git and Github Desktop
+#### Language Selection
 
-Since you will be using this alone, you do not need to fuss about with git too much.
+Set language after `\begin{document}`:
 
-* When working on your thesis, make small and local commits, this way you will be able to go back to very specific points if things break
-* Document each commit at least somewhat
-* choose what to include in each commit
-* this is especially crucial for non text parts, like plots, tables, graphics
-* **before you start changing anything create a branch for the original template**
-* Work in the main branch or the
-* This way you can switch between the template and your thesis very quickly for troubleshooting
-* I know you are not taking this seriously and will be lazy with git
+- Use `\selectlanguage{}` (options: `english`, `ngerman`, `naustrian`)
+- Choose `\titlepageDE` or `\titlepageEN`
+- Select `\input{preamble/declarationDE}` or `\input{preamble/declarationEN}`
+- Set the locale for `\sisetup`
+- Provide both English and German abstracts
 
 >[!note]
-Github Copilot online chat can currently (February 2025) only access the main branch when feeding it a repo.
+ Do not delete template code; comment it out instead.
 
-## Using the template
-
-See Prerequisites for the assumed basics of using TeX and Git.
-
-Ensure Github Desktop is open.
-The `thesis.tex` file is the main file
-
-The template is built in a modular way for faster compilation. If you do not need some features like native LaTeX plots via TikZ/PGF or source code formatting, feel free to disable these `\input{modulename}` under the `MODULES` section. Make sure to exclude the example code from the structure, otherwise it will not compile. For long works or generally faster compiles, check the usage of the `\includeonly{}` command.
-
-Close TS if it is currently opened. Open `thesis.txss2` from Github Desktop or the file explorer. This will set the `thesis.tex` file as the root file, so it does not matter which file you have open when you compile, you can even close `thesis.tex`. This will also set the open tabs and panes. If you wish to restore the order simply reopen the session file through `File > Session > Load`. You can also save a session and overwrite the one provided, the root document will be saved again.
-
-First of all, compile the template. Check the `Log` at the bottom. There should be no errors, warnings, infos. Create a copy of the `thesis.pdf` and rename it to `template.pdf` or whatever suits you. Keep this copy as quick reference.
-
-### First steps
-
-From here you can also switch to the documentation provided by the template directly. The first few steps are also laid out here.
-
-[NOTE] A word of advice: Do not delete any code provided by the template. Comment it out.
-
-#### Data
-
-Find and right-click on `\input{preamble/titlepage-data}` in `thesis.tex` and click Open. Fill out all the data. You can do this later as well, of course. Alternatively, open via file system.
-
-#### digital signature
-
-To enable or disable displaying the digital signature:
-
-* Open `/preamble/signature.tex`
-* Follow instructions in comment up top
-
-#### language selection
-
-All language selection is made after `\begin{document}`. No selection/changes need to be made in the preamble.
-
-* right after `\begin{document}` is `\selectlanguage{}`, choose from english, ngerman or naustrian. The *n* stands for *new* as in *new grammar*.
-* Next choose between `\titlepageDE` and `\titlepageEN`
-* Next choose between `\input{preamble/declarationDE}` and `\input{preamble/declarationEN}`
-* You need both English and German abstract
-* Some chapter and section headings are for you to change, like the Preface
-
->[!NOTE]
->
->* you can use `\selectlanguage{}` whenenver switching languages inside the document
->* Do not forget to switch back, or use the group functionality
->* This is used in the two abstract files
->* {the contents inside loose curly brackets (meaning not part of a command) are a group}
+[//]: # "chatticus: Consider adding additional documentation for advanced features like bibliography management, table formatting, and custom styling."
