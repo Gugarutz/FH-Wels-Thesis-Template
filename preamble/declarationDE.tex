@@ -1,7 +1,50 @@
-\newcommand{\declarationText}{
-	Ich erkläre eidesstattlich, dass ich die vorliegende Arbeit selbstständig und ohne fremde Hilfe verfasst, andere als die angegebenen Quellen nicht benutzt und die den benutzten Quellen entnommenen Stellen als solche kenntlich gemacht habe.
-	
-	Die Arbeit wurde bisher in gleicher oder ähnlicher Form keiner anderen Prüfungsbehörde vorgelegt und auch nicht veröffentlicht.
-	
-	Die vorliegende Arbeit ist mit dem elektronisch übermittelten Textdokument identisch.
+% !TeX spellcheck = de_DE
+
+\newcommand{\declarationDE}{%
+
+%------------------------------------------------------------%
+	{
+	\renewcommand*\chapterheadstartvskip{\vspace*{6.5\topskip}}
+	\chapter{Eidesstattliche Erklärung}
+	}
+
+%------------------------------------------------------------%
+	%% TOP Part: Logo, Wels Campus
+	\begin{textblock*}{15cm}(3.5cm,1.25cm)
+		\begin{flushright}
+			\includegraphics[width=6.25cm]{FH.png}
+		\end{flushright}
+		\rule{15cm}{0.1mm}
+		\vspace{-2.2cm}
+		\begin{flushright}
+			Wels Campus
+		\end{flushright}
+	\end{textblock*}
+
+%------------------------------------------------------------%
+	%% Declaration Text
+	\vfill
+	\begin{minipage}[t]{0.33\textwidth}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.66\textwidth}
+		{\parskip 1.5ex		% local parksip change
+			Ich erkläre eidesstattlich, dass ich die vorliegende Arbeit selbstständig und ohne fremde Hilfe verfasst, andere als die angegebenen Quellen nicht benutzt und die den benutzten Quellen entnommenen Stellen als solche kenntlich gemacht habe.
+
+            Die Arbeit wurde bisher in gleicher oder ähnlicher Form keiner anderen Prüfungsbehörde vorgelegt und auch nicht veröffentlicht.
+
+            Die vorliegende Arbeit ist mit dem elektronisch übermittelten Textdokument identisch.
+		}
+		\vspace{25mm}
+
+		\begin{minipage}[t]{7.5cm}
+			\centering \dotfill \\
+		\end{minipage}
+		\vskip 0mm
+		\printauthor
+		\vskip 0mm
+		\printlocation, {\printsubmonth\ \printsubyear}
+		\input{preamble/signature}		% seperated for simpler user interaction
+	\end{minipage}
+	\vfill
 }

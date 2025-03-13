@@ -16,7 +16,7 @@
 		\input{preamble/graphics}	% graphics, colour, tables packages and settings
 			\graphicspath{{graphics},{images}} % TODO add relevant paths
         \input{preamble/data}       % reading data, making diagrams & plots
-        
+
     %% choose how units and numbers are displayed
         \sisetup{					% TODO choose locale and settings
         	locale = US, 			% localisation US or DE recommended
@@ -32,12 +32,12 @@
 		\counterwithin{table}{chapter}
 		\counterwithin{equation}{chapter}
 %------------------------------------------------------------%
-%% FRONT PAGE
-    \input{preamble/titlepage-fields}
-    \input{preamble/titlepage-data}		% TODO Fill this out
-    \input{preamble/titlepage}
-    \input{preamble/declaration}
-        % TODO open preamble/signature to enable/diable digital signature and adjust position
+    %% FRONT PAGE
+        \input{preamble/titlepage-fields}
+        \input{preamble/titlepage-data}		% TODO Fill this out
+        \input{preamble/titlepage}
+        \input{preamble/declaration}
+            % TODO open preamble/signature to enable/diable digital signature and adjust position
 
 %------------------------------------------------------------%
 	%% FOR TESTING
@@ -52,62 +52,67 @@
 
 \begin{document}
 	\selectlanguage{english}	% Set language -> naustrian or ngerman for new austrian/german
+
 %------------------------------------------------------------%
 	\frontmatter			% everything before the content of the thesis starts
 	\pagenumbering{Roman} 	% uppercase roman numerals, only frontmatter
 
-		% Select Titlepage language
-			\titlepageEN
-			%\titlepageDE
+	% Select Titlepage language
+		\titlepageEN
+		%\titlepageDE
 
-		% Write you Preface, acknowledgements, thanks etc here
-			\include{frontmatter/preface}
+	% Write you Preface, acknowledgements, thanks etc here
+		\include{frontmatter/preface}
 
-		% Select Declaration language
-			\input{preamble/declarationEN}
-			%\input{preamble/declarationDE}
-			\declaration
+	% Select Declaration language
+		\input{preamble/declarationEN}
+		%\input{preamble/declarationDE}
+		\declaration
 
-		% a general summary of the contents in German AND English
-			\include{frontmatter/abstractEN}
-			\include{frontmatter/abstractDE}
+	% a general summary of the contents in German AND English
+		\include{frontmatter/abstractEN}
+		\include{frontmatter/abstractDE}
 
-		% Table of contents
-			\markleft{\contentsname}	% adds "Contents" or equivalent to header
-			\setSectioning				% sets indents and seperation for TOC
-			\tableofcontents
+	% Table of contents
+		\markleft{\contentsname}	% adds "Contents" or equivalent to header
+		\setSectioning				% sets indents and seperation for TOC
+		\tableofcontents
 
 
 %------------------------------------------------------------%
 	\mainmatter % is the main part of the thesis, from the introduction to the conclusion/summary
 		% recommended: subfolders for each chapter; this is YOUR choice!
-		% TODO you need to understand (look up) the difference between \input and \include
 
-		% Introduction
-			\include{mainmatter/introduction}
+	% Introduction
+		\include{mainmatter/introduction}
 
-		%% CHAPTER I - THEORY
-		\include{mainmatter/ch1/ch1}		% introduction for the chapter
-			\include{mainmatter/ch1/tabletest}
-			\include{mainmatter/ch1/graphictest}
-			\include{mainmatter/ch1/mathtest}
-		%% CHAPTER II - PRACTICE
+    %% CHAPTER 0 - DEMO
+    \include{mainmatter/ch-demo/ch-demo}
+   	    \include{mainmatter/ch-demo/demo-tables}
+        \include{mainmatter/ch-demo/demo-graphics}
+        \include{mainmatter/ch-demo/demo-math}
 
-		%% TESTING --------
-			\blinddocument
-			\blindmathpaper
-			\cite{WWW:MenschlicherEinflussKlima}
-			\cite{Norm:ISO690:2021}
-			\cite{Lehrndorfer:KontrollierteSprache}
-			\cite{Meier:Globalisierung}
-			\cite{Mueller:Meier}
-			\cite{Mueller:Meier:Huber}
-			\cite{Mueller:Meier:Huber:Tausch}
-			\cite{Norm:ONR12658:2013}
-			\cite{Norm:OENORMA2662:2023}
-			\cite{OpenAI:2023}
-			\cite{Schulz:NormPraxis}
-		%% ----------------
+	%% CHAPTER I - THEORY
+	\include{mainmatter/ch1/ch1}
+        %\include{mainmatter/ch1/sec1}
+
+	%% CHAPTER II - PRACTICE
+
+	%% TESTING --------
+		\blinddocument
+		\blindmathpaper
+		\cite{WWW:MenschlicherEinflussKlima}
+		\cite{Norm:ISO690:2021}
+		\cite{Lehrndorfer:KontrollierteSprache}
+		\cite{Meier:Globalisierung}
+		\cite{Mueller:Meier}
+		\cite{Mueller:Meier:Huber}
+		\cite{Mueller:Meier:Huber:Tausch}
+		\cite{Norm:ONR12658:2013}
+		\cite{Norm:OENORMA2662:2023}current
+		\cite{OpenAI:2023}
+		\cite{Schulz:NormPraxis}
+	%% ----------------
 
 %------------------------------------------------------------%
 %	\backmatter % if you do not want chapter numbers
