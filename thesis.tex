@@ -14,22 +14,23 @@
 		\input{preamble/typesetting}
 		\input{preamble/math}
 		\input{preamble/graphics}	% graphics, colour, tables packages and settings
-			\graphicspath{{graphics},{images}}
+			\graphicspath{{graphics},{images}} % TODO add relevant paths
         \input{preamble/data}       % reading data, making diagrams & plots
         
     %% choose how units and numbers are displayed
-        \sisetup
-       		{locale = US, 		% localisation US or DE recommended
-        	%per-mode=symbol,	% display as fractions
+        \sisetup{					% TODO choose locale and settings
+        	locale = US, 			% localisation US or DE recommended
+        	%per-mode=symbol,		% display as / fractions
         	separate-uncertainty,
-        	%exponent-product=\cdot
-        	}
+        	%exponent-product=\cdot % use \times for x multiplier
+        }
 
 	% citing and referencing
 		\usepackage[backend=biber,maxcitenames=3,sorting=nyt]{biblatex}
-		\bibliography{bibliography.bib}			 % file(s) with all sources
-%		\counterwithin{figure}{chapter} % set figure counter to include chapter; analogous for tables, etc
-
+		\bibliography{bibliography.bib}	% file(s) with your sources
+		\counterwithin{figure}{chapter} % set figure counter to include chapter
+		\counterwithin{table}{chapter}
+		\counterwithin{equation}{chapter}
 %------------------------------------------------------------%
 %% FRONT PAGE
     \input{preamble/titlepage-fields}
@@ -41,21 +42,16 @@
 %------------------------------------------------------------%
 	%% FOR TESTING
 		\usepackage{showframe}
-		\usepackage{blindtext}
-			\blindmathtrue
+		\usepackage{blindtext}\blindmathtrue
 
 
-
-
-
-%==============================================================================================%
 %==============================================================================================%
 %                                      DOCUMENT                                                %
 %==============================================================================================%
-%==============================================================================================%
+
 
 \begin{document}
-	\selectlanguage{english}	% Set language -> naustrian or ngerman for new austrian or new german
+	\selectlanguage{english}	% Set language -> naustrian or ngerman for new austrian/german
 %------------------------------------------------------------%
 	\frontmatter			% everything before the content of the thesis starts
 	\pagenumbering{Roman} 	% uppercase roman numerals, only frontmatter
