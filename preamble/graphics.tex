@@ -10,6 +10,7 @@
     \usepackage{overpic}    % allows drawing inside images
     \usepackage{wrapfig}    % allows wrapping text around an image
     \usepackage{rotating}
+    \usepackage{pdfpages}   % allows inclusion of pdfs
 
 
 %-------------------------------------------------------
@@ -30,15 +31,18 @@
 %-------------------------------------------------------
 %% settings for tables
 	% cellheight increased
-	\renewcommand{\arraystretch}{1.2}
+	   \renewcommand{\arraystretch}{1.2}
 
 	% column spacing increased
-	\setlength{\tabcolsep}{1mm}
+    	\setlength{\tabcolsep}{1mm}
 
 	% thicker seperation line \specialrule{thickness}{abovespace}{belowspace}
-	\newcommand{\headrule}{\specialrule{2pt}{0pt}{0pt}}
-    % this is so the column align in texstudio recognises \midrule
-    \renewcommand{\midrule}{\specialrule{2pt}{0pt}{0pt}}
+    	\newcommand{\headrule}{\specialrule{2pt}{0pt}{0pt}}
+
+     % this is so the column align in texstudio recognises \midrule and the others
+        \renewcommand{\midrule}   {\specialrule{2pt}{0pt}{0pt}}
+        \renewcommand{\toprule}   {\specialrule{3pt}{0pt}{0pt}}
+        \renewcommand{\bottomrule}{\specialrule{3pt}{0pt}{0pt}}
 
     % settings for caption package, use \captionsetup[float type]{options} for individual control
     \captionsetup{

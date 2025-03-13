@@ -5,7 +5,7 @@
 	bibliography=totocnumbered,	% incluse bibliography in TOC with number
 	listof=totocnumbered,	% include List of Tables/Figures in TOC with number
 	numbers=noenddot,		% changes heading numbering from 1.1. to 1.1
-	appendixprefix = true	% makes Appendix A... First appendix chapter, disable for one appendix
+%	appendixprefix = true	% makes Appendix A... First appendix chapter, disable for one appendix
 ]{scrbook}
 
 %------------------------------------------------------------%
@@ -17,6 +17,9 @@
 			\graphicspath{{graphics},{images}} % TODO add relevant paths
         \input{preamble/data}       % reading data, making diagrams & plots
 
+    %% MODULES (YOU CAN DISABLE THESE)
+        \input{preamble/code}       % display code and input markdown markdown
+
     %% choose how units and numbers are displayed
         \sisetup{					% TODO choose locale and settings
         	locale = US, 			% localisation US or DE recommended
@@ -27,16 +30,18 @@
 
 	% citing and referencing
 		\usepackage[backend=biber,maxcitenames=3,sorting=nyt]{biblatex}
-		\bibliography{bibliography.bib}	% file(s) with your sources
-		\counterwithin{figure}{chapter} % set figure counter to include chapter
-		\counterwithin{table}{chapter}
-		\counterwithin{equation}{chapter}
+            \bibliography{bibliography.bib}	  % file(s) with your sources
+        \counterwithin{figure}{chapter}   % set figure   counter to include chapter
+		\counterwithin{table}{chapter}    % set table    counter to include chapter
+		\counterwithin{equation}{chapter} % set equation counter to include chapter
+
 %------------------------------------------------------------%
     %% FRONT PAGE
         \input{preamble/titlepage-fields}
         \input{preamble/titlepage-data}		% TODO Fill this out
         \input{preamble/titlepage}
-        \input{preamble/declaration}
+        \input{preamble/declarationDE}
+        \input{preamble/declarationEN}
             % TODO open preamble/signature to enable/diable digital signature and adjust position
 
 %------------------------------------------------------------%
@@ -65,17 +70,16 @@
 		\include{frontmatter/preface}
 
 	% Select Declaration language
-		\input{preamble/declarationEN}
-		%\input{preamble/declarationDE}
-		\declaration
+		\declarationEN
+		%\declarationDE
 
 	% a general summary of the contents in German AND English
 		\include{frontmatter/abstractEN}
 		\include{frontmatter/abstractDE}
 
 	% Table of contents
-		\markleft{\contentsname}	% adds "Contents" or equivalent to header
-		\setSectioning				% sets indents and seperation for TOC
+    		\markleft{\contentsname}	% adds "Contents" or equivalent to header
+    		\setSectioning				% sets indents and seperation for TOC
 		\tableofcontents
 
 
@@ -109,7 +113,7 @@
 		\cite{Mueller:Meier:Huber}
 		\cite{Mueller:Meier:Huber:Tausch}
 		\cite{Norm:ONR12658:2013}
-		\cite{Norm:OENORMA2662:2023}current
+		\cite{Norm:OENORMA2662:2023}
 		\cite{OpenAI:2023}
 		\cite{Schulz:NormPraxis}
 	%% ----------------
@@ -124,6 +128,8 @@
 	% add additional tables, figures, source code, transcripts,...
 	\appendix	% changes chapter numbering to Alphabetic
 		\include{appendices/append1}	% create folders as necessary
+        \include{appendices/demo-pdf}
+        \include{appendices/demo-code}
 
 %------------------------------------------------------------%
 \end{document}
