@@ -63,8 +63,6 @@ TeXstudio can have integrated AI help. See the official [TeX studio documentatio
 
 Installation time varies, but plan for at least three hours. Avoid using university WiFi; install at home instead. All software must be installed in English.
 
-<details>
-
 ### TeX Live
 
 Run PowerShell as admin
@@ -160,8 +158,6 @@ Set the language to English.
 >[!Important]
 > Do not use long directory paths or OneDrive folders to avoid syncing issues. Use a separate backup solution (e.g., FreeFileSync) for replication to a cloud folder or external storage.
 
-</details>
-
 ## Alternative setup (no Admin rights)
 
 The alternative setup uses MikTeX and VSCode as these can be installed per user instead of system wide. Therefore not needing admin rights. The system provided to you in your internship will likely not have admin rights.
@@ -174,26 +170,28 @@ TeX Live is recommended, but MiKTeX can be used if preferred. Note that TeX Live
 >You will need to install the relevant extensions for TeX in VSCode yourself. (Help is appreciated)
 
 >[!warning]
->Installing Git requires admin rights. You can use VSCode for writing and GitHub Desktop for commiting. Consider Overleaf.
+>Installing Git requires admin rights. But can use VSCode for writing and GitHub Desktop for commiting.
 
 ### Install MikTeX & VS Code
 
 <details>
 
-  Open `cmd` or `powershell` and run:
+Open PowerShell or CMD and run:
 
-  ``` bash
-  winget install MikTeX.MikTeX --locale en-US
-  ```
+``` bash
+winget install MikTeX.MikTeX --locale en-US
+```
 
-  Then run:
+``` bash
+winget install vscode --locale en-US
+```
 
-  ``` bash
-  winget install vscode --locale en-US
-  ```
+``` bash
+winget install github.githubdesktop --locale en-US
+```
 
-  >[!warning]
-  >Do not install more than one TeX distribution. (mostly for your own sanity)
+>[!warning]>
+> Do not install more than one TeX distribution. (mostly for your own sanity)
 
 </details>
 
