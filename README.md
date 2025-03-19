@@ -4,6 +4,9 @@ This is a re-created template for writing scientific texts and theses at the Uni
 
 Deviation from these instructions is permitted, but support will not be provided for non-standard modifications.
 
+![Build Status](https://img.shields.io/github/actions/workflow/status/user/repo/main.yml)
+![License](https://img.shields.io/github/license/user/repo)
+
 ## Features
 
 Improvements over the provided version from FHOOE:
@@ -32,7 +35,7 @@ TeX Live is preferred over MiKTeX due to faster compilation and broader package 
 ### German Users
 
 For German users, this [YouTube Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTg5XgHXhNPUJNib6gW_Zpi) serves as a reference. The recommended TeXstudio settings align with those in the playlist, but follow the installation instructions here in case of conflicting information.
-Whether to use `de_DE`, `de_AT`, or another dictionaries for spellchecking in TeXstudio is up to the user.
+Whether to use `de_DE`, `de_AT`, or another dictionaries for spellchecking in TeXstudio is up to the user. The spellchecking can be changed at any time in the bottom right and can be inserted as a magic comment for each file (per file spellcheck).
 If dictionaries are unavailable, check [this resource](https://tex.stackexchange.com/questions/87650/dictionary-for-texstudio-no-dictionary-available).
 
 See the [Extended Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTEasZqICLLwTjk80rAP2GQ) for a deeper understanding of TeX. Highly recommended.
@@ -118,11 +121,11 @@ TeX Live is recommended, but MiKTeX can be used if preferred. Note that TeX Live
 >You will need to install the relevant extensions for TeX in VSCode yourself. (Help is appreciated)
 
 >[!warning]
->Installing Git may be required (admin rights may be required), which could make this setup partly useless, switch to Overleaf at his point.
-
-<details>
+>Installing Git requires admin rights. You can use VSCode for writing and GitHub Desktop for commiting. Consider Overleaf.
 
 ### Install MikTeX & VS Code
+
+<details>
 
   Open `cmd` or `powershell` and run:
 
