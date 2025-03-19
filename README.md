@@ -1,13 +1,11 @@
 # FH-Wels-Thesis-Template
 
-![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)
-![GitHub issues](https://img.shields.io/github/issues/Gugarutz/FH-Wels-Thesis-Template)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/Gugarutz/FH-Wels-Thesis-Template?style=for-the-badge)
 
 This is a re-created template for writing scientific texts and theses at the University of Applied Sciences Upper Austria - Campus Wels. It may be freely used by anyone outside of that institution as well.
 
-Deviation from these instructions is permitted, but support will not be provided for non-standard modifications.
-
-![PDFLaTeX](https://img.shields.io/badge/PDFLaTeX-Required-blue)
+Deviation from these instructions is permitted, but support will not be provided for non-standard modifications. You may skip to the [recommended setup](#recommended-setup), if you know your way around LaTeX
 
 ## Features
 
@@ -24,9 +22,9 @@ Improvements over the provided version from FHOOE:
 
 This assumes the following software:
 
-[![TeX Live](https://img.shields.io/badge/TeX%20Live-Recommended-blue)](https://www.tug.org/)
-[![TeXstudio](https://img.shields.io/badge/TeXstudio-Recommended-blue)](https://www.texstudio.org/)
-[![GitHub Desktop](https://img.shields.io/badge/GitHub%20Desktop-Recommended-blue)](https://desktop.github.com/)
+[![TeX Live](https://img.shields.io/badge/TeX%20Live-Recommended-blue?style=for-the-badge)](https://www.tug.org/)
+[![TeXstudio](https://img.shields.io/badge/TeXstudio-Recommended-blue?style=for-the-badge)](https://www.texstudio.org/)
+[![GitHub Desktop](https://img.shields.io/badge/GitHub%20Desktop-Recommended-blue?style=for-the-badge)](https://desktop.github.com/)
 
 See [Recommended setup](#recommended-setup) for installation.
 
@@ -140,10 +138,11 @@ winget install github.githubdesktop --locale en-US
 
 #### Using standard Windows install process
 
-- Download from [texstudio.org](https://www.texstudio.org/) and install manually. Set the language to **English**, other settings can remain at default.
-- Download from [github.com](https://desktop.github.com/) and install manually.
+[![TexStudio](https://img.shields.io/badge/Download%20TexStudio-Install-g?style=for-the-badge)](https://texstudio.org/)
 
-Set the language to English.
+[![GitHub Desktop](https://img.shields.io/badge/Download%20GitHub%20Desktop-Install-g?style=for-the-badge)](https://central.github.com/deployments/desktop/desktop/latest/win32)
+
+Set the language to English for both programs during the install.
 
 ### Configure GitHub Desktop
 
@@ -164,13 +163,16 @@ The alternative setup uses MikTeX and VSCode as these can be installed per user 
 
 TeX Live is recommended, but MiKTeX can be used if preferred. Note that TeX Live compiles 20-30% faster and has better package support.
 
->[!warning]
+>[!note]
 >Currently, I cannot provide you with any information or help for this setup.
 >
 >You will need to install the relevant extensions for TeX in VSCode yourself. (Help is appreciated)
 
 >[!warning]
->Installing Git requires admin rights. But can use VSCode for writing and GitHub Desktop for commiting.
+> To use Git inside VSCode you need to install it seperately. This requires admin rights. Use GitHub Desktop for Git.
+
+>[!warning]
+> Do not install more than one TeX distribution. (mostly for your own sanity)
 
 ### Install MikTeX & VS Code
 
@@ -183,15 +185,12 @@ winget install MikTeX.MikTeX --locale en-US
 ```
 
 ``` bash
-winget install vscode --locale en-US
+winget install Microsoft.VisualStudioCode --locale en-US
 ```
 
 ``` bash
 winget install github.githubdesktop --locale en-US
 ```
-
->[!warning]>
-> Do not install more than one TeX distribution. (mostly for your own sanity)
 
 </details>
 
@@ -210,12 +209,13 @@ winget install github.githubdesktop --locale en-US
 
 An Overleaf project for easier setup will be provided soon.
 
-[![Overleaf](https://img.shields.io/badge/Overleaf-Open-green)](https://www.overleaf.com/read/kwxdfrpxsvyy#9f071f)
-
+[![Overleaf](https://img.shields.io/badge/Overleaf-Open-green?style=for-the-badge)](https://www.overleaf.com/read/kwxdfrpxsvyy#9f071f)
 
 To manually download the template:
 
-1. Visit the [GitHub repository](https://github.com/Gugarutz/FH-Wels-Thesis-Template)
+<details>
+
+1. Visit the [GitHub repository](https://github.com/Gugarutz/FH-Wels-Thesis-Template) or scroll up
 2. Click `<> Code` > `Download ZIP`
 3. To work locally:
    1. Extract to `C:\Github\`
@@ -231,6 +231,8 @@ To manually download the template:
    3. Ensure `main.tex` is at the root of the structure (outside any folder)
 5. Delete `LICENSE`, `.gitignore`, `.gitattributes`, `main.txss2`, they are not needed.
 6. Keep the `README.md` as a reference
+
+</details>
 
 ## Using the Template
 
@@ -248,6 +250,8 @@ The template is modular for faster compilation. Disable unused modules by commen
 First, compile the template. Check the `Log` below for errors, warnings, or info messages. Save a copy of `main.pdf` as `template.pdf` for reference.
 
 ### First Steps
+
+<details>
 
 The main file is `main.tex`. Set it as root manually or by opening `main.txss2` from GitHub Desktop or File Explorer.
 
@@ -271,6 +275,8 @@ Set language after `\begin{document}`:
 - Set the locale for `\sisetup`
 - Provide both English and German abstracts
 
+</details>
+
 >[!note]
 > Never delete template code; comment it out instead. This way you can keep it as a reference. Feel free to delete the `\include{ch-demo/...}` chapters, sections and appendices.
 
@@ -286,6 +292,6 @@ If there is a relevant issue that was fixed, please mark that.
 
 ### License
 
-![License](https://img.shields.io/github/license/Gugarutz/FH-Wels-Thesis-Template)
+![License](https://img.shields.io/github/license/Gugarutz/FH-Wels-Thesis-Template?style=for-the-badge)
 
 The license does not cover the FHOOE logo, which is the property of the FHOOE.
