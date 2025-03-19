@@ -24,11 +24,11 @@ Improvements over the provided version from FHOOE:
 
 This assumes the following software:
 
-![TeX Live](https://img.shields.io/badge/TeX%20Live-Recommended-blue)
-![TeXstudio](https://img.shields.io/badge/TeXstudio-Recommended-blue)
+[![TeX Live](https://img.shields.io/badge/TeX%20Live-Recommended-blue)](https://www.tug.org/)
+[![TeXstudio](https://img.shields.io/badge/TeXstudio-Recommended-blue)](https://www.texstudio.org/)
 [![GitHub Desktop](https://img.shields.io/badge/GitHub%20Desktop-Recommended-blue)](https://desktop.github.com/)
 
-See [## Recommended setup] for installation.
+See [Recommended setup](#recommended-setup) for installation.
 
 To effectively use this template, familiarity with TeX/LaTeX is necessary. Basic knowledge of Git and KOMA-Scrips is recommended. Many solutions found online may not work correctly with KOMA-Script.
 
@@ -58,16 +58,50 @@ TeXstudio can have integrated AI help. See the official [TeX studio documentatio
 
 ## Recommended setup
 
+>[!warning]
+> ADMIN RIGHTS ARE REQUIRED, USE POWERSHELL AS ADMIN FOR ALL INSTALL COMMANDS.
+
 Installation time varies, but plan for at least three hours. Avoid using university WiFi; install at home instead. All software must be installed in English.
 
 <details>
 
 ### TeX Live
 
+Run PowerShell as admin
+
+>[!tip]
+>
+> - press <kbd>WIN</kbd> + <kbd>R</kbd>
+> - type `powershell`
+> - press <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>ENTER</kbd>
+> - click `yes`
+
+Make sure Chocolatey is installed.
+
+``` bash
+choco --version
+```
+
+Otherwise, install it *(Yes, I know, big scary command)*:
+
+``` bash
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+Check the version of choco with the above command again before proceeding.
+
+Open PowerShell as admin (required for Chocolatey):
+
+``` bash
+choco install texlive
+```
+
+#### Manual installation
+
 Download the [TeX Live installer](https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe) and run it. If prompted with "Windows protected your PC," click `More info`, then `Run Anyway`.
 
 >[!note]Author's comment
-> Yes, I know this install sucks, I do not like it either. But trust me here and use TeX Live if you can.
+> Yes, I know this installer is not great, I do not like it either. But trust me here and use TeX Live if you can.
 
 In the TeX Live installer:
 
@@ -86,9 +120,17 @@ In the TeX Live installer:
 
 ### Install TeXstudio & GitHub Desktop
 
-Using winget:
+#### Using winget
 
-- Open PowerShell (preferably as admin) and run:
+>[!tip]
+> To open PowerShell as Admin:
+>
+> - press <kbd>WIN</kbd> + <kbd>R</kbd>
+> - type `powershell`
+> - press <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>ENTER</kbd>
+> - click `yes`
+
+- Open PowerShell as admin and run:
 
 ``` bash
 winget install texstudio.texstudio --locale en-US
@@ -98,7 +140,7 @@ winget install texstudio.texstudio --locale en-US
 winget install github.githubdesktop --locale en-US
 ```
 
-Using standard Windows installation:
+#### Using standard Windows install process
 
 - Download from [texstudio.org](https://www.texstudio.org/) and install manually. Set the language to **English**, other settings can remain at default.
 - Download from [github.com](https://desktop.github.com/) and install manually.
