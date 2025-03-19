@@ -43,10 +43,10 @@ If dictionaries are unavailable, check this resource: [TeXstudio Dictionary Issu
 
 ### English Users
 
->[!important] Help wanted
->Links to english resources.
+>[!important]
+> Help wanted: Links to english resources.
 
-The [official TeXstudio decumentation](https://texstudio-org.github.io/getting_started.html) is a good reference, but maybe not be a good learining resource.
+The [official TeXstudio decumentation](https://texstudio-org.github.io/getting_started.html) is a good reference, but maybe not be a good learning resource.
 
 ### Use of AI & chat bots
 
@@ -96,7 +96,7 @@ choco install texlive
 
 Download the [TeX Live installer](https://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe) and run it. If prompted with "Windows protected your PC," click `More info`, then `Run Anyway`.
 
->[!note]Author's comment
+>[!note]
 > Yes, I know this installer is not great, I do not like it either. But trust me here and use TeX Live if you can.
 
 In the TeX Live installer:
@@ -126,7 +126,7 @@ In the TeX Live installer:
 > - press <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>ENTER</kbd>
 > - click `yes`
 
-- Open PowerShell as admin and run:
+Open PowerShell as admin and run:
 
 ``` bash
 winget install texstudio.texstudio --locale en-US
@@ -152,33 +152,30 @@ Set the language to English for both programs during the install.
 4. Click `<> Code` > `Open with GitHub Desktop`
 5. Click allow in the browser pop up
 6. A popup in GitHub Desktop will open
-7. Set the local path to `C:\Github\[reponame]`
+7. Set the local path to `C:\Github\FH-Wels-Thesis-Template`
 
 >[!Important]
 > Do not use long directory paths or OneDrive folders to avoid syncing issues. Use a separate backup solution (e.g., FreeFileSync) for replication to a cloud folder or external storage.
 
 ## Alternative setup (no Admin rights)
 
-The alternative setup uses MikTeX and VSCode as these can be installed per user instead of system wide. Therefore not needing admin rights. The system provided to you in your internship will likely not have admin rights.
-
-TeX Live is recommended, but MiKTeX can be used if preferred. Note that TeX Live compiles 20-30% faster and has better package support.
-
 >[!note]
 >Currently, I cannot provide you with any information or help for this setup.
 >
 >You will need to install the relevant extensions for TeX in VSCode yourself. (Help is appreciated)
 
->[!warning]
-> To use Git inside VSCode you need to install it seperately. This requires admin rights. Use GitHub Desktop for Git.
+The alternative setup uses MikTeX and VSCode as these can be installed per user instead of system wide. Therefore not needing admin rights. The system provided to you in your internship will likely not have admin rights. To use Git inside VSCode you need to install it seperately. This requires admin rights. Use GitHub Desktop for Git.
+
+TeX Live is recommended, but MiKTeX can be used if preferred. Note that TeX Live compiles 20-30% faster and has better package support.
 
 >[!warning]
 > Do not install more than one TeX distribution. (mostly for your own sanity)
 
-### Install MikTeX & VS Code
+### Install MikTeX, VSCode & GitHub Desktop
 
 <details>
 
-Open PowerShell or CMD and run:
+Open PowerShell or CMD and run the following commands:
 
 ``` bash
 winget install MikTeX.MikTeX --locale en-US
@@ -191,6 +188,7 @@ winget install Microsoft.VisualStudioCode --locale en-US
 ``` bash
 winget install github.githubdesktop --locale en-US
 ```
+
 
 </details>
 
