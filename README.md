@@ -1,11 +1,13 @@
 # FH-Wels-Thesis-Template
 
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)
+![GitHub issues](https://img.shields.io/github/issues/Gugarutz/FH-Wels-Thesis-Template)
+
 This is a re-created template for writing scientific texts and theses at the University of Applied Sciences Upper Austria - Campus Wels. It may be freely used by anyone outside of that institution as well.
 
 Deviation from these instructions is permitted, but support will not be provided for non-standard modifications.
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/user/repo/main.yml)
-![License](https://img.shields.io/github/license/user/repo)
+![PDFLaTeX](https://img.shields.io/badge/PDFLaTeX-Required-blue)
 
 ## Features
 
@@ -20,30 +22,39 @@ Improvements over the provided version from FHOOE:
 
 ## Prerequisites
 
-This template requires the following software:
+This assumes the following software:
 
-- TeX Live
-- TeXstudio
-- GitHub Desktop
+![TeX Live](https://img.shields.io/badge/TeX%20Live-Recommended-blue)
+![TeXstudio](https://img.shields.io/badge/TeXstudio-Recommended-blue)
+[![GitHub Desktop](https://img.shields.io/badge/GitHub%20Desktop-Recommended-blue)](https://desktop.github.com/)
 
-To effectively use this template, familiarity with TeX/LaTeX is necessary. Basic knowledge of Git and KOMA-Script is recommended. Many solutions found online may not work correctly with KOMA-Script.
+See [## Recommended setup] for installation.
 
-When seeking AI-generated assistance (e.g., ChatGPT, Copilot), specify that you are using KOMA-Script or the `scrbook` document class. As of February 2025, GitHub Copilot with the *Claude Sonnet* Model is recommended for LaTeX help.
+To effectively use this template, familiarity with TeX/LaTeX is necessary. Basic knowledge of Git and KOMA-Scrips is recommended. Many solutions found online may not work correctly with KOMA-Script.
 
 TeX Live is preferred over MiKTeX due to faster compilation and broader package support. This guide assumes a Windows 10/11 system; official support for GNU+Linux and OSX is not provided. The recommended install should work fine with either.
 
 ### German Users
 
 For German users, this [YouTube Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTg5XgHXhNPUJNib6gW_Zpi) serves as a reference. The recommended TeXstudio settings align with those in the playlist, but follow the installation instructions here in case of conflicting information.
-Whether to use `de_DE`, `de_AT`, or another dictionaries for spellchecking in TeXstudio is up to the user. The spellchecking can be changed at any time in the bottom right and can be inserted as a magic comment for each file (per file spellcheck).
-If dictionaries are unavailable, check [this resource](https://tex.stackexchange.com/questions/87650/dictionary-for-texstudio-no-dictionary-available).
 
 See the [Extended Playlist](https://www.youtube.com/playlist?list=PL0FqMC_xCtjTEasZqICLLwTjk80rAP2GQ) for a deeper understanding of TeX. Highly recommended.
+
+Whether to use `de_DE`, `de_AT`, or another dictionaries for spellchecking in TeXstudio is up to the user. The spellchecking can be changed at any time in the bottom right and can be inserted as a [magic comment](https://texstudio-org.github.io/advanced.html#advanced-header-usage) for each file (per file spellcheck).
+If dictionaries are unavailable, check this resource: [TeXstudio Dictionary Issue](https://tex.stackexchange.com/questions/87650/dictionary-for-texstudio-no-dictionary-available)
 
 ### English Users
 
 >[!important] Help wanted
->Links to english resources
+>Links to english resources.
+
+The [official TeXstudio decumentation](https://texstudio-org.github.io/getting_started.html) is a good reference, but maybe not be a good learining resource.
+
+### Use of AI & chat bots
+
+When seeking AI-generated assistance (e.g., ChatGPT, Copilot), specify that you are using KOMA-Script or the `scrbook` document class. As of February 2025, GitHub Copilot with the *Claude Sonnet* Model is recommended for LaTeX help.
+
+TeXstudio can have integrated AI help. See the official [TeX studio documentation](https://texstudio-org.github.io/advanced.html#ai-chat-assistant) for setup.
 
 ## Recommended setup
 
@@ -157,6 +168,11 @@ TeX Live is recommended, but MiKTeX can be used if preferred. Note that TeX Live
 
 ## Overleaf & ZIP download
 
+An Overleaf project for easier setup will be provided soon.
+
+[![Overleaf](https://img.shields.io/badge/Overleaf-Open-green)](https://www.overleaf.com/read/kwxdfrpxsvyy#9f071f)
+
+
 To manually download the template:
 
 1. Visit the [GitHub repository](https://github.com/Gugarutz/FH-Wels-Thesis-Template)
@@ -178,7 +194,7 @@ To manually download the template:
 
 ## Using the Template
 
-The template is modular for faster compilation. Disable unused modules by commenting out `\input[modulename]` under `MODULES`.
+The template is modular for faster compilation. Disable unused modules by commenting out `\input{[modulename]}` under `%% MODULES`.
 
 - Use `\include{}` for chapters and sections, it automatically adds a `\clearpage`. It cannot be nested. It cannot be used in the preamble.
 - Use `\input` for everything else, it is "dumb", it does not do anything other than a directly inserting your code.
@@ -195,7 +211,7 @@ First, compile the template. Check the `Log` below for errors, warnings, or info
 
 The main file is `main.tex`. Set it as root manually or by opening `main.txss2` from GitHub Desktop or File Explorer.
 
-Run `Biber` under `Tools > Commands > Biber`.
+Run `Biber` under `Tools > Commands > Biber`. You may need to rerun this occasionally.
 
 #### Data Entry
 
@@ -217,3 +233,19 @@ Set language after `\begin{document}`:
 
 >[!note]
 > Never delete template code; comment it out instead. This way you can keep it as a reference. Feel free to delete the `\include{ch-demo/...}` chapters, sections and appendices.
+
+## About this repository
+
+A quick overview of this repository.
+
+### Contributing
+
+Contributions are welcome! But please make Pull Requests with the relevant fixes ONLY. No other changes, e.g. "I did some code formatting in a completely different file while I was fixing a bug with TikZ". Changing the documentation when changing the implementation of a feature is of course permitted and desired.
+
+If there is a relevant issue that was fixed, please mark that.
+
+### License
+
+![License](https://img.shields.io/github/license/Gugarutz/FH-Wels-Thesis-Template)
+
+The license does not cover the FHOOE logo, which is the property of the FHOOE.
