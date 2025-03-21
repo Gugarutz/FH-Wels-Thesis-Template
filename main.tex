@@ -29,7 +29,11 @@
         }
 
 	% citing and referencing
-		\usepackage[backend=biber,maxcitenames=3,sorting=nyt]{biblatex}
+		\usepackage[
+			backend=biber,
+   			maxcitenames=3,
+      			sorting=none
+	 	    ]{biblatex}
             \bibliography{bibliography.bib}	  % file(s) with your sources
         \counterwithin{figure}{chapter}   % set figure   counter to include chapter
 		\counterwithin{table}{chapter}    % set table    counter to include chapter
