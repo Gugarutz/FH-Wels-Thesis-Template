@@ -13,6 +13,8 @@
 \usepackage{eurosym}			% €-Symbol
 \usepackage{textgreek}			% adds \textalpha \textbeta etc (no math mode greek)
 
+\usepackage{enumitem}           % allows definition of enumerate (see below)
+\usepackage{outlines}
 
 %------------------------------------------------------------%
 %% PARAGRAPH SPACING
@@ -70,3 +72,20 @@
 
 % More space for page numbers for chapters, Roman is wide :P
 	\DeclareTOCStyleEntry[pagenumberwidth=4em]{tocline}{chapter}
+
+
+%-------------------------------------------
+% change itemize to use dashes
+    % syntax: \rule[<raise>]{<width>}{<thickness>}
+    \renewcommand{\labelitemi}  {\rule[0.5ex]{1em}   {0.7pt}}
+    \renewcommand{\labelitemii} {\rule[0.5ex]{0.75em}{0.7pt}}
+    \renewcommand{\labelitemiii}{\rule[0.5ex]{0.5em} {0.7pt}}
+    \renewcommand{\labelitemiv} {\rule[0.5ex]{0.25em}{0.7pt}}
+
+
+% Change enumerate to use 1.1.1.1.
+    \setlist[enumerate,1]{label=\arabic*.}
+    \setlist[enumerate,2]{label=\arabic{enumi}.\arabic*.}
+    \setlist[enumerate,3]{label=\arabic{enumi}.\arabic{enumii}.\arabic*.}
+    \setlist[enumerate,4]{label=\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic*.}
+
