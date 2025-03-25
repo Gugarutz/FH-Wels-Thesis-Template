@@ -1,5 +1,15 @@
 \section{Mathematics and Units}
 
+\subsection{Custom commands}
+
+%\renewcommand{\dd}{\ensuremath{\mathrm{d\!I}}}
+
+% \dd
+
+ $\dd[3]{x}$
+
+\subsection{Physics package}
+
 \subsection{Greek Symbols in Text}
 
 % Use the `textgreek` package for inline Greek characters without entering math mode.
@@ -62,7 +72,9 @@ The \verb|\SI| command combines numbers and units seamlessly:
 % Customize `siunitx` display settings.
 Different display options for units and numeric notation can be configured in \verb|\sisetup{...}| globally or locally.
 
-The \verb|\num| command can be forced into scientific notation using the \verb|scientific-notation=true| option:
+The \verb|\num| command can be forced into scientific notation using the\\
+\verb|scientific-notation=true| option:
+
 \begin{itemize}
     \item \verb|\num[exponent-mode=scientific]{000.000123}| produces \num[exponent-mode=scientific]{000.000123}.
 \end{itemize}
@@ -84,12 +96,13 @@ To display uncertainty separately, use:
 
 
 
-$\set{10}$
+%$\set{10}$
+%
+%$\set[10]$
+%
+%$\set(10) \qquad $
 
-$\set[10]$
-
-$\set(10) \qquad \qty(10)$
-
+$\qty{10}{\kg}$
 
 \begin{equation}
 	\pdv{\psi}{t}
