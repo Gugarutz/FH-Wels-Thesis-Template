@@ -1,139 +1,137 @@
 % !TeX root = main.tex
 % !TeX spellcheck = en_GB
 \documentclass[
-	oneside,
-	bibliography=totocnumbered,	% incluse bibliography in TOC with number
-	listof=totocnumbered,	% include List of Tables/Figures in TOC with number
-	numbers=noenddot,		% changes heading numbering from 1.1. to 1.1
-%	appendixprefix = true	% makes Appendix A... First appendix chapter, disable for one appendix
+    oneside,
+    bibliography=totocnumbered, % Include bibliography in TOC with number
+    listof=totocnumbered,       % Include List of Tables/Figures in TOC with number
+    numbers=noenddot            % Changes heading numbering from 1.1. to 1.1
+    % appendixprefix = true     % Makes Appendix A... First appendix chapter, disable for one appendix
 ]{scrbook}
 
 %------------------------------------------------------------%
-	%% Settings and Packages
-		\input{preamble/layout}
-		\input{preamble/typesetting}
-		\input{preamble/math}
-		\input{preamble/graphics}	% graphics, colour, tables packages and settings
-			\graphicspath{{graphics},{images}} % TODO add relevant paths
-        \input{preamble/data}       % reading data, making diagrams & plots
+% SETTINGS AND PACKAGES
+    \input{preamble/layout}
+    \input{preamble/typesetting}
+    \input{preamble/math}
+    \input{preamble/graphics} % Graphics, colour, tables packages and settings
+    \graphicspath{{graphics/},{images/}} % TODO: Add relevant paths
+    \input{preamble/data} % Reading data, making diagrams & plots
 
-    %% MODULES (YOU CAN DISABLE THESE)
-        \input{preamble/code}       % display code and input markdown markdown
+% MODULES (YOU CAN DISABLE THESE)
+    \input{preamble/code} % Display code and input markdown markdown
 
-    %% choose how units and numbers are displayed
-        \sisetup{					% TODO choose locale and settings
-        	locale = US, 			% localisation US or DE recommended
-        	%per-mode=symbol,		% display as / fractions
-        	separate-uncertainty,
-        	%exponent-product=\cdot % use \times for x multiplier
-        }
+% CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
+    \sisetup{ % TODO: Choose locale and settings
+        locale = US,                % Localisation US or DE recommended
+        % per-mode=symbol,          % Display as / fractions
+        separate-uncertainty,
+        % exponent-product=\cdot    % Use \times for x multiplier
+    }
 
-	% citing and referencing
-		\usepackage[
-			backend=biber,
-   			maxcitenames=3,
-      			sorting=none
-	 	    ]{biblatex}
-            \bibliography{bibliography.bib}	  % file(s) with your sources
-        \counterwithin{figure}{chapter}   % set figure   counter to include chapter
-		\counterwithin{table}{chapter}    % set table    counter to include chapter
-		\counterwithin{equation}{chapter} % set equation counter to include chapter
+% CITING AND REFERENCING
+    \usepackage[
+        backend=biber,
+        maxcitenames=3,
+        sorting=none
+    ]{biblatex}
 
-%------------------------------------------------------------%
-    %% FRONT PAGE
-        \input{preamble/titlepage-fields}
-        \input{preamble/titlepage-data}		% TODO Fill this out
-        \input{preamble/titlepage}
-        \input{preamble/declarationDE}
-        \input{preamble/declarationEN}
-            % TODO open preamble/signature to enable/diable digital signature and adjust position
+    \addbibresource{bibliography.bib}   % File(s) with your sources
+    \counterwithin{figure}{chapter}     % Set figure counter to include chapter
+    \counterwithin{table}{chapter}      % Set table counter to include chapter
+    \counterwithin{equation}{chapter}   % Set equation counter to include chapter
 
 %------------------------------------------------------------%
-	%% FOR TESTING
-		\usepackage{showframe}
-		\usepackage{blindtext}\blindmathtrue
+% FRONT PAGE
+    \input{preamble/titlepage-fields}
+    \input{preamble/titlepage-data} % TODO: Fill this out
+    \input{preamble/titlepage}
+    \input{preamble/declarationDE}
+    \input{preamble/declarationEN}  % TODO: Adjust preamble/signature settings
 
+%------------------------------------------------------------%
+% FOR TESTING
+    \usepackage{showframe}
+    \usepackage{blindtext}
 
 %==============================================================================================%
 %                                      DOCUMENT                                                %
 %==============================================================================================%
 
-
 \begin{document}
-	\selectlanguage{english}	% Set language -> naustrian or ngerman for new austrian/german
+    \selectlanguage{english} % Set language -> naustrian or ngerman for new austrian/german
 
-%------------------------------------------------------------%
-	\frontmatter			% everything before the content of the thesis starts
-	\pagenumbering{Roman} 	% uppercase roman numerals, only frontmatter
+    %------------------------------------------------------------%
+    % FRONTMATTER
+        \frontmatter % Everything before the content of the thesis starts
+        \pagenumbering{Roman} % Uppercase Roman numerals, only frontmatter
 
-	% Select Titlepage language
-		\titlepageEN
-		%\titlepageDE
+    % SELECT TITLEPAGE LANGUAGE
+        \titlepageEN
+        % \titlepageDE
 
-	% Write you Preface, acknowledgements, thanks etc here
-		\include{frontmatter/preface}
+    % PREFACE, ACKNOWLEDGEMENTS, ETC.
+        \include{frontmatter/preface}
 
-	% Select Declaration language
-		\declarationEN
-		%\declarationDE
+    % SELECT DECLARATION LANGUAGE
+        \declarationEN
+        % \declarationDE
 
-	% a general summary of the contents in German AND English
-		\include{frontmatter/abstractEN}
-		\include{frontmatter/abstractDE}
+    % ABSTRACTS (GERMAN & ENGLISH)
+        \include{frontmatter/abstractEN}
+        \include{frontmatter/abstractDE}
 
-	% Table of contents
-    		\markleft{\contentsname}	% adds "Contents" or equivalent to header
-    		\setSectioning				% sets indents and seperation for TOC
-		\tableofcontents
+    % TABLE OF CONTENTS
+        \markleft{\contentsname} % Adds "Contents" or equivalent to header
+        \setSectioning % Sets indents and separation for TOC
+        \tableofcontents
 
+    %------------------------------------------------------------%
+    % MAINMATTER (CONTENT)
+        \mainmatter % Main part of the thesis, from the introduction to the conclusion
 
-%------------------------------------------------------------%
-	\mainmatter % is the main part of the thesis, from the introduction to the conclusion/summary
-		% recommended: subfolders for each chapter; this is YOUR choice!
+    % INTRODUCTION
+        \include{mainmatter/introduction}
 
-	% Introduction
-		\include{mainmatter/introduction}
-
-    %% CHAPTER 0 - DEMO
-    \include{mainmatter/ch-demo/ch-demo}
-   	    \include{mainmatter/ch-demo/demo-tables}
+    % CHAPTER 0 - DEMO
+        \include{mainmatter/ch-demo/ch-demo}
+        \include{mainmatter/ch-demo/demo-tables}
         \include{mainmatter/ch-demo/demo-graphics}
         \include{mainmatter/ch-demo/demo-math}
 
-	%% CHAPTER I - THEORY
-	\include{mainmatter/ch1/ch1}
-        %\include{mainmatter/ch1/sec1}
+    % CHAPTER I - THEORY
+        \include{mainmatter/ch1/ch1}
+        % \include{mainmatter/ch1/sec1}
 
-	%% CHAPTER II - PRACTICE
+    % CHAPTER II - PRACTICE
 
-	%% TESTING --------
-		\blinddocument
-		\blindmathpaper
-		\cite{WWW:MenschlicherEinflussKlima}
-		\cite{Norm:ISO690:2021}
-		\cite{Lehrndorfer:KontrollierteSprache}
-		\cite{Meier:Globalisierung}
-		\cite{Mueller:Meier}
-		\cite{Mueller:Meier:Huber}
-		\cite{Mueller:Meier:Huber:Tausch}
-		\cite{Norm:ONR12658:2013}
-		\cite{Norm:OENORMA2662:2023}
-		\cite{OpenAI:2023}
-		\cite{Schulz:NormPraxis}
-	%% ----------------
+    % TESTING SECTION
+        \blinddocument
+        \blindmathpaper
+        \cite{WWW:MenschlicherEinflussKlima}
+        \cite{Norm:ISO690:2021}
+        \cite{Lehrndorfer:KontrollierteSprache}
+        \cite{Meier:Globalisierung}
+        \cite{Mueller:Meier}
+        \cite{Mueller:Meier:Huber}
+        \cite{Mueller:Meier:Huber:Tausch}
+        \cite{Norm:ONR12658:2013}
+        \cite{Norm:OENORMA2662:2023}
+        \cite{OpenAI:2023}
+        \cite{Schulz:NormPraxis}
 
-%------------------------------------------------------------%
-%	\backmatter % if you do not want chapter numbers
+    %------------------------------------------------------------%
+    % BACKMATTER (OPTIONAL)
+        % \backmatter % Disables chapter numbering
+        \printbibliography
+        \listoffigures
+        \listoftables
 
-		\printbibliography
-		\listoffigures
-		\listoftables
-%------------------------------------------------------------%
-	% add additional tables, figures, source code, transcripts,...
-	\appendix	% changes chapter numbering to Alphabetic
-		\include{appendices/append1}	% create folders as necessary
+    %------------------------------------------------------------%
+    % APPENDICES
+        \appendix % Changes chapter numbering to Alphabetic
+        \include{appendices/append1} % Create folders as necessary
         \include{appendices/demo-pdf}
         \include{appendices/demo-code}
 
-%------------------------------------------------------------%
+    %------------------------------------------------------------%
 \end{document}
