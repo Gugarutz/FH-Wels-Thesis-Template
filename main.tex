@@ -12,13 +12,17 @@
 % SETTINGS AND PACKAGES
     \input{preamble/layout}
     \input{preamble/typesetting}
+    \input{preamble/toc}
+    \input{preamble/lists}
     \input{preamble/math}
     \input{preamble/graphics} % Graphics, colour, tables packages and settings
     \graphicspath{{graphics/},{images/}} % TODO: Add relevant paths
-    \input{preamble/data} % Reading data, making diagrams & plots
+
 
 % MODULES (YOU CAN DISABLE THESE)
-    \input{preamble/code} % Display code and input markdown markdown
+    \input{preamble/code} % Display code
+    \input{preamble/data} % Reading data
+    \input{preamble/pgf}  % Making diagrams & plots
 
 % CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
     \sisetup{ % TODO: Choose locale and settings
@@ -92,11 +96,13 @@
     % INTRODUCTION
         \include{mainmatter/introduction}
 
+
     % CHAPTER 0 - DEMO
         \include{mainmatter/ch-demo/ch-demo}
         \include{mainmatter/ch-demo/demo-tables}
         \include{mainmatter/ch-demo/demo-graphics}
         \include{mainmatter/ch-demo/demo-math}
+        \include{mainmatter/ch-demo/demo-item}
 
     % CHAPTER I - THEORY
         \include{mainmatter/ch1/ch1}
