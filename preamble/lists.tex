@@ -1,0 +1,26 @@
+%------------------------------------------------------------%
+% LISTS
+%------------------------------------------------------------%
+
+\usepackage{enumitem}               % Customize list styles
+\usepackage{outlines}               % Outline lists
+
+% Change itemize to use rules instead of bullet points
+\renewcommand{\labelitemi}  {\rule[0.5ex]{0.9em}{0.7pt}}
+\renewcommand{\labelitemii} {\rule[0.5ex]{0.7em}{0.7pt}}
+\renewcommand{\labelitemiii}{\rule[0.5ex]{0.5em}{0.7pt}}
+\renewcommand{\labelitemiv} {\rule[0.5ex]{0.3em}{0.7pt}}
+
+% Customize enumerate to use hierarchical numbering
+\setlist[enumerate, 1]{label=\arabic*.}
+\setlist[enumerate, 2]{label=\arabic{enumi}.\arabic*.}
+\setlist[enumerate, 3]{label=\arabic{enumi}.\arabic{enumii}.\arabic*.}
+\setlist[enumerate, 4]{label=\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic*.}
+
+% Decrease the spacing of Lists
+\setlist[itemize]  {itemsep=-6pt}   % Space between items
+\setlist[enumerate]{itemsep=-6pt}   % Space between items
+
+
+% Tighten up space when changing list level, only for levels spcified
+\setlist[2,3,4]{topsep=-6pt}
