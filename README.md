@@ -1,7 +1,7 @@
 # FH-Wels-Thesis-Template
 
-![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues/Gugarutz/FH-Wels-Thesis-Template?style=for-the-badge)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?style=for-the-badge)](https://github.com/Gugarutz/FH-Wels-Thesis-Template/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/Gugarutz/FH-Wels-Thesis-Template?style=for-the-badge)](https://github.com/Gugarutz/FH-Wels-Thesis-Template/issues)
 
 This is a re-created template for writing scientific texts and theses at the University of Applied Sciences Upper Austria - Campus Wels. It may be freely used by anyone outside of that institution as well.
 
