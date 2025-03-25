@@ -1,91 +1,40 @@
-\usepackage[english,ngerman,naustrian]{babel}
-\usepackage{lmodern}
-\usepackage{cmap}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{csquotes}
-\usepackage[protrusion=true, expansion=true]{microtype} % text justification
-\usepackage{hyphenat}
-	\hyphenpenalty=100  % Lower the penalty for hyphenating words
-	\exhyphenpenalty=100  % Lower the penalty for line breaks at hyphens
+%------------------------------------------------------------%
+% "GENERAL" PACKAGES
+%------------------------------------------------------------%
 
-\usepackage{textcomp}			% Sonderzeichen(Copyright, Latex-Logo,...)
-\usepackage{eurosym}			% €-Symbol
-\usepackage{textgreek}			% adds \textalpha \textbeta etc (no math mode greek)
+\usepackage[utf8]{inputenc}         % Input encoding
+\usepackage{cmap}                   % Font encoding for PDF search
+\usepackage[T1]{fontenc}            % Font encoding
+\usepackage[english,ngerman,naustrian]{babel} % Languages
 
-\usepackage{enumitem}           % allows definition of enumerate (see below)
-\usepackage{outlines}
+\usepackage{lmodern}                % Latin Modern fonts
+\usepackage{csquotes}               % Contextual quoting (load after babel)
 
 %------------------------------------------------------------%
-%% PARAGRAPH SPACING
-	\parskip 1.5ex plus0.5ex minus0.5ex	% flexible paragraph spacing
-	\setlength{\parindent}{0pt}			% remove indent
-	\raggedbottom 						% no vertical stretching
+% SYMBOLS AND SPECIAL CHARACTERS
+%------------------------------------------------------------%
 
-%% Chapter Top Spacing
-	\renewcommand*\chapterheadstartvskip{\vspace*{-0.8\topskip}}
-
+\usepackage{textcomp}               % Special symbols (Copyright, LaTeX logo, etc.)
+\usepackage{textgreek}              % Greek letters in text mode
 
 %------------------------------------------------------------%
-%% TABLE OF CONTENTS
+% SPACING ADJUSTMENTS
+%------------------------------------------------------------%
 
-	\setcounter{secnumdepth}{4}	% depth of section numbering
-	\setcounter{tocdepth}{3}	% depth of sections displayed in TOC
-	\newcommand{\setSectioning}
-	{
-		\RedeclareSectionCommand[
-			tocnumwidth	= 4em,		% Width reserved for the section number
-			indent		= 0pt,
-			beforeskip	= 2ex,	% Adjust this value as needed
-			afterskip	= 1ex,
-			tocindent	= 1.5em]
-		{section}
-		\RedeclareSectionCommand[
-			tocnumwidth	= 4em,		% Width reserved for the section number
-			indent		= 0pt,
-			beforeskip	= 2ex, 	% Adjust this value as needed
-			afterskip	= 0.1ex,
-			tocindent	= 1.5em]
-		{subsection}
-		\RedeclareSectionCommand[
-			tocnumwidth	= 4em,		% Width reserved for the section number
-			indent		= 0pt,
-			beforeskip	= 2ex,	% Adjust this value as needed
-			afterskip	= 0.1ex,
-			tocindent	= 1.5em]
-		{subsubsection}
-		\RedeclareSectionCommand[
-			tocnumwidth	= 4em,		% Width reserved for the section number
-			indent		= 0pt,
-			beforeskip	= 2ex,	% Adjust this value as needed
-			afterskip	= 0.1ex,
-			tocindent	= 1.5em]
-		{paragraph}
-		\RedeclareSectionCommand[
-			tocnumwidth	= 4em,		% Width reserved for the section number
-			indent		= 0pt,
-			beforeskip	= 2ex,	% Adjust this value as needed
-			afterskip	= 0.1ex,
-			tocindent	= 1.5em]
-		{subparagraph}
-	}
+% Paragraph Spacing and Indentation
+\parskip 1.5ex plus0.5ex minus0.5ex   % Flexible paragraph spacing
+\setlength{\parindent}{0pt}          % No paragraph indentation
+\raggedbottom                        % Prevent vertical stretching
 
-% More space for page numbers for chapters, Roman is wide :P
-	\DeclareTOCStyleEntry[pagenumberwidth=4em]{tocline}{chapter}
+% Adjust spacing before chapter titles
+\renewcommand*\chapterheadstartvskip{\vspace*{-0.8\topskip}}
 
+%------------------------------------------------------------%
+% TYPOGRAPHY IMPROVEMENTS
+%------------------------------------------------------------%
 
-%-------------------------------------------
-% change itemize to use dashes
-    % syntax: \rule[<raise>]{<width>}{<thickness>}
-    \renewcommand{\labelitemi}  {\rule[0.5ex]{1em}   {0.7pt}}
-    \renewcommand{\labelitemii} {\rule[0.5ex]{0.75em}{0.7pt}}
-    \renewcommand{\labelitemiii}{\rule[0.5ex]{0.5em} {0.7pt}}
-    \renewcommand{\labelitemiv} {\rule[0.5ex]{0.25em}{0.7pt}}
+\usepackage[protrusion=true, expansion=true]{microtype} % Text justification
+\usepackage{hyphenat}                % Hyphenation management
 
-
-% Change enumerate to use 1.1.1.1.
-    \setlist[enumerate,1]{label=\arabic*.}
-    \setlist[enumerate,2]{label=\arabic{enumi}.\arabic*.}
-    \setlist[enumerate,3]{label=\arabic{enumi}.\arabic{enumii}.\arabic*.}
-    \setlist[enumerate,4]{label=\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic*.}
-
+\hyphenpenalty=100                   % Lower hyphenation penalty
+\exhyphenpenalty=100                 % Lower penalty for line breaks at hyphens
