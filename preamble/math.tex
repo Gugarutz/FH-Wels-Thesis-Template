@@ -10,8 +10,20 @@
 	% Load physics first and rename its \qty
 	\usepackage{physics}
 		\let\set\qty  % Rename physics' \qty to \set
-		\let\qty\relax  % Remove physics' \qty to avoid conflicts
-	
+%		\let\qty\relax  % Remove physics' \qty to avoid conflicts
 	% Load siunitx (which will define \qty)
 	\usepackage{siunitx}
 
+
+%    \usepackage{silence}             % package to filter warnings
+%    \WarningFilter{latex}{omitting definition of \string\qty} % silence that warning
+
+
+
+
+
+%------------------------------------------------------------%
+% CUSTOM MATH COMMANDS
+%------------------------------------------------------------%
+
+\renewcommand{\diffd}{\mathrm{d\!I}} % replace normal differential d from physics with Schiefermayr d
