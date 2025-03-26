@@ -10,13 +10,14 @@
 
 %------------------------------------------------------------%
 % SETTINGS AND PACKAGES
+%------------------------------------------------------------%
     \input{preamble/layout}
-    \input{preamble/typesetting}
-    \input{preamble/toc}
-    \input{preamble/lists}
-    \input{preamble/math}
-    \input{preamble/graphics} % Graphics, colour, tables packages and settings
-    \graphicspath{{graphics/},{images/}} % TODO: Add relevant paths
+    \input{preamble/typesetting}% Typography handling 
+    \input{preamble/toc}		% Table of Contents
+    \input{preamble/lists}		% Lists (enumerate, itemize, outline)
+    \input{preamble/math}		% TODO: 
+    \input{preamble/graphics} 	% Graphics, colour, tables
+    \graphicspath{{graphics/},{images/}} % TODO: [USER] Add relevant paths
 
 
 % MODULES (YOU CAN DISABLE THESE)
@@ -25,7 +26,7 @@
     \input{preamble/pgf}  % Making diagrams & plots
 
 % CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
-    \sisetup{ % TODO: Choose locale and settings
+    \sisetup{ % TODO: [USER] Choose locale and settings
         locale = US,                % Localisation US or DE recommended
         % per-mode=symbol,          % Display as / fractions
         separate-uncertainty,
@@ -48,11 +49,12 @@
 
 %------------------------------------------------------------%
 % FRONT PAGE
+%------------------------------------------------------------%
     \input{preamble/titlepage-fields}
-    \input{preamble/titlepage-data} % TODO: Fill this out
+    \input{preamble/titlepage-data} % TODO: [USER] Fill this out
     \input{preamble/titlepage}
     \input{preamble/declarationDE}
-    \input{preamble/declarationEN}  % TODO: Adjust preamble/signature settings
+    \input{preamble/declarationEN}  % TODO: [USER] Adjust preamble/signature settings
 
 %------------------------------------------------------------%
 % FOR TESTING
