@@ -1,52 +1,54 @@
 %------------------------------------------------------------%
-%% KOMA
+% KOMA
+%------------------------------------------------------------%
 
-	\usepackage{scrlayer-scrpage}
-	\KOMAoptions{
-		fontsize	 = 12pt
-		,sfdefaults	 = false
-		,headsepline = true
-		,autooneside = true
-		,manualmark
-	}%
+% Prerequisite settings & 
+\usepackage{scrlayer-scrpage}
+\KOMAoptions{
+	fontsize     = 12pt,
+	sfdefaults   = false,
+	headsepline  = true,
+	autooneside  = true,
+	manualmark
+}%
 
 %------------------------------------------------------------%
-%% Header & Footer setup
+% Header & Footer setup
+%------------------------------------------------------------%
 
-	% TODO give options to choose from
-	% Modify \chaptermark to include the chapter title in \leftmark  (without number for \addchap)
-		\renewcommand{\chaptermark}[1]{\markleft {\ifnum\value{chapter}=0 #1\else\thechapter~ #1\fi}}
+% Modify \chaptermark to include the chapter title in \leftmark (without number for \addchap)
+\renewcommand{\chaptermark}[1]{\markleft{\ifnum\value{chapter}=0 #1\else\thechapter~ #1\fi}}
 
-	% Modify \sectionmark to include the section title in \rightmark (without number for \addsec)
-		\renewcommand{\sectionmark}[1]{\markright{\ifnum\value{section}=0 #1\else\thesection~ #1\fi}}
+% Modify \sectionmark to include the section title in \rightmark (without number for \addsec)
+\renewcommand{\sectionmark}[1]{\markright{\ifnum\value{section}=0 #1\else\thesection~ #1\fi}}
 
-
-	\clearpairofpagestyles		% Clear default settings
-		\ihead[\empty]{\leftmark}		% Leftmark (chapter title) on the left header
-		\ohead[\empty]{\rightmark}		% Rightmark (section title) on the right header
-		\ofoot[\pagemark]{\pagemark} % Page number on the bottom right
+\clearpairofpagestyles       % Clear default settings
+\ihead[\empty]{\leftmark}     % Leftmark (chapter title) on the left header
+\ohead[\empty]{\rightmark}    % Rightmark (section title) on the right header
+\ofoot[\pagemark]{\pagemark}  % Page number on the bottom right
 
 %------------------------------------------------------------%
-%% page spacing and margin setup
+% Page spacing and margin setup
+%------------------------------------------------------------%
+\usepackage{setspace}
+\onehalfspacing               % 1.5 lines of line spacing
 
-	\usepackage{setspace}
-		\onehalfspacing		% 1.5 lines of line spacing
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=3.50cm,
+	right=2.50cm,
+	top=2.5cm,
+	bottom=3cm
+}
 
-	\usepackage{geometry}
-		\geometry{
-			a4paper,
-			left=3.50cm,
-			right=2.50cm,
-			top=2.5cm,
-			bottom=3cm}
-
-		% define head + foot sizes
-		% \baselinestretch: dynamically depend on the current line spacing setting
-			\setlength{\footskip}  {\baselinestretch\baselineskip}
-			\setlength{\headheight}{\baselinestretch\baselineskip}
-			\setlength{\footheight}{\baselinestretch\baselineskip}
-
+% Define head + foot sizes
+% \baselinestretch: dynamically depends on the current line spacing setting
+\setlength{\footskip}   {\baselinestretch\baselineskip}
+\setlength{\headheight} {\baselinestretch\baselineskip}
+\setlength{\footheight} {\baselinestretch\baselineskip}
 
 %------------------------------------------------------------%
-%%
-	\usepackage[absolute]{textpos} % absolute textposition for \declaration > \textblock envirionment
+% Absolute text positioning
+%------------------------------------------------------------%
+\usepackage[absolute]{textpos} % Absolute text position for \declaration > \textblock environment
