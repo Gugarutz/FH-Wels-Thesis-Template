@@ -40,6 +40,8 @@
     ]{biblatex}
 
     \addbibresource{bibliography.bib}   % File(s) with your sources
+%    \renewcommand{\bibfont}{\small}  % Adjust size here
+    
     \counterwithin{figure}{chapter}     % Set figure counter to include chapter
     \counterwithin{table}{chapter}      % Set table counter to include chapter
     \counterwithin{equation}{chapter}   % Set equation counter to include chapter
@@ -128,9 +130,12 @@
     %------------------------------------------------------------%
     % BACKMATTER (OPTIONAL)
         % \backmatter % Disables chapter numbering
+        \begingroup \small
         \printbibliography
         \listoffigures
         \listoftables
+        \endgroup
+        
 
     %------------------------------------------------------------%
     % APPENDICES
