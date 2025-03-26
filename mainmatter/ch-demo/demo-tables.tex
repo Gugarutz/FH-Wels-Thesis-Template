@@ -78,16 +78,17 @@ The following uses a simple csv file.
     \centering
     \caption{Table from an imported CSV}
     \begin{tabular}{l*{3}{r}}
-    \toprule
-    \textbf{Col1} &\textbf{Col2} &\textbf{Col3} &\textbf{ColPct}
-    \DTLforeach*{data2}{\1=Col1, \2=Col2, \3=Col3, \4=ColPct}
-    {%
-        \DTLiffirstrow{\\ \midrule}{\\}%
-        \1 & \2 & \3 & \4 %
-    }
-    \\ \hline
+        \toprule
+        \textbf{Col1} & \textbf{Col2} & \textbf{Col3} & \textbf{ColPct} \\
+        \DTLforeach*{data2}{\colone=Col1, \coltwo=Col2, \colthree=Col3, \colfour=ColPct}
+        {%
+            \DTLiffirstrow{\\ \midrule}{\\}%
+            \colone & \coltwo & \colthree & \colfour %
+        }
+        \\ \hline
     \end{tabular}
 \end{table}
+
 
 For the next two tables the same csv file is used. It is located in \texttt{./data/}
 
@@ -95,6 +96,8 @@ For the next two tables the same csv file is used. It is located in \texttt{./da
 
 
 The table displayed in a specific format. The syntax for this is looks intimidating but is not that hard.
+
+
 
 \DTLloaddb{data}{data/sales_data.csv}
 \begingroup\small\rowcolors{2}{gray!15}{white}
@@ -119,10 +122,9 @@ The table displayed in a specific format. The syntax for this is looks intimidat
     \endlastfoot
 
     % Data from your CSV file
-    \DTLforeach*{data}{\1=Date, \2=Product, \3=Quantity Sold, \4=Price (€), \5=Total (€)}{%
+    \DTLforeach*{data}{\datecol=Date, \productcol=Product, \quantitycol=Quantity Sold, \pricecol=Price (€), \totalcol=Total (€)}{%
         \DTLiffirstrow{}{\\} % No extra line before the first row
-        \1 & \2 & \3 & \4 & \5 %
+        \datecol & \productcol & \quantitycol & \pricecol & \totalcol %
     }
-
 \end{longtable}
 \endgroup

@@ -1,0 +1,105 @@
+\section{Numbered and unnumbered lists}
+This serves as a demonstration of the \verb|itemize| and \verb|enumerate| environments and their possibilities.
+
+\textcolor[rgb]{0.7, 0, 0}{WARNING}: \verb|\subitem| is not used for lists, it is a command used in indices.
+
+\subsection{Itemize}
+
+    \begin{itemize}
+        \item First level item 1
+        \item First level item 2
+        \item First level item 3
+        \item First level item 4
+        \item First level item 5
+    \end{itemize}
+
+    You can use \verb|\begin{itemize} ... \end{itemize}}| within itself (nesting) to create sub items.
+
+    \begin{itemize}
+        \item First level item 1
+        \begin{itemize}
+            \item Second level item 1
+            \begin{itemize}
+                \item Third level item 1
+                \begin{itemize}
+                    \item Fourth level item 1
+                \end{itemize}
+            \end{itemize}
+        \end{itemize}
+        \item First level item 2
+        \item First level item 3
+        \item First level item 4
+    \end{itemize}
+
+\subsection{Enumerate}
+
+    \begin{enumerate}
+        \item First level item 1
+        \item First level item 2
+        \item First level item 3
+        \item First level item 4
+        \item First level item 5
+    \end{enumerate}
+
+    Here is an example of a nested \verb|enumerate| environment.
+
+    \begin{enumerate}
+        \item First level item 1
+        \begin{enumerate}
+            \item Second level item 1
+            \begin{enumerate}
+                \item Third level item 1
+                \begin{enumerate}
+                    \item Fourth level item 1
+                \end{enumerate}
+            \end{enumerate}
+        \end{enumerate}
+        \item First level item 2
+        \item First level item 3
+        \item First level item 4
+        \item First level item 5
+    \end{enumerate}
+
+%------------------------------------------------------------%
+\subsection{Outline package}
+
+Here is a standard usage of the \verb|outline| environment. It is confusingly provided by the outline\underline{s} package. An \texttt{outline} package also exists.
+
+    \begin{outline}
+        \1 Item on level 1
+        \2 Item on level 2
+        \3 Item on level 3
+        \4 Item on level 4
+    \end{outline}
+
+    Here is what that looks like in the code:
+
+    \begin{verbatim}
+    \begin{outline}
+          \1 Item on level 1
+          \2 Item on level 2
+          \3 Item on level 3
+          \4 Item on level 4
+    \end{outline}
+    \end{verbatim}
+
+    The \verb|\1| etc. provide the "level" indicator for the list.
+
+    Here is an \verb|outline| environment using the \verb|[enumerate]| option right after\\ \verb|\begin{outline}|.
+
+    \begin{outline}[enumerate]
+        \1 Top level item
+         \2 Sub item
+          \3 sub sub item
+    \end{outline}
+
+    You can use one time custom label with square brackets, e.g. \verb|\1[>]|.
+
+    \begin{outline}
+        \1[>] a very simple example using the normal greater sign
+        \2[$\rightarrowtail$] you can use the math commands \verb|[$\rightarrowtail$]|
+        \2[\LaTeX] be creative
+        \2[$\cdot$] or don't
+        \3[\textit{fixed right:}] yes, all of that is label. Be careful about the left margin!
+    \end{outline}
+

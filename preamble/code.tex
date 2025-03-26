@@ -1,2 +1,67 @@
-% \usepackage{markdown}     % Needs luatex
+\usepackage{listings}	% Base package to display code snippets
+
+%------------------------------------------------------------%
+% STYLE DEFINITIONS
+%------------------------------------------------------------%
+
+% Python Style
+\lstdefinestyle{pythonstyle}{
+	language=Python,
+	basicstyle=\ttfamily\scriptsize,
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{gray},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny\color{gray}\ttfamily,
+	stepnumber=5,        % Number every 5th line
+	firstnumber=1,       % Start numbering at 1
+	numbersep=5pt,       % Adjust spacing
+	frame=single,
+	showstringspaces=false,
+	xleftmargin=20pt,
+	xrightmargin=10pt,
+	tabsize=2,  % Decrease the tab size (default is 8)
+	breaklines=true, % Enable line wrapping
+}
+
+% C Style
+\lstdefinestyle{cstyle}{
+	language=C,
+	basicstyle=\ttfamily\scriptsize,
+	keywordstyle=\color{purple}\bfseries,
+	commentstyle=\color{gray},
+	stringstyle=\color{brown},
+	numbers=left,
+	numberstyle=\tiny\color{gray}\ttfamily,
+	stepnumber=5,
+	firstnumber=1,
+	numbersep=5pt,
+	frame=single,
+	showstringspaces=false,
+	xleftmargin=20pt,
+	xrightmargin=10pt,
+	tabsize=2,  % Decrease the tab size (default is 8)
+	breaklines=true, % Enable line wrapping
+	postbreak=\mbox{$\hookrightarrow$\space} % Add arrow to indicate line break
+}
+
+% LaTeX Style
+\lstdefinestyle{latexstyle}{
+	language=[LaTeX]TeX,
+	basicstyle=\ttfamily\scriptsize,
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{gray},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny\color{gray}\ttfamily,
+	stepnumber=5,
+	firstnumber=1,
+	numbersep=5pt,
+	frame=single,
+	showstringspaces=false,
+	xleftmargin=20pt,
+	xrightmargin=10pt,
+	tabsize=2,  % Decrease the tab size (default is 8)
+	breaklines=true, % Enable line wrapping
+}
 

@@ -1,0 +1,48 @@
+%------------------------------------------------------------%
+% TABLE OF CONTENTS
+%------------------------------------------------------------%
+
+\setcounter{secnumdepth}{4}          % Set depth of section numbering
+\setcounter{tocdepth}{3}             % Set depth of sections displayed in TOC
+
+% Define custom sectioning for TOC
+\newcommand{\setSectioning}{
+    \RedeclareSectionCommand[
+        tocnumwidth=4em,              % Width reserved for the section number
+        indent=0pt,
+        beforeskip=2ex,               % Adjust spacing before sections
+        afterskip=1ex,
+        tocindent=1.5em
+    ]{section}
+    \RedeclareSectionCommand[
+        tocnumwidth=4em,
+        indent=0pt,
+        beforeskip=2ex,
+        afterskip=0.1ex,
+        tocindent=1.5em
+    ]{subsection}
+    \RedeclareSectionCommand[
+        tocnumwidth=4em,
+        indent=0pt,
+        beforeskip=2ex,
+        afterskip=0.1ex,
+        tocindent=1.5em
+    ]{subsubsection}
+    \RedeclareSectionCommand[
+        tocnumwidth=4em,
+        indent=0pt,
+        beforeskip=2ex,
+        afterskip=0.1ex,
+        tocindent=1.5em
+    ]{paragraph}
+    \RedeclareSectionCommand[
+        tocnumwidth=4em,
+        indent=0pt,
+        beforeskip=2ex,
+        afterskip=0.1ex,
+        tocindent=1.5em
+    ]{subparagraph}
+}
+
+% Adjust TOC for page numbers
+\DeclareTOCStyleEntry[pagenumberwidth=4em]{tocline}{chapter}
