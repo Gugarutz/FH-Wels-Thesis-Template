@@ -2,31 +2,38 @@
 \usepackage{mathtools}  % Extension package to amsmath incl. fixes for bugs inn amsmath, loads 'amsmath'
 \usepackage{amssymb}    % Mathematical symbols from American Math Society
 \usepackage{thmtools}   % extension package to amsthm, loads 'amsthm'
-%\usepackage{newtxmath}	% nicer math font that enables \mathscr
+
 
 \usepackage{icomma}		% disable spacing when using commas as decimal seperator
 
+%------------------------------------------------------------%
+% Math Fonts
+%------------------------------------------------------------%
+
+\usepackage{dsfont}
+%\usepackage{newtxmath}	% nicer math font that enables \mathscr
 
 %------------------------------------------------------------%
-% avoid conflict siunitx and physics
+% Avoid conflict siunitx and physics (both define \qty)
 %------------------------------------------------------------%
-	% Load physics first and rename its \qty
 	\usepackage{physics}
-		\let\set\qty  % Rename physics' \qty to \set
-%		\let\qty\relax  % Remove physics' \qty to avoid conflicts
-	% Load siunitx (which will define \qty)
+    \NewCommandCopy\set\qty
 	\usepackage{siunitx}
 
+% defines \set with the physics definition
+    \AtBeginDocument{\RenewCommandCopy\set\qty}
+% defines \qty as \SI (they are identical within siunitx)
+    \AtBeginDocument{\RenewCommandCopy\qty\SI}
 
-%    \usepackage{silence}             % package to filter warnings
-%    \WarningFilter{latex}{omitting definition of \string\qty} % silence that warning
-
-
-
-
+% silences the warning that \qty is overwritten see:
+% https://tex.stackexchange.com/questions/681700/silencing-siunitx-and-physics-package-qty-warning
+    \ExplSyntaxOn
+    \msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+    \ExplSyntaxOff
 
 %------------------------------------------------------------%
 % CUSTOM MATH COMMANDS
 %------------------------------------------------------------%
 
 \renewcommand{\diffd}{\mathrm{d\!I}} % replace normal differential d from physics with Schiefermayr d
+\renewcommand{\I}{\mathds{I}}
