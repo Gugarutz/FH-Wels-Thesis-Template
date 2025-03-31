@@ -12,10 +12,10 @@
 % SETTINGS AND PACKAGES
 %------------------------------------------------------------%
     \input{preamble/layout}
-    \input{preamble/typesetting}% Typography handling 
+    \input{preamble/typesetting}% Typography handling
     \input{preamble/toc}		% Table of Contents
     \input{preamble/lists}		% Lists (enumerate, itemize, outline)
-    \input{preamble/math}		% TODO: 
+    \input{preamble/math}		%
     \input{preamble/graphics} 	% Graphics, colour, tables
     \graphicspath{{graphics/},{images/}} % TODO: [USER] Add relevant paths
 
@@ -42,7 +42,7 @@
 
     \addbibresource{bibliography.bib}   % File(s) with your sources
     \renewcommand{\bibfont}{\small}  % Adjust size here
-    
+
     \counterwithin{figure}{chapter}     % Set figure counter to include chapter
     \counterwithin{table}{chapter}      % Set table counter to include chapter
     \counterwithin{equation}{chapter}   % Set equation counter to include chapter
@@ -50,14 +50,16 @@
 %------------------------------------------------------------%
 % FRONT PAGE
 %------------------------------------------------------------%
-    \input{preamble/titlepage-fields}
-    \input{preamble/titlepage-data} % TODO: [USER] Fill this out
-    \input{preamble/titlepage}
-    \input{preamble/declarationDE}
-    \input{preamble/declarationEN}  % TODO: [USER] Adjust preamble/signature settings
+    \input{preamble/titlepage-fields}   % defines fields for user data
+    \input{preamble/titlepage-data}     % TODO: [USER] Fill this out
+    \input{preamble/titlepage}          % sets up the titlepage
+    \input{preamble/declarationDE}      % declaration in 2 languages
+    \input{preamble/declarationEN}
+        % TODO: [USER] Adjust {/preamble/signature} settings to en/disable signature
 
 %------------------------------------------------------------%
 % FOR TESTING
+%------------------------------------------------------------%
     \usepackage{showframe}
     \usepackage{blindtext}
 
@@ -68,10 +70,12 @@
 \begin{document}
     \selectlanguage{english} % Set language -> naustrian or ngerman for new austrian/german
 
-    %------------------------------------------------------------%
-    % FRONTMATTER
-        \frontmatter % Everything before the content of the thesis starts
-        \pagenumbering{Roman} % Uppercase Roman numerals, only frontmatter
+%------------------------------------------------------------%
+% FRONTMATTER
+%------------------------------------------------------------%
+    % FRONTMATTER SETTINGS
+        \frontmatter            % Everything before the content of the thesis starts
+        \pagenumbering{Roman}   % Uppercase Roman numerals, only frontmatter
 
     % SELECT TITLEPAGE LANGUAGE
         \titlepageEN
@@ -93,8 +97,9 @@
         \setSectioning % Sets indents and separation for TOC
         \tableofcontents
 
-    %------------------------------------------------------------%
-    % MAINMATTER (CONTENT)
+%------------------------------------------------------------%
+% MAINMATTER (CONTENT)
+%------------------------------------------------------------%
         \mainmatter % Main part of the thesis, from the introduction to the conclusion
 
     % INTRODUCTION
@@ -129,23 +134,31 @@
         \cite{OpenAI:2023}
         \cite{Schulz:NormPraxis}
 
-    %------------------------------------------------------------%
-    % BACKMATTER (OPTIONAL)
+%------------------------------------------------------------%
+% BACKMATTER
+%------------------------------------------------------------%
         % \backmatter % Disables chapter numbering
-        
-        \printbibliography
-        
-        \begingroup \small % Decreases the fontsize inside group
-	        \listoffigures
-	        \listoftables
-        \endgroup
-        
 
-    %------------------------------------------------------------%
-    % APPENDICES
+        \markright{\empty}
+
+        \printbibliography
+            \blindtext[2] % todo for testing
+
+        \begingroup
+            \small % Decreases the fontsize inside group
+	        \listoffigures
+                \blindtext[6] % todo for testing
+	        \listoftables
+                \blindtext[6] % todo for testing
+        \endgroup
+
+
+%------------------------------------------------------------%
+% APPENDICES
+%------------------------------------------------------------%
         \appendix % Changes chapter numbering to Alphabetic
         \include{appendices/demo-pdf}
         \include{appendices/demo-code}
 
-    %------------------------------------------------------------%
+%------------------------------------------------------------%
 \end{document}
