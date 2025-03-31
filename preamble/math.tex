@@ -10,8 +10,9 @@
 % Math Fonts
 %------------------------------------------------------------%
 
-\usepackage{dsfont}
-%\usepackage{newtxmath}	% nicer math font that enables \mathscr
+\usepackage{dsfont}     % \mathds
+\usepackage{newtxmath}	% nicer math font that enables \mathscr
+
 
 %------------------------------------------------------------%
 % Avoid conflict siunitx and physics (both define \qty)
@@ -35,5 +36,8 @@
 % CUSTOM MATH COMMANDS
 %------------------------------------------------------------%
 
+% changes to existing commands
 \renewcommand{\diffd}{\mathrm{d\!I}} % replace normal differential d from physics with Schiefermayr d
-\renewcommand{\I}{\mathds{I}}
+
+
+\newcommand{\I}{\ensuremath{\mathds{I}}}
