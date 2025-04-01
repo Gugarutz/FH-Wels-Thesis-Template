@@ -1,0 +1,50 @@
+
+\section{Using PGF for tables}
+\label{sec:pgf-table}
+
+PGF (Portable Graphics Format) and its higher-level interface TikZ can be used to create tables in LaTeX. However, PGF/TikZ is primarily designed for graphics and diagrams, so it's not the most common method for making tables.
+
+The \verb|pgfplotstable| packages makes it possible to create tables with PGF. It uses CSV syntax and does not understand strings (letters and words) by default, keep that in mind.
+
+It is not meant to be used for short tables, but more for CSV files and large amount of data.
+
+\begin{table}
+    \centering\caption{examples using PGF}
+    \pgfplotstabletypeset[
+    col sep=comma, % Use comma as column separator
+    header=true,   % Display the first row as a header
+    columns/Name/.style={string type}, % Treat the "Name" column as text
+    ]{Name, Age, Score
+        Alice, 23, 88
+        Bob, 25, 92
+        Charlie, 22, 85
+    }
+    \hskip 1cm
+    \pgfplotstabletypeset[
+    col sep=comma, % Use comma as column separator
+    header=true,   % Display header row
+    columns/Name/.style={string type}, % Treat "Name" column as text
+    every head row/.style={before row=\toprule, after row=\hline\hline}, % Top and mid rules
+    every last row/.style={after row=\bottomrule}, % Bottom rule
+    columns={Name,Age,Score}, % Specify column order
+    every row no 2/.style={before row=\midrule} % Insert midrule before 3rd row
+    ]{Name, Age, Score
+        Alice, 23, 88
+        Bob, 25, 92
+        Charlie, 22, 85
+    }
+    \hskip 1cm
+    \pgfplotstabletypeset[
+    col sep=comma,
+    header=true,
+    columns/Name/.style={string type, column type=|l|}, % Vertical line after "Name"
+    columns/Age/.style={column type=c|}, % Vertical line after "Age"
+    columns/Score/.style={column type=r|}, % No vertical line after "Score"
+    every head row/.style={before row=\toprule, after row=\midrule},
+    every last row/.style={after row=\bottomrule}
+    ]{Name, Age, Score
+        Alice, 23, 88
+        Bob, 25, 92
+        Charlie, 22, 85
+    }
+\end{table}
