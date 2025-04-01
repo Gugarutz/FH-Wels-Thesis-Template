@@ -8,115 +8,115 @@
 
 \subsection{Physics package}
 
-The \verb|physics| package defines \verb|\qty|. However this is already used by \texttt{siunitx}. Therefore this template redefines \verb|\qty| to set \verb|\set|. I can only be used in a math environment.
+    The \verb|physics| package defines \verb|\qty|. However this is already used by \texttt{siunitx}. Therefore this template redefines \verb|\qty| to set \verb|\set|. I can only be used in a math environment.
 
 
-\verb|\set{10}| produces: $\set{10}$
+    \verb|\set{10}| produces: $\set{10}$
 
-\verb|\set[\dfrac{13}{14}]|     produces:$\set[\dfrac{13}{14}]$
+    \verb|\set[\dfrac{13}{14}]|     produces:$\set[\dfrac{13}{14}]$
 
-$\set10 $
+    $\set10 $
 
-\subsubsection{Mathematical fonts}
+    \subsubsection{Mathematical fonts}
 
-mathds $\mathds{R, I, N, 1}$
+    mathds $\mathds{R, I, N, 1}$
 
-mathscr $\mathscr{R, I, N, 1, 2, e, j, i, a}$
+    mathscr $\mathscr{R, I, N, 1, 2, e, j, i, a}$
 
-mathcal $\mathcal{R, I, N, 1, 2, e,h, j, i, a}$
+    mathcal $\mathcal{R, I, N, 1, 2, e,h, j, i, a}$
 
-mathfrak $\mathfrak{R, I, N, 1, 2, e, j, i, a}$
+    mathfrak $\mathfrak{R, I, N, 1, 2, e, j, i, a}$
 
-mathsf $\mathsf{R, I, N, 1, 2, e, j, i, a}$
+    mathsf $\mathsf{R, I, N, 1, 2, e, j, i, a}$
 
 
-\subsubsection{Differentials}
+    \subsubsection{Differentials}
 
-The \texttt{physics} packages adds various helpful commands for easy and quick setting of differentials.
+    The \texttt{physics} packages adds various helpful commands for easy and quick setting of differentials.
 
-The normal upright d used in by \texttt{physics} was replaced by $\mathrm{d\!I}$ which is used by professor Schiefermayr in his scripts. You can disable this in the \texttt{preamble/math.tex} under the custom math commands.
+    The normal upright d used in by \texttt{physics} was replaced by $\mathrm{d\!I}$ which is used by professor Schiefermayr in his scripts. You can disable this in the \texttt{preamble/math.tex} under the custom math commands.
 
- $\dd[3]{x}$
+     $\dd[3]{x}$
 
 \subsection{Greek Symbols in Text}
 
-With the \verb|textgreek| package, you can use commands like \verb|\textalpha| (\textalpha) to create Greek characters inside normal text without needing to invoke math mode.
+    With the \verb|textgreek| package, you can use commands like \verb|\textalpha| (\textalpha) to create Greek characters inside normal text without needing to invoke math mode.
 
 \subsection{Variables and Constants}
 
-It is common practice to write variables in \textit{italics} and constants upright. For example, $e$ might be used for eccentricity, while $\mathrm{e}$ is used for Euler's constant $(=\num{2.718281}\dots)$.
+    It is common practice to write variables in \textit{italics} and constants upright. For example, $e$ might be used for eccentricity, while $\mathrm{e}$ is used for Euler's constant $(=\num{2.718281}\dots)$.
 
-% TODO: Add a table summarizing all math shortcuts.
+    % TODO: Add a table summarizing all math shortcuts.
 
 \subsection{The \texttt{siunitx} Package}
 
-% The `siunitx` package ensures correct typesetting of numbers and units.
-This package is useful for automatic typesetting of numbers and units. You will need to choose appropriate settings in \verb|\unitsetup{...}| in the \verb|main.tex| preamble. % TODO: Specify the exact settings path.
+    % The `siunitx` package ensures correct typesetting of numbers and units.
+    This package is useful for automatic typesetting of numbers and units. You will need to choose appropriate settings in \verb|\unitsetup{...}| in the \verb|main.tex| preamble. % TODO: Specify the exact settings path.
 
-\paragraph*{Only Units}
+    \paragraph*{Only Units}
 
-% Use `\unit` for proper spacing and formatting of standalone units.
-The \verb|\unit| command ensures proper spacing and styling for standalone units:
-\begin{itemize}
-    \item \verb|\unit{\kilogram\metre\per\second}| produces \unit{\kilogram\metre\per\second}.
-    \item \verb|\unit{\kg\per\m\per\s\squared}| produces \unit{\kg\per\m\per\s\squared}.
-    \item \verb|\unit{\degreeCelsius}| correctly handles special symbols: \unit{\degreeCelsius}.
-    \item \verb|\unit{\ohm}| ensures correct typesetting of units like ohms: \unit{\ohm}.
-\end{itemize}
+    % Use `\unit` for proper spacing and formatting of standalone units.
+    The \verb|\unit| command ensures proper spacing and styling for standalone units:
+    \begin{itemize}
+        \item \verb|\unit{\kilogram\metre\per\second}| produces \unit{\kilogram\metre\per\second}.
+        \item \verb|\unit{\kg\per\m\per\s\squared}| produces \unit{\kg\per\m\per\s\squared}.
+        \item \verb|\unit{\degreeCelsius}| correctly handles special symbols: \unit{\degreeCelsius}.
+        \item \verb|\unit{\ohm}| ensures correct typesetting of units like ohms: \unit{\ohm}.
+    \end{itemize}
 
-\paragraph*{Only Numbers}
+    \paragraph*{Only Numbers}
 
-% Use `\num` to ensure consistent number formatting.
-The \verb|\num| command formats numbers consistently:
-\begin{itemize}
-    \item \verb|\num{12345.678}| formats large numbers: \num{12345.678}.
-    \item \verb|\num{6.022e23}| correctly formats scientific notation: \num{6.022e23}.
-    \item \verb|\num{000.000123}| removes unnecessary leading zeros: \num{000.000123}.
-\end{itemize}
+    % Use `\num` to ensure consistent number formatting.
+    The \verb|\num| command formats numbers consistently:
+    \begin{itemize}
+        \item \verb|\num{12345.678}| formats large numbers: \num{12345.678}.
+        \item \verb|\num{6.022e23}| correctly formats scientific notation: \num{6.022e23}.
+        \item \verb|\num{000.000123}| removes unnecessary leading zeros: \num{000.000123}.
+    \end{itemize}
 
-\paragraph*{Numbers and Units}
+    \paragraph*{Numbers and Units}
 
-% Use `\qty` to format numbers together with units.
-The \verb|\qty| command combines numbers and units seamlessly:
-\begin{itemize}
-    \item \verb|\qty{9.81}{\metre\per\second\squared}| represents acceleration: \qty{9.81}{\metre\per\second\squared}.
-    \item \verb|\qty{1.5}{\mega\hertz}| correctly applies SI prefixes: \qty{1.5}{\mega\hertz}.
-    \item \verb|\qty{500}{\milli\liter}| handles subunits properly: \qty{500}{\milli\liter}.
-\end{itemize}
+    % Use `\qty` to format numbers together with units.
+    The \verb|\qty| command combines numbers and units seamlessly:
+    \begin{itemize}
+        \item \verb|\qty{9.81}{\metre\per\second\squared}| represents acceleration: \qty{9.81}{\metre\per\second\squared}.
+        \item \verb|\qty{1.5}{\mega\hertz}| correctly applies SI prefixes: \qty{1.5}{\mega\hertz}.
+        \item \verb|\qty{500}{\milli\liter}| handles subunits properly: \qty{500}{\milli\liter}.
+    \end{itemize}
 
-\paragraph*{Uncertainty}
+    \paragraph*{Uncertainty}
 
-% Uncertainty notation in `siunitx`.
-\begin{itemize}
-    \item \verb|\num{1.23(45)}| shows uncertainty in parentheses: \num{1.23(45)}.
-    \item \verb|\qty{1.23(45)}{\metre}| combines uncertainty with units: \qty{1.23(45)}{\metre}.
-    \item \verb|\num{1.23(4)e5}| formats numbers with uncertainty in scientific notation: \num{1.23(4)e5}.
-\end{itemize}
-To display uncertainty separately, use:
-\begin{itemize}
-    \item \verb|\qty[separate-uncertainty=false]{1.23(0.05)}{\metre}|, \\
-    which produces \qty[separate-uncertainty=false]{1.23(0.05)}{\metre}.
-\end{itemize}
+    % Uncertainty notation in `siunitx`.
+    \begin{itemize}
+        \item \verb|\num{1.23(45)}| shows uncertainty in parentheses: \num{1.23(45)}.
+        \item \verb|\qty{1.23(45)}{\metre}| combines uncertainty with units: \qty{1.23(45)}{\metre}.
+        \item \verb|\num{1.23(4)e5}| formats numbers with uncertainty in scientific notation: \num{1.23(4)e5}.
+    \end{itemize}
+    To display uncertainty separately, use:
+    \begin{itemize}
+        \item \verb|\qty[separate-uncertainty=false]{1.23(0.05)}{\metre}|, \\
+        which produces \qty[separate-uncertainty=false]{1.23(0.05)}{\metre}.
+    \end{itemize}
 
 
-\paragraph*{Display Options}
+    \paragraph*{Display Options}
 
-% Customize `siunitx` display settings.
-Different display options for units and numeric notation can be configured in \\
- \verb|\unitsetup{...}| globally or locally.
+    % Customize `siunitx` display settings.
+    Different display options for units and numeric notation can be configured in \\
+     \verb|\unitsetup{...}| globally or locally.
 
-The \verb|\num| command can be forced into scientific notation using the\\
-\verb|scientific-notation=true| option:
+    The \verb|\num| command can be forced into scientific notation using the\\
+    \verb|scientific-notation=true| option:
 
-\begin{itemize}
-    \item \verb|\num[exponent-mode=scientific]{000.000123}| produces \num[exponent-mode=scientific]{000.000123}.
-\end{itemize}
+    \begin{itemize}
+        \item \verb|\num[exponent-mode=scientific]{000.000123}| produces \num[exponent-mode=scientific]{000.000123}.
+    \end{itemize}
 
-The \verb|\unit| and \verb|\qty| command can format units as fractions:
-\begin{itemize}
-    \item \verb|\unit[per-mode=fraction]{\kg\per\m\per\s\squared}| produces \unit[per-mode=fraction]{\kg\per\m\per\s\squared}.
-    \item \verb|\unit[per-mode=symbol]{\kg\per\m\per\s\squared}| produces \unit[per-mode=symbol]{\kg\per\m\per\s\squared}.
-\end{itemize}
+    The \verb|\unit| and \verb|\qty| command can format units as fractions:
+    \begin{itemize}
+        \item \verb|\unit[per-mode=fraction]{\kg\per\m\per\s\squared}| produces \unit[per-mode=fraction]{\kg\per\m\per\s\squared}.
+        \item \verb|\unit[per-mode=symbol]{\kg\per\m\per\s\squared}| produces \unit[per-mode=symbol]{\kg\per\m\per\s\squared}.
+    \end{itemize}
 
 
 
