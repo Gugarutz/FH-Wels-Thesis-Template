@@ -1,6 +1,7 @@
 % !TeX root = main.tex
 % !TeX spellcheck = en_GB
 \documentclass[
+    english,		% TODO: [USER] select language here for cleveref to work
     oneside,
     bibliography=totocnumbered, % Include bibliography in TOC with number
     listof=totocnumbered,       % Include List of Tables/Figures in TOC with number
@@ -12,18 +13,22 @@
 % SETTINGS AND PACKAGES
 %------------------------------------------------------------%
     \input{preamble/layout}
-    \input{preamble/typesetting}% Typography handling
-    \input{preamble/toc}		% Table of Contents
-    \input{preamble/lists}		% Lists (enumerate, itemize, outline)
-    \input{preamble/math}		%
-    \input{preamble/graphics} 	% Graphics, colour, tables
-    \graphicspath{{graphics/},{images/}} % TODO: [USER] Add relevant paths
+    \input{preamble/typesetting}	% Typography handling
+    \input{preamble/math}			%
+    \input{preamble/graphics} 		% Graphics, colour, tables
+    \input{preamble/cite-reference} % Caption, Referencing, Citing
+    \input{preamble/toc}		   	% Table of Contents
+    \input{preamble/lists}	      	% Lists (enumerate, itemize, outline)
 
 
-% MODULES (YOU CAN DISABLE THESE)
+% MODULES (YOU CAN DISABLE THESE, also disable demo chapters below)
     \input{preamble/code} % Display code
     \input{preamble/data} % Reading data
     \input{preamble/pgf}  % Making diagrams & plots
+
+%------------------------------------------------------------%
+% SETTINGS FOR THE USER
+%------------------------------------------------------------%
 
 % CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
     \sisetup{ % TODO: [USER] Choose locale and settings
@@ -33,19 +38,12 @@
         % exponent-product=\cdot    % Use \times for x multiplier
     }
 
-% CITING AND REFERENCING
-    \usepackage[
-        backend=biber,
-        maxcitenames=3,
-        sorting=none
-    ]{biblatex}
+% CHOOSE THE FILE PATH FOR GRAPHICS
+    \graphicspath{{graphics/},{images/}} % TODO: [USER] Add relevant paths
 
+% CHOOSE THE FILE PATH FOR BIBLIOGRAPHY
     \addbibresource{bibliography.bib}   % File(s) with your sources
-    \renewcommand{\bibfont}{\small}  % Adjust size here
 
-    \counterwithin{figure}{chapter}     % Set figure counter to include chapter
-    \counterwithin{table}{chapter}      % Set table counter to include chapter
-    \counterwithin{equation}{chapter}   % Set equation counter to include chapter
 
 %------------------------------------------------------------%
 % FRONT PAGE
@@ -58,9 +56,9 @@
         % TODO: [USER] Adjust {/preamble/signature} settings to en/disable signature
 
 %------------------------------------------------------------%
-% FOR TESTING
+% TESTING
 %------------------------------------------------------------%
-    \usepackage{showframe}
+%    \usepackage{showframe}
     \usepackage{blindtext}
 
 %==============================================================================================%
@@ -68,7 +66,7 @@
 %==============================================================================================%
 
 \begin{document}
-    \selectlanguage{english} % Set language -> naustrian or ngerman for new austrian/german
+    \selectlanguage{ngerman} % Set language -> naustrian or ngerman for new austrian/german
 
 %------------------------------------------------------------%
 % FRONTMATTER
@@ -79,7 +77,7 @@
 
     % SELECT TITLEPAGE LANGUAGE
         \titlepageEN
-        % \titlepageDE
+        %\titlepageDE
 
     % PREFACE, ACKNOWLEDGEMENTS, ETC.
         \include{frontmatter/preface}
@@ -113,6 +111,8 @@
         \include{mainmatter/ch-demo/demo-math}
         \include{mainmatter/ch-demo/demo-item}
 
+        \include{mainmatter/ch-module/demo-pgf}
+
     % CHAPTER I - THEORY
         \include{mainmatter/ch1/ch1}
         % \include{mainmatter/ch1/sec1}
@@ -140,16 +140,15 @@
         % \backmatter % Disables chapter numbering
 
         \markright{\empty}
-
         \printbibliography
-            \blindtext[2] % todo for testing
+            \blindtext[2] %todo for testing
 
         \begingroup
             \small % Decreases the fontsize inside group
 	        \listoffigures
-                \blindtext[6] % todo for testing
+                \blindtext[6] %todo for testing
 	        \listoftables
-                \blindtext[6] % todo for testing
+                \blindtext[6] %todo for testing
         \endgroup
 
 
