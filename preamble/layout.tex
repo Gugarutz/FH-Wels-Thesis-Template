@@ -27,9 +27,6 @@
 \ohead[\empty]{\rightmark}    % Rightmark (section title) on the right header
 \ofoot[\pagemark]{\pagemark}  % Page number on the bottom right
 
-\renewcommand*{\chapterpagestyle}{empty} % Removes headers on chapter pages
-
-
 %------------------------------------------------------------%
 % Page spacing and margin setup
 %------------------------------------------------------------%
@@ -49,8 +46,13 @@
 % \baselinestretch: dynamically depends on the current line spacing setting
 \setlength{\footskip}   {\baselinestretch\baselineskip}
 \setlength{\footheight} {\baselinestretch\baselineskip}
-\setlength{\headsep}   {\baselinestretch\baselineskip}
+\setlength{\headsep}    {\baselinestretch\baselineskip}
 \setlength{\headheight} {\baselinestretch\baselineskip}
+
+
+
+% Remove header and reclaim space
+\RedeclareSectionCommand[afterskip=0pt]{chapter}
 
 %------------------------------------------------------------%
 % Absolute text positioning
