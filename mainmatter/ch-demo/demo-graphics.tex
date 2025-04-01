@@ -62,7 +62,7 @@ You will still need to separate the images manually, but you can reference and c
     \label{fig:ExampleFigure-4}
 \end{figure}
 
-The total amount of width of subfigures or when using \texttt{includegraphics} multiple times, should not be or exceed one. Use 0.49 for both left and right images for example. The above example uses 0.4 for \ref{fig:subfig1} and 0.55 for \ref{fig:subfig2}.
+The total amount of width of subfigures or when using \texttt{includegraphics} multiple times, should not be or exceed one. Use \verb|width=0.49\linewidth| for both left and right images for example. The above example uses 0.4 as the multiplier for \cref{fig:subfig1} and 0.55 for \Cref{fig:subfig2}.
 
 %-------------------------------------------------------------------------
 \subsection{Usage of the overpic package}
@@ -105,10 +105,10 @@ The spacing of the image has been adjusted to move it further upwards.
 \subsection{On using figures}
 Consider the following points when using figures:
 \begin{itemize}
-    \item Figures must be referenced within or linked to the text; otherwise they are superfluous. To do this, use the command \verb|\ref{}|
-    [see Fig.~\ref{fig:ExampleFigure-1}]\\
+    \item Figures must be referenced within or linked to the text; otherwise they are superfluous. To do this, use the command \verb|\cref{}|
+    [see \cref{fig:ExampleFigure-1}]\\
     An additional page reference can be added with the command \verb|\pageref{}| \newline
-    [see Fig.~\ref{fig:ExampleFigure-1} on page \pageref{fig:ExampleFigure-1}]
+    [see \cref{fig:ExampleFigure-1} on page \pageref{fig:ExampleFigure-1}]
     \item Not every figure needs to be in the text. Analyses, tables, backup information, etc.~can be collected in the appendix. However, the text should reference them.
     \item If necessary, add a legend in the figures and the necessary references.
 \end{itemize}
