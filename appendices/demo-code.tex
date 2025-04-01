@@ -1,16 +1,115 @@
 \chapter{Source Code}
 
-Please be aware that the indentations in this code will be visible in the compiled PDF.
+Please be aware that the indentations in this code will be visible in the compiled PDF. Many styles are predefined for you, change them in \texttt{preamble/code.tex} if needed.
 
-\section{Python code example}
+\section{Markup and data languages}
+\subsection{\LaTeX{} code example}
+\begin{lstlisting}[style=latexstyle]
+\documentclass[
+    oneside,
+    bibliography=totocnumbered, % Include bibliography in TOC with number
+    listof=totocnumbered,       % Include List of Tables/Figures in TOC with number
+    numbers=noenddot            % Changes heading numbering from 1.1. to 1.1
+    % appendixprefix = true     % Makes Appendix A... First appendix chapter, disable for one appendix
+]{scrbook}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+    Hello, world!
 
-\begin{lstlisting}[style=pythonstyle]
-def hello():
-print("Hello, world!")
+    \begin{equation}
+        \pdv{\psi}{t}
+        =
+        \frac{\partial \psi}{\partial t}
+    \end{equation}
+
+\end{document}
 \end{lstlisting}
-	
-	
-\section{C code example}
+
+
+
+\subsection{YAML code example}
+You can also directly input the code of a file into the \verb|lstlisting| command.
+
+\lstinputlisting[style=yamlstyle]{code/docker-compose.yaml}
+
+\section{Programming languages}
+\subsection{Python code example}
+\begin{lstlisting}[style=pythonstyle]
+def fibonacci(n):
+    a, b = 0, 1
+    while a < n:
+        print(a, end=" ")
+        a, b = b, a + b
+    print()
+
+# Example usage
+fibonacci(50)
+
+\end{lstlisting}
+
+\subsection{Matlab code example}
+\begin{lstlisting}[style=matlabstyle]
+function fibonacci(n)
+    a = 0;
+    b = 1;
+    while a < n
+        fprintf('%d ', a);
+        temp = a + b;
+        a = b;
+        b = temp;
+    end
+    fprintf('\n');
+end
+
+% Example usage
+fibonacci(50)
+\end{lstlisting}
+
+
+\subsection{Wolfram Mathematica code example}
+\begin{lstlisting}[style=wolframstyle]
+FibonacciSequence[n_] := Module[{a = 0, b = 1, temp},
+    While[a < n,
+        Print[a, " "];
+        temp = a + b;
+        a = b;
+        b = temp;
+    ]
+]
+
+(* Example usage *)
+FibonacciSequence[50]
+
+\end{lstlisting}
+
+
+\subsection{C code example}
+\begin{lstlisting}[style=cstyle]
+#include <stdio.h>
+
+void fibonacci(int n) {
+    int a = 0, b = 1, temp;
+    while (a < n) {
+        printf("%d ", a);
+        temp = a + b;
+        a = b;
+        b = temp;
+    }
+    printf("\n");
+}
+
+int main() {
+    fibonacci(50);
+    return 0;
+}
+\end{lstlisting}
+
+
+
+
+%---------------------------------------------------------------------------%
+\clearpage
+\subsection{Longer code example (C)}
 
 The following is the main.cpp from the TeXstudio GitHub repository. Direct Link:
 
@@ -70,8 +169,8 @@ class TexstudioApp : public QtSingleApplication
 			return false;
 		}
 	}*/
-	
-	
+
+
 	protected:
 	bool event(QEvent *event);
 };
@@ -94,14 +193,14 @@ void TexstudioApp::init(QStringList &cmdLine)
 	QSplashScreen *splash = new QSplashScreen(pixmap);
 	splash->show();
 	processEvents();
-	
+
 	mw = new Texstudio(nullptr, Qt::WindowFlags(), splash);
 	connect(this, SIGNAL(lastWindowClosed()), this, SLOT(quit()));
 	splash->finish(mw);
 	delete splash;
-	
+
 	initialized = true;
-	
+
 	if (!delayedFileLoad.isEmpty()) cmdLine << delayedFileLoad;
 	mw->executeCommandLine(cmdLine, true);
 	if(!cmdLine.contains("--auto-tests")){
@@ -141,7 +240,7 @@ QStringList parseArguments(const QStringList &args, bool &outStartAlways)
 	QStringList cmdLine;
 	for (int i = 1; i < args.count(); ++i) {
 		QString cmdArgument =  args[i];
-		
+
 		if (cmdArgument.startsWith('-')) {
 			// various commands
 			if (cmdArgument == "--start-always")
@@ -200,12 +299,12 @@ bool handleCommandLineOnly(const QStringList &cmdLine) {
 		;
 		return true;
 	}
-	
+
 	if (cmdLine.contains("--version")) {
 		QTextStream(stdout) << "TeXstudio " << TXSVERSION << " (" << TEXSTUDIO_GIT_REVISION << ")\n";
 		return true;
 	}
-	
+
 	return false;
 }
 
@@ -223,11 +322,11 @@ int main(int argc, char **argv)
 	TexstudioApp a(appId, argc, argv);
 	bool startAlways = false;
 	QStringList cmdLine = parseArguments(QCoreApplication::arguments(), startAlways);
-	
+
 	if (handleCommandLineOnly(cmdLine)) {
 		return 0;
 	}
-	
+
 	if (!startAlways) {
 		if (a.isRunning()) {
 			#ifdef Q_OS_WIN32
@@ -238,16 +337,16 @@ int main(int argc, char **argv)
 			return 0;
 		}
 	}
-	
+
 	a.setApplicationName( TEXSTUDIO );
 	#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)) && defined(Q_OS_LINUX)
 	a.setDesktopFileName("texstudio");
 	#endif
 	a.init(cmdLine); // Initialization takes place only if there is no other instance running.
-	
+
 	QObject::connect(&a, SIGNAL(messageReceived(const QString&)),
 	a.mw, SLOT(onOtherInstanceMessage(const QString&)));
-	
+
 	try {
 		int execResult = a.exec();
 		#ifdef DEBUG_LOGGER
@@ -264,29 +363,3 @@ int main(int argc, char **argv)
 	}
 }
 \end{lstlisting}
-	
-
-
-\section{\LaTeX{} code example}
-
-
-\begin{lstlisting}[style=latexstyle]
-\documentclass[
-	oneside,
-	bibliography=totocnumbered, % Include bibliography in TOC with number
-	listof=totocnumbered,       % Include List of Tables/Figures in TOC with number
-	numbers=noenddot            % Changes heading numbering from 1.1. to 1.1
-	% appendixprefix = true     % Makes Appendix A... First appendix chapter, disable for one appendix
-]{scrbook}
-\begin{document}
-	Hello, world!
-	
-	\begin{equation}
-		\pdv{\psi}{t}
-		=
-		\frac{\partial \psi}{\partial t}
-	\end{equation}
-	
-\end{document}
-\end{lstlisting}
-	
