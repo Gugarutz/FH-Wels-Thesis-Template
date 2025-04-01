@@ -2,14 +2,14 @@
 % KOMA
 %------------------------------------------------------------%
 
-% Prerequisite settings & 
+% Prerequisite settings &
 \usepackage{scrlayer-scrpage}
 \KOMAoptions{
 	fontsize     = 12pt,
 	sfdefaults   = false,
 	headsepline  = true,
 	autooneside  = true,
-	manualmark
+	manualmark,
 }%
 
 %------------------------------------------------------------%
@@ -22,7 +22,7 @@
 % Modify \sectionmark to include the section title in \rightmark (without number for \addsec)
 \renewcommand{\sectionmark}[1]{\markright{\ifnum\value{section}=0 #1\else\thesection~ #1\fi}}
 
-\clearpairofpagestyles       % Clear default settings
+\clearpairofpagestyles        % Clear default settings (blank slate for new settings)
 \ihead[\empty]{\leftmark}     % Leftmark (chapter title) on the left header
 \ohead[\empty]{\rightmark}    % Rightmark (section title) on the right header
 \ofoot[\pagemark]{\pagemark}  % Page number on the bottom right
@@ -45,8 +45,14 @@
 % Define head + foot sizes
 % \baselinestretch: dynamically depends on the current line spacing setting
 \setlength{\footskip}   {\baselinestretch\baselineskip}
-\setlength{\headheight} {\baselinestretch\baselineskip}
 \setlength{\footheight} {\baselinestretch\baselineskip}
+\setlength{\headsep}    {\baselinestretch\baselineskip}
+\setlength{\headheight} {\baselinestretch\baselineskip}
+
+
+
+% Remove header and reclaim space
+\RedeclareSectionCommand[afterskip=0pt]{chapter}
 
 %------------------------------------------------------------%
 % Absolute text positioning

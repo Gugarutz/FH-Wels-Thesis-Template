@@ -8,37 +8,41 @@
 % Define custom sectioning for TOC
 \newcommand{\setSectioning}{
     \RedeclareSectionCommand[
-        tocnumwidth=4em,              % Width reserved for the section number
+        afterskip=2ex,
+        beforeskip=0ex,
+    ]{chapter}
+    \RedeclareSectionCommand[
+        tocnumwidth=4em,
         indent=0pt,
-        beforeskip=2ex,               % Adjust spacing before sections
+        beforeskip=1.5ex,
         afterskip=1ex,
         tocindent=1.5em
     ]{section}
     \RedeclareSectionCommand[
         tocnumwidth=4em,
         indent=0pt,
-        beforeskip=2ex,
+        beforeskip=1.5ex,
         afterskip=0.1ex,
         tocindent=1.5em
     ]{subsection}
     \RedeclareSectionCommand[
         tocnumwidth=4em,
         indent=0pt,
-        beforeskip=2ex,
+        beforeskip=1.5ex,
         afterskip=0.1ex,
         tocindent=1.5em
     ]{subsubsection}
     \RedeclareSectionCommand[
         tocnumwidth=4em,
         indent=0pt,
-        beforeskip=2ex,
+        beforeskip=1.5ex,
         afterskip=0.1ex,
         tocindent=1.5em
     ]{paragraph}
     \RedeclareSectionCommand[
         tocnumwidth=4em,
         indent=0pt,
-        beforeskip=2ex,
+        beforeskip=1.5ex,
         afterskip=0.1ex,
         tocindent=1.5em
     ]{subparagraph}

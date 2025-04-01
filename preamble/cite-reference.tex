@@ -1,0 +1,67 @@
+%------------------------------------------------------------%
+% PACKAGES FOR REFERENCING
+%------------------------------------------------------------%
+
+    \usepackage{caption}    		% better captioning control
+    \usepackage{subcaption} 		% allows subfigures etc
+    \usepackage[hidelinks]{hyperref}% loads of option for pdf linking and bookmarks
+    \usepackage{hyperref-patches}	% fix compat with cleverref, caption etc
+    \usepackage{cleveref}
+
+
+    \usepackage[
+        backend=biber,
+        maxcitenames=3,
+        sorting=none
+    ]{biblatex}
+
+%------------------------------------------------------------%
+% BIBLIOGRAPHY SETTINS
+%------------------------------------------------------------%
+    \renewcommand{\bibfont}{\small}  % Adjust size here
+
+
+%------------------------------------------------------------%
+% CAPTION SETTINS
+%------------------------------------------------------------%
+% settings for caption package, use \captionsetup[float type]{options} for individual control
+    \captionsetup{
+        font=small,
+        labelfont=bf,
+        aboveskip=10pt,
+        belowskip=5pt,
+        margin=5mm,
+        justification=raggedright
+    }
+
+%------------------------------------------------------------%
+% CAPTION NUMBER
+%------------------------------------------------------------%
+    \counterwithin{figure}{chapter}     % Set figure counter to include chapter
+    \counterwithin{table}{chapter}      % Set table counter to include chapter
+    \counterwithin{equation}{chapter}   % Set equation counter to include chapter
+
+%------------------------------------------------------------%
+% CAPTION NAMES
+%------------------------------------------------------------%
+
+% Naming of Figures
+%    \addto\captionsngerman  {\renewcommand{\figurename}{Abb.}}
+%    \addto\captionsnaustrian{\renewcommand{\figurename}{Abb.}}
+%    \addto\captionsenglish  {\renewcommand{\figurename}{Fig.}}
+%% Naming of Tables
+%    \addto\captionsngerman  {\renewcommand{\tablename}{Tab.}}
+%    \addto\captionsnaustrian{\renewcommand{\tablename}{Tab.}}
+%    \addto\captionsenglish  {\renewcommand{\tablename}{Tab.}}
+% Naming of Equations
+
+%------------------------------------------------------------%
+% REFERENCES
+%------------------------------------------------------------%
+
+%\crefname{figure}	{fig.}{figs.} % Singular and plural
+%%\crefname{Figure}	{Fig.}{Figs.}
+%\crefname{table}	{tab.}{tabs.}
+%\crefname{Table}	{Tab.}{Tabs.}
+%\crefname{equation}	{eq.} {euqations}
+%%\crefname{Equation} {Eq.}

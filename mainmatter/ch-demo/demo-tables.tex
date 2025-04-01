@@ -71,7 +71,7 @@ The following table uses \texttt{tabularx}, a package for automatic column width
 \section{Longtable and importing data}
 
 
-The following uses a simple csv file.
+The following uses a simple csv file. See also \cref{sec:pgf-table}
 
 \DTLloaddb{data2}{data/sample_data.csv}
 \begin{table}[H]
@@ -95,13 +95,16 @@ For the next two tables the same csv file is used. It is located in \texttt{./da
 
 
 
-The table displayed in a specific format. The syntax for this is looks intimidating but is not that hard.
+The table displayed in a specific format. The syntax for this is looks intimidating but is not that hard. This is a reference to \cref{tab:multicsv}
 
 
 
 \DTLloaddb{data}{data/sales_data.csv}
-\begingroup\small\rowcolors{2}{gray!15}{white}
-\begin{longtable}{|l|*{4}{r|}}
+\begingroup
+    \small
+    \setlength{\tabcolsep}{3mm}
+    \rowcolors{2}{gray!15}{white}
+\begin{longtable}{l*{4}{r}}
     \caption{Longtable from a CSV file}\cr
     \hline
     \textbf{Date} & \textbf{Product} & \textbf{Units Sold} & \textbf{Price (€)} & \textbf{Total (€)} \\
@@ -114,7 +117,7 @@ The table displayed in a specific format. The syntax for this is looks intimidat
     \endhead
 
     \hline
-    \multicolumn{5}{|r|}{\textit{(Continued on next page)}} \\
+    \multicolumn{5}{r}{\textit{(Continued on next page)}} \\
     \hline
     \endfoot
 
@@ -126,5 +129,6 @@ The table displayed in a specific format. The syntax for this is looks intimidat
         \DTLiffirstrow{}{\\} % No extra line before the first row
         \datecol & \productcol & \quantitycol & \pricecol & \totalcol %
     }
+    \label{tab:multicsv}
 \end{longtable}
 \endgroup
