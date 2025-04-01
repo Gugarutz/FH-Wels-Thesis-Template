@@ -5,13 +5,10 @@
     \usepackage{graphicx}   		% Graphics package, easily include  images (see Insert Graphic Wizard)
     \usepackage[x11names]{xcolor}   % Sophistacated package for colours, with table option to use colors in tables
     \usepackage{float}				% more control for placing floats (tables, figures,...)
-    \usepackage{caption}    		% better captioning control
-    \usepackage{subcaption} 		% allows subfigures etc
     \usepackage{overpic}    		% allows drawing inside images
     \usepackage{wrapfig}    		% allows wrapping text around an image
     \usepackage{rotating}
     \usepackage{pdfpages}   		% allows inclusion of pdfs
-
 
 %------------------------------------------------------------%
 % TABLES
@@ -31,7 +28,7 @@
 % SETTINGS FOR TABLES
 %------------------------------------------------------------%
 	% cellheight increased
-	   \renewcommand{\arraystretch}{1.2}
+        \renewcommand{\arraystretch}{1.2}
 
 	% column spacing increased
     	\setlength{\tabcolsep}{1mm}
@@ -40,16 +37,7 @@
     	\newcommand{\headrule}{\specialrule{2pt}{0pt}{0pt}}
 
      % this is so the column align in texstudio recognises \midrule and the others
-        \renewcommand{\midrule}   {\specialrule{2pt}{0pt}{0pt}}
-        \renewcommand{\toprule}   {\specialrule{3pt}{0pt}{0pt}}
-        \renewcommand{\bottomrule}{\specialrule{3pt}{0pt}{0pt}}
+        \newcommand{\midruled}   {\specialrule{0.05 em}{0pt}{0pt}}
+        \newcommand{\topruled}   {\specialrule{0.08 em}{0pt}{0pt}}
+        \newcommand{\bottomruled}{\specialrule{0.08 em}{0pt}{0pt}}
 
-    % settings for caption package, use \captionsetup[float type]{options} for individual control
-    \captionsetup{
-        font=small,
-        labelfont=bf,
-        aboveskip=10pt,
-        belowskip=5pt,
-        margin=5mm,
-        justification=raggedright
-        }
