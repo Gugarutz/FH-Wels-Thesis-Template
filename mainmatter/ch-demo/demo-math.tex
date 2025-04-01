@@ -92,6 +92,12 @@ The \verb|\qty| command combines numbers and units seamlessly:
     \item \verb|\qty{1.23(45)}{\metre}| combines uncertainty with units: \qty{1.23(45)}{\metre}.
     \item \verb|\num{1.23(4)e5}| formats numbers with uncertainty in scientific notation: \num{1.23(4)e5}.
 \end{itemize}
+To display uncertainty separately, use:
+\begin{itemize}
+    \item \verb|\qty[separate-uncertainty=false]{1.23(0.05)}{\metre}|, \\
+    which produces \qty[separate-uncertainty=false]{1.23(0.05)}{\metre}.
+\end{itemize}
+
 
 \paragraph*{Display Options}
 
@@ -106,17 +112,12 @@ The \verb|\num| command can be forced into scientific notation using the\\
     \item \verb|\num[exponent-mode=scientific]{000.000123}| produces \num[exponent-mode=scientific]{000.000123}.
 \end{itemize}
 
-The \verb|\unit| command can format units as fractions:
+The \verb|\unit| and \verb|\qty| command can format units as fractions:
 \begin{itemize}
     \item \verb|\unit[per-mode=fraction]{\kg\per\m\per\s\squared}| produces \unit[per-mode=fraction]{\kg\per\m\per\s\squared}.
     \item \verb|\unit[per-mode=symbol]{\kg\per\m\per\s\squared}| produces \unit[per-mode=symbol]{\kg\per\m\per\s\squared}.
 \end{itemize}
 
-To display uncertainty separately, use:
-\begin{itemize}
-    \item \verb|\qty[separate-uncertainty=false]{1.23(0.05)}{\metre}|, \\
-        which produces \qty[separate-uncertainty=false]{1.23(0.05)}{\metre}.
-\end{itemize}
 
 
 
