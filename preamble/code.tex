@@ -51,7 +51,7 @@
 	basicstyle=\ttfamily\scriptsize,
 	keywordstyle=\color{blue}\bfseries,
 	commentstyle=\color{gray},
-	stringstyle=\color{red},
+	stringstyle=\color{brown},
 	numbers=left,
 	numberstyle=\tiny\color{gray}\ttfamily,
 	stepnumber=5,
@@ -65,3 +65,70 @@
 	breaklines=true, % Enable line wrapping
 }
 
+\lstdefinestyle{matlabstyle}{
+    language=Matlab,
+    basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray}\ttfamily,
+    stepnumber=5,        % Number every 5th line
+    firstnumber=1,       % Start numbering at 1
+    numbersep=5pt,       % Adjust spacing
+    frame=single,
+    showstringspaces=false,
+    xleftmargin=20pt,
+    xrightmargin=10pt,
+    tabsize=2,  % Decrease the tab size (default is 8)
+    breaklines=true, % Enable line wrapping
+}
+
+\lstdefinestyle{wolframstyle}{
+    language=Mathematica,
+    basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray}\ttfamily,
+    stepnumber=5,        % Number every 5th line
+    firstnumber=1,       % Start numbering at 1
+    numbersep=5pt,       % Adjust spacing
+    frame=single,
+    showstringspaces=false,
+    xleftmargin=20pt,
+    xrightmargin=10pt,
+    tabsize=2,  % Decrease the tab size (default is 8)
+    breaklines=true, % Enable line wrapping
+}
+
+% Define YAML syntax highlighting
+\lstdefinelanguage{yaml}{
+    keywords={true,false,null,y,n,yes,no,on,off},
+    keywordstyle=\color{blue}\bfseries,
+    basicstyle=\ttfamily,
+    comment=[l]{\#},
+    commentstyle=\color{gray}\ttfamily,
+    morecomment=[s]{/*}{*/},
+    morestring=[b]',
+    morestring=[b]"
+}
+\lstdefinestyle{yamlstyle}{
+    language=Yaml,
+    basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray}\ttfamily,
+    stepnumber=5,        % Number every 5th line
+    firstnumber=1,       % Start numbering at 1
+    numbersep=5pt,       % Adjust spacing
+    frame=single,
+    showstringspaces=false,
+    xleftmargin=20pt,
+    xrightmargin=10pt,
+    tabsize=2,  % Decrease the tab size (default is 8)
+    breaklines=true, % Enable line wrapping
+}
