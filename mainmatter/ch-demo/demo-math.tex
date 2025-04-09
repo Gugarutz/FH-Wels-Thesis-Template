@@ -4,20 +4,17 @@
 \begingroup \small
 \subsection{Custom commands}
 
-\I
+    \I
 
-\subsection{Physics package}
+\subsection{Sub and superscript}
+    Normal subscript and superscript comes after the object in question and is done with \texttt{\_} and \texttt{\^}. By default this only applies to one symbol each, so \verb|M_ab| produces $M_ab$. To avoid this use curly brackets like with other \LaTeX{} commands sa follows: \verb|M_{ab}^{cd}| to produce $M_{ab}^{cd}$
 
-    The \verb|physics| package defines \verb|\qty|. However this is already used by \texttt{siunitx}. Therefore this template redefines \verb|\qty| to set \verb|\set|. I can only be used in a math environment.
+    With the \verb|\prescript{sup}{sub}{arg}| command you can typeset subscript and superscript before an object like this:
+    \[  \prescript{sup}{sub}{arg}
+        \text{\quad and even add the ones after that: \quad}
+        \prescript{a}{b}{M}_c^d \]
 
-
-    \verb|\set{10}| produces: $\set{10}$
-
-    \verb|\set[\dfrac{13}{14}]|     produces:$\set[\dfrac{13}{14}]$
-
-    $\set10 $
-
-    \subsubsection{Mathematical fonts}
+\subsection{Mathematical fonts}
 
     mathds $\mathds{R, I, N, 1}$
 
@@ -29,6 +26,19 @@
 
     mathsf $\mathsf{R, I, N, 1, 2, e, j, i, a}$
 
+\subsection{Physics package}
+
+    The \verb|physics| package defines \verb|\qty|. However this is already used by \texttt{siunitx}. Therefore this template redefines \verb|\qty| to set \verb|\set|. I can only be used in a math environment.
+
+
+    \verb|\set{10}| produces: $\set{10}$
+
+    \verb|\set[\dfrac{13}{14}]|     produces:$\set[\dfrac{13}{14}]$
+
+    $\set|\vec{a}| \quad  \abs{\vec{r}} \quad \norm{\va{r}} \quad \norm{\va*{r}} $
+
+
+
 
     \subsubsection{Differentials}
 
@@ -37,6 +47,8 @@
     The normal upright d used in by \texttt{physics} was replaced by $\mathrm{d\!I}$ which is used by professor Schiefermayr in his scripts. You can disable this in the \texttt{preamble/math.tex} under the custom math commands.
 
      $\dd[3]{x}$
+
+    \[ \int_{0}^{\infty} 3x^2 \dd{x} = \eval{x^3}_{0}^{\infty} \]
 
 \subsection{Greek Symbols in Text}
 
