@@ -6,11 +6,46 @@
 
     \I
 
-\subsection{Sub and superscript}
-    Normal subscript and superscript comes after the object in question and is done with \texttt{\_} and \texttt{\^}. By default this only applies to one symbol each, so \verb|M_ab| produces $M_ab$. To avoid this use curly brackets like with other \LaTeX{} commands sa follows: \verb|M_{ab}^{cd}| to produce $M_{ab}^{cd}$
+    The command \verb|\eff| is meant to be used in subscript for denoting effective, $P_{\eff}$ for example.
 
-    With the \verb|\prescript{sup}{sub}{arg}| command you can typeset subscript and superscript before an object like this:
-    \[  \prescript{sup}{sub}{arg}
+    Some extra math shortcuts are provided for German users for Umlauts as the normal ä, ö, ü would be typeset upright.
+
+    \[
+        \verb|\aum| \rightarrowtail  \aum \quad
+        \verb|\oum| \rightarrowtail  \oum \quad
+        \verb|\uum| \rightarrowtail  \uum
+    \]
+
+
+    \subsubsection{Dimensionless numbers}
+    This Package provides a significant set of preset named, dimensionless numbers. Be aware that these are not simple shortcuts but have a  Links to wikipedia as well as the commands themselves can be found in the \texttt{math.tex} file, you may disable the \verb|\mathit{}| there to for upright typesetting. See table below for all available shortcuts/commands.
+
+    \begin{table}[H]
+        \centering
+        \caption{All dimensionless numbers provided}
+        \begin{tabular}{lll|lll|lll|lll}
+        \verb|\Arch| & $\rightarrow $ & $\Arch$ & \verb|\Lewi| & $\rightarrow $ & $\Lewi$
+            &\verb|\Four| & $\rightarrow $ & $\Four$ & \verb|\Rayl| & $\rightarrow $ & $\Rayl$\\
+        \verb|\Biot| & $\rightarrow $ & $\Biot$ & \verb|\Mach| & $\rightarrow $ & $\Mach$
+            &\verb|\Frou| & $\rightarrow $ & $\Frou$ & \verb|\Reyn| & $\rightarrow $ & $\Reyn$\\
+        \verb|\Cauc| & $\rightarrow $ & $\Cauc$ & \verb|\Nuss| & $\rightarrow $ & $\Nuss$
+            &\verb|\Gras| & $\rightarrow $ & $\Gras$ & \verb|\Schm| & $\rightarrow $ & $\Schm$\\
+        \verb|\Damk| & $\rightarrow $ & $\Damk$ & \verb|\Pecl| & $\rightarrow $ & $\Pecl$
+            &\verb|\Karl| & $\rightarrow $ & $\Karl$ & \verb|\Sher| & $\rightarrow $ & $\Sher$\\
+        \verb|\Eule| & $\rightarrow $ & $\Eule$ & \verb|\Pran| & $\rightarrow $ & $\Pran$
+            &\verb|\Knud| & $\rightarrow $ & $\Knud$ & \verb|\Stro| & $\rightarrow $ & $\Stro$\\
+        \verb|\Webe| & $\rightarrow $ & $\Webe$ &              &                &&&&&&&
+        \end{tabular}
+    \end{table}
+
+    \subsubsection{Custom commands for thermodynamics}
+
+
+\subsection{Sub and superscript}
+    Normal subscript and superscript comes after the object in question and is done with \texttt{\_} and \texttt{\^}. By default this only applies to one symbol each, so \verb|M_ab| produces $M_ab$. To avoid this use curly brackets like with other \LaTeX{} commands sa follows: \verb|M_{ab}^{cd}| to produce $M_{ab}^{cd}$. Also avoid $M_{a ^b}$ and ${M_a}^b$
+
+    With the \verb|\prescript{a}{b}{M}| command you can typeset subscript and superscript before an object like this:
+    \[  \prescript{a}{b}{M}
         \text{\quad and even add the ones after that: \quad}
         \prescript{a}{b}{M}_c^d \]
 
