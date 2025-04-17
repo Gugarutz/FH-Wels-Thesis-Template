@@ -6,10 +6,10 @@
 \usepackage{outlines}               % Outline lists
 
 % Change itemize to use rules instead of bullet points
-\renewcommand{\labelitemi}  {\rule[0.5ex]{0.9em}{0.7pt}}
-\renewcommand{\labelitemii} {\rule[0.5ex]{0.7em}{0.7pt}}
-\renewcommand{\labelitemiii}{\rule[0.5ex]{0.5em}{0.7pt}}
-\renewcommand{\labelitemiv} {\rule[0.5ex]{0.3em}{0.7pt}}
+\setlist[itemize, 1]{label=\rule[0.5ex]{0.9em}{0.7pt}}
+\setlist[itemize, 2]{label=\rule[0.5ex]{0.7em}{0.7pt}}
+\setlist[itemize, 3]{label=\rule[0.5ex]{0.5em}{0.7pt}}
+\setlist[itemize, 4]{label=\rule[0.5ex]{0.3em}{0.7pt}}
 
 % Customize enumerate to use hierarchical numbering
 \setlist[enumerate, 1]{label=\arabic*.}
