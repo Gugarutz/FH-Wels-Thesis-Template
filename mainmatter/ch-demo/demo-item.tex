@@ -3,6 +3,8 @@ This serves as a demonstration of the \verb|itemize| and \verb|enumerate| enviro
 
 \textcolor[rgb]{0.7, 0, 0}{WARNING}: \verb|\subitem| is not used for lists, it is a command used in indices.
 
+\textbf{Note:} The spacing of the items has been reduced compared to the default value for higher density of the text.
+
 \subsection{Itemize}
 
     \begin{itemize}
@@ -13,23 +15,23 @@ This serves as a demonstration of the \verb|itemize| and \verb|enumerate| enviro
         \item First level item 5
     \end{itemize}
 
-    You can use \verb|\begin{itemize} ... \end{itemize}}| within itself (nesting) to create sub items.
+    You can use \verb|\begin{itemize} ... \end{itemize}| within itself (nesting) to create sub items.
+
+    \textbf{Note:} In this document, \texttt{itemize} lists use horizontal rules in place of default bullets, with size decreasing by level.
 
     \begin{itemize}
-        \item First level item 1
+        \item Level 1 item
         \begin{itemize}
-            \item Second level item 1
+            \item Level 2 item
             \begin{itemize}
-                \item Third level item 1
+                \item Level 3 item
                 \begin{itemize}
-                    \item Fourth level item 1
+                    \item Level 4 item
                 \end{itemize}
             \end{itemize}
         \end{itemize}
-        \item First level item 2
-        \item First level item 3
-        \item First level item 4
     \end{itemize}
+
 
 \subsection{Enumerate}
 
@@ -42,6 +44,8 @@ This serves as a demonstration of the \verb|itemize| and \verb|enumerate| enviro
     \end{enumerate}
 
     Here is an example of a nested \verb|enumerate| environment.
+    \texttt{enumerate} lists have been customized to show hierarchical numbering:
+    \texttt{1., 1.1., 1.1.1.,} etc.
 
     \begin{enumerate}
         \item First level item 1
@@ -54,16 +58,14 @@ This serves as a demonstration of the \verb|itemize| and \verb|enumerate| enviro
                 \end{enumerate}
             \end{enumerate}
         \end{enumerate}
-        \item First level item 2
-        \item First level item 3
-        \item First level item 4
-        \item First level item 5
     \end{enumerate}
 
 %------------------------------------------------------------%
 \subsection{Outline package}
 
-Here is a standard usage of the \verb|outline| environment. It is confusingly provided by the outline\underline{s} package. An \texttt{outline} package also exists.
+This example uses the \texttt{outlines} package (note the plural). A separate and unrelated \texttt{outline} package also exists -- be sure to refer to the correct one.
+
+The customization done via \texttt{enumitem} carry over to the outline environment.
 
     \begin{outline}
         \1 Item on level 1
@@ -93,13 +95,13 @@ Here is a standard usage of the \verb|outline| environment. It is confusingly pr
           \3 sub sub item
     \end{outline}
 
-    You can use one time custom label with square brackets, e.g. \verb|\1[>]|.
+    You can use a one-time custom label with square brackets, e.g. \verb|\1[>]|. The default label (line or number, depending on choice) is overwritten.
 
     \begin{outline}
         \1[>] a very simple example using the normal greater sign
-        \2[$\rightarrowtail$] you can use the math commands \verb|[$\rightarrowtail$]|
+        \2[$\rightarrowtail$] you can use the math commands, here: \verb|[$\rightarrowtail$]|
         \2[\LaTeX] be creative
         \2[$\cdot$] or don't
-        \3[\textit{fixed right:}] yes, all of that is label. Be careful about the left margin!
+        \3[\textit{fixed right:}] yes, all of that is the label. Be careful about the left margin!
     \end{outline}
 
