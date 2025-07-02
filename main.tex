@@ -11,18 +11,18 @@
 %------------------------------------------------------------%
 % SETTINGS AND PACKAGES
 %------------------------------------------------------------%
-    \input{preamble/layout}
-    \input{preamble/typesetting}	% Typography handling
-    \input{preamble/math}			%
-    \input{preamble/graphics} 		% Graphics, colour, tables
-    \input{preamble/cite-reference} % Caption, Referencing, Citing
-    \input{preamble/toc}		   	% Table of Contents
-    \input{preamble/lists}	      	% Lists (enumerate, itemize, outline)
+    \input{preamble/set-layout}
+    \input{preamble/set-typesetting}	% Typography handling
+    \input{preamble/set-math}			%
+    \input{preamble/set-graphics} 		% Graphics, colour, tables
+    \input{preamble/set-cite-reference} % Caption, Referencing, Citing
+    \input{preamble/set-toc}		   	% Table of Contents
+    \input{preamble/set-lists}	      	% Lists (enumerate, itemize, outline)
 
 % MODULES (YOU CAN DISABLE THESE, also disable demo chapters below)
-    \input{preamble/code}           % Display code
-    \input{preamble/data}           % Reading data
-    \input{preamble/pgf}            % Making diagrams & plots
+    \input{preamble/mod-code}           % Display code
+    \input{preamble/mod-data}           % Reading data
+    \input{preamble/mod-pgf}            % Making diagrams & plots
 
 %------------------------------------------------------------%
 % SETTINGS FOR THE USER
@@ -102,22 +102,22 @@
         \mainmatter % Main part of the thesis, from the introduction to the conclusion
 
     % INTRODUCTION
-        \include{mainmatter/introduction}
+        \include{content/introduction}
 
 
     % CHAPTER 0 - DEMO
-        \include{mainmatter/ch-demo/ch-demo}
-        \include{mainmatter/ch-demo/demo-tables}
-        \include{mainmatter/ch-demo/demo-graphics}
-        \include{mainmatter/ch-demo/demo-math}
-        \include{mainmatter/ch-demo/demo-item}
+        \include{content/ch-demo/ch-demo}
+        \include{content/ch-demo/demo-tables}
+        \include{content/ch-demo/demo-graphics}
+        \include{content/ch-demo/demo-math}
+        \include{content/ch-demo/demo-item}
 
     % DEMO - MODULES
-        \include{mainmatter/ch-module/demo-tikz-pgf}
-        \include{mainmatter/ch-module/demo-pgf}
+        \include{content/ch-module/demo-tikz-pgf}
+        \include{content/ch-module/demo-pgf}
 
     % CHAPTER I - THEORY
-
+        \include{content/ch1/ch1-intro}
     % CHAPTER II - PRACTICE
 
     % TESTING SECTION
