@@ -3,10 +3,9 @@
 \documentclass[
     english,		% TODO: [USER] select language here for cleveref to work
     oneside,
-    bibliography=totocnumbered, % Include bibliography in TOC with number
-    listof=totocnumbered,       % Include List of Tables/Figures in TOC with number
-    numbers=noenddot            % Changes heading numbering from 1.1. to 1.1
-    % appendixprefix = true     % Makes Appendix A... First appendix chapter, disable for one appendix
+    bibliography=totocnumbered,     % Include bibliography in TOC with number
+    listof=totocnumbered,           % Include List of Tables/Figures in TOC with number
+    numbers=noenddot                % Changes heading numbering from 1.1. to 1.1
 ]{scrbook}
 
 %------------------------------------------------------------%
@@ -21,9 +20,9 @@
     \input{preamble/lists}	      	% Lists (enumerate, itemize, outline)
 
 % MODULES (YOU CAN DISABLE THESE, also disable demo chapters below)
-    \input{preamble/code} % Display code
-    \input{preamble/data} % Reading data
-    \input{preamble/pgf}  % Making diagrams & plots
+    \input{preamble/code}           % Display code
+    \input{preamble/data}           % Reading data
+    \input{preamble/pgf}            % Making diagrams & plots
 
 %------------------------------------------------------------%
 % SETTINGS FOR THE USER
@@ -38,7 +37,7 @@
     }
 
 % CHOOSE THE FILE PATH FOR GRAPHICS
-    \graphicspath{		% TODO: [USER] Add relevant paths
+    \graphicspath{		% Add relevant paths
         {graphics/},	% for digital graphics
         {images/}		% for real world pictures
     }
@@ -68,7 +67,7 @@
 %==============================================================================================%
 
 \begin{document}
-    \selectlanguage{english} % Set language -> naustrian or ngerman for new austrian/german
+    \selectlanguage{english} % Set language -> ngerman for new grammer german
 
 %------------------------------------------------------------%
 % FRONTMATTER
@@ -94,7 +93,7 @@
 
     % TABLE OF CONTENTS
         \markleft{\contentsname} % Adds "Contents" or equivalent to header
-        \setSectioning % Sets indents and separation for TOC
+        \setSectioning           % Sets indents and separation for TOC
         \tableofcontents
 
 %------------------------------------------------------------%
