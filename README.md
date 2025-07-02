@@ -16,7 +16,7 @@ Improvements over the provided version from FHOOE:
 - Backwards compatibility with the provided template (to be verified)
 - Default TikZ support (TODO)
   - Template for continuous plots (TODO)
-  - Template for discrete plots (TODO)
+  - Template for discrete plots
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ If dictionaries are unavailable, check this resource: [TeXstudio Dictionary Issu
 
 ### English Users
 
->[!important]
+>[!IMPORTANT]
 > Help wanted: Links to english resources.
 
 The [official TeXstudio decumentation](https://texstudio-org.github.io/getting_started.html) is a good reference, but maybe not be a good learning resource.
@@ -275,7 +275,7 @@ Set language after `\begin{document}`:
 
 </details>
 
->[!note]
+>[!NOTE]
 > Never delete template code; comment it out instead. This way you can keep it as a reference. Feel free to delete the `\include{ch-demo/...}` chapters, sections and appendices.
 
 ## About this repository

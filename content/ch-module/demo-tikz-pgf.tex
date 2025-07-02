@@ -1,0 +1,139 @@
+\chapter{PGF and TikZ}
+
+PGF ("Portable Graphics Format") and TikZ ("TikZ ist kein Zeichenprogramm") are powerful tools used to create high-quality diagrams directly within LaTeX.
+
+TikZ is the user-facing layer that provides an intuitive syntax to create graphics. PGF is the lower-level layer responsible for the rendering. Most users interact primarily with TikZ, which internally compiles down to PGF commands. In short:
+
+\begin{itemize}
+    \item \texttt{TikZ} is easier to write and read.
+    \item \texttt{PGF} handles the rendering and offers more fine-grained control (often used via libraries like \texttt{pgfplots}).
+\end{itemize}
+
+\section{Baby's first \texttt{tikzpicture}}
+
+This example draws a simple equilateral triangle using absolute coordinates. It shows how to connect points with lines and place text within the diagram. This kind of drawing is useful for basic geometric figures or quick sketches.
+
+\begin{tikzpicture}
+    \draw[thick, blue] (0,0) -- (4,0) -- (2,3.46) -- cycle;
+    \node[align=center] at (2,1) {Equilateral \\ Triangle};
+\end{tikzpicture}
+
+\section{Flowchart with TikZ}
+
+Here we use named nodes and relative positioning to create a simple flowchart. This style makes it easier to maintain and adjust diagrams without dealing with raw coordinates. Shapes like diamonds (used here for decisions) are part of TikZ's geometric shapes library.
+
+\begin{tikzpicture}[node distance=1.5cm and 2cm, every node/.style={draw, align=center, minimum width=2cm}]
+    \node (start) {Start};
+    \node[below=of start] (process) {Process};
+    \node[below=of process] (decision) [diamond, aspect=2] {Decision?};
+    \node[below left=of decision] (yes) {Yes};
+    \node[below right=of decision] (no) {No};
+
+    \draw[->] (start) -- (process);
+    \draw[->] (process) -- (decision);
+    \draw[->] (decision) -- (yes);
+    \draw[->] (decision) -- (no);
+\end{tikzpicture}
+
+\section{Diagrams with PGFPlots}
+
+This example uses the \texttt{pgfplots} package (built on top of PGF) to plot a mathematical function. PGFPlots is ideal for data visualization and produces publication-quality plots. This one handles scaling, grid lines, and sampling automatically.
+
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        grid=both,
+        domain=-2:2,
+        samples=100,
+        ]
+        \addplot[blue, thick] {x^3 - x};
+    \end{axis}
+\end{tikzpicture}
+
+\section{Plotting External Data}
+
+PGFPlots also allows importing data from external files such as CSVs, which is common in scientific documents. Below is a plot of temperature readings taken during a 1-hour experiment at 5-minute intervals.
+
+Make sure the CSV file is accessible and contains headers matching those referenced in the plot code.
+
+\begin{tikzpicture}
+    \begin{axis}[
+        width=12cm,
+        height=8cm,
+        xlabel={Time (min)},
+        ylabel={Temperature (°C)},
+        grid=both,
+        mark=*,
+        mark size=2pt,
+        thick,
+        ]
+        \addplot[blue] table [
+        col sep=comma,
+        x={Time (min)},
+        y={Temperature (°C)}
+        ] {data/temperature_measurement.csv};
+    \end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        width=12cm,
+        height=8cm,
+        xlabel={Time (min)},
+        ylabel={Temperature (°C)},
+        axis lines=left,
+        enlargelimits=false,
+        clip=true,
+        grid=both,
+        axis line style={->, >=stealth,  thick},
+        mark=*,
+        mark size=2pt,
+        thick,
+        xmin=0,
+        ymin=20,
+        ymax=45,
+        xtick distance=10,
+        ytick distance=5,
+        clip=false
+        ]
+        \addplot[blue] table [
+        col sep=comma,
+        x={Time (min)},
+        y={Temperature (°C)}
+        ] {data/temperature_measurement.csv};
+    \end{axis}
+\end{tikzpicture}
+
+
+\section{Distinct Line Styles}
+
+In academic or black-and-white printing, it is often necessary to distinguish plot lines using different styles (e.g., dashed, dotted) instead of color. This is particularly useful for accessibility or publication constraints. Below is an example showing \texttt{sin(x)} and \texttt{cos(x)} using distinct dash patterns.
+
+\begin{tikzpicture}
+    \begin{axis}[
+        width=12cm,
+        height=8cm,
+        xlabel={$x$},
+        ylabel={$f(x)$},
+        axis lines=left,
+        axis line style={->, >=stealth, thick},
+        grid=both,
+        xmin=0,
+        xmax=6.3,
+        xtick={0, 1.571, 3.142, 4.712, 6.283},
+        xticklabels={$0$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$},
+        ytick distance=0.5,
+        samples=400,
+        domain=0:6.283,
+        thick,
+        legend style={at={(0.5,-0.15)}, anchor=north, legend columns=-1},
+        ]
+            \addplot[solid] {sin(deg(x))};
+            \addlegendentry{$\sin(x)$}
+
+            \addplot[dashed] {cos(deg(x))};
+            \addlegendentry{$\cos(x)$}
+    \end{axis}
+\end{tikzpicture}

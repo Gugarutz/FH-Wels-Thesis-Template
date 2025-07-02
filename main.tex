@@ -3,28 +3,26 @@
 \documentclass[
     english,		% TODO: [USER] select language here for cleveref to work
     oneside,
-    bibliography=totocnumbered, % Include bibliography in TOC with number
-    listof=totocnumbered,       % Include List of Tables/Figures in TOC with number
-    numbers=noenddot            % Changes heading numbering from 1.1. to 1.1
-    % appendixprefix = true     % Makes Appendix A... First appendix chapter, disable for one appendix
+    bibliography=totocnumbered,     % Include bibliography in TOC with number
+    listof=totocnumbered,           % Include List of Tables/Figures in TOC with number
+    numbers=noenddot                % Changes heading/caption numbering from 1.1. to 1.1
 ]{scrbook}
 
 %------------------------------------------------------------%
 % SETTINGS AND PACKAGES
 %------------------------------------------------------------%
-    \input{preamble/layout}
-    \input{preamble/typesetting}	% Typography handling
-    \input{preamble/math}			%
-    \input{preamble/graphics} 		% Graphics, colour, tables
-    \input{preamble/cite-reference} % Caption, Referencing, Citing
-    \input{preamble/toc}		   	% Table of Contents
-    \input{preamble/lists}	      	% Lists (enumerate, itemize, outline)
-
+    \input{preamble/set-layout}         % General layout and spacing
+    \input{preamble/set-typesetting}	% Typography handling
+    \input{preamble/set-math}			%
+    \input{preamble/set-graphics} 		% Graphics, colour, tables
+    \input{preamble/set-reference}      % Caption, Referencing, Citing
+    \input{preamble/set-toc}		   	% Table of Contents
+    \input{preamble/set-lists}	      	% Lists (enumerate, itemize, outline)
 
 % MODULES (YOU CAN DISABLE THESE, also disable demo chapters below)
-    \input{preamble/code} % Display code
-    \input{preamble/data} % Reading data
-    \input{preamble/pgf}  % Making diagrams & plots
+    \input{preamble/mod-code}           % Display code
+    \input{preamble/mod-data}           % Reading data
+    \input{preamble/mod-pgf}            % Making diagrams & plots
 
 %------------------------------------------------------------%
 % SETTINGS FOR THE USER
@@ -32,17 +30,14 @@
 
 % CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
     \sisetup{ % TODO: [USER] Choose locale and settings
-        locale = US,                % Localisation US or DE recommended
+        locale = US,                % Localization US or DE recommended
         % per-mode=symbol,          % Display as / fractions
         separate-uncertainty,
-        exponent-product=\cdot    % Use \times for x multiplier
+        exponent-product=\cdot      % Use \times for x multiplier
     }
 
 % CHOOSE THE FILE PATH FOR GRAPHICS
-    \graphicspath{		% TODO: [USER] Add relevant paths
-        {graphics/},	% for digital graphics
-        {images/}		% for real world pictures
-    }
+    \graphicspath{{graphics/}} % add relevant paths
 
 % CHOOSE THE FILE PATH FOR BIBLIOGRAPHY
     \addbibresource{bibliography.bib}   % File(s) with your sources
@@ -51,17 +46,17 @@
 %------------------------------------------------------------%
 % FRONT PAGE
 %------------------------------------------------------------%
-    \input{preamble/titlepage-fields}   % defines fields for user data
-    \input{preamble/titlepage-data}     % TODO: [USER] Fill this out
-    \input{preamble/titlepage}          % sets up the titlepage
-    \input{preamble/declarationDE}      % declaration in 2 languages
-    \input{preamble/declarationEN}
-        % TODO: [USER] Adjust {/preamble/signature} settings to en/disable signature
+    \input{preamble/set-titlepage-fields}   % defines fields for user data
+    \input{metadata}                        % TODO: [USER] Fill this out
+    \input{preamble/set-titlepage}          % sets up the titlepage
+    \input{preamble/set-declarationDE}      % declaration in 2 languages
+    \input{preamble/set-declarationEN}
+        % TODO: [USER] Adjust {/preamble/set-signature} settings to toggle signature
 
 %------------------------------------------------------------%
 % TESTING
 %------------------------------------------------------------%
-%    \usepackage{showframe}
+%    \usepackage{showframe}         % use to check margins
     \usepackage{blindtext}
 
 %==============================================================================================%
@@ -69,7 +64,7 @@
 %==============================================================================================%
 
 \begin{document}
-    \selectlanguage{english} % Set language -> naustrian or ngerman for new austrian/german
+    \selectlanguage{english} % Set language -> ngerman for new grammer german
 
 %------------------------------------------------------------%
 % FRONTMATTER
@@ -95,7 +90,7 @@
 
     % TABLE OF CONTENTS
         \markleft{\contentsname} % Adds "Contents" or equivalent to header
-        \setSectioning % Sets indents and separation for TOC
+        \setSectioning           % Sets indents and separation for TOC
         \tableofcontents
 
 %------------------------------------------------------------%
@@ -104,20 +99,21 @@
         \mainmatter % Main part of the thesis, from the introduction to the conclusion
 
     % INTRODUCTION
-        \include{mainmatter/introduction}
-
+        \include{content/introduction}
 
     % CHAPTER 0 - DEMO
-        \include{mainmatter/ch-demo/ch-demo}
-        \include{mainmatter/ch-demo/demo-tables}
-        \include{mainmatter/ch-demo/demo-graphics}
-        \include{mainmatter/ch-demo/demo-math}
-        \include{mainmatter/ch-demo/demo-item}
+        \include{content/ch-demo/ch-demo}
+        \include{content/ch-demo/demo-tables}
+        \include{content/ch-demo/demo-graphics}
+        \include{content/ch-demo/demo-math}
+        \include{content/ch-demo/demo-item}
 
-        \include{mainmatter/ch-module/demo-pgf}
+    % DEMO - MODULES
+        \include{content/ch-module/demo-tikz-pgf}
+        \include{content/ch-module/demo-pgf}
 
     % CHAPTER I - THEORY
-
+        \include{content/ch1/ch1-intro}
     % CHAPTER II - PRACTICE
 
     % TESTING SECTION
@@ -147,13 +143,12 @@
 	        \listoftables
         \endgroup
 
-
 %------------------------------------------------------------%
 % APPENDICES
 %------------------------------------------------------------%
         \appendix % Changes chapter numbering to Alphabetic
-        \include{appendices/demo-pdf}
-        \include{appendices/demo-code}
+        \include{appendix/demo-pdf}
+        \include{appendix/demo-code}
 
 %------------------------------------------------------------%
 \end{document}
