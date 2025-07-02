@@ -11,7 +11,7 @@
 %------------------------------------------------------------%
 % SETTINGS AND PACKAGES
 %------------------------------------------------------------%
-    \input{preamble/set-layout}
+    \input{preamble/set-layout}         % General layout and spacing
     \input{preamble/set-typesetting}	% Typography handling
     \input{preamble/set-math}			%
     \input{preamble/set-graphics} 		% Graphics, colour, tables
@@ -39,7 +39,6 @@
 % CHOOSE THE FILE PATH FOR GRAPHICS
     \graphicspath{{graphics/}} % add relevant paths
 
-
 % CHOOSE THE FILE PATH FOR BIBLIOGRAPHY
     \addbibresource{bibliography.bib}   % File(s) with your sources
 
@@ -48,7 +47,7 @@
 % FRONT PAGE
 %------------------------------------------------------------%
     \input{preamble/set-titlepage-fields}   % defines fields for user data
-    \input{metadata}     % TODO: [USER] Fill this out
+    \input{metadata}                        % TODO: [USER] Fill this out
     \input{preamble/set-titlepage}          % sets up the titlepage
     \input{preamble/set-declarationDE}      % declaration in 2 languages
     \input{preamble/set-declarationEN}
@@ -57,7 +56,7 @@
 %------------------------------------------------------------%
 % TESTING
 %------------------------------------------------------------%
-%    \usepackage{showframe}
+%    \usepackage{showframe}         % use to check margins
     \usepackage{blindtext}
 
 %==============================================================================================%
@@ -101,7 +100,6 @@
 
     % INTRODUCTION
         \include{content/introduction}
-
 
     % CHAPTER 0 - DEMO
         \include{content/ch-demo/ch-demo}
