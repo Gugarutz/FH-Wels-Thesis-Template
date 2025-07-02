@@ -15,7 +15,7 @@
     \input{preamble/set-typesetting}	% Typography handling
     \input{preamble/set-math}			%
     \input{preamble/set-graphics} 		% Graphics, colour, tables
-    \input{preamble/set-cite-reference} % Caption, Referencing, Citing
+    \input{preamble/set-reference}      % Caption, Referencing, Citing
     \input{preamble/set-toc}		   	% Table of Contents
     \input{preamble/set-lists}	      	% Lists (enumerate, itemize, outline)
 
@@ -37,10 +37,8 @@
     }
 
 % CHOOSE THE FILE PATH FOR GRAPHICS
-    \graphicspath{		% Add relevant paths
-        {graphics/},	% for digital graphics
-        {images/}		% for real world pictures
-    }
+    \graphicspath{{graphics/}} % add relevant paths
+
 
 % CHOOSE THE FILE PATH FOR BIBLIOGRAPHY
     \addbibresource{bibliography.bib}   % File(s) with your sources
@@ -52,8 +50,8 @@
     \input{preamble/set-titlepage-fields}   % defines fields for user data
     \input{metadata}     % TODO: [USER] Fill this out
     \input{preamble/set-titlepage}          % sets up the titlepage
-    \input{preamble/declarationDE}      % declaration in 2 languages
-    \input{preamble/declarationEN}
+    \input{preamble/set-declarationDE}      % declaration in 2 languages
+    \input{preamble/set-declarationEN}
         % TODO: [USER] Adjust {/preamble/set-signature} settings to toggle signature
 
 %------------------------------------------------------------%
