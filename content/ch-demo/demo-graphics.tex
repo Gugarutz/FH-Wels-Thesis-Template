@@ -1,68 +1,83 @@
 \section{Figures}
-\label{sec:Figures}
-The figure environment has to be used for inserting and referencing figures. Figures and tables are inserted as floats, this means they will be moved where there is space (but in the order they are called in the text). To prevent this, use \texttt{[h]} or \texttt{[H]} when calling the figure environment.
-It is often best to define the width of the graphic as a multiple of the the textwidth.
-See source code.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.50\textwidth]{FH.png}
-	\caption{Example of inserting a figure}
-	\label{fig:ExampleFigure-1}
-\end{figure}
+    \label{sec:Figures}
+
+    Figures in \LaTeX{} are handled using the \texttt{figure} environment. Like tables, figures are inserted as floats. This means they are positioned where \LaTeX{} deems optimal for page layout, rather than exactly where they are written in the code. By default, floats tend to move to the top or bottom of pages or onto dedicated float pages.
+
+    To force figures closer to their position in the code, use placement specifiers:
+    \begin{itemize}
+        \item \texttt{[h]} — roughly "here"
+        \item \texttt{[H]} — exactly "here" (requires the \texttt{float} package)
+    \end{itemize}
+
+    It is best practice to scale images relative to the text width, e.g., \verb|width=0.5\textwidth|, to maintain consistency across different document sizes.
+
+    \begin{figure}[h]
+    	\centering
+    	\includegraphics[width=0.50\textwidth]{FH.png}
+    	\caption{Example of inserting a figure}
+    	\label{fig:ExampleFigure-1}
+    \end{figure}
 
 %-------------------------------------------------------------------------
-\subsection{Multiple figures}
-You can insert two graphics files into a single figure environment by just calling the \verb|\includegraphics[]{}| command twice. They will only have one caption. They spacing between them will be 0. You can use \texttt{hskip, hspace, hfill, hfil} to separate them. \texttt{hfil} is generally the best option here
+\subsection{Multiple figures in one environment}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.4\textwidth]{FH.png}
-    \hfil
-    \includegraphics[width=0.4\textwidth]{FH.png}
-    \caption{Example of inserting two figures}
-    \label{fig:ExampleFigure-2}
-\end{figure}
+    The simplest way to display two images side by side is to call \verb|\includegraphics| twice inside one \texttt{figure} environment. However, spacing must be managed manually.
 
-The better approach will be using the \verb|subfigure| environment:
+    Example with manual spacing:
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}{0.4\textwidth}
+    \begin{figure}[h]
         \centering
-        \includegraphics[width=\textwidth]{FH.png}
-    \end{subfigure}
-    \hfil
-    \begin{subfigure}{0.4\textwidth}
+        \includegraphics[width=0.4\textwidth]{FH.png}
+        \hfil
+        \includegraphics[width=0.4\textwidth]{FH.png}
+        \caption{Example of inserting two figures}
+        \label{fig:ExampleFigure-2}
+    \end{figure}
+
+    \verb|\hfil| provides flexible horizontal spacing and is generally the best choice.
+
+    Alternatives include \verb|\hspace|, \verb|\hskip|, and explicit spacing lengths.
+
+    \paragraph{Using \texttt{subfigure} (Recommended)}
+
+    A more robust method uses the \texttt{subcaption} package. This allows each image to have its own caption and label for referencing.
+
+    \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{FH.png}
-    \end{subfigure}
-    \caption{Example of inserting a figure with subfigures}
-    \label{fig:ExampleFigure-3}
-\end{figure}
+        \begin{subfigure}{0.4\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{FH.png}
+            \caption{First Image}
+            \label{fig:subfig1}
+        \end{subfigure}
+        \hfil
+        \begin{subfigure}{0.55\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{FH.png}
+            \caption{Second Image}
+            \label{fig:subfig2}
+        \end{subfigure}
+        \caption{Example of inserting a figure with differently sized subfigures with subcaption}
+        \label{fig:ExampleFigure-4}
+    \end{figure}
 
-You will still need to separate the images manually, but you can reference and caption the subfigures as well, like here:
+    \begin{warningbox}
+        A \texttt{subfigure} package also exists. It is incompatible with \texttt{subcaption} and is less versatile.
+    \end{warningbox}
 
+    The widths of subfigures should sum to less than or equal to 1.0 relative to \verb|\textwidth| or \verb|\linewidth|, accounting for spacing. Typical choices are \verb|0.49\linewidth| or \verb|0.33\linewidth|.
 
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{FH.png}
-        \caption{First Image}
-        \label{fig:subfig1}
-    \end{subfigure}
-    \hfil
-    \begin{subfigure}{0.55\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{FH.png}
-        \caption{Second Image}
-        \label{fig:subfig2}
-    \end{subfigure}
-    \caption{Example of inserting a figure with differently sized subfigures with subcaption}
-    \label{fig:ExampleFigure-4}
-\end{figure}
+    \begin{notebox}
+        There is a difference between \verb|\textwidth| and \verb|\linewidth|.
 
-The total amount of width of subfigures or when using \texttt{includegraphics} multiple times, should not be or exceed one. Use \verb|width=0.49\linewidth| for both left and right images for example. The above example uses 0.4 as the multiplier for \cref{fig:subfig1} and 0.55 for \Cref{fig:subfig2}.
+        \verb|\textwidth| refers to the total width of the main text block on the page. It stays constant in single-column documents.
+
+        \verb|\linewidth| refers to the width of the current line of text — which changes depending on the environment. Inside a figure, table, or other floats, \verb|\linewidth| is equal to \verb|\textwidth|.
+
+        However, inside nested environments like minipage, subfigure, quote, or wrapfigure, \verb|\linewidth| adjusts to the local width.
+
+        This means that when sizing images inside subfigures or wrapped figures, you should generally use width=\verb|\linewidth| rather than \verb|\textwidth| to ensure the image fills the container correctly.
+    \end{notebox}
 
 %-------------------------------------------------------------------------
 \subsection{Usage of the overpic package}
