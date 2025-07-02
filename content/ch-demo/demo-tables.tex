@@ -1,102 +1,158 @@
 \section{Insert a table}
 
-\blindtext
+    This section demonstrates how to create tables using different environments and styling options.
 
-\begin{table}[H]
-	\centering
-	\caption{Testtabelle 2}
-	\begin{tabular}{c|c||c}
-		Heading column 1 & Heading column 2 & Heading column 3 \\ \headrule
-		       1         &      Test-1      &      Test-2      \\ \hline
-		       2         &        0         &        0         \\
-		       3         &        0         &        0         \\
-		       4         &        0         &        1         \\
-	\end{tabular}
-	\label{tab:Testtabelle-2}
-\end{table}
+    Tables in \LaTeX{} are highly customizable but can be verbose. The examples below show basic layouts, row colouring, automatic column width, and data import from external files.
 
-\blindtext
+%------------------------------------------------------------%
+\paragraph{Simple Table with Rulings}
+    This example shows a standard table with manual horizontal and vertical lines. Different ruling styles (|, \verb|\hline|, \verb|\headrule|) help visually separate headers and rows. This is the most basic way to create tables.
 
-\begin{table}[H]
-    \centering
-    \caption{Table with alternating row colors}
-    \rowcolors{2}{gray!20}{white}  % Alternating row colors (light gray and white)
-    \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|}
-        \hline
-        size     & size 1   & size 2   \\ \hline
-        [unit]   & [unit 1] & [unit 2] \\ \hline
-        object 1 & 5        & 6        \\
-        object 2 & 8        & 9        \\
-        object 3 & 11       & 12       \\ \hline
-    \end{tabular}
-\end{table}
+    Note: Manual layout like this is error-prone for complex tables or when column widths need to adapt.
 
-The following table uses \texttt{tabularx}, a package for automatic column width. The compatibility with \texttt{rowcolors} is limited
-\begin{table}[H]
-    \centering
-    \caption{Table with alternating colours and automatic column width (B) using tabularx, fixed size (C) and standard centred (A)}
-    \rowcolors{2}{white}{gray!15}
-    \begin{tabularx}{0.8\linewidth}{c|XX p{2cm}}
-        \hline
-        A  & B  & B  & C  \\ \hline
-        1  & 2  & 2  & 3  \\
-        4  & 5  & 5  & 6  \\
-        7  & 8  & 8  & 9  \\
-        10 & 11 & 11 & 12 \\ \hline
-    \end{tabularx}
-\end{table}
+    \begin{table}[H]
+    	\centering
+    	\caption{Simple Table with Rulings}
+    	\begin{tabular}{c|c||c}
+    		Heading column 1 & Heading column 2 & Heading column 3 \\ \headrule
+    		       1         &      Test-1      &      Test-2      \\ \hline
+    		       2         &        0         &        0         \\
+    		       3         &        0         &        0         \\
+    		       4         &        0         &        1         \\
+    	\end{tabular}
+    	\label{tab:table-rulings}
+    \end{table}
 
-\texttt{tabulary} is an extended version of \texttt{tabularx} with support for Right, Centred, Left aligned and justified text. The compatibility with \texttt{rowcolors} is limited
+%------------------------------------------------------------%
+\paragraph{Table with Alternating Row Colors}
+    Here, the \verb|\rowcolors| command is used to improve readability by applying alternating row colors (zebra striping). This technique is particularly helpful for tables with many rows.
 
-\begin{table}[H]
-    \centering
-    \caption{Example using tabulary, smaller text to save space}
-    \small
-    \begin{tabulary}{\linewidth}{|L|C|R|J|}
-        \hline
-        Left-aligned & Centered & Right-aligned & Justified text \\ \hline
-        Apple  & 10   & 5.99  & This is some longer text that will wrap properly. \\
-        Banana & 20   & 3.49  & Another line with text to test justification. \\
-        Cherry & 15   & 7.99  & Yet another example. \\ \hline
-    \end{tabulary}
-\end{table}
+    However, the columns use fixed-width definitions (p\{3cm\}), which allows text wrapping but must be set manually.
 
+    \begin{table}[H]
+        \centering
+        \caption{Table with alternating row colours}
+        \rowcolors{2}{gray!20}{white}  % Alternating row colors (light gray and white)
+        \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|}
+            \hline
+            size     & size 1   & size 2   \\ \hline
+            [unit]   & [unit 1] & [unit 2] \\ \hline
+            object 1 & 5        & 6        \\
+            object 2 & 8        & 9        \\
+            object 3 & 11       & 12       \\ \hline
+        \end{tabular}
+    \end{table}
 
+%------------------------------------------------------------%
+\paragraph{Table with Automatic Column Width — Tabularx}
+    The tabularx package automatically adjusts column widths to fit the table into a specified width (here, 80\% of the text width).
+    This reduces manual tweaking but is less compatible with features like \verb|\rowcolors| or certain advanced table rules.
 
+    Columns labelled X auto-expand.
 
+    Mixed with standard c or fixed-width p columns.
 
+    \begin{table}[H]
+        \centering
+        \caption{Table with alternating colours and automatic column width (B) using tabularx, fixed size (C) and standard centred (A)}
+        \rowcolors{2}{white}{gray!15}
+        \begin{tabularx}{0.8\linewidth}{c|XX p{2cm}}
+            \hline
+            A  & B  & B  & C  \\ \hline
+            1  & 2  & 2  & 3  \\
+            4  & 5  & 5  & 6  \\
+            7  & 8  & 8  & 9  \\
+            10 & 11 & 11 & 12 \\ \hline
+        \end{tabularx}
+    \end{table}
 
+\paragraph{Table with Justified Columns — Tabulary}
+    The \texttt{tabulary} package extends \texttt{tabularx} by offering precise control over text alignment within columns. It supports the following alignment options:
 
-%------------------------------------------------------------------------
+    \begin{itemize}
+        \item \textbf{L} $\rightarrowtail$ Left aligned (equivalent to X)
+        \item \textbf{C} $\rightarrowtail$ Centred
+        \item \textbf{R} $\rightarrowtail$ Right aligned
+        \item \textbf{J} $\rightarrowtail$ Fully justified text
+    \end{itemize}
+
+    This is particularly useful for tables that combine descriptive text with numerical data, allowing for readable layouts without manual width adjustments.
+
+    \begin{notebox}
+        Compatibility with \verb|\rowcolors| and very wide tables is limited. Be cautious when mixing with automatic row coloring or complex layouts.
+    \end{notebox}
+
+    \begin{table}[H]
+        \centering
+        \caption{Example using tabulary, smaller text to save space}
+        \small
+        \begin{tabulary}{\linewidth}{|L|C|R|J|}
+            \hline
+            Left-aligned & Centred & Right-aligned & Justified text                                    \\ \hline
+            Apple        &    10    &          5.99 & This is some longer text that will wrap properly. \\
+            Banana       &    20    &          3.49 & Another line with text to test justification.     \\
+            Cherry       &    15    &          7.99 & Yet another example.                              \\ \hline
+        \end{tabulary}
+    \end{table}
+
+%------------------------------------------------------------%
 \section{Longtable and importing data}
+%------------------------------------------------------------%
+
+    This section shows how to create tables that automatically split across multiple pages and how to import data from external files like CSVs.
+
+    \begin{tipbox}
+        See also \cref{sec:pgf-table} for a different solution to data importing.
+    \end{tipbox}
 
 
-The following uses a simple csv file. See also \cref{sec:pgf-table}
+\subsection{Table from an Imported CSV (DTL)}
+    This table is generated directly from a CSV file using the \text{datatool} package. This avoids manual data entry in LaTeX and ensures consistency if the data updates.
 
-\DTLloaddb{data2}{data/sample_data.csv}
-\begin{table}[H]
-    \centering
-    \caption{Table from an imported CSV}
-    \begin{tabular}{l*{3}{r}}
-        \toprule
-        \textbf{Col1} & \textbf{Col2} & \textbf{Col3} & \textbf{ColPct} \\
-        \DTLforeach*{data2}{\colone=Col1, \coltwo=Col2, \colthree=Col3, \colfour=ColPct}
-        {%
-            \DTLiffirstrow{\\ \midrule}{\\}%
-            \colone & \coltwo & \colthree & \colfour %
-        }
-        \\ \hline
-    \end{tabular}
-\end{table}
+    Useful for:
+    \begin{itemize}
+        \item Simple data tables
+        \item Automatically generated or exported datasets (e.g., from Excel)
+    \end{itemize}
+
+    \DTLloaddb{data2}{data/sample_data.csv}
+    \begin{table}[H]
+        \centering
+        \caption{Table from an imported CSV}
+        \begin{tabular}{l*{3}{r}}
+            \toprule
+            \textbf{Col1} & \textbf{Col2} & \textbf{Col3} & \textbf{ColPct} \\
+            \DTLforeach*{data2}{\colone=Col1, \coltwo=Col2, \colthree=Col3, \colfour=ColPct}
+            {%
+                \DTLiffirstrow{\\ \midrule}{\\}%
+                \colone & \coltwo & \colthree & \colfour %
+            }
+            \\ \hline
+        \end{tabular}
+    \end{table}
 
 
-For the next two tables the same csv file is used. It is located in \texttt{./data/}
+\subsection{Longtable example}
+    When tables are too long to fit on one page, \texttt{longtable} handles automatic splitting with repeated headers. Combined with \texttt{datatool}, this creates dynamic, multi-page tables.
+
+    This example loads a CSV file \texttt{(sales\_data.csv)} and displays the data with:
+    \begin{itemize}
+        \item Repeated headers on each page
+        \item Alternating row colors
+        \item Custom column widths
+    \end{itemize}
+    This method is robust but comes with more complex syntax.
 
 
 
+    \begin{tipbox}
+        External data import works best for datasets that might change frequently or for long reports.
 
-The table displayed in a specific format. The syntax for this is looks intimidating but is not that hard. This is a reference to \cref{tab:multicsv}
-
+        It can be useful to place the code for these imports in a separate file for better readability and reusability
+    \end{tipbox}
+    \begin{quirkbox}
+        \texttt{longtable} does not work inside floating environments like \texttt{table}.
+    \end{quirkbox}
 
 
 \DTLloaddb{data}{data/sales_data.csv}

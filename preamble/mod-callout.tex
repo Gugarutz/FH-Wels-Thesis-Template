@@ -1,0 +1,69 @@
+
+
+%------------------------------------------------------------%
+% Admonition boxes or callout inspired by MD/Github (https://github.com/orgs/community/discussions/16925)
+\usepackage{fontawesome5}
+\usepackage{tcolorbox}
+% NOTE (blue info box)
+\newtcolorbox{notebox}{
+    colback=blue!5,
+    colframe=blue!50!black,
+    title=\faInfo\ \bfseries\sffamily NOTE,
+    boxrule=0.5pt,
+    arc=5pt
+}
+
+% TIP (green suggestion box)
+\newtcolorbox{tipbox}{
+    colback=green!5,
+    colframe=green!50!black,
+    title=\faLightbulb\ \bfseries\sffamily TIP,
+    boxrule=0.5pt,
+    arc=5pt
+}
+
+% WARNING (yellow caution box)
+\newtcolorbox{warningbox}{
+    colback=yellow!10,
+    colframe=orange!65!black,
+    title=\faExclamationTriangle\ \bfseries\sffamily WARNING,
+    boxrule=0.5pt,
+    arc=5pt
+}
+
+% DANGER (red error box)
+\newtcolorbox{dangerbox}{
+    colback=red!5,
+    colframe=red!70!black,
+    title=\faTimes\ \bfseries\sffamily DANGER,
+    boxrule=0.6pt,
+    arc=5pt
+}
+
+% IMPORTANT (purple attention box)
+\newtcolorbox{importantbox}{
+    colback=red!5,
+    colframe=violet!50!black,
+    title=\faExclamation\ \bfseries\sffamily IMPORTANT,
+    boxrule=0.5pt,
+    arc=5pt
+}
+
+% QUIRK
+\newtcolorbox{quirkbox}{
+    colback=cyan!5,
+    colframe=cyan!50!black,
+    title=\faWrench\ \bfseries\sffamily QUIRK,
+    boxrule=0.5pt,
+    arc=5pt
+}
+
+% BUG
+\newtcolorbox{bugbox}{
+    colback=orange!10,
+    colframe=orange!70!black,
+    title=\faBug\ \bfseries\sffamily BUG,
+    boxrule=0.5pt,
+    arc=5pt
+}
+
