@@ -5,7 +5,7 @@
     oneside,
     bibliography=totocnumbered,     % Include bibliography in TOC with number
     listof=totocnumbered,           % Include List of Tables/Figures in TOC with number
-    numbers=noenddot                % Changes heading numbering from 1.1. to 1.1
+    numbers=noenddot                % Changes heading/caption numbering from 1.1. to 1.1
 ]{scrbook}
 
 %------------------------------------------------------------%
@@ -50,11 +50,11 @@
 % FRONT PAGE
 %------------------------------------------------------------%
     \input{preamble/set-titlepage-fields}   % defines fields for user data
-    \input{preamble/set-titlepage-data}     % TODO: [USER] Fill this out
+    \input{metadata}     % TODO: [USER] Fill this out
     \input{preamble/set-titlepage}          % sets up the titlepage
     \input{preamble/declarationDE}      % declaration in 2 languages
     \input{preamble/declarationEN}
-        % TODO: [USER] Adjust {/preamble/signature} settings to en/disable signature
+        % TODO: [USER] Adjust {/preamble/set-signature} settings to toggle signature
 
 %------------------------------------------------------------%
 % TESTING
