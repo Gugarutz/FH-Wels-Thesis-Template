@@ -134,12 +134,10 @@
 % BACKMATTER
 %------------------------------------------------------------%
         % \backmatter % Disables chapter numbering
-
-        \markright{\empty}
-        \printbibliography
-
         \begingroup
-            \small % Decreases the fontsize inside group
+          \footnotesize % Decreases the fontsize inside group
+          \markright{\empty}
+            \printbibliography
 	        \listoffigures
 	        \listoftables
         \endgroup

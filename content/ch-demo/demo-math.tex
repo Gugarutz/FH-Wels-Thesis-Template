@@ -1,114 +1,64 @@
 \section{Mathematics and Units}
-
-
 \begingroup \small
-\subsection{Custom commands}
 
-    \subsubsection{Number spaces}
-        The following commands are provided number sets:
-        \[
-            \verb|\N| \rightarrowtail \N \quad
-            \verb|\Z| \rightarrowtail\Z \quad
-            \verb|\Q| \rightarrowtail\Q \quad
-            \verb|\R| \rightarrowtail\R \quad
-            \verb|\I| \rightarrowtail\I \quad
-            \verb|\C| \rightarrowtail\C
-        \]
+Writing mathematical equation in \LaTeX{} is generally easy, the problem lies in making them look correct. There are many common practices that are specific to \TeX{} users, scientific writing in general, and can be very different depending of the field of study. This template focuses on the usage for mechanical \& electrical engineering for central Europe.
 
-    \subsubsection{Umlauts in math mode}
-        Some extra math shortcuts are provided for German users for Umlauts as the normal ä, ö, ü would be typeset upright and require brackets \{ \} despite being one letter.
+\subsection{Variables and Constants}
+    \label{sec:variables-const}
 
-        \[
-            \verb|\aum| \rightarrowtail  \aum \qquad
-            \verb|\oum| \rightarrowtail  \oum \qquad
-            \verb|\uum| \rightarrowtail  \uum
-        \]
-        \[
-            \verb|\Aum| \rightarrowtail  \Aum \qquad
-            \verb|\Oum| \rightarrowtail  \Oum \qquad
-            \verb|\Uum| \rightarrowtail  \Uum
-        \]
+    It is common practice to write variables in \textit{italics} and constants upright.
+    For example, $k$ may be the stiffness of a spring but would be typeset as $\mathrm{k}$ (though more commonly $\mathrm{k_B}$) for the Boltzmann constant.
 
-        Compared to normal Umlauts being used in math mode:
-        % faked to not have error: 'Command \" not allowed in math mode'
-        \[
-            P_{\ddot{\mathrm{a}}} \rightarrowtail P_\aum \qquad
-            T_{\ddot{\mathrm{o}}} \rightarrowtail T_\oum \qquad
-            p_{\ddot{\mathrm{u}}} \rightarrowtail p_\uum
-        \]
-        \[
-            P_{\ddot{\mathrm{A}}} \rightarrowtail P_\Aum \qquad
-            T_{\ddot{\mathrm{O}}} \rightarrowtail T_\Oum \qquad
-            p_{\ddot{\mathrm{U}}} \rightarrowtail p_\Uum
-        \]
+    Keep in mind that the usage of these principles also applies to Greek letters for example: $\upalpha$ and $\alpha$, or $\epsilon$ and $\varepsilon$. Be aware of $\pi$ and $\varpi$ especially, \verb|\varpi| (the second one) looks more like a lower case omega, than pi.
 
+    \begin{notebox}
+        Euler's constant \e was formatted in \verb|\mathscr{}| instead of upright (\verb|\mathrm{}|) for better usability in text and aesthetic purposes
+    \end{notebox}
 
-    \subsubsection{Dimensionless numbers}
-        This Package provides a significant set of preset named, dimensionless numbers. Be aware that these are not simple shortcuts but have specific kerning (the distance between characters) for better readability and recognizability.
+    \begin{tipbox}
+        For more examples, please see the following repositories:\\
+        \url{https://github.com/Gugarutz/FH-Wels-Formelsammlung-THD-STL-WUE}\\
+        \url{https://github.com/Gugarutz/FH-Wels-FEL-Formelsammlung}
+    \end{tipbox}
 
-        The commands can be found in \texttt{preamble/set-math.tex} file, you may disable the. See table below for all available shortcuts/commands.
+\subsection{Mathematical fonts}
+    The use of fonts (or rather typefaces) in \LaTeX{} can be hard to understand, especially due to the misuse of the word by Microsoft Office products. Fonts are variations of a single typeface, eg. bold, italics, or small caps. Whereas typefaces are what you may know as fonts.
 
-        \begin{table}[H]
-            \centering
-            \caption{All dimensionless numbers provided}
-            \begin{tabular}{lll|lll|lll|lll}
-                \verb|\Arch| & $\rightarrowtail $ & $\Arch$ &
-                  \verb|\Lewi| & $\rightarrowtail $ & $\Lewi$ &
-                  \verb|\Four| & $\rightarrowtail $ & $\Four$ &
-                  \verb|\Rayl| & $\rightarrowtail $ & $\Rayl$ \\
-                \verb|\Biot| & $\rightarrowtail $ & $\Biot$ &
-                  \verb|\Mach| & $\rightarrowtail $ & $\Mach$ &
-                  \verb|\Frou| & $\rightarrowtail $ & $\Frou$ &
-                  \verb|\Reyn| & $\rightarrowtail $ & $\Reyn$ \\
-                \verb|\Cauc| & $\rightarrowtail $ & $\Cauc$ &
-                  \verb|\Nuss| & $\rightarrowtail $ & $\Nuss$ &
-                  \verb|\Gras| & $\rightarrowtail $ & $\Gras$ &
-                  \verb|\Schm| & $\rightarrowtail $ & $\Schm$ \\
-                \verb|\Damk| & $\rightarrowtail $ & $\Damk$ &
-                  \verb|\Pecl| & $\rightarrowtail $ & $\Pecl$ &
-                  \verb|\Karl| & $\rightarrowtail $ & $\Karl$ &
-                  \verb|\Sher| & $\rightarrowtail $ & $\Sher$ \\
-                \verb|\Eule| & $\rightarrowtail $ & $\Eule$ &
-                  \verb|\Pran| & $\rightarrowtail $ & $\Pran$ &
-                  \verb|\Knud| & $\rightarrowtail $ & $\Knud$ &
-                  \verb|\Stro| & $\rightarrowtail $ & $\Stro$ \\
-                \verb|\Webe| & $\rightarrowtail $ & $\Webe$ &
-                  &&&&&&&&
-            \end{tabular}
-        \end{table}
+    Keep in mind that the typefaces for math and text are always separated in \LaTeX{}, both in regards of setting the defaults and in terms of availability.
 
-    \subsubsection{Further kerned shortcuts}
+    \begin{center}
+        \small
+        \begin{tabular}{l cl l}
+            \toprule
+            \textbf{Command}        & \textbf{Text}          & \textbf{Numbers}           & \textbf{Description}                     \\ \midrule
+            Default (none)          & $ABC$                  & $123456789.0$              & Default math italic                      \\
+            \verb|\mathrm{...}|     & $\mathrm{ABC-abc}$     & $\mathrm{123456789.0}$     & Upright Roman (for constants)                    \\
+            \verb|\mathit{...}|     & $\mathit{ABC-abc}$     & $\mathit{123456789.0}$     & Italic (for variables)         \\
+            \verb|\mathbf{...}|     & $\mathbf{ABC-abc}$     & $\mathbf{123456789.0}$     & Bold Roman (serif)                       \\
+            \verb|\mathsf{...}|     & $\mathsf{ABC-abc}$     & $\mathsf{123456789.0}$     & Sans-serif upright                       \\
+            \verb|\mathtt{...}|     & $\mathtt{ABC-abc}$     & $\mathtt{123456789.0}$     & Typewriter (monospace)                   \\
+            \verb|\mathcal{...}|    & $\mathcal{ABC}$        & ---                        & Calligraphic (uppercase only)            \\
+            \verb|\mathbb{...}|     & $\mathbb{ABC}$         & ---                        & Blackboard (uppercase only)              \\
+            \verb|\mathds{...}|     & $\mathds{ABC}$         & $\mathds{123456789.0}$     & alternate Blackboard (uppercase only)    \\
+            \verb|\mathfrak{...}|   & $\mathfrak{ABC-abc}$   & $\mathfrak{123456789.0}$   & Fraktur (Gothic-style)                   \\
+            \verb|\boldsymbol{...}| & $\boldsymbol{ABC-abc}$ & $\boldsymbol{123456789.0}$ & General bold math (symbols \& Greek) \\
+            \verb|\mathscr{...}|    & $\mathscr{ABC}$        & ---                        & Script (more decorative)    \\ \bottomrule
+        \end{tabular}
+    \end{center}
+
 
 
 \subsection{Sub and superscript}
     Normal subscript and superscript comes after the object in question and is done with~\texttt{\_} and~\texttt{\^}. By default this only applies to one symbol each, so \verb|M_ab| produces $M_ab$. To avoid this use curly brackets like with other \LaTeX{} commands as follows: \verb|M_{ab}^{cd}| to produce $M_{ab}^{cd}$. Also avoid $M_{a^b}$ (\verb*|M_{a^b}|) and ${M_a}^b$ (\verb*|{M_a}^b|).
 
     With the \verb|\prescript{a}{b}{M}| command you can typeset subscript and superscript before an object like this:
-    \[  \prescript{a}{b}{M}
+    \[
+        \prescript{a}{b}{M}
         \text{\quad and even add the ones after that: \quad}
-        \prescript{a}{b}{M}_c^d \]
+        \prescript{a}{b}{M}_c^d
+    \]
 
-\subsection{Mathematical fonts}
 
-\begin{center}
-    \small
-    \begin{tabular}{l cl l}
-        \toprule
-        \textbf{Command}        & \textbf{Text}          & \textbf{Numbers}           & \textbf{Description}                     \\ \midrule
-        Default (none)          & $ABC$                  & $123456789.0$              & Default math italic                      \\
-        \verb|\mathrm{...}|     & $\mathrm{ABC-abc}$     & $\mathrm{123456789.0}$     & Upright Roman (serif)                    \\
-        \verb|\mathit{...}|     & $\mathit{ABC-abc}$     & $\mathit{123456789.0}$     & Italic (serif, default for vars)         \\
-        \verb|\mathbf{...}|     & $\mathbf{ABC-abc}$     & $\mathbf{123456789.0}$     & Bold Roman (serif)                       \\
-        \verb|\mathsf{...}|     & $\mathsf{ABC-abc}$     & $\mathsf{123456789.0}$     & Sans-serif upright                       \\
-        \verb|\mathtt{...}|     & $\mathtt{ABC-abc}$     & $\mathtt{123456789.0}$     & Typewriter (monospace)                   \\
-        \verb|\mathcal{...}|    & $\mathcal{ABC}$        & ---                        & Calligraphic (uppercase only)            \\
-        \verb|\mathbb{...}|     & $\mathbb{ABC}$         & ---                        & Blackboard (uppercase only)              \\
-        \verb|\mathds{...}|     & $\mathds{ABC}$         & $\mathds{123456789.0}$     & alternate Blackboard (uppercase only)    \\
-        \verb|\mathfrak{...}|   & $\mathfrak{ABC-abc}$   & $\mathfrak{123456789.0}$   & Fraktur (Gothic-style)                   \\
-        \verb|\boldsymbol{...}| & $\boldsymbol{ABC-abc}$ & $\boldsymbol{123456789.0}$ & General bold math (symbols \& Greek) \\
-        \verb|\mathscr{...}|    & $\mathscr{ABC}$        & ---                        & Script (more decorative calligraphic)    \\ \bottomrule
-    \end{tabular}
-\end{center}
 
 \subsection{Physics package}
 
@@ -122,24 +72,18 @@
 
     \subsubsection{Differentials}
 
-    The \texttt{physics} packages adds various helpful commands for easy and quick setting of differentials.
+        The \texttt{physics} packages adds various helpful commands for easy and quick setting of differentials.
 
-    The normal upright d used in by \texttt{physics} was replaced by $\mathrm{d\!I}$ which is used by professor Schiefermayr in his scripts. You can disable this in the \texttt{preamble/math.tex} under the custom math commands.
+        The normal upright d used in by \texttt{physics} was replaced by $\mathrm{d\!I}$ which is used by professor Schiefermayr in his scripts. You can disable this in the \texttt{preamble/math.tex} under the custom math commands.
 
-     \[ \dd[3]{x} \]
-
-     \[ \int_{0}^{\infty} 3x^2 \dd{x} = \eval{x^3}_{0}^{\infty} \]
+         \[ \dd[3]{x} \]
+         \[ \int_{0}^{\infty} 3x^2 \dd{x} = \eval{x^3}_{0}^{\infty} \]
 
 \subsection{Greek Symbols in Text}
 
     With the \verb|textgreek| package, you can use commands like \verb|\textalpha| (\textalpha) to create Greek characters inside normal text without needing to invoke math mode.
 
-\subsection{Variables and Constants}
-
-    It is common practice to write variables in \textit{italics} and constants upright. For example, $e$ might be used for eccentricity, while $\mathrm{e}$ is used for Euler's constant $(=\num{2.718281}\dots)$.
-
-    % TODO: Add a table summarizing all math shortcuts.
-
+%==================================================================================
 \subsection{The \texttt{siunitx} Package}
 
     % The `siunitx` package ensures correct typesetting of numbers and units.
@@ -202,17 +146,88 @@
                produces \unit[per-mode=symbol]{\kg\per\m\per\s\squared}.
         \end{itemize}
 
+%==================================================================================
+\subsection{Custom commands}
+    Some special mathematical characters are provided by this template in a nicer and distinct font or typeset upright as per \cref{sec:variables-const}.
+
+    \begin{align*}
+        \text{Euler's constant: } & \texttt{\tb e    } \rightarrowtail  \e    \\
+        \text{Imaginary i: }      & \texttt{\tb imag } \rightarrowtail  \imag \\
+        \text{Imaginary j: }      & \texttt{\tb jmag } \rightarrowtail  \jmag
+    \end{align*}
+
+    \subsubsection{Number spaces}
+        The following commands are provided number sets:
+        \[
+            \verb|\N| \rightarrowtail \N \quad
+            \verb|\Z| \rightarrowtail \Z \quad
+            \verb|\Q| \rightarrowtail \Q \quad
+            \verb|\R| \rightarrowtail \R \quad
+            \verb|\I| \rightarrowtail \I \quad
+            \verb|\C| \rightarrowtail \C
+        \]
+
+    \subsubsection{Umlauts in math mode}
+        Some extra math shortcuts are provided for German users for Umlauts as the normal ä, ö, ü would be typeset upright and require brackets \{ \} despite being one letter.
+
+        \[
+            \verb|\aum| \rightarrowtail  \aum \qquad
+            \verb|\oum| \rightarrowtail  \oum \qquad
+            \verb|\uum| \rightarrowtail  \uum
+        \]
+        \[
+            \verb|\Aum| \rightarrowtail  \Aum \qquad
+            \verb|\Oum| \rightarrowtail  \Oum \qquad
+            \verb|\Uum| \rightarrowtail  \Uum
+        \]
+
+        Compared to normal Umlauts being used in math mode:
+        % faked to not have error: 'Command \" not allowed in math mode'
+        \[
+            P_{\ddot{\mathrm{a}}} \rightarrowtail P_\aum \qquad
+            T_{\ddot{\mathrm{o}}} \rightarrowtail T_\oum \qquad
+            p_{\ddot{\mathrm{u}}} \rightarrowtail p_\uum
+        \]
+        \[
+            P_{\ddot{\mathrm{A}}} \rightarrowtail P_\Aum \qquad
+            T_{\ddot{\mathrm{O}}} \rightarrowtail T_\Oum \qquad
+            p_{\ddot{\mathrm{U}}} \rightarrowtail p_\Uum
+        \]
 
 
+    \subsubsection{Dimensionless numbers}
+        This Package provides a significant set of preset named, dimensionless numbers. Be aware that these are not simple shortcuts but have specific kerning (the distance between characters) for better readability and recognizability.
 
+        The commands can be found in \texttt{preamble/set-math.tex} file, you may disable the. See table below for all available shortcuts/commands.
 
-
-
-
-
-
-
-
+        \begin{table}[H]
+            \centering
+            \caption{All dimensionless numbers provided}
+            \begin{tabular}{lll|lll|lll|lll}
+                \verb|\Arch| & $\rightarrowtail $ & $\Arch$ &
+                \verb|\Lewi| & $\rightarrowtail $ & $\Lewi$ &
+                \verb|\Four| & $\rightarrowtail $ & $\Four$ &
+                \verb|\Rayl| & $\rightarrowtail $ & $\Rayl$ \\
+                \verb|\Biot| & $\rightarrowtail $ & $\Biot$ &
+                \verb|\Mach| & $\rightarrowtail $ & $\Mach$ &
+                \verb|\Frou| & $\rightarrowtail $ & $\Frou$ &
+                \verb|\Reyn| & $\rightarrowtail $ & $\Reyn$ \\
+                \verb|\Cauc| & $\rightarrowtail $ & $\Cauc$ &
+                \verb|\Nuss| & $\rightarrowtail $ & $\Nuss$ &
+                \verb|\Gras| & $\rightarrowtail $ & $\Gras$ &
+                \verb|\Schm| & $\rightarrowtail $ & $\Schm$ \\
+                \verb|\Damk| & $\rightarrowtail $ & $\Damk$ &
+                \verb|\Pecl| & $\rightarrowtail $ & $\Pecl$ &
+                \verb|\Karl| & $\rightarrowtail $ & $\Karl$ &
+                \verb|\Sher| & $\rightarrowtail $ & $\Sher$ \\
+                \verb|\Eule| & $\rightarrowtail $ & $\Eule$ &
+                \verb|\Pran| & $\rightarrowtail $ & $\Pran$ &
+                \verb|\Knud| & $\rightarrowtail $ & $\Knud$ &
+                \verb|\Stro| & $\rightarrowtail $ & $\Stro$ \\
+                \verb|\Webe| & $\rightarrowtail $ & $\Webe$ &
+                &&&&&&&&
+            \end{tabular}
+        \end{table}
 
 
 
