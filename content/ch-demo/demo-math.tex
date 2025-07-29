@@ -28,7 +28,7 @@ Writing mathematical equation in \LaTeX{} is generally easy, the problem lies in
 
     \begin{center}
         \small
-        \begin{tabular}{l cl l}
+        \begin{tabular}{lccl}
             \toprule
             \textbf{Command}        & \textbf{Text}          & \textbf{Numbers}           & \textbf{Description}                     \\ \midrule
             Default (none)          & $ABC$                  & $123456789.0$              & Default math italic                      \\
@@ -62,13 +62,22 @@ Writing mathematical equation in \LaTeX{} is generally easy, the problem lies in
 
 \subsection{Physics package}
 
-    The \verb|physics| package defines \verb|\qty|. However this is already used by \texttt{siunitx}. Therefore this template redefines \verb|\qty| to set \verb|\set|. It can only be used in a maths environment.
+    The \verb|physics| package defines \verb|\qty|. However this is already used by \texttt{siunitx}. Therefore this template redefines \verb|\qty| to \verb|\set|.
 
-    \verb|\set{10}| produces: $\set{10}$
+    \begin{center}
+        \verb|\set{10}|             produces: $\set{10}$
 
-    \verb|\set[\dfrac{13}{14}]|     produces:$\set[\dfrac{13}{14}]$
+        \verb|\set[\dfrac{13}{14}]| produces: $\set[\dfrac{13}{14}]$
 
-    $\set|\vec{a}| \quad  \abs{\vec{r}} \quad \norm{\va{r}} \quad \norm{\va*{r}} $
+        \verb/\set|\vec{a}| \abs{\vec{r}} \norm{\va{r}} \norm{\va*{r}}/ \\
+            produces: \\
+            $\set|\vec{a}| \quad  \abs{\vec{r}} \quad \norm{\va{r}} \quad \norm{\va*{r}} $
+    \end{center}
+
+
+    \begin{warningbox}
+        \verb*|\set| may only be used inside a math environment!
+    \end{warningbox}
 
     \subsubsection{Differentials}
 
@@ -198,7 +207,7 @@ Writing mathematical equation in \LaTeX{} is generally easy, the problem lies in
     \subsubsection{Dimensionless numbers}
         This Package provides a significant set of preset named, dimensionless numbers. Be aware that these are not simple shortcuts but have specific kerning (the distance between characters) for better readability and recognizability.
 
-        The commands can be found in \texttt{preamble/set-math.tex} file, you may disable the. See table below for all available shortcuts/commands.
+        The commands can be found in \texttt{preamble/set-math.tex} file, you may disable them there. See table below for all available shortcuts/commands.
 
         \begin{table}[H]
             \centering
@@ -231,7 +240,50 @@ Writing mathematical equation in \LaTeX{} is generally easy, the problem lies in
 
 
 
-
-
+    \subsubsection{Abbreviations}
+        \begin{center}
+        \begin{tabular}{lll|lll|lll|lll}
+            \verb|\eff|   & $\rightarrowtail$ & $\eff$   &
+            \verb|\avg|   & $\rightarrowtail$ & $\avg$   &
+            \verb|\maxx|  & $\rightarrowtail$ & $\maxx$  &
+            \verb|\minn|  & $\rightarrowtail$ & $\minn$  \\
+            \verb|\inl|   & $\rightarrowtail$ & $\inl$   &
+            \verb|\out|   & $\rightarrowtail$ & $\out$   &
+            \verb|\refe|  & $\rightarrowtail$ & $\refe$  &
+            \verb|\sat|   & $\rightarrowtail$ & $\sat$   \\
+            \verb|\amb|   & $\rightarrowtail$ & $\amb$   &
+            \verb|\crit|  & $\rightarrowtail$ & $\crit$  &
+            \verb|\env|   & $\rightarrowtail$ & $\env$   &
+            \verb|\tot|   & $\rightarrowtail$ & $\tot$   \\
+            \verb|\res|   & $\rightarrowtail$ & $\res$   &
+            \verb|\num|   & $\rightarrowtail$ & $\numer$   &
+            \verb|\expmt| & $\rightarrowtail$ & $\expmt$ &
+            \verb|\simu|  & $\rightarrowtail$ & $\simu$  \\
+            \verb|\init|  & $\rightarrowtail$ & $\init$  &
+            \verb|\final| & $\rightarrowtail$ & $\final$ &
+            \verb|\thrm|  & $\rightarrowtail$ & $\thrm$  &
+            \verb|\cond|  & $\rightarrowtail$ & $\cond$  \\
+            \verb|\conv|  & $\rightarrowtail$ & $\conv$  &
+            \verb|\rad|   & $\rightarrowtail$ & $\rad$   &
+            \verb|\gen|   & $\rightarrowtail$ & $\gen$   &
+            \verb|\loss|  & $\rightarrowtail$ & $\loss$  \\
+            \verb|\trans| & $\rightarrowtail$ & $\trans$ &
+            \verb|\eq|    & $\rightarrowtail$ & $\eq$    &
+            \verb|\rxn|   & $\rightarrowtail$ & $\rxn$   &
+            \verb|\mix|   & $\rightarrowtail$ & $\mix$   \\
+            \verb|\bulk|  & $\rightarrowtail$ & $\bulk$  &
+            \verb|\wall|  & $\rightarrowtail$ & $\wall$  &
+            \verb|\film|  & $\rightarrowtail$ & $\film$  &
+            \verb|\surf|  & $\rightarrowtail$ & $\surf$  \\
+            \verb|\rms|   & $\rightarrowtail$ & $\rms$   &
+            \verb|\dc|    & $\rightarrowtail$ & $\dc$    &
+            \verb|\ac|    & $\rightarrowtail$ & $\ac$    &
+            \verb|\nom|   & $\rightarrowtail$ & $\nom$   \\
+            \verb|\ctrl|  & $\rightarrowtail$ & $\ctrl$  &
+            \verb|\meas|  & $\rightarrowtail$ & $\meas$  &
+            \verb|\set|   & $\rightarrowtail$ & $\setp$   &
+            &&
+        \end{tabular}
+        \end{center}
 
 \endgroup
