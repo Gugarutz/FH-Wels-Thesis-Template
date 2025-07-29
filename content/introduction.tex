@@ -1,24 +1,101 @@
-\addchap{Introduction}
-%\chapter{Introduction} % use this for numbered introduction
-	\blindtext
-	
-	\blindtext
-	
-	\blindtext
-	
-	\blindtext
-	
-	\blindtext
-	
-	\blindtext
-	
-	\blindtext
-	
-	\blindtext
-	
-	\blindtext
-	
-	\blindtext
-	
-	\blindtext
-	
+%\addchap{Introduction}
+\chapter{Introduction} % use this for numbered introduction
+
+Some experience with the software package {\LaTeX} is necessary for using this template.
+
+Please refer to the \textsc{README.md} file or the \hyperget{https://github.com/Gugarutz/FH-Wels-Thesis-Template}{GitHub repository} for installation and first compilation.
+
+Throughout this template, various informational boxes are used to communicate important details, recommendations, and warnings. Each type of box serves a distinct purpose:
+
+\begin{notebox}
+    Provides general notes or remarks. These highlight information that users should be aware of, even when skimming the document.
+\end{notebox}
+
+\begin{tipbox}
+    Contains optional advice or best practices. These tips are intended to improve the user’s workflow or output but are not strictly required.
+\end{tipbox}
+
+\begin{importantbox}
+    Marks essential information that is critical for the correct usage of the template. Ignoring these instructions may lead to incorrect formatting, compilation issues, or failure to meet submission requirements.
+\end{importantbox}
+
+\begin{dangerbox}
+    Indicates critical issues that require immediate attention. Failure to comply may result in severe errors, document corruption, or non-compliance with institutional standards.
+\end{dangerbox}
+
+\begin{warningbox}
+    Highlights potential risks, unintended consequences, or problematic outcomes that could arise from a particular action or configuration.
+\end{warningbox}
+
+\begin{quirkbox}
+    Documents minor irregularities, limitations, or edge cases related to LaTeX behavior, package interactions, or the template itself. These do not generally prevent successful use but may cause confusion or unexpected results.
+\end{quirkbox}
+
+\begin{bugbox}
+    Reports known issues, malfunctions, or broken features in the current version of the template. These require manual workarounds or await future fixes.
+\end{bugbox}
+
+
+
+You can disable the feature in the modules. Simply comment out\\ \verb|\input{preamble/mod-callout}|. Keep in mind that you will need to also disable any files that use the feature
+
+\section{Headings}
+With respect to headings, consider the following points for the formulation of a table of contents:
+\begin{itemize}
+    \item Do not use unknown abbreviations in headings
+    \item No full stop at the end of headings
+    \item Make sure that a heading -- without associated text -- is not situated on the last line of a page; a page should also not start with a single line which belongs to the paragraph on the previous page.
+    \item The degree of detail corresponds to the focus and emphasis of the thesis
+    \item Always use at least two sub-chapters in one chapter; otherwise do not use sub-chapters
+    \item Use a maximum of 5 levels of sub-chapters
+\end{itemize}
+
+The following are the available heading types. The numbering is identical to the internal \LaTeX{} numbering. You can add an asterisk (*) in to remove the number and the table of contents entry. Use \verb*|\addchap| or \verb*|\addsec| for unnumbered headings with a table of contents entry.
+
+\begin{center}
+  \begin{tabular}{lll}
+    level 0: & \verb|\chapter{...}|       & \verb*|\addchap{...}| \\
+    level 1: & \verb|\section{...}|       & \verb*|\addsec{...}| \\
+    level 2: & \verb|\subsection{...}|    & not provided \\
+    level 3: & \verb|\subsubsection{...}| & not provided \\
+    level 4: & \verb|\paragraph{...}|     & not numbered \\
+    level 5: & \verb|\subparagraph{...}|  & not numbered
+  \end{tabular}
+\end{center}
+
+The numbering for paragraph and subparagraph has been disabled and no table of contents entry will be created.
+
+%------------------------------------------------------------
+\section{Dashes}
+
+\begin{description}[style=nextline, leftmargin=1cm]
+
+    \item[Hyphen (-) (\texttt{-})]
+    The shortest dash. Used for:
+    \begin{itemize}
+        \item Hyphenating words (e.g., well-being, co-author)
+        \item Breaking words at line ends
+        \item Compound modifiers (e.g., high-speed train)
+    \end{itemize}
+
+    \item[En dash (--) (\texttt{- -})]
+    Medium length dash. Use it for:
+    \begin{itemize}
+        \item Ranges (e.g., 1990--2025, pages 12--30)
+        \item Connecting related items or contrast (e.g., the Paris--London flight)
+        \item Scores or results (e.g., 3--2 win)
+    \end{itemize}
+
+    \item[Em dash (---) (\texttt{- - -})]
+    Longest dash. Used to:
+    \begin{itemize}
+        \item Indicate breaks or interruptions in thought
+        \item Emphasize additional information or explanations
+        \item Replace commas, parentheses, or colons for emphasis
+    \end{itemize}
+
+    \item[Minus sign ($-$)]
+    Not a dash, but often confused with one. Used in math to denote subtraction or negative numbers. In \LaTeX, use a normal hyphen in math mode for a proper minus.
+
+\end{description}
+

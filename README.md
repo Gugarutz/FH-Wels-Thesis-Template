@@ -276,7 +276,7 @@ Set language after `\begin{document}`:
 </details>
 
 >[!NOTE]
-> Never delete template code; comment it out instead. This way you can keep it as a reference. Feel free to delete the `\include{ch-demo/...}` chapters, sections and appendices.
+> Never delete template code; comment it out instead. This way you can keep it as a reference.
 
 ## About this repository
 
