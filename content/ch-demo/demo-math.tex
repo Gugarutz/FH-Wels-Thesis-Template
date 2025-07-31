@@ -160,130 +160,180 @@ Writing mathematical equation in \LaTeX{} is generally easy, the problem lies in
     Some special mathematical characters are provided by this template in a nicer and distinct font or typeset upright as per \cref{sec:variables-const}.
 
     \begin{align*}
-        \text{Euler's constant: } & \texttt{\tb e    } \rightarrowtail  \e    \\
-        \text{Imaginary i: }      & \texttt{\tb imag } \rightarrowtail  \imag \\
-        \text{Imaginary j: }      & \texttt{\tb jmag } \rightarrowtail  \jmag
+        \text{Euler's constant: } & \texttt{\tb e    } \rat  \e    \\
+        \text{Imaginary i: }      & \texttt{\tb imag } \rat  \imag \\
+        \text{Imaginary j: }      & \texttt{\tb jmag } \rat  \jmag
     \end{align*}
 
     \subsubsection{Number spaces}
         The following commands are provided number sets:
         \[
-            \verb|\N| \rightarrowtail \N \quad
-            \verb|\Z| \rightarrowtail \Z \quad
-            \verb|\Q| \rightarrowtail \Q \quad
-            \verb|\R| \rightarrowtail \R \quad
-            \verb|\I| \rightarrowtail \I \quad
-            \verb|\C| \rightarrowtail \C
+            \verb|\N| \rat \N \quad
+            \verb|\Z| \rat \Z \quad
+            \verb|\Q| \rat \Q \quad
+            \verb|\R| \rat \R \quad
+            \verb|\I| \rat \I \quad
+            \verb|\C| \rat \C
         \]
 
     \subsubsection{Umlauts in math mode}
         Some extra math shortcuts are provided for German users for Umlauts as the normal ä, ö, ü would be typeset upright and require brackets \{ \} despite being one letter.
 
         \[
-            \verb|\aum| \rightarrowtail  \aum \qquad
-            \verb|\oum| \rightarrowtail  \oum \qquad
-            \verb|\uum| \rightarrowtail  \uum
+            \verb|\aum| \rat  \aum \qquad
+            \verb|\oum| \rat  \oum \qquad
+            \verb|\uum| \rat  \uum
         \]
         \[
-            \verb|\Aum| \rightarrowtail  \Aum \qquad
-            \verb|\Oum| \rightarrowtail  \Oum \qquad
-            \verb|\Uum| \rightarrowtail  \Uum
+            \verb|\Aum| \rat  \Aum \qquad
+            \verb|\Oum| \rat  \Oum \qquad
+            \verb|\Uum| \rat  \Uum
         \]
 
         Compared to normal Umlauts being used in math mode:
         % faked to not have error: 'Command \" not allowed in math mode'
         \[
-            P_{\ddot{\mathrm{a}}} \rightarrowtail P_\aum \qquad
-            T_{\ddot{\mathrm{o}}} \rightarrowtail T_\oum \qquad
-            p_{\ddot{\mathrm{u}}} \rightarrowtail p_\uum
+            P_{\ddot{\mathrm{a}}} \rat P_\aum \qquad
+            T_{\ddot{\mathrm{o}}} \rat T_\oum \qquad
+            p_{\ddot{\mathrm{u}}} \rat p_\uum
         \]
         \[
-            P_{\ddot{\mathrm{A}}} \rightarrowtail P_\Aum \qquad
-            T_{\ddot{\mathrm{O}}} \rightarrowtail T_\Oum \qquad
-            p_{\ddot{\mathrm{U}}} \rightarrowtail p_\Uum
+            P_{\ddot{\mathrm{A}}} \rat P_\Aum \qquad
+            T_{\ddot{\mathrm{O}}} \rat T_\Oum \qquad
+            p_{\ddot{\mathrm{U}}} \rat p_\Uum
         \]
 
 
     \subsubsection{Dimensionless numbers}
-        This Package provides a significant set of preset named, dimensionless numbers. Be aware that these are not simple shortcuts but have specific kerning (the distance between characters) for better readability and recognizability.
+        This template provides a significant set of preset named, dimensionless numbers. Be aware that these are not simple shortcuts but have specific kerning (the distance between characters) for better readability and recognizability.
 
-        The commands can be found in \texttt{preamble/set-math.tex} file, you may disable them there. See table below for all available shortcuts/commands.
+        The commands can be found in \texttt{preamble/mod-math.tex} file, you may disable them there. See table below for all available shortcuts/commands.
 
         \begin{table}[H]
             \centering
             \caption{All dimensionless numbers provided}
             \begin{tabular}{lll|lll|lll|lll}
-                \verb|\Arch| & $\rightarrowtail $ & $\Arch$ &
-                \verb|\Lewi| & $\rightarrowtail $ & $\Lewi$ &
-                \verb|\Four| & $\rightarrowtail $ & $\Four$ &
-                \verb|\Rayl| & $\rightarrowtail $ & $\Rayl$ \\
-                \verb|\Biot| & $\rightarrowtail $ & $\Biot$ &
-                \verb|\Mach| & $\rightarrowtail $ & $\Mach$ &
-                \verb|\Frou| & $\rightarrowtail $ & $\Frou$ &
-                \verb|\Reyn| & $\rightarrowtail $ & $\Reyn$ \\
-                \verb|\Cauc| & $\rightarrowtail $ & $\Cauc$ &
-                \verb|\Nuss| & $\rightarrowtail $ & $\Nuss$ &
-                \verb|\Gras| & $\rightarrowtail $ & $\Gras$ &
-                \verb|\Schm| & $\rightarrowtail $ & $\Schm$ \\
-                \verb|\Damk| & $\rightarrowtail $ & $\Damk$ &
-                \verb|\Pecl| & $\rightarrowtail $ & $\Pecl$ &
-                \verb|\Karl| & $\rightarrowtail $ & $\Karl$ &
-                \verb|\Sher| & $\rightarrowtail $ & $\Sher$ \\
-                \verb|\Eule| & $\rightarrowtail $ & $\Eule$ &
-                \verb|\Pran| & $\rightarrowtail $ & $\Pran$ &
-                \verb|\Knud| & $\rightarrowtail $ & $\Knud$ &
-                \verb|\Stro| & $\rightarrowtail $ & $\Stro$ \\
-                \verb|\Webe| & $\rightarrowtail $ & $\Webe$ &
-                &&&&&&&&
+                \verb|\Arch| & \rat & \Arch &
+                \verb|\Biot| & \rat & \Biot &
+                \verb|\Cauc| & \rat & \Cauc &
+                \verb|\Damk| & \rat & \Damk \\
+                \verb|\Ecke| & \rat & \Ecke &
+                \verb|\Eule| & \rat & \Eule &
+                \verb|\Four| & \rat & \Four &
+                \verb|\Frou| & \rat & \Frou \\
+                \verb|\Gras| & \rat & \Gras &
+                \verb|\Karl| & \rat & \Karl &
+                \verb|\Knud| & \rat & \Knud &
+                \verb|\Lewi| & \rat & \Lewi \\
+                \verb|\Mach| & \rat & \Mach &
+                \verb|\Nuss| & \rat & \Nuss &
+                \verb|\Pecl| & \rat & \Pecl &
+                \verb|\Pran| & \rat & \Pran \\
+                \verb|\Rayl| & \rat & \Rayl &
+                \verb|\Reyn| & \rat & \Reyn &
+                \verb|\Schm| & \rat & \Schm &
+                \verb|\Sher| & \rat & \Sher \\
+                \verb|\Stan| & \rat & \Stan &
+                \verb|\Stro| & \rat & \Stro &
+                \verb|\Thom| & \rat & \Thom &
+                \verb|\Webe| & \rat & \Webe
             \end{tabular}
         \end{table}
 
-
-
     \subsubsection{Abbreviations}
-        \begin{center}
-        \begin{tabular}{lll|lll|lll|lll}
-            \verb|\eff|   & $\rightarrowtail$ & $\eff$   &
-            \verb|\avg|   & $\rightarrowtail$ & $\avg$   &
-            \verb|\maxx|  & $\rightarrowtail$ & $\maxx$  &
-            \verb|\minn|  & $\rightarrowtail$ & $\minn$  \\
-            \verb|\inl|   & $\rightarrowtail$ & $\inl$   &
-            \verb|\out|   & $\rightarrowtail$ & $\out$   &
-            \verb|\refe|  & $\rightarrowtail$ & $\refe$  &
-            \verb|\sat|   & $\rightarrowtail$ & $\sat$   \\
-            \verb|\amb|   & $\rightarrowtail$ & $\amb$   &
-            \verb|\crit|  & $\rightarrowtail$ & $\crit$  &
-            \verb|\env|   & $\rightarrowtail$ & $\env$   &
-            \verb|\tot|   & $\rightarrowtail$ & $\tot$   \\
-            \verb|\res|   & $\rightarrowtail$ & $\res$   &
-            \verb|\num|   & $\rightarrowtail$ & $\numer$   &
-            \verb|\expmt| & $\rightarrowtail$ & $\expmt$ &
-            \verb|\simu|  & $\rightarrowtail$ & $\simu$  \\
-            \verb|\init|  & $\rightarrowtail$ & $\init$  &
-            \verb|\final| & $\rightarrowtail$ & $\final$ &
-            \verb|\thrm|  & $\rightarrowtail$ & $\thrm$  &
-            \verb|\cond|  & $\rightarrowtail$ & $\cond$  \\
-            \verb|\conv|  & $\rightarrowtail$ & $\conv$  &
-            \verb|\rad|   & $\rightarrowtail$ & $\rad$   &
-            \verb|\gen|   & $\rightarrowtail$ & $\gen$   &
-            \verb|\loss|  & $\rightarrowtail$ & $\loss$  \\
-            \verb|\trans| & $\rightarrowtail$ & $\trans$ &
-            \verb|\eq|    & $\rightarrowtail$ & $\eq$    &
-            \verb|\rxn|   & $\rightarrowtail$ & $\rxn$   &
-            \verb|\mix|   & $\rightarrowtail$ & $\mix$   \\
-            \verb|\bulk|  & $\rightarrowtail$ & $\bulk$  &
-            \verb|\wall|  & $\rightarrowtail$ & $\wall$  &
-            \verb|\film|  & $\rightarrowtail$ & $\film$  &
-            \verb|\surf|  & $\rightarrowtail$ & $\surf$  \\
-            \verb|\rms|   & $\rightarrowtail$ & $\rms$   &
-            \verb|\dc|    & $\rightarrowtail$ & $\dc$    &
-            \verb|\ac|    & $\rightarrowtail$ & $\ac$    &
-            \verb|\nom|   & $\rightarrowtail$ & $\nom$   \\
-            \verb|\ctrl|  & $\rightarrowtail$ & $\ctrl$  &
-            \verb|\meas|  & $\rightarrowtail$ & $\meas$  &
-            \verb|\set|   & $\rightarrowtail$ & $\setp$   &
-            &&
-        \end{tabular}
-        \end{center}
+    to be redone
+
+    \paragraph*{Thermodynamics}
+    \begin{center}
+    \begin{tabular}{llll|llll|llll}
+        \verb|\eff|   & \rat &  \eff   & Effective     &
+        \verb|\inl|   & \rat &  \inl   & Inlet         &
+        \verb|\out|   & \rat &  \out   & Outlet        \\
+        \verb|\refe|  & \rat &  \refe  & Reference     &
+        \verb|\sat|   & \rat &  \sat   & Saturation    &
+        \verb|\amb|   & \rat &  \amb   & Ambient       \\
+        \verb|\env|   & \rat &  \env   & Environment   &
+        \verb|\crit|  & \rat &  \crit  & Critical      &
+        \verb|\tot|   & \rat &  \tot   & Total         \\
+        \verb|\rev|   & \rat &  \rev   & Reversible    &
+        \verb|\irr|   & \rat &  \irr   & Irreversible  &
+        \verb|\ex|    & \rat &  \ex    & Exergy        \\
+    \end{tabular}
+    \end{center}
+
+    \paragraph*{numerics}
+    \begin{center}
+    \begin{tabular}{llll|llll|llll}
+        \verb|\avg|    & \rat & \avg   & Average        &
+        \verb|\maxx|   & \rat & \maxx  & Maximum        &
+        \verb|\minn|   & \rat & \minn  & Minimum        \\
+        \verb|\iter|   & \rat & \iter  & Iteration      &
+        \verb|\res|    & \rat & \res   & Residual       &
+        \verb|\numer|  & \rat & \numer & Numerical      \\
+        \verb|\expmt|  & \rat & \expmt & Experimental   &
+        \verb|\simu|   & \rat & \simu  & Simulated      &
+        \verb|\init|   & \rat & \init  & Initial        \\
+        \verb|\final|  & \rat & \final & Final          &
+        \verb|\CFL|    & \rat & \CFL   & \multicolumn{5}{l}{Courant–Friedrichs–Lewy}
+    \end{tabular}
+    \end{center}
+
+    \paragraph*{Thermal}
+    \begin{center}
+    \begin{tabular}{llll|llll|llll}
+        \verb|\thrm|   & \rat & \thrm   & Thermal       &
+        \verb|\cond|   & \rat & \cond   & Conduction    &
+        \verb|\conv|   & \rat & \conv   & Convection    \\
+        \verb|\rad|    & \rat & \rad    & Radiation     &
+        \verb|\gen|    & \rat & \gen    & Generated     &
+        \verb|\loss|   & \rat & \loss   & Loss          \\
+        \verb|\trans|  & \rat & \trans  & Transferred
+    \end{tabular}
+    \end{center}
+
+    \paragraph*{chem}
+    \begin{center}
+    \begin{tabular}{llll|llll|llll}
+        \verb|\eqlb| & \rat & \eqlb   & Equilibrium    &
+        \verb|\rxn|  & \rat & \rxn    & Reaction       &
+        \verb|\reac| & \rat & \reac   & Reaction (alt) \\
+        \verb|\mix|  & \rat & \mix    & Mixture        &
+        \verb|\bulk| & \rat & \bulk   & Bulk           &
+        \verb|\wall| & \rat & \wall   & Wall           \\
+        \verb|\film| & \rat & \film   & Film           &
+        \verb|\surf| & \rat & \surf   & Surface        &
+        \verb|\mol|  & \rat & \mol    & Molecular Mass \\
+    \end{tabular}
+    \end{center}
+
+    \paragraph*{fluids}
+    \begin{center}
+    \begin{tabular}{llll|llll}
+        \verb|\visc|   & \rat & \visc   & Viscous         &
+        \verb|\incomp| & \rat & \incomp & Incompressible  \\
+        \verb|\comp|   & \rat & \comp   & Compressible    &
+        \verb|\ideal|  & \rat & \ideal  & Ideal (Gas)     \\
+        \verb|\realg|  & \rat & \realg  & Real (Gas)
+    \end{tabular}
+    \end{center}
+
+    \paragraph*{electric}
+    \begin{center}
+    \begin{tabular}{llll|llll|llll}
+        \verb|\rms|   & \rat & \rms   & {\footnotesize Root Mean Square} &
+        \verb|\dc|    & \rat & \dc    & DC       &
+        \verb|\ac|    & \rat & \ac    & AC       \\
+        \verb|\RMS|   & \rat & \RMS   & RMS (up) &
+        \verb|\DC|    & \rat & \DC    & DC (up)  &
+        \verb|\AC|    & \rat & \AC    & AC (up)  \\
+        \verb|\nom|   & \rat & \nom   & Nominal  &
+        \verb|\ctrl|  & \rat & \ctrl  & Control  &
+        \verb|\meas|  & \rat & \meas  & Measured \\
+        \verb|\setp|  & \rat & \setp  & Setpoint &
+        \verb|\err|   & \rat & \err   & Error    &
+        \verb|\gain|  & \rat & \gain  & Gain     \\
+    \end{tabular}
+    \end{center}
+
 
 \endgroup
