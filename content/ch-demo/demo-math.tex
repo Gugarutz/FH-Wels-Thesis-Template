@@ -1,185 +1,339 @@
 \section{Mathematics and Units}
-
-
 \begingroup \small
-\subsection{Custom commands}
 
-    \I
+Writing mathematical equation in \LaTeX{} is generally easy, the problem lies in making them look correct. There are many common practices that are specific to \TeX{} users, scientific writing in general, and can be very different depending of the field of study. This template focuses on the usage for mechanical \& electrical engineering for central Europe.
 
-    The command \verb|\eff| is meant to be used in subscript for denoting effective, $P_{\eff}$ for example.
+\subsection{Variables and Constants}
+    \label{sec:variables-const}
 
-    Some extra math shortcuts are provided for German users for Umlauts as the normal ä, ö, ü would be typeset upright.
+    It is common practice to write variables in \textit{italics} and constants upright.
+    For example, $k$ may be the stiffness of a spring but would be typeset as $\mathrm{k}$ (though more commonly $\mathrm{k_B}$) for the Boltzmann constant.
 
-    \[
-        \verb|\aum| \rightarrowtail  \aum \quad
-        \verb|\oum| \rightarrowtail  \oum \quad
-        \verb|\uum| \rightarrowtail  \uum
-    \]
+    Keep in mind that the usage of these principles also applies to Greek letters for example: $\upalpha$ and $\alpha$, or $\epsilon$ and $\varepsilon$. Be aware of $\pi$ and $\varpi$ especially, \verb|\varpi| (the second one) looks more like a lower case omega, than pi.
 
+    \begin{notebox}
+        Euler's constant \e was formatted in \verb|\mathscr{}| instead of upright (\verb|\mathrm{}|) for better usability in text and aesthetic purposes
+    \end{notebox}
 
-    \subsubsection{Dimensionless numbers}
-    This Package provides a significant set of preset named, dimensionless numbers. Be aware that these are not simple shortcuts but have a  Links to wikipedia as well as the commands themselves can be found in the \texttt{math.tex} file, you may disable the \verb|\mathit{}| there to for upright typesetting. See table below for all available shortcuts/commands.
+    \begin{tipbox}
+        For more examples, please see the following repositories:\\
+        \url{https://github.com/Gugarutz/FH-Wels-Formelsammlung-THD-STL-WUE}\\
+        \url{https://github.com/Gugarutz/FH-Wels-FEL-Formelsammlung}
+    \end{tipbox}
 
-    \begin{table}[H]
-        \centering
-        \caption{All dimensionless numbers provided}
-        \begin{tabular}{lll|lll|lll|lll}
-        \verb|\Arch| & $\rightarrow $ & $\Arch$ & \verb|\Lewi| & $\rightarrow $ & $\Lewi$
-            &\verb|\Four| & $\rightarrow $ & $\Four$ & \verb|\Rayl| & $\rightarrow $ & $\Rayl$\\
-        \verb|\Biot| & $\rightarrow $ & $\Biot$ & \verb|\Mach| & $\rightarrow $ & $\Mach$
-            &\verb|\Frou| & $\rightarrow $ & $\Frou$ & \verb|\Reyn| & $\rightarrow $ & $\Reyn$\\
-        \verb|\Cauc| & $\rightarrow $ & $\Cauc$ & \verb|\Nuss| & $\rightarrow $ & $\Nuss$
-            &\verb|\Gras| & $\rightarrow $ & $\Gras$ & \verb|\Schm| & $\rightarrow $ & $\Schm$\\
-        \verb|\Damk| & $\rightarrow $ & $\Damk$ & \verb|\Pecl| & $\rightarrow $ & $\Pecl$
-            &\verb|\Karl| & $\rightarrow $ & $\Karl$ & \verb|\Sher| & $\rightarrow $ & $\Sher$\\
-        \verb|\Eule| & $\rightarrow $ & $\Eule$ & \verb|\Pran| & $\rightarrow $ & $\Pran$
-            &\verb|\Knud| & $\rightarrow $ & $\Knud$ & \verb|\Stro| & $\rightarrow $ & $\Stro$\\
-        \verb|\Webe| & $\rightarrow $ & $\Webe$ &              &                &&&&&&&
+\subsection{Mathematical fonts}
+    The use of fonts (or rather typefaces) in \LaTeX{} can be hard to understand, especially due to the misuse of the word by Microsoft Office products. Fonts are variations of a single typeface, eg. bold, italics, or small caps. Whereas typefaces are what you may know as fonts.
+
+    Keep in mind that the typefaces for math and text are always separated in \LaTeX{}, both in regards of setting the defaults and in terms of availability.
+
+    \begin{center}
+        \small
+        \begin{tabular}{lccl}
+            \toprule
+            \textbf{Command}        & \textbf{Text}          & \textbf{Numbers}           & \textbf{Description}                     \\ \midrule
+            Default (none)          & $ABC$                  & $123456789.0$              & Default math italic                      \\
+            \verb|\mathrm{...}|     & $\mathrm{ABC-abc}$     & $\mathrm{123456789.0}$     & Upright Roman (for constants)                    \\
+            \verb|\mathit{...}|     & $\mathit{ABC-abc}$     & $\mathit{123456789.0}$     & Italic (for variables)         \\
+            \verb|\mathbf{...}|     & $\mathbf{ABC-abc}$     & $\mathbf{123456789.0}$     & Bold Roman (serif)                       \\
+            \verb|\mathsf{...}|     & $\mathsf{ABC-abc}$     & $\mathsf{123456789.0}$     & Sans-serif upright                       \\
+            \verb|\mathtt{...}|     & $\mathtt{ABC-abc}$     & $\mathtt{123456789.0}$     & Typewriter (monospace)                   \\
+            \verb|\mathcal{...}|    & $\mathcal{ABC}$        & ---                        & Calligraphic (uppercase only)            \\
+            \verb|\mathbb{...}|     & $\mathbb{ABC}$         & ---                        & Blackboard (uppercase only)              \\
+            \verb|\mathds{...}|     & $\mathds{ABC}$         & $\mathds{123456789.0}$     & alternate Blackboard (uppercase only)    \\
+            \verb|\mathfrak{...}|   & $\mathfrak{ABC-abc}$   & $\mathfrak{123456789.0}$   & Fraktur (Gothic-style)                   \\
+            \verb|\boldsymbol{...}| & $\boldsymbol{ABC-abc}$ & $\boldsymbol{123456789.0}$ & General bold math (symbols \& Greek) \\
+            \verb|\mathscr{...}|    & $\mathscr{ABC}$        & ---                        & Script (more decorative)    \\ \bottomrule
         \end{tabular}
-    \end{table}
+    \end{center}
 
-    \subsubsection{Custom commands for thermodynamics}
 
 
 \subsection{Sub and superscript}
-    Normal subscript and superscript comes after the object in question and is done with \texttt{\_} and \texttt{\^}. By default this only applies to one symbol each, so \verb|M_ab| produces $M_ab$. To avoid this use curly brackets like with other \LaTeX{} commands as follows: \verb|M_{ab}^{cd}| to produce $M_{ab}^{cd}$. Also avoid $M_{a^b}$ (\verb*|M_{a^b}|) and ${M_a}^b$ (\verb*|{M_a}^b|).
+    Normal subscript and superscript comes after the object in question and is done with~\texttt{\_} and~\texttt{\^}. By default this only applies to one symbol each, so \verb|M_ab| produces $M_ab$. To avoid this use curly brackets like with other \LaTeX{} commands as follows: \verb|M_{ab}^{cd}| to produce $M_{ab}^{cd}$. Also avoid $M_{a^b}$ (\verb*|M_{a^b}|) and ${M_a}^b$ (\verb*|{M_a}^b|).
 
     With the \verb|\prescript{a}{b}{M}| command you can typeset subscript and superscript before an object like this:
-    \[  \prescript{a}{b}{M}
+    \[
+        \prescript{a}{b}{M}
         \text{\quad and even add the ones after that: \quad}
-        \prescript{a}{b}{M}_c^d \]
+        \prescript{a}{b}{M}_c^d
+    \]
 
-\subsection{Mathematical fonts}
 
-    mathds $\mathds{R, I, N, 1}$
-
-    mathscr $\mathscr{R, I, N, 1, 2, e, j, i, a}$
-
-    mathcal $\mathcal{R, I, N, 1, 2, e,h, j, i, a}$
-
-    mathfrak $\mathfrak{R, I, N, 1, 2, e, j, i, a}$
-
-    mathsf $\mathsf{R, I, N, 1, 2, e, j, i, a}$
 
 \subsection{Physics package}
 
-    The \verb|physics| package defines \verb|\qty|. However this is already used by \texttt{siunitx}. Therefore this template redefines \verb|\qty| to set \verb|\set|. I can only be used in a math environment.
+    The \verb|physics| package defines \verb|\qty|. However this is already used by \texttt{siunitx}. Therefore this template redefines \verb|\qty| to \verb|\set|.
+
+    \begin{center}
+        \verb|\set{10}|             produces: $\set{10}$
+
+        \verb|\set[\dfrac{13}{14}]| produces: $\set[\dfrac{13}{14}]$
+
+        \verb/\set|\vec{a}| \abs{\vec{r}} \norm{\va{r}} \norm{\va*{r}}/ \\
+            produces: \\
+            $\set|\vec{a}| \quad  \abs{\vec{r}} \quad \norm{\va{r}} \quad \norm{\va*{r}} $
+    \end{center}
 
 
-    \verb|\set{10}| produces: $\set{10}$
-
-    \verb|\set[\dfrac{13}{14}]|     produces:$\set[\dfrac{13}{14}]$
-
-    $\set|\vec{a}| \quad  \abs{\vec{r}} \quad \norm{\va{r}} \quad \norm{\va*{r}} $
-
-
-
+    \begin{warningbox}
+        \verb*|\set| may only be used inside a math environment!
+    \end{warningbox}
 
     \subsubsection{Differentials}
 
-    The \texttt{physics} packages adds various helpful commands for easy and quick setting of differentials.
+        The \texttt{physics} packages adds various helpful commands for easy and quick setting of differentials.
 
-    The normal upright d used in by \texttt{physics} was replaced by $\mathrm{d\!I}$ which is used by professor Schiefermayr in his scripts. You can disable this in the \texttt{preamble/math.tex} under the custom math commands.
+        The normal upright d used in by \texttt{physics} was replaced by $\mathrm{d\!I}$ which is used by professor Schiefermayr in his scripts. You can disable this in the \texttt{preamble/math.tex} under the custom math commands.
 
-     $\dd[3]{x}$
-
-    \[ \int_{0}^{\infty} 3x^2 \dd{x} = \eval{x^3}_{0}^{\infty} \]
+         \[ \dd[3]{x} \]
+         \[ \int_{0}^{\infty} 3x^2 \dd{x} = \eval{x^3}_{0}^{\infty} \]
 
 \subsection{Greek Symbols in Text}
 
     With the \verb|textgreek| package, you can use commands like \verb|\textalpha| (\textalpha) to create Greek characters inside normal text without needing to invoke math mode.
 
-\subsection{Variables and Constants}
-
-    It is common practice to write variables in \textit{italics} and constants upright. For example, $e$ might be used for eccentricity, while $\mathrm{e}$ is used for Euler's constant $(=\num{2.718281}\dots)$.
-
-    % TODO: Add a table summarizing all math shortcuts.
-
+%==================================================================================
 \subsection{The \texttt{siunitx} Package}
 
     % The `siunitx` package ensures correct typesetting of numbers and units.
     This package is useful for automatic typesetting of numbers and units. You will need to choose appropriate settings in \verb|\unitsetup{...}| in the \verb|main.tex| preamble. % TODO: Specify the exact settings path.
 
     \paragraph*{Only Units}
-
-    % Use `\unit` for proper spacing and formatting of standalone units.
-    The \verb|\unit| command ensures proper spacing and styling for standalone units:
-    \begin{itemize}
-        \item \verb|\unit{\kilogram\metre\per\second}| produces \unit{\kilogram\metre\per\second}.
-        \item \verb|\unit{\kg\per\m\per\s\squared}| produces \unit{\kg\per\m\per\s\squared}.
-        \item \verb|\unit{\degreeCelsius}| correctly handles special symbols: \unit{\degreeCelsius}.
-        \item \verb|\unit{\ohm}| ensures correct typesetting of units like ohms: \unit{\ohm}.
-    \end{itemize}
+        The \verb|\unit| command ensures proper spacing and styling for standalone units:
+        \begin{itemize}
+            \item \verb|\unit{\kilogram\metre\per\second}| produces \unit{\kilogram\metre\per\second}.
+            \item \verb|\unit{\kg\per\m\per\s\squared}| produces \unit{\kg\per\m\per\s\squared}.
+            \item \verb|\unit{\degreeCelsius}| correctly handles special symbols: \unit{\degreeCelsius}.
+            \item \verb|\unit{\ohm}| ensures correct typesetting of units like ohms: \unit{\ohm}.
+        \end{itemize}
 
     \paragraph*{Only Numbers}
-
-    % Use `\num` to ensure consistent number formatting.
-    The \verb|\num| command formats numbers consistently:
-    \begin{itemize}
-        \item \verb|\num{12345.678}| formats large numbers: \num{12345.678}.
-        \item \verb|\num{6.022e23}| correctly formats scientific notation: \num{6.022e23}.
-        \item \verb|\num{000.000123}| removes unnecessary leading zeros: \num{000.000123}.
-    \end{itemize}
+        The \verb|\num| command formats numbers consistently:
+        \begin{itemize}
+            \item \verb|\num{12345.678}| formats large numbers: \num{12345.678}.
+            \item \verb|\num{6.022e23}| correctly formats scientific notation: \num{6.022e23}.
+            \item \verb|\num{000.000123}| removes unnecessary leading zeros: \num{000.000123}.
+        \end{itemize}
 
     \paragraph*{Numbers and Units}
-
-    % Use `\qty` to format numbers together with units.
-    The \verb|\qty| command combines numbers and units seamlessly:
-    \begin{itemize}
-        \item \verb|\qty{9.81}{\metre\per\second\squared}| represents acceleration: \qty{9.81}{\metre\per\second\squared}.
-        \item \verb|\qty{1.5}{\mega\hertz}| correctly applies SI prefixes: \qty{1.5}{\mega\hertz}.
-        \item \verb|\qty{500}{\milli\liter}| handles subunits properly: \qty{500}{\milli\liter}.
-    \end{itemize}
+        The \verb|\qty| command combines numbers and units seamlessly:
+        \begin{itemize}
+            \item \verb|\qty{9.81}{\metre\per\second\squared}| represents acceleration: \qty{9.81}{\metre\per\second\squared}.
+            \item \verb|\qty{1.5}{\mega\hertz}| correctly applies SI prefixes: \qty{1.5}{\mega\hertz}.
+            \item \verb|\qty{500}{\milli\liter}| handles subunits properly: \qty{500}{\milli\liter}.
+        \end{itemize}
 
     \paragraph*{Uncertainty}
-
-    % Uncertainty notation in `siunitx`.
-    \begin{itemize}
-        \item \verb|\num{1.23(45)}| shows uncertainty in parentheses: \num{1.23(45)}.
-        \item \verb|\qty{1.23(45)}{\metre}| combines uncertainty with units: \qty{1.23(45)}{\metre}.
-        \item \verb|\num{1.23(4)e5}| formats numbers with uncertainty in scientific notation: \num{1.23(4)e5}.
-    \end{itemize}
-    To display uncertainty separately, use:
-    \begin{itemize}
-        \item \verb|\qty[separate-uncertainty=false]{1.23(0.05)}{\metre}|, \\
-        which produces \qty[separate-uncertainty=false]{1.23(0.05)}{\metre}.
-    \end{itemize}
+        \begin{itemize}
+            \item \verb|\num{1.23(45)}| shows uncertainty in parentheses: \num{1.23(45)}.
+            \item \verb|\qty{1.23(45)}{\metre}| combines uncertainty with units: \qty{1.23(45)}{\metre}.
+            \item \verb|\num{1.23(4)e5}| formats numbers with uncertainty in scientific notation: \num{1.23(4)e5}.
+        \end{itemize}
+        To display uncertainty separately, use:
+        \begin{itemize}
+            \item \verb|\qty[separate-uncertainty=false]{1.23(0.05)}{\metre}|, \\
+            which produces \qty[separate-uncertainty=false]{1.23(0.05)}{\metre}.
+        \end{itemize}
 
 
     \paragraph*{Display Options}
+        Different display options for units and numeric notation can be configured in \\
+         \verb|\unitsetup{...}| globally or locally.
 
-    % Customize `siunitx` display settings.
-    Different display options for units and numeric notation can be configured in \\
-     \verb|\unitsetup{...}| globally or locally.
+        The \verb|\num| command can be forced into scientific notation using the\\
+        \verb|scientific-notation=true| option:
 
-    The \verb|\num| command can be forced into scientific notation using the\\
-    \verb|scientific-notation=true| option:
+        \begin{itemize}
+            \item \verb|\num[exponent-mode=scientific]{000.000123}| produces \num[exponent-mode=scientific]{000.000123}.
+        \end{itemize}
 
-    \begin{itemize}
-        \item \verb|\num[exponent-mode=scientific]{000.000123}| produces \num[exponent-mode=scientific]{000.000123}.
-    \end{itemize}
+        The \verb|\unit| and \verb|\qty| command can format units as fractions:
+        \begin{itemize}
+            \item \verb|\unit[per-mode=fraction]{\kg\per\m\per\s\squared}|
+               produces \unit[per-mode=fraction]{\kg\per\m\per\s\squared}.
+            \item \verb|\unit[per-mode=symbol]{\kg\per\m\per\s\squared}|
+               produces \unit[per-mode=symbol]{\kg\per\m\per\s\squared}.
+        \end{itemize}
 
-    The \verb|\unit| and \verb|\qty| command can format units as fractions:
-    \begin{itemize}
-        \item \verb|\unit[per-mode=fraction]{\kg\per\m\per\s\squared}| produces \unit[per-mode=fraction]{\kg\per\m\per\s\squared}.
-        \item \verb|\unit[per-mode=symbol]{\kg\per\m\per\s\squared}| produces \unit[per-mode=symbol]{\kg\per\m\per\s\squared}.
-    \end{itemize}
+%==================================================================================
+\subsection{Custom commands}
+    Some special mathematical characters are provided by this template in a nicer and distinct font or typeset upright as per \cref{sec:variables-const}.
+
+    \begin{align*}
+        \text{Euler's constant: } & \texttt{\tb e    } \rat  \e    \\
+        \text{Imaginary i: }      & \texttt{\tb imag } \rat  \imag \\
+        \text{Imaginary j: }      & \texttt{\tb jmag } \rat  \jmag
+    \end{align*}
+
+    \subsubsection{Number spaces}
+        The following commands are provided number sets:
+        \[
+            \verb|\N| \rat \N \quad
+            \verb|\Z| \rat \Z \quad
+            \verb|\Q| \rat \Q \quad
+            \verb|\R| \rat \R \quad
+            \verb|\I| \rat \I \quad
+            \verb|\C| \rat \C
+        \]
+
+    \subsubsection{Umlauts in math mode}
+        Some extra math shortcuts are provided for German users for Umlauts as the normal ä, ö, ü would be typeset upright and require brackets \{ \} despite being one letter.
+
+        \[
+            \verb|\aum| \rat  \aum \qquad
+            \verb|\oum| \rat  \oum \qquad
+            \verb|\uum| \rat  \uum
+        \]
+        \[
+            \verb|\Aum| \rat  \Aum \qquad
+            \verb|\Oum| \rat  \Oum \qquad
+            \verb|\Uum| \rat  \Uum
+        \]
+
+        Compared to normal Umlauts being used in math mode:
+        % faked to not have error: 'Command \" not allowed in math mode'
+        \[
+            P_{\ddot{\mathrm{a}}} \rat P_\aum \qquad
+            T_{\ddot{\mathrm{o}}} \rat T_\oum \qquad
+            p_{\ddot{\mathrm{u}}} \rat p_\uum
+        \]
+        \[
+            P_{\ddot{\mathrm{A}}} \rat P_\Aum \qquad
+            T_{\ddot{\mathrm{O}}} \rat T_\Oum \qquad
+            p_{\ddot{\mathrm{U}}} \rat p_\Uum
+        \]
 
 
+    \subsubsection{Dimensionless numbers}
+        This template provides a significant set of preset named, dimensionless numbers. Be aware that these are not simple shortcuts but have specific kerning (the distance between characters) for better readability and recognizability.
 
+        The commands can be found in \texttt{preamble/mod-math.tex} file, you may disable them there. See table below for all available shortcuts/commands.
 
+        \begin{table}[H]
+            \centering
+            \caption{All dimensionless numbers provided}
+            \begin{tabular}{lll|lll|lll|lll}
+                \verb|\Arch| & \rat & \Arch &
+                \verb|\Biot| & \rat & \Biot &
+                \verb|\Cauc| & \rat & \Cauc &
+                \verb|\Damk| & \rat & \Damk \\
+                \verb|\Ecke| & \rat & \Ecke &
+                \verb|\Eule| & \rat & \Eule &
+                \verb|\Four| & \rat & \Four &
+                \verb|\Frou| & \rat & \Frou \\
+                \verb|\Gras| & \rat & \Gras &
+                \verb|\Karl| & \rat & \Karl &
+                \verb|\Knud| & \rat & \Knud &
+                \verb|\Lewi| & \rat & \Lewi \\
+                \verb|\Mach| & \rat & \Mach &
+                \verb|\Nuss| & \rat & \Nuss &
+                \verb|\Pecl| & \rat & \Pecl &
+                \verb|\Pran| & \rat & \Pran \\
+                \verb|\Rayl| & \rat & \Rayl &
+                \verb|\Reyn| & \rat & \Reyn &
+                \verb|\Schm| & \rat & \Schm &
+                \verb|\Sher| & \rat & \Sher \\
+                \verb|\Stan| & \rat & \Stan &
+                \verb|\Stro| & \rat & \Stro &
+                \verb|\Thom| & \rat & \Thom &
+                \verb|\Webe| & \rat & \Webe
+            \end{tabular}
+        \end{table}
 
+    \subsubsection{Abbreviations}
+    to be redone
 
+    \paragraph*{Thermodynamics}
+    \begin{center}
+    \begin{tabular}{llll|llll|llll}
+        \verb|\eff|   & \rat &  \eff   & Effective     &
+        \verb|\inl|   & \rat &  \inl   & Inlet         &
+        \verb|\out|   & \rat &  \out   & Outlet        \\
+        \verb|\refe|  & \rat &  \refe  & Reference     &
+        \verb|\sat|   & \rat &  \sat   & Saturation    &
+        \verb|\amb|   & \rat &  \amb   & Ambient       \\
+        \verb|\env|   & \rat &  \env   & Environment   &
+        \verb|\crit|  & \rat &  \crit  & Critical      &
+        \verb|\tot|   & \rat &  \tot   & Total         \\
+        \verb|\rev|   & \rat &  \rev   & Reversible    &
+        \verb|\irr|   & \rat &  \irr   & Irreversible  &
+        \verb|\ex|    & \rat &  \ex    & Exergy        \\
+    \end{tabular}
+    \end{center}
 
+    \paragraph*{numerics}
+    \begin{center}
+    \begin{tabular}{llll|llll|llll}
+        \verb|\avg|    & \rat & \avg   & Average        &
+        \verb|\maxx|   & \rat & \maxx  & Maximum        &
+        \verb|\minn|   & \rat & \minn  & Minimum        \\
+        \verb|\iter|   & \rat & \iter  & Iteration      &
+        \verb|\res|    & \rat & \res   & Residual       &
+        \verb|\numer|  & \rat & \numer & Numerical      \\
+        \verb|\expmt|  & \rat & \expmt & Experimental   &
+        \verb|\simu|   & \rat & \simu  & Simulated      &
+        \verb|\init|   & \rat & \init  & Initial        \\
+        \verb|\final|  & \rat & \final & Final          &
+        \verb|\CFL|    & \rat & \CFL   & \multicolumn{5}{l}{Courant–Friedrichs–Lewy}
+    \end{tabular}
+    \end{center}
 
+    \paragraph*{Thermal}
+    \begin{center}
+    \begin{tabular}{llll|llll|llll}
+        \verb|\thrm|   & \rat & \thrm   & Thermal       &
+        \verb|\cond|   & \rat & \cond   & Conduction    &
+        \verb|\conv|   & \rat & \conv   & Convection    \\
+        \verb|\rad|    & \rat & \rad    & Radiation     &
+        \verb|\gen|    & \rat & \gen    & Generated     &
+        \verb|\loss|   & \rat & \loss   & Loss          \\
+        \verb|\trans|  & \rat & \trans  & Transferred
+    \end{tabular}
+    \end{center}
 
+    \paragraph*{chem}
+    \begin{center}
+    \begin{tabular}{llll|llll|llll}
+        \verb|\eqlb| & \rat & \eqlb   & Equilibrium    &
+        \verb|\rxn|  & \rat & \rxn    & Reaction       &
+        \verb|\reac| & \rat & \reac   & Reaction (alt) \\
+        \verb|\mix|  & \rat & \mix    & Mixture        &
+        \verb|\bulk| & \rat & \bulk   & Bulk           &
+        \verb|\wall| & \rat & \wall   & Wall           \\
+        \verb|\film| & \rat & \film   & Film           &
+        \verb|\surf| & \rat & \surf   & Surface        &
+        \verb|\mol|  & \rat & \mol    & Molecular Mass \\
+    \end{tabular}
+    \end{center}
 
+    \paragraph*{fluids}
+    \begin{center}
+    \begin{tabular}{llll|llll}
+        \verb|\visc|   & \rat & \visc   & Viscous         &
+        \verb|\incomp| & \rat & \incomp & Incompressible  \\
+        \verb|\comp|   & \rat & \comp   & Compressible    &
+        \verb|\ideal|  & \rat & \ideal  & Ideal (Gas)     \\
+        \verb|\realg|  & \rat & \realg  & Real (Gas)
+    \end{tabular}
+    \end{center}
 
-
-
-
-
-
+    \paragraph*{electric}
+    \begin{center}
+    \begin{tabular}{llll|llll|llll}
+        \verb|\rms|   & \rat & \rms   & {\footnotesize Root Mean Square} &
+        \verb|\dc|    & \rat & \dc    & DC       &
+        \verb|\ac|    & \rat & \ac    & AC       \\
+        \verb|\RMS|   & \rat & \RMS   & RMS (up) &
+        \verb|\DC|    & \rat & \DC    & DC (up)  &
+        \verb|\AC|    & \rat & \AC    & AC (up)  \\
+        \verb|\nom|   & \rat & \nom   & Nominal  &
+        \verb|\ctrl|  & \rat & \ctrl  & Control  &
+        \verb|\meas|  & \rat & \meas  & Measured \\
+        \verb|\setp|  & \rat & \setp  & Setpoint &
+        \verb|\err|   & \rat & \err   & Error    &
+        \verb|\gain|  & \rat & \gain  & Gain     \\
+    \end{tabular}
+    \end{center}
 
 
 \endgroup

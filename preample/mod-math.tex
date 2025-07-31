@@ -1,0 +1,138 @@
+%------------------------------------------------------------%
+% CUSTOM MATH COMMANDS
+%------------------------------------------------------------%
+
+% CHANGES TO EXISTING COMMANDS
+    % replace normal differential d from physics with Schiefermayr d
+    \renewcommand{\diffd}{\mathrm{d\!I}}
+
+
+%===================================================================
+% SYMBOLIC MATHEMATICS
+    \newcommand*{\imag}{\ensuremath{\mathscr{i}}}
+    \newcommand*{\jmag}{\ensuremath{\mathscr{j}}}
+    \newcommand*{\e}   {\ensuremath{\mathscr{e}}}
+    %
+    \newcommand*{\N}{\ensuremath{\mathds{N}}}
+    \newcommand*{\Z}{\ensuremath{\mathds{Z}}}
+    \newcommand*{\Q}{\ensuremath{\mathds{Q}}}
+    \newcommand*{\R}{\ensuremath{\mathds{R}}}
+    \newcommand*{\I}{\ensuremath{\mathds{I}}}
+    \newcommand*{\C}{\ensuremath{\mathds{C}}}
+
+%===================================================================
+% UMLAUTS
+    % standard umlaut are upright in math mode
+    % Lower Case
+    \newcommand*{\uum}{{\ensuremath{\ddot{u}}}}
+    \newcommand*{\oum}{{\ensuremath{\ddot{o}}}}
+    \newcommand*{\aum}{{\ensuremath{\ddot{a}}}}
+    % Upper Case
+    \newcommand*{\Uum}{{\ensuremath{\ddot{U}}}}
+    \newcommand*{\Oum}{{\ensuremath{\ddot{O}}}}
+    \newcommand*{\Aum}{{\ensuremath{\ddot{A}}}}
+
+%===================================================================
+% DIMENSIONLESS NUMBERS
+    \newcommand*{\Arch}{{\ensuremath{A\kern-.06em r}}} % Archimedes
+    \newcommand*{\Biot}{{\ensuremath{B\kern-.08em i}}} % Biot
+    \newcommand*{\Cauc}{{\ensuremath{C\kern-.13em a}}} % Cauchy
+    \newcommand*{\Damk}{{\ensuremath{D\kern-.12em a}}} % Damköhler
+    \newcommand*{\Ecke}{{\ensuremath{E\kern-.15em c}}} % Eckert
+    \newcommand*{\Eule}{{\ensuremath{E\kern-.09em u}}} % Euler
+    \newcommand*{\Four}{{\ensuremath{F\kern-.20em o}}} % Fourier
+    \newcommand*{\Frou}{{\ensuremath{F\kern-.07em r}}} % Froude
+    \newcommand*{\Gras}{{\ensuremath{G\kern-.12em r}}} % Grashof
+    \newcommand*{\Karl}{{\ensuremath{K\kern-.15em a}}} % Karlovitz
+    \newcommand*{\Knud}{{\ensuremath{K\kern-.13em n}}} % Knudsen
+    \newcommand*{\Lewi}{{\ensuremath{L\kern-.05em e}}} % Lewis
+    \newcommand*{\Mach}{{\ensuremath{M\kern-.20em a}}} % Mach
+    \newcommand*{\Nuss}{{\ensuremath{N\kern-.15em u}}} % Nusselt
+    \newcommand*{\Pecl}{{\ensuremath{P\kern-.15em e}}} % Péclet
+    \newcommand*{\Pran}{{\ensuremath{P\kern-.10em r}}} % Prandtl
+    \newcommand*{\Rayl}{{\ensuremath{R\kern-.10em a}}} % Rayleigh
+    \newcommand*{\Reyn}{{\ensuremath{R\kern-.10em e}}} % Reynolds
+    \newcommand*{\Schm}{{\ensuremath{S\kern-.12em c}}} % Schmidt
+    \newcommand*{\Sher}{{\ensuremath{S\kern-.12em h}}} % Sherwood
+    \newcommand*{\Stan}{{\ensuremath{S\kern-.12em t}}} % Stanton
+    \newcommand*{\Stro}{{\ensuremath{S\kern-.09em r}}} % Strouhal
+    \newcommand*{\Thom}{{\ensuremath{T\kern-.18em h}}} % Thompson
+    \newcommand*{\Webe}{{\ensuremath{W\kern-.25em e}}} % Weber
+
+% TODO finish kerning
+%===================================================================
+% KERNED ENGINEERING ABBREVIATIONS
+
+    % THERMODYNAMICS
+    \newcommand*{\eff}  {{\ensuremath{\kern-.10em e \kern-.20em f \kern-.30em f}}}   % Effective
+    \newcommand*{\inl}  {{\ensuremath{\kern-.10em i \kern-.15em n}}}    % Inlet
+    \newcommand*{\out}  {{\ensuremath{\kern-.10em o \kern-.15em u \kern-.20em t}}}   % Outlet
+    \newcommand*{\refe} {{\ensuremath{\kern-.10em r \kern-.10em e \kern-.15em f}}}   % Reference
+    \newcommand*{\sat}  {{\ensuremath{\kern-.10em s \kern-.15em a \kern-.20em t}}}   % Saturation
+    \newcommand*{\amb}  {{\ensuremath{\kern-.10em a \kern-.15em m \kern-.20em b}}}   % Ambient
+    \newcommand*{\env}  {{\ensuremath{\kern-.10em e \kern-.10em n \kern-.15em v}}}   % Environment
+    \newcommand*{\crit} {{\ensuremath{\kern-.10em c \kern-.10em r \kern-.10em i \kern-.10em t}}} % Critical
+    \newcommand*{\tot}  {{\ensuremath{\kern-.10em t \kern-.10em o \kern-.15em t}}}   % Total
+    \newcommand*{\rev}  {{\ensuremath{\kern-.10em r \kern-.10em e \kern-.15em v}}}   % Reversible
+    \newcommand*{\irr}  {{\ensuremath{\kern-.10em i \kern-.15em r \kern-.15em r}}}   % Irreversible
+    \newcommand*{\ex}   {{\ensuremath{\kern-.10em e \kern-.15em x}}}                 % Exergy
+
+
+    % NUMERICS
+    \newcommand*{\avg}  {{\ensuremath{\kern-.10em a \kern-.15em v \kern-.20em g}}}   % Average
+    \newcommand*{\maxx} {{\ensuremath{\kern-.10em m \kern-.15em a \kern-.25em x}}}   % Maximum
+    \newcommand*{\minn} {{\ensuremath{\kern-.10em m \kern-.15em i \kern-.20em n}}}   % Minimum
+    \newcommand*{\iter} {{\ensuremath{\kern-.10em i \kern-.10em t \kern-.15em e \kern-.15em r}}} % Iteration
+    \newcommand*{\res}  {{\ensuremath{\kern-.10em r \kern-.10em e \kern-.15em s}}}   % Resultant / Residual
+    \newcommand*{\numer}{{\ensuremath{\kern-.10em n \kern-.10em u \kern-.15em m}}}   % Numerical
+    \newcommand*{\expmt}{{\ensuremath{\kern-.10em e \kern-.10em x \kern-.10em p}}}   % Experimental
+    \newcommand*{\simu} {{\ensuremath{\kern-.10em s \kern-.10em i \kern-.10em m}}}   % Simulated
+    \newcommand*{\init} {{\ensuremath{\kern-.10em i \kern-.10em n \kern-.10em i \kern-.10em t}}} % Initial
+    \newcommand*{\final}{{\ensuremath{\kern-.10em f \kern-.10em i \kern-.10em n \kern-.10em a \kern-.10em l}}} % Final
+    \newcommand*{\CFL}  {{\ensuremath{\kern-.10em C \kern-.10em F \kern-.10em L}}}   % Courant–Friedrichs–Lewy
+
+    % THERMAL / HEAT TRANSFER
+    \newcommand*{\thrm} {{\ensuremath{\kern-.10em t \kern-.10em h}}}                               % Thermal
+    \newcommand*{\cond} {{\ensuremath{\kern-.10em c \kern-.10em o \kern-.10em n \kern-.15em d}}}   % Conduction
+    \newcommand*{\conv} {{\ensuremath{\kern-.10em c \kern-.10em o \kern-.10em n \kern-.10em v}}}   % Convection
+    \newcommand*{\rad}  {{\ensuremath{\kern-.10em r \kern-.10em a \kern-.15em d}}}                 % Radiation
+    \newcommand*{\gen}  {{\ensuremath{\kern-.10em g \kern-.10em e \kern-.15em n}}}                 % Generated
+    \newcommand*{\loss} {{\ensuremath{\kern-.10em l \kern-.15em o \kern-.10em s \kern-.20em s}}}   % Loss
+    \newcommand*{\trans}{{\ensuremath{\kern-.10em t \kern-.10em r \kern-.10em a \kern-.10em n \kern-.15em s}}} % Transferred
+
+    % CHEM / MATERIALS
+    \newcommand*{\eqlb} {{\ensuremath{\kern-.10em e \kern-.10em q}}}                              % Equilibrium
+    \newcommand*{\rxn}  {{\ensuremath{\kern-.10em r \kern-.10em x \kern-.10em n}}}                % Reaction
+    \newcommand*{\reac} {{\ensuremath{\kern-.10em r \kern-.10em e \kern-.10em a \kern-.10em c}}}  % Reaction alt.
+    \newcommand*{\mix}  {{\ensuremath{\kern-.10em m \kern-.10em i \kern-.20em x}}}                % Mixture
+    \newcommand*{\bulk} {{\ensuremath{\kern-.10em b \kern-.10em u \kern-.10em l \kern-.10em k}}}  % Bulk
+    \newcommand*{\wall} {{\ensuremath{\kern-.10em w \kern-.10em a \kern-.10em l \kern-.10em l}}}  % Wall
+    \newcommand*{\film} {{\ensuremath{\kern-.10em f \kern-.10em i \kern-.10em l \kern-.10em m}}}  % Film
+    \newcommand*{\surf} {{\ensuremath{\kern-.10em s \kern-.10em u \kern-.10em r \kern-.10em f}}}  % Surface
+    \newcommand*{\mol}  {{\ensuremath{\kern-.10em m \kern-.10em o \kern-.10em l}}}                % Molecular mass
+
+    % FLUIDS
+    \newcommand*{\visc}  {{\ensuremath{\kern-.10em v \kern-.10em i \kern-.10em s \kern-.15em c}}} % Viscous
+    \newcommand*{\incomp}{{\ensuremath{\kern-.10em i \kern-.10em n \kern-.10em c \kern-.10em o \kern-.15em m \kern-.10em p}}} % Incompressible
+    \newcommand*{\comp}  {{\ensuremath{c \kern-.10em o \kern-.15em m \kern-.10em p}}} % Compressible
+    \newcommand*{\ideal} {{\ensuremath{\kern-.10em i \kern-.10em d \kern-.15em e \kern-.15em a \kern-.15em l}}}  % Ideal
+    \newcommand*{\realg} {{\ensuremath{\kern-.10em r \kern-.10em e \kern-.10em a \kern-.15em l}}} % Real
+
+    % ELECTRICAL / CONTROL SYSTEMS
+    \newcommand*{\rms}  {{\ensuremath{\kern-.10em R \kern-.10em M \kern-.20em S}}}    % Root Mean Square
+    \newcommand*{\dc}   {{\ensuremath{\kern-.10em D \kern-.10em C}}}                  % DC
+    \newcommand*{\ac}   {{\ensuremath{\kern-.10em A \kern-.10em C}}}                  % AC
+    \newcommand*{\RMS}  {{\ensuremath{\mathrm{RMS}}}}
+    \newcommand*{\AC}   {{\ensuremath{\mathrm{AC}}}}
+    \newcommand*{\DC}   {{\ensuremath{\mathrm{DC}}}}
+    %
+    \newcommand*{\nom}  {{\ensuremath{\kern-.10em n \kern-.10em o \kern-.15em m}}}    % Nominal
+    \newcommand*{\ctrl} {{\ensuremath{\kern-.10em c \kern-.10em t \kern-.10em r \kern-.10em l}}} % Control
+    \newcommand*{\meas} {{\ensuremath{\kern-.10em m \kern-.10em e \kern-.10em a \kern-.10em s}}} % Measured
+    \newcommand*{\setp} {{\ensuremath{\kern-.10em s \kern-.10em e \kern-.10em t}}}     % Setpoint
+    \newcommand*{\err}  {{\ensuremath{\kern-.10em e \kern-.15em r \kern-.10em r}}}     % Error
+    \newcommand*{\gain} {{\ensuremath{\kern-.10em g \kern-.10em a \kern-.15em i \kern-.15em n}}} % Gain
+
+% for LaTeX source code readability
+    \newcommand*{\tb}{\textbackslash}
+    \newcommand*{\rat}{\ensuremath{\rightarrowtail}} % mostly used for the demo

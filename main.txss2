@@ -12,88 +12,40 @@
                 "text": "code.tex\n"
             }
         ],
-        "CurrentFile": "main.tex",
+        "CurrentFile": "content/ch-demo/demo-math.tex",
         "FileVersion": 1,
         "Files": [
             {
-                "Col": 39,
+                "Col": 25,
                 "EditorGroup": 0,
                 "FileName": "main.tex",
-                "FirstLine": 66,
-                "FoldedLines": "",
-                "Line": 96
-            },
-            {
-                "Col": 35,
-                "EditorGroup": 0,
-                "FileName": "preamble/layout.tex",
-                "FirstLine": 3,
+                "FirstLine": 84,
                 "FoldedLines": "",
                 "Line": 15
             },
             {
-                "Col": 0,
+                "Col": 41,
                 "EditorGroup": 0,
-                "FileName": "preamble/typesetting.tex",
-                "FirstLine": 27,
+                "FileName": "preamble/set-math.tex",
+                "FirstLine": 52,
                 "FoldedLines": "",
-                "Line": 32
+                "Line": 77
             },
             {
-                "Col": 29,
-                "EditorGroup": 0,
-                "FileName": "preamble/graphics.tex",
-                "FirstLine": 17,
-                "FoldedLines": "",
-                "Line": 41
-            },
-            {
-                "Col": 22,
-                "EditorGroup": 0,
-                "FileName": "preamble/data.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 0
-            },
-            {
-                "Col": 20,
-                "EditorGroup": 0,
-                "FileName": "preamble/math.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 8
-            },
-            {
-                "Col": 0,
-                "EditorGroup": 0,
-                "FileName": "preamble/code.tex",
-                "FirstLine": 2,
-                "FoldedLines": "",
-                "Line": 2
-            },
-            {
-                "Col": 20,
+                "Col": 75,
                 "EditorGroup": 1,
-                "FileName": "appendices/demo-pdf.tex",
+                "FileName": "content/ch-demo/demo-graphics.tex",
                 "FirstLine": 0,
                 "FoldedLines": "",
-                "Line": 2
+                "Line": 11
             },
             {
-                "Col": 0,
+                "Col": 25,
                 "EditorGroup": 1,
-                "FileName": "appendices/demo-code.tex",
-                "FirstLine": 0,
+                "FileName": "content/ch-demo/demo-math.tex",
+                "FirstLine": 48,
                 "FoldedLines": "",
-                "Line": 0
-            },
-            {
-                "Col": 1,
-                "EditorGroup": 1,
-                "FileName": "mainmatter/ch-demo/demo-math.tex",
-                "FirstLine": 0,
-                "FoldedLines": "",
-                "Line": 7
+                "Line": 76
             }
         ],
         "MasterFile": "main.tex",
