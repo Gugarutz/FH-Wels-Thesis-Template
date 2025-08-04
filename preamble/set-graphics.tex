@@ -1,43 +1,47 @@
-%------------------------------------------------------------%
-% GENERAL GRAPHICS AND FLOAT MANAGEMENT
-%------------------------------------------------------------%
+%===============================================================================%
+%                   GRAPHICS, FLOATS, AND TABLE CONFIGURATION                   %
+%===============================================================================%
+% This configures graphics inclusion, float behavior, and table handling.
 
-    \usepackage{graphicx}   		% Graphics package, easily include  images (see Insert Graphic Wizard)
-    \usepackage[x11names]{xcolor}   % Sophistacated package for colours, with table option to use colors in tables
-    \usepackage{float}				% more control for placing floats (tables, figures,...)
-    \usepackage{overpic}    		% allows drawing inside images
-    \usepackage{wrapfig}    		% allows wrapping text around an image
-    \usepackage{rotating}
-    \usepackage{pdfpages}   		% allows inclusion of pdfs
+%-------------------------------------------------------------------------------%
+%                        GRAPHICS AND FLOAT ENVIRONMENTS                        %
+%-------------------------------------------------------------------------------%
 
-%------------------------------------------------------------%
-% TABLES
-%------------------------------------------------------------%
+    \usepackage{graphicx}         % Basic image inclusion
+    \usepackage[x11names]{xcolor} % Extended color set (X11 names)
+    \usepackage{float}            % Improved float placement control
+    \usepackage{overpic}          % Draw over included graphics
+    \usepackage{wrapfig}          % Text wrapping around figures
+    \usepackage{rotating}         % Sideways figures/tables
+    \usepackage{pdfpages}         % Include full PDF pages
 
-	\usepackage{array}			% Provides advanced table formatting options
-	\usepackage{longtable}		% Allows tables to span multiple pages
-	\usepackage{booktabs}		% Provides professional-looking table rules
-	\usepackage{colortbl}		% Enables colored table cells
-	\usepackage{multicol}		% Allows multi-column cells in tables
-	\usepackage{multirow}		% Allows multi-row cells in tables
-	\usepackage{nicematrix}		% custom table rules and decorations
-    \usepackage{tabularx}       % equal distribution of columns
-    \usepackage{tabulary}       % expanded version of tabularx
+%-------------------------------------------------------------------------------%
+%                                 TABLE PACKAGES                                %
+%-------------------------------------------------------------------------------%
 
-%------------------------------------------------------------%
-% SETTINGS FOR TABLES
-%------------------------------------------------------------%
-	% cellheight increased
-        \renewcommand{\arraystretch}{1.2}
+    \usepackage{array}            % Extended column types
+    \usepackage{longtable}        % Tables spanning multiple pages
+    \usepackage{booktabs}         % Better horizontal rules
+    \usepackage{colortbl}         % Colored cells and rows
+    \usepackage{multicol}         % Multi-column cells
+    \usepackage{multirow}         % Multi-row cells
+    \usepackage{nicematrix}       % Extra rules and decorations
+    \usepackage{tabularx}         % Equal-width columns
+    \usepackage{tabulary}         % Improved column width calculation
 
-	% column spacing increased
-    	\setlength{\tabcolsep}{1mm}
+%-------------------------------------------------------------------------------%
+%                            TABLE SETTINGS & MACROS                            %
+%-------------------------------------------------------------------------------%
 
-	% thicker seperation line \specialrule{thickness}{abovespace}{belowspace}
-    	\newcommand{\headrule}{\specialrule{2pt}{0pt}{0pt}}
+    % Increase row height
+    \renewcommand{\arraystretch}{1.2}
 
-     % this is so the column align in texstudio recognises \midrule and the others
-        \newcommand{\midruled}   {\specialrule{0.05 em}{0pt}{0pt}}
-        \newcommand{\topruled}   {\specialrule{0.08 em}{0pt}{0pt}}
-        \newcommand{\bottomruled}{\specialrule{0.08 em}{0pt}{0pt}}
+    % Adjust inter-column spacing
+    \setlength{\tabcolsep}{1mm}
 
+    % Custom rules
+    \newcommand{\headrule}     {\specialrule{2pt}{0pt}{0pt}}
+    \newcommand{\topruled}      {\specialrule{0.08em}{0pt}{0pt}}
+    \newcommand{\midruled}      {\specialrule{0.05em}{0pt}{0pt}}
+    \newcommand{\bottomruled}   {\specialrule{0.08em}{0pt}{0pt}}
+    % TODO: figure out best rule thicknesses and names
