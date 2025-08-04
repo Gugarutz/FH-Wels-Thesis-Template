@@ -40,8 +40,8 @@
         \input{preamble/set-toc}		   	% Heading & TOC spacings & max depth
         \input{preamble/set-lists}	      	% Lists (enumerate, itemize, outline)
 
-    % TODO [USER:modules]
-    % MODULES: YOU MAY DISABLE THESE - Disable the according demo chapter!
+
+    % TODO [USER:modules] - YOU MAY DISABLE THESE - Disable according demo chapters!
         \input{preamble/mod-math}           % Custom math commands
         \input{preamble/mod-code}           % Display code
         \input{preamble/mod-data}           % Reading data
@@ -62,7 +62,7 @@
 %                              SETTINGS FOR THE USER
 %-------------------------------------------------------------------------------%
     % CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
-        \sisetup{ % TODO: [USER:lang] Choose locale and settings
+        \sisetup{               % TODO [USER:lang] - Choose locale and settings
             locale = US,                % Localization US or DE recommended
             % per-mode=symbol,          % Display as / fractions
             separate-uncertainty,
@@ -81,35 +81,36 @@
 %===============================================================================%
 %                            QUICKSTART — START HERE
 %===============================================================================%
-%   TODO NOTE: The TODO comments are marked pink. You can view all in the left pane
+    % TODO [NOTE] - The TODO comments are marked pink. You can view all in the left pane
 
     % 00. Refer to the README.md for installation of TeX-Live and TeXstudio
+        % Check https://github.com/Gugarutz/FH-Wels-Thesis-Template for the newest version of the Template and the README instructions
 
     %️  0. One-Time Setup
-    %     - In TeXstudio: Options > Configure TeXstudio > Build > Set Biber as default
-    %     - Or Recommended: Options > Load Profile > Select Wels.txsprofile in template folder
-    %     - Load Session: File > Session > Load Session... > Select main.txss2 in template folder
+        % - In TeXstudio: Options > Configure TeXstudio > Build > Set Biber as default
+        % - Or Recommended: Options > Load Profile > Select Wels.txsprofile in template folder
+        % - Load Session: File > Session > Load Session... > Select main.txss2 in template folder
 
     %  1. First Compile
-    %     - Compile once without changes — Log should be clean.
-    %     - If bibliography errors: Tools > Commands > Biber
-          % TODO [USER:tip] - keep a copy of the compiled PDF (rename to template.pdf)
+        % - Compile once without changes — Log should be clean.
+        % - If bibliography errors: Tools > Commands > Biber
+        % TODO [USER:tip] - keep a copy of the compiled PDF (rename to template.pdf)
 
     %  2. Set Language
-          % TODO [USER:lang] - there are multiple!
+        % TODO [USER:lang] - there are multiple!
 
     %  3. Enter Your Metadata & Signature
-          % TODO [USER:metadata]
-    %     - Change the signature.png or disable it in /preamble/set-signature
+        % TODO [USER:metadata]
+        % - Change the signature.png or disable it in /preamble/set-signature
 
     %  4. Remove Demo Content from main.tex BUT KEEP THE FILES AS REFERENCE
-          % TODO [USER:demo]
+        % TODO [USER:demo]
 
     %  5. Add Your Own Chapters
-    %     - Add content in the MAINMATTER section
+        % - Add content in the MAINMATTER section
 
     %  6. Compile Again
-    %     - Done!
+        % - May the TeX be with you and Good Luck!
 
 %===============================================================================%
 %                                   DOCUMENT
