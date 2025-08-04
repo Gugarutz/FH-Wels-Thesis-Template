@@ -1,2 +1,60 @@
-\usepackage{csvsimple}
-\usepackage{datatool}
+%===============================================================================%
+%                    DATA IMPORT & PGF/TIKZ CONFIGURATION                       %
+%===============================================================================%
+
+%-------------------------------------------------------------------------------%
+%                                DATA IMPORT                                    %
+%-------------------------------------------------------------------------------%
+
+\usepackage{csvsimple}       % Simple CSV parsing
+\usepackage{datatool}        % More advanced data table handling
+
+%-------------------------------------------------------------------------------%
+%                         PGF/TIKZ + PGFPLOTS SETUP                             %
+%-------------------------------------------------------------------------------%
+
+\usepackage{tikz}            % Core drawing package (also loads PGF package)
+\usepackage{pgfplots}        % Scientific plotting on top of TikZ
+\usepackage{pgfplotstable}   % Table data import for pgfplots
+    \pgfplotsset{compat=1.18}    % Avoid legacy warnings; locked for consistency
+
+\usetikzlibrary{
+    arrows.meta,             % Modern arrow tips
+    positioning,             % Node-relative positioning
+    shapes.geometric,        % Basic shapes like diamond, ellipse, etc.
+    calc                     % Math on coordinates
+}
+
+
+%-------------------------------------------------------------------------------%
+%                          PGFPLOTS BASE CONFIGURATION                          %
+%-------------------------------------------------------------------------------%
+
+\pgfplotsset{
+    % Global style
+    every axis/.style={
+        font=\footnotesize,
+        line width=0.8pt,
+        tick style={line width=0.6pt},
+        minor tick num=1,
+        grid=both,
+        grid style={line width=.1pt, draw=gray!20},
+        major grid style={line width=.2pt, draw=gray!40},
+        axis line style={draw=black, ->, >=stealth, thick},
+        axis lines=left,
+%        tick align=outside,
+        enlargelimits=false,
+        clip=false,
+        legend cell align={left},
+    },
+    % Default line and marker style
+    every axis plot/.append style={
+        thick
+    },
+    % Better spacing for tick labels
+    scaled ticks=false,
+    tick label style={
+        /pgf/number format/fixed,
+        /pgf/number format/precision=3
+    }
+}
