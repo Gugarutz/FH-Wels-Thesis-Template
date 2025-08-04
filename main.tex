@@ -22,7 +22,7 @@
     % !TeX spellcheck = en_GB
 
     \documentclass[
-        english,    % TODO: [USER] select language here for cleveref to work
+        english,    % TODO [USER:lang] - select language here for cleveref to work
         oneside,                    % only right sided pages
         bibliography=totocnumbered, % Include bibliography in TOC with number
         listof=totocnumbered,       % Include List of Tables/Figures in TOC with number
@@ -53,7 +53,7 @@
 %                              SETTINGS FOR THE USER
 %-------------------------------------------------------------------------------%
     % CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
-        \sisetup{ % TODO: [USER] Choose locale and settings
+        \sisetup{ % TODO: [USER:lang] Choose locale and settings
             locale = US,                % Localization US or DE recommended
             % per-mode=symbol,          % Display as / fractions
             separate-uncertainty,
@@ -70,39 +70,74 @@
 %                                   FRONT PAGE
 %-------------------------------------------------------------------------------%
     \input{preamble/set-titlepage-fields}   % defines fields for user data
-    \input{metadata}                        % TODO: [USER] Fill this out
+    \input{metadata}                        % TODO [USER:metadata] - Fill this out
     \input{preamble/set-titlepage}          % sets up the titlepage
     \input{preamble/set-declarationDE}      % declaration in 2 languages
     \input{preamble/set-declarationEN}
-        % TODO: [USER] Adjust {/preamble/set-signature} settings to toggle signature
+        % TODO [USER:metadata] - Adjust /preamble/set-signature settings to toggle signature
 
 %-------------------------------------------------------------------------------%
 %                         PACKAGES AND SETTINGS FOR TESTING
 %-------------------------------------------------------------------------------%
-%    \usepackage{showframe}         % use to check margins
-    \usepackage{blindtext}
+%    \usepackage{showframe}         % use to check margins (borders of the page)
+    \usepackage{blindtext}          % Remove for final version
+
+%===============================================================================%
+%                            QUICKSTART — START HERE
+%===============================================================================%
+%   TODO NOTE: The TODO comments are marked pink. They can be viewed in the left pane
+
+%  00. Refer to the README.md for installation of TeX-Live and TeXstudio
+
+% ️  0. One-Time Setup
+%    - In TeXstudio: Options > Configure TeXstudio > Build > Set Biber as default
+%    - Or Recommended: Options > Load Profile > Select Wels.txsprofile in template folder
+%    - Load Session: File > Session > Load Session... > Select main.txss2 in template folder
+
+%   1. First Compile
+%    - Compile once without changes — Log should be clean.
+%    - If bibliography errors: Tools > Commands > Biber
+
+%   2. Set Language
+%    - Look for: % TODO [USER:lang] (there are multiple!)
+
+%   3. Enter Your Metadata & Signature
+%    - Look for: % TODO [USER:metadata]
+%    - Change the signature.png or disable it in /preamble/set-signature
+
+%   4. Remove Unused Modules or Demo Content
+%    - Optional: % TODO [USER:modules] & % TODO [USER:demo]
+
+%   5. Add Your Own Chapters
+%    - Add content in the MAINMATTER section
+
+%   6. Compile Again
+%    - Done!
 
 %===============================================================================%
 %                                   DOCUMENT
 %===============================================================================%
 
 \begin{document}
-    \selectlanguage{english}    % Set language -> ngerman for new grammer german
+    % TODO [USER:lang] - select relevant language
+        \selectlanguage{english} % Use ngmeran for german (new grammar)
 
 %-------------------------------------------------------------------------------%
 %                                   FRONTMATTER
 %-------------------------------------------------------------------------------%
-    \frontmatter                % Everything before the content of the thesis starts
-        \pagenumbering{Roman}   % Uppercase Roman numerals in page number, frontmatter only
+    \frontmatter                 % Everything before the content of the thesis starts
+        \pagenumbering{Roman}    % Uppercase Roman numerals in page number, frontmatter only
 
-    % SELECT TITLEPAGE LANGUAGE
+    % TITLEPAGE
+        % TODO [USER:lang] - Titlepage: select relevant language
         \titlepageEN
         %\titlepageDE
 
     % PREFACE, ACKNOWLEDGEMENTS, ETC.
         \include{frontmatter/preface}
 
-    % SELECT DECLARATION LANGUAGE
+    % DECLARATION
+        % TODO [USER:lang] - Declaration: select relevant language
         \declarationEN
         % \declarationDE
 
@@ -123,17 +158,19 @@
     % INTRODUCTION
         \include{content/introduction}
 
-    % CHAPTER 0 - DEMO
-        \include{content/ch-demo/ch-demo}
+    % DEMO
+        % TODO [USER:demo] - disable these before submission (select all > CTRL + T)
+        \include{content/ch-demo/demo-item}
         \include{content/ch-demo/demo-tables}
         \include{content/ch-demo/demo-graphics}
         \include{content/ch-demo/demo-math}
-        \include{content/ch-demo/demo-item}
+            % TODO [USER:module] - demo-math.tex includes mod-math.tex commands!
 
-    % CHAPTER 0 - DEMO: MODULES
+    % DEMO: MODULES
         \include{content/ch-module/demo-tikz-pgf}
         \include{content/ch-module/demo-pgf}
 
+    % TODO [USER] - This is your space,
     % CHAPTER I  - THEORY
         \include{content/ch1/ch1-intro}
 
@@ -146,7 +183,7 @@
         \begingroup             % Group for layout and sizing control
             \footnotesize       % Decreases the fontsize inside group
              \markright{\empty} % Remove section reference in header
-
+          %
           \printbibliography
           \listoffigures
           \listoftables
@@ -156,8 +193,8 @@
 %                                   APPENDICES
 %-------------------------------------------------------------------------------%
         \appendix % Changes chapter numbering to Alphabetic
-        \include{appendix/demo-pdf}
-        \include{appendix/demo-code}
+        \include{appendix/demo-pdf}     % TODO [USER:demo]
+        \include{appendix/demo-code}    % TODO [USER:module]
 
 %===============================================================================%
 \end{document}
