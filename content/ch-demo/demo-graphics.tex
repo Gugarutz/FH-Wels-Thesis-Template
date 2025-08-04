@@ -1,7 +1,11 @@
 \section{Figures}
     \label{sec:Figures}
 
-    Figures in \LaTeX{} are handled using the \texttt{figure} environment. Like tables, figures are inserted as floats. This means they are positioned where \LaTeX{} deems optimal for page layout, rather than exactly where they are written in the code. By default, floats tend to move to the top or bottom of pages or onto dedicated float pages.
+    Figures in \LaTeX{} are handled using the \texttt{figure} environment.
+    Like tables, figures are inserted as floats.
+    This means they are positioned where \LaTeX{} deems optimal for page layout,
+    rather than exactly where they are written in the code. By default,
+    floats tend to move to the top or bottom of pages or onto dedicated float pages.
 
     To force figures closer to their position in the code, use placement specifiers:
     \begin{itemize}
@@ -9,7 +13,8 @@
         \item \texttt{[H]} — exactly "here" (requires the \texttt{float} package)
     \end{itemize}
 
-    It is best practice to scale images relative to the text width, e.g.,\\ \verb|width=0.5\textwidth|, to maintain consistency across different document sizes.
+    It is best practice to scale images relative to the text width, e.g.,\\
+    \verb|width=0.5\textwidth|, to maintain consistency across different document sizes.
 
     \begin{figure}[h]
     	\centering
@@ -21,11 +26,12 @@
 %-------------------------------------------------------------------------
 \subsection{Multiple figures in one environment}
 
-    The simplest way to display two images side by side is to call \verb|\includegraphics| twice inside one \texttt{figure} environment. However, spacing must be managed manually.
+    The simplest way to display two images side by side is to call \verb|\includegraphics|
+    twice inside one \texttt{figure} environment. However, spacing must be managed manually.
 
     Example with manual spacing:
 
-    \begin{figure}[h]
+    \begin{figure}[H]
         \centering
         \includegraphics[width=0.4\textwidth]{FH.png}
         \hfil

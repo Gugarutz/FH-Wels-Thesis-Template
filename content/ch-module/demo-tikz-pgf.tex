@@ -58,6 +58,7 @@ PGFPlots also allows importing data from external files such as CSVs, which is c
 
 Make sure the CSV file is accessible and contains headers matching those referenced in the plot code.
 
+
 \begin{tikzpicture}
     \begin{axis}[
         width=12cm,
@@ -65,15 +66,13 @@ Make sure the CSV file is accessible and contains headers matching those referen
         xlabel={Time (min)},
         ylabel={Temperature (°C)},
         grid=both,
-        mark=*,
-        mark size=2pt,
         thick,
         ]
         \addplot[blue] table [
-        col sep=comma,
-        x={Time (min)},
-        y={Temperature (°C)}
-        ] {data/temperature_measurement.csv};
+            col sep=comma,
+            x={Time (min)},
+            y={Temperature (°C)}
+            ] {data/temperature_measurement.csv};
     \end{axis}
 \end{tikzpicture}
 
@@ -84,19 +83,13 @@ Make sure the CSV file is accessible and contains headers matching those referen
         xlabel={Time (min)},
         ylabel={Temperature (°C)},
         axis lines=left,
-        enlargelimits=false,
         clip=true,
         grid=both,
-        axis line style={->, >=stealth,  thick},
-        mark=*,
-        mark size=2pt,
-        thick,
         xmin=0,
         ymin=20,
-        ymax=45,
+        ymax=50,
         xtick distance=10,
-        ytick distance=5,
-        clip=false
+        ytick distance=10,
         ]
         \addplot[blue] table [
         col sep=comma,
