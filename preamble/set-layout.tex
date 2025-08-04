@@ -1,6 +1,6 @@
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
 % KOMA
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
 
 % Prerequisite settings &
 \usepackage{scrlayer-scrpage}
@@ -12,9 +12,9 @@
 	manualmark,
 }%
 
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
 % Header & Footer setup
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
 
 % Modify \chaptermark to include the chapter title in \leftmark (without number for \addchap)
 \renewcommand{\chaptermark}[1]{\markleft{\ifnum\value{chapter}=0 #1\else\thechapter~ #1\fi}}
@@ -27,9 +27,9 @@
 \ohead[\empty]{\rightmark}    % Rightmark (section title) on the right header
 \ofoot[\pagemark]{\pagemark}  % Page number on the bottom right
 
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
 % Page spacing and margin setup
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
 \usepackage{setspace}
 \onehalfspacing               % 1.5 lines of line spacing
 
@@ -49,13 +49,8 @@
 \setlength{\headsep}    {\baselinestretch\baselineskip}
 \setlength{\headheight} {\baselinestretch\baselineskip}
 
-
-
-% Remove header and reclaim space
-\RedeclareSectionCommand[afterskip=0pt]{chapter}
-
-%------------------------------------------------------------%
-% OTHER PACKAGES
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                                   OTHER PACKAGES
+%-------------------------------------------------------------------------------%
 \usepackage[absolute]{textpos} % Absolute text position for \declaration > \textblock environment
 

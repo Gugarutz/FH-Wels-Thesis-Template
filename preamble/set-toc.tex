@@ -6,9 +6,8 @@
 \setcounter{tocdepth}{3}             % Set depth of heading displayed in TOC
 
 % Define custom sectioning for TOC
-\newcommand{\setSectioning}{
     \RedeclareSectionCommand[
-        afterskip=2ex,
+        afterskip=1ex,
         beforeskip=0ex,
     ]{chapter}
     \RedeclareSectionCommand[
@@ -46,7 +45,7 @@
         afterskip=0.1ex,
         tocindent=1.5em
     ]{subparagraph}
-}
+
 
 % Adjust TOC for page numbers
 \DeclareTOCStyleEntry[pagenumberwidth=4em]{tocline}{chapter}

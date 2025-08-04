@@ -1,154 +1,198 @@
-% !TeX root = main.tex
-% !TeX spellcheck = en_GB
-\documentclass[
-    english,		% TODO: [USER] select language here for cleveref to work
-    oneside,
-    bibliography=totocnumbered,     % Include bibliography in TOC with number
-    listof=totocnumbered,           % Include List of Tables/Figures in TOC with number
-    numbers=noenddot                % Changes heading/caption numbering from 1.1. to 1.1
-]{scrbook}
+%===============================================================================%
+%                              ABOUT THIS DOCUMENT
+%===============================================================================%
+% LaTeX template for academic writing at the University of Applied Sciences
+% Upper Austria, Campus Wels. Originally created by Gugarutz (Astrusia) in 2025.
+%
+% This template is licensed under the GNU General Public License v2.0 (GPL-2.0).
+% Note: The license applies only to the template itself and any derivative templates.
+% Documents authored *using* this template are not subject to the GPL license.
+%
+% The banner image of FHOOE remains the property of FHOOE and is not covered by this license.
+%
+% Repository: https://github.com/Gugarutz/FH-Wels-Thesis-Template
+%===============================================================================%
 
-%------------------------------------------------------------%
-% SETTINGS AND PACKAGES
-%------------------------------------------------------------%
-    \input{preamble/set-layout}         % General layout and spacing
-    \input{preamble/set-typesetting}	% Typography handling
-    \input{preamble/set-math}			%
-    \input{preamble/set-graphics} 		% Graphics, colour, tables
-    \input{preamble/set-reference}      % Caption, Referencing, Citing
-    \input{preamble/set-toc}		   	% Table of Contents
-    \input{preamble/set-lists}	      	% Lists (enumerate, itemize, outline)
+%-------------------------------------------------------------------------------%
+%                              GENERAL/META SETTINGS
+%-------------------------------------------------------------------------------%
 
-% MODULES (YOU CAN DISABLE THESE, also disable demo chapters below)
-    \input{preample/mod-math}           % Custom math commands
-    \input{preamble/mod-code}           % Display code
-    \input{preamble/mod-data}           % Reading data
-    \input{preamble/mod-pgf}            % Making diagrams & plots
-    \input{preamble/mod-callout}
+% MAGIC COMMENTS FOR TeXstudio
+    % !TeX root = main.tex
+    % !TeX spellcheck = en_GB
 
-%------------------------------------------------------------%
-% SETTINGS FOR THE USER
-%------------------------------------------------------------%
+    \documentclass[
+        english,    % TODO [USER:lang] - select language here for cleveref to work
+        oneside,                    % only right sided pages
+        bibliography=totocnumbered, % Include bibliography in TOC with number
+        listof=totocnumbered,       % Include List of Tables/Figures in TOC with number
+        numbers=noenddot            % Changes heading/caption numbering from 1.1. to 1.1
+    ]{scrbook}
 
-% CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
-    \sisetup{ % TODO: [USER] Choose locale and settings
-        locale = US,                % Localization US or DE recommended
-        % per-mode=symbol,          % Display as / fractions
-        separate-uncertainty,
-        exponent-product=\cdot      % Use \times for x multiplier
-    }
+%-------------------------------------------------------------------------------%
+%                             SETTINGS AND PACKAGES
+%-------------------------------------------------------------------------------%
+    % PACKAGES, SETTINGS AND
+        \input{preamble/set-layout}         % General layout and spacing
+        \input{preamble/set-typesetting}	% Typography handling
+        \input{preamble/set-math}			%
+        \input{preamble/set-graphics} 		% Graphics, colour, tables
+        \input{preamble/set-reference}      % Caption, Referencing, Citing
+        \input{preamble/set-toc}		   	% Heading & TOC spacings & max depth
+        \input{preamble/set-lists}	      	% Lists (enumerate, itemize, outline)
 
-% CHOOSE THE FILE PATH FOR GRAPHICS
-    \graphicspath{{graphics/}} % add relevant paths
+    % TODO [USER:modules]
+    % MODULES: YOU MAY DISABLE THESE - Disable the according demo chapter!
+        \input{preamble/mod-math}           % Custom math commands
+        \input{preamble/mod-code}           % Display code
+        \input{preamble/mod-data}           % Reading data
+        \input{preamble/mod-pgf}            % Making diagrams & plots in LaTeX
+        \input{preamble/mod-callout}        % Callouts/Admonitions (GitHub style)
+            % TODO [USER:warning] Callouts are used throughout ALL demo chapters!
 
-% CHOOSE THE FILE PATH FOR BIBLIOGRAPHY
-    \addbibresource{bibliography.bib}   % File(s) with your sources
+    % TITLE PAGE PAGE
+        \input{preamble/set-titlepage-fields}   % defines fields for user data
 
+%-------------------------------------------------------------------------------%
+%                         PACKAGES AND SETTINGS FOR TESTING
+%-------------------------------------------------------------------------------%
+    %\usepackage{showframe}         % use to check margins (borders of the page)
+    \usepackage{blindtext}          % Remove for final version
 
-%------------------------------------------------------------%
-% FRONT PAGE
-%------------------------------------------------------------%
-    \input{preamble/set-titlepage-fields}   % defines fields for user data
-    \input{metadata}                        % TODO: [USER] Fill this out
-    \input{preamble/set-titlepage}          % sets up the titlepage
-    \input{preamble/set-declarationDE}      % declaration in 2 languages
-    \input{preamble/set-declarationEN}
-        % TODO: [USER] Adjust {/preamble/set-signature} settings to toggle signature
+%-------------------------------------------------------------------------------%
+%                              SETTINGS FOR THE USER
+%-------------------------------------------------------------------------------%
+    % CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
+        \sisetup{ % TODO: [USER:lang] Choose locale and settings
+            locale = US,                % Localization US or DE recommended
+            % per-mode=symbol,          % Display as / fractions
+            separate-uncertainty,
+            exponent-product=\cdot      % Use \times for x multiplier
+        }
 
-%------------------------------------------------------------%
-% TESTING
-%------------------------------------------------------------%
-%    \usepackage{showframe}         % use to check margins
-    \usepackage{blindtext}
+    % CHOOSE THE FILE PATH FOR GRAPHICS
+        \graphicspath{{graphics/}}
 
-%==============================================================================================%
-%                                      DOCUMENT                                                %
-%==============================================================================================%
+    % CHOOSE THE FILE PATH FOR BIBLIOGRAPHY
+        \addbibresource{bibliography.bib}
+
+    % TODO [USER:metadata] - Fill this out
+        \input{metadata}
+
+%===============================================================================%
+%                            QUICKSTART — START HERE
+%===============================================================================%
+%   TODO NOTE: The TODO comments are marked pink. You can view all in the left pane
+
+%  00. Refer to the README.md for installation of TeX-Live and TeXstudio
+
+% ️  0. One-Time Setup
+%    - In TeXstudio: Options > Configure TeXstudio > Build > Set Biber as default
+%    - Or Recommended: Options > Load Profile > Select Wels.txsprofile in template folder
+%    - Load Session: File > Session > Load Session... > Select main.txss2 in template folder
+
+%   1. First Compile
+%    - Compile once without changes — Log should be clean.
+%    - If bibliography errors: Tools > Commands > Biber
+%       TODO [USER:tip] - keep a copy of the compiled PDF (rename it)
+
+%   2. Set Language
+%       TODO [USER:lang] - there are multiple!
+
+%   3. Enter Your Metadata & Signature
+%       TODO [USER:metadata]
+%    - Change the signature.png or disable it in /preamble/set-signature
+
+%   4. Remove Demo Content from main.tex BUT KEEP THE FILES AS REFERENCE
+        % TODO [USER:demo]
+
+%   5. Add Your Own Chapters
+%    - Add content in the MAINMATTER section
+
+%   6. Compile Again
+%    - Done!
+
+%===============================================================================%
+%                                   DOCUMENT
+%===============================================================================%
 
 \begin{document}
-    \selectlanguage{english} % Set language -> ngerman for new grammer german
+    % TODO [USER:lang] - select relevant language
+        \selectlanguage{english} % Use ngmeran for german (new grammar)
 
-%------------------------------------------------------------%
-% FRONTMATTER
-%------------------------------------------------------------%
-    % FRONTMATTER SETTINGS
-        \frontmatter            % Everything before the content of the thesis starts
-        \pagenumbering{Roman}   % Uppercase Roman numerals in page number, frontmatter only
+%-------------------------------------------------------------------------------%
+%                                   FRONTMATTER
+%-------------------------------------------------------------------------------%
+    \frontmatter                 % Everything before the content of the thesis starts
+        \pagenumbering{Roman}    % Uppercase Roman numerals in page number
 
-    % SELECT TITLEPAGE LANGUAGE
-        \titlepageEN
-        %\titlepageDE
+    % TITLEPAGE
+        % TODO [USER:lang] - Titlepage: select relevant language
+        \input{frontmatter/titlepageEN}
+        \input{frontmatter/titlepageDE}
 
-    % PREFACE, ACKNOWLEDGEMENTS, ETC.
+    % PREFACE / ACKNOWLEDGEMENTS
         \include{frontmatter/preface}
 
-    % SELECT DECLARATION LANGUAGE
-        \declarationEN
-        % \declarationDE
+    % DECLARATION
+        % TODO [USER:lang] - Declaration: select relevant language
+        \include{frontmatter/declarationEN}
+        \include{frontmatter/declarationDE}
 
-    % ABSTRACTS (GERMAN & ENGLISH)
+    % ABSTRACTS (BOTH GERMAN & ENGLISH REQUIRED!)
         \include{frontmatter/abstractEN}
         \include{frontmatter/abstractDE}
 
     % TABLE OF CONTENTS
         \markleft{\contentsname} % Adds "Contents" or equivalent to header
-        \setSectioning           % Sets indents and separation for TOC
-        \tableofcontents
+        \tableofcontents         % Creates the table of contents (TOC)
 
-%------------------------------------------------------------%
-% MAINMATTER (CONTENT)
-%------------------------------------------------------------%
-        \mainmatter % Main part of the thesis, from the introduction to the conclusion
+%-------------------------------------------------------------------------------%
+%                               MAINMATTER (CONTENT)
+%-------------------------------------------------------------------------------%
+    \mainmatter % Main part of the thesis, from the introduction to the conclusion
 
     % INTRODUCTION
         \include{content/introduction}
 
-    % CHAPTER 0 - DEMO
-%        \include{content/ch-demo/ch-demo}
+    % DEMO
+        % TODO [USER:demo] - disable these before submission (select all > CTRL + T)
+        \include{content/ch-demo/demo-item}
         \include{content/ch-demo/demo-tables}
         \include{content/ch-demo/demo-graphics}
         \include{content/ch-demo/demo-math}
-        \include{content/ch-demo/demo-item}
+            % TODO [USER:module] - demo-math.tex includes mod-math.tex commands!
 
-    % DEMO - MODULES
+    % DEMO: MODULES
+        % TODO [USER:module] - remove these if removing the mod-* files
         \include{content/ch-module/demo-tikz-pgf}
         \include{content/ch-module/demo-pgf}
 
-    % CHAPTER I - THEORY
+    % TODO [USER] - This is your space define folders and files as needed
+    % CHAPTER I  - THEORY
         \include{content/ch1/ch1-intro}
+
     % CHAPTER II - PRACTICE
 
-    % TESTING SECTION
-        \cite{WWW:MenschlicherEinflussKlima}
-        \cite{Norm:ISO690:2021}
-        \cite{Lehrndorfer:KontrollierteSprache}
-        \cite{Meier:Globalisierung}
-        \cite{Mueller:Meier}
-        \cite{Mueller:Meier:Huber}
-        \cite{Mueller:Meier:Huber:Tausch}
-        \cite{Norm:ONR12658:2013}
-        \cite{Norm:OENORMA2662:2023}
-        \cite{OpenAI:2023}
-        \cite{Schulz:NormPraxis}
-
-%------------------------------------------------------------%
-% BACKMATTER
-%------------------------------------------------------------%
-        % \backmatter % Disables chapter numbering
-        \begingroup
-          \footnotesize % Decreases the fontsize inside group
-          \markright{\empty}
-            \printbibliography
-	        \listoffigures
-	        \listoftables
+%-------------------------------------------------------------------------------%
+%                                   BACKMATTER
+%-------------------------------------------------------------------------------%
+%    \backmatter % Disables chapter numbering
+        \begingroup             % Group for layout and sizing control
+            \footnotesize       % Decreases the fontsize inside group
+            \markright{\empty}  % Removea section reference in header
+          %
+          \printbibliography
+          \listoffigures
+          \listoftables
         \endgroup
 
-%------------------------------------------------------------%
-% APPENDICES
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                                   APPENDICES
+%-------------------------------------------------------------------------------%
         \appendix % Changes chapter numbering to Alphabetic
-        \include{appendix/demo-pdf}
-        \include{appendix/demo-code}
+        \include{appendix/demo-pdf}     % TODO [USER:demo]
+        \include{appendix/demo-code}    % TODO [USER:demo]
 
-%------------------------------------------------------------%
+%===============================================================================%
 \end{document}
