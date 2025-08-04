@@ -1,13 +1,21 @@
-%------------------------------------------------------------%
-% PACKAGES FOR REFERENCING
-%------------------------------------------------------------%
+%===============================================================================%
+%                           REFERENCING AND BIBLIOGRAPHY                        %
+%===============================================================================%
+% Configures references, citations, hyperlinks, and captions.
 
-    \usepackage{caption}    		% better captioning control
-    \usepackage{subcaption} 		% allows subfigures etc
-    \usepackage[hidelinks]{hyperref}% loads of option for pdf linking and bookmarks
-    \usepackage{hyperref-patches}	% fix compat with cleverref, caption etc
-    \usepackage{cleveref}
+%-------------------------------------------------------------------------------%
+%                          REFERENCING AND HYPERLINKING                         %
+%-------------------------------------------------------------------------------%
 
+        \usepackage{caption}                % Better caption control
+        \usepackage{subcaption}             % Subfigures, subtables
+        \usepackage[hidelinks]{hyperref}    % Clickable references without colored boxes
+        \usepackage{hyperref-patches}       % Compatibility patches
+        \usepackage{cleveref}               % Smart cross-referencing
+
+%-------------------------------------------------------------------------------%
+%                                 BIBLIOGRAPHY                                  %
+%-------------------------------------------------------------------------------%
 
     \usepackage[
         backend=biber,
@@ -15,16 +23,13 @@
         sorting=none
     ]{biblatex}
 
-%------------------------------------------------------------%
-% BIBLIOGRAPHY SETTINS
-%------------------------------------------------------------%
+    % Font size for bibliography
     \renewcommand{\bibfont}{\small}  % Adjust size here
 
+%-------------------------------------------------------------------------------%
+%                              CAPTION CONFIGURATION                            %
+%-------------------------------------------------------------------------------%
 
-%------------------------------------------------------------%
-% CAPTION SETTINS
-%------------------------------------------------------------%
-% settings for caption package, use \captionsetup[float type]{options} for individual control
     \captionsetup{
         font=small,
         labelfont=bf,
@@ -34,24 +39,31 @@
         justification=raggedright
     }
 
-%------------------------------------------------------------%
-% CAPTION NUMBER
-%------------------------------------------------------------%
-    \counterwithin{figure}{chapter}     % Set figure counter to include chapter
-    \counterwithin{table}{chapter}      % Set table counter to include chapter
-    \counterwithin{equation}{chapter}   % Set equation counter to include chapter
+%-------------------------------------------------------------------------------%
+%                            NUMBERING IN CHAPTER CONTEXT                       %
+%-------------------------------------------------------------------------------%
 
-%------------------------------------------------------------%
-% CAPTION NAMES
-%------------------------------------------------------------%
+    \counterwithin{figure}  {chapter}   % Figure numbering includes chapter
+    \counterwithin{table}   {chapter}   % Table numbering includes chapter
+    \counterwithin{equation}{chapter}   % Equation numbering includes chapter
 
-% Naming of Figures
+    % Same but for sections, not tested
+    % \counterwithin{figure}  {section}
+    % \counterwithin{table}   {section}
+    % \counterwithin{equation}{section}
+
+%-------------------------------------------------------------------------------%
+%                           LANGUAGE-SPECIFIC LABEL NAMES                       %
+%-------------------------------------------------------------------------------%
+
+    % Figure captions
     \addto\captionsngerman  {\renewcommand{\figurename}{Abb.}}
-    \addto\captionsnaustrian{\renewcommand{\figurename}{Abb.}}
     \addto\captionsenglish  {\renewcommand{\figurename}{Fig.}}
-% Naming of Tables
-    \addto\captionsngerman  {\renewcommand{\tablename}{Tab.}}
-    \addto\captionsnaustrian{\renewcommand{\tablename}{Tab.}}
-    \addto\captionsenglish  {\renewcommand{\tablename}{Tab.}}
-% Naming of Equations
 
+    % Table captions
+    \addto\captionsngerman  {\renewcommand{\tablename}{Tab.}}
+    \addto\captionsenglish  {\renewcommand{\tablename}{Tab.}}
+
+    % ???? Equation names are not a thing?
+%    \addto\captionsngerman  {\renewcommand{\equationname}{Gl.}}
+%    \addto\captionsenglish  {\renewcommand{\equationname}{Eq.}}
