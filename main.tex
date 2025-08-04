@@ -20,6 +20,7 @@
 % MAGIC COMMENTS FOR TeXstudio
 % !TeX root = main.tex
 % !TeX spellcheck = en_GB
+
 \documentclass[
     english,		% TODO: [USER] select language here for cleveref to work
     oneside,
@@ -28,9 +29,9 @@
     numbers=noenddot                % Changes heading/caption numbering from 1.1. to 1.1
 ]{scrbook}
 
-%------------------------------------------------------------%
-% SETTINGS AND PACKAGES
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                             SETTINGS AND PACKAGES
+%-------------------------------------------------------------------------------%
     \input{preamble/set-layout}         % General layout and spacing
     \input{preamble/set-typesetting}	% Typography handling
     \input{preamble/set-math}			%
@@ -46,9 +47,9 @@
     \input{preamble/mod-pgf}            % Making diagrams & plots
     \input{preamble/mod-callout}
 
-%------------------------------------------------------------%
-% SETTINGS FOR THE USER
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                              SETTINGS FOR THE USER
+%-------------------------------------------------------------------------------%
 
 % CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
     \sisetup{ % TODO: [USER] Choose locale and settings
@@ -65,9 +66,9 @@
     \addbibresource{bibliography.bib}   % File(s) with your sources
 
 
-%------------------------------------------------------------%
-% FRONT PAGE
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                                   FRONT PAGE
+%-------------------------------------------------------------------------------%
     \input{preamble/set-titlepage-fields}   % defines fields for user data
     \input{metadata}                        % TODO: [USER] Fill this out
     \input{preamble/set-titlepage}          % sets up the titlepage
@@ -75,22 +76,22 @@
     \input{preamble/set-declarationEN}
         % TODO: [USER] Adjust {/preamble/set-signature} settings to toggle signature
 
-%------------------------------------------------------------%
-% TESTING
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                         PACKAGES AND SETTINGS FOR TESTING
+%-------------------------------------------------------------------------------%
 %    \usepackage{showframe}         % use to check margins
     \usepackage{blindtext}
 
-%==============================================================================================%
-%                                      DOCUMENT                                                %
-%==============================================================================================%
+%===============================================================================%
+%                                   DOCUMENT
+%===============================================================================%
 
 \begin{document}
     \selectlanguage{english} % Set language -> ngerman for new grammer german
 
-%------------------------------------------------------------%
-% FRONTMATTER
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                                   FRONTMATTER
+%-------------------------------------------------------------------------------%
     % FRONTMATTER SETTINGS
         \frontmatter            % Everything before the content of the thesis starts
         \pagenumbering{Roman}   % Uppercase Roman numerals in page number, frontmatter only
@@ -113,11 +114,11 @@
     % TABLE OF CONTENTS
         \markleft{\contentsname} % Adds "Contents" or equivalent to header
         \setSectioning           % Sets indents and separation for TOC
-        \tableofcontents
+        \tableofcontents         % Creates the table of contents (TOC)
 
-%------------------------------------------------------------%
-% MAINMATTER (CONTENT)
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                                 MAINMATTER (CONTENT)
+%-------------------------------------------------------------------------------%
         \mainmatter % Main part of the thesis, from the introduction to the conclusion
 
     % INTRODUCTION
@@ -125,35 +126,23 @@
 
     % CHAPTER 0 - DEMO
 %        \include{content/ch-demo/ch-demo}
-        \include{content/ch-demo/demo-tables}
-        \include{content/ch-demo/demo-graphics}
-        \include{content/ch-demo/demo-math}
-        \include{content/ch-demo/demo-item}
+%        \include{content/ch-demo/demo-tables}
+%        \include{content/ch-demo/demo-graphics}
+%        \include{content/ch-demo/demo-math}
+%        \include{content/ch-demo/demo-item}
 
     % DEMO - MODULES
-        \include{content/ch-module/demo-tikz-pgf}
-        \include{content/ch-module/demo-pgf}
+%        \include{content/ch-module/demo-tikz-pgf}
+%        \include{content/ch-module/demo-pgf}
 
-    % CHAPTER I - THEORY
+    % CHAPTER I  - THEORY
         \include{content/ch1/ch1-intro}
-    % CHAPTER II - PRACTICE
 
-    % TESTING SECTION
-        \cite{WWW:MenschlicherEinflussKlima}
-        \cite{Norm:ISO690:2021}
-        \cite{Lehrndorfer:KontrollierteSprache}
-        \cite{Meier:Globalisierung}
-        \cite{Mueller:Meier}
-        \cite{Mueller:Meier:Huber}
-        \cite{Mueller:Meier:Huber:Tausch}
-        \cite{Norm:ONR12658:2013}
-        \cite{Norm:OENORMA2662:2023}
-        \cite{OpenAI:2023}
-        \cite{Schulz:NormPraxis}
+    % CHAPTER II -
 
-%------------------------------------------------------------%
-% BACKMATTER
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                                   BACKMATTER
+%-------------------------------------------------------------------------------%
         % \backmatter % Disables chapter numbering
         \begingroup
           \footnotesize % Decreases the fontsize inside group
@@ -163,12 +152,12 @@
 	        \listoftables
         \endgroup
 
-%------------------------------------------------------------%
-% APPENDICES
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                                   APPENDICES
+%-------------------------------------------------------------------------------%
         \appendix % Changes chapter numbering to Alphabetic
         \include{appendix/demo-pdf}
         \include{appendix/demo-code}
 
-%------------------------------------------------------------%
+%===============================================================================%
 \end{document}
