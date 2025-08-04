@@ -11,7 +11,6 @@
 % The banner image of FHOOE remains the property of FHOOE and is not covered by this license.
 %
 % Repository: https://github.com/Gugarutz/FH-Wels-Thesis-Template
-%===============================================================================%
 
 %-------------------------------------------------------------------------------%
 %                              GENERAL/META SETTINGS
@@ -41,29 +40,28 @@
         \input{preamble/set-toc}		   	% Heading & TOC spacings & max depth
         \input{preamble/set-lists}	      	% Lists (enumerate, itemize, outline)
 
-    % TODO [USER:modules]
-    % MODULES: YOU MAY DISABLE THESE - Disable the according demo chapter!
+
+    % TODO [USER:modules] - YOU MAY DISABLE THESE - Disable according demo chapters!
         \input{preamble/mod-math}           % Custom math commands
         \input{preamble/mod-code}           % Display code
         \input{preamble/mod-data}           % Reading data
-        \input{preamble/mod-pgf}            % Making diagrams & plots in LaTeX
         \input{preamble/mod-callout}        % Callouts/Admonitions (GitHub style)
             % TODO [USER:warning] Callouts are used throughout ALL demo chapters!
 
     % TITLE PAGE PAGE
-        \input{preamble/set-titlepage-fields}   % defines fields for user data
+        \input{preamble/set-titlepage-fields}   % Defines fields for user data
 
 %-------------------------------------------------------------------------------%
 %                         PACKAGES AND SETTINGS FOR TESTING
 %-------------------------------------------------------------------------------%
-    %\usepackage{showframe}         % use to check margins (borders of the page)
-    \usepackage{blindtext}          % Remove for final version
+    \usepackage{showframe}  % use to check margins (borders of the page)
+    \usepackage{blindtext}  % TODO [USER:cleanup] - Remove for final version
 
 %-------------------------------------------------------------------------------%
 %                              SETTINGS FOR THE USER
 %-------------------------------------------------------------------------------%
     % CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
-        \sisetup{ % TODO: [USER:lang] Choose locale and settings
+        \sisetup{               % TODO [USER:lang] - Choose locale and settings
             locale = US,                % Localization US or DE recommended
             % per-mode=symbol,          % Display as / fractions
             separate-uncertainty,
@@ -71,46 +69,47 @@
         }
 
     % CHOOSE THE FILE PATH FOR GRAPHICS
-        \graphicspath{{graphics/}}
+        \graphicspath{{graphics/}}          % TODO [USER:paths]
 
     % CHOOSE THE FILE PATH FOR BIBLIOGRAPHY
-        \addbibresource{bibliography.bib}
+        \addbibresource{bibliography.bib}   % TODO [USER:paths]
 
-    % TODO [USER:metadata] - Fill this out
-        \input{metadata}
+    % METADATA FOR TITLE AND DECLARATION
+        \input{metadata}                    % TODO [USER:metadata] - Fill this out
 
 %===============================================================================%
 %                            QUICKSTART — START HERE
 %===============================================================================%
-%   TODO NOTE: The TODO comments are marked pink. You can view all in the left pane
+    % TODO [NOTE] - The TODO comments are marked pink. You can view all in the left pane
 
-%  00. Refer to the README.md for installation of TeX-Live and TeXstudio
+    % 00. Refer to the README.md for installation of TeX-Live and TeXstudio
+        % Check https://github.com/Gugarutz/FH-Wels-Thesis-Template for the newest version of the Template and the README instructions
 
-% ️  0. One-Time Setup
-%    - In TeXstudio: Options > Configure TeXstudio > Build > Set Biber as default
-%    - Or Recommended: Options > Load Profile > Select Wels.txsprofile in template folder
-%    - Load Session: File > Session > Load Session... > Select main.txss2 in template folder
+    %️  0. One-Time Setup
+        % - In TeXstudio: Options > Configure TeXstudio > Build > Set Biber as default
+        % - Or Recommended: Options > Load Profile > Select Wels.txsprofile in template folder
+        % - Load Session: File > Session > Load Session... > Select main.txss2 in template folder
 
-%   1. First Compile
-%    - Compile once without changes — Log should be clean.
-%    - If bibliography errors: Tools > Commands > Biber
-%       TODO [USER:tip] - keep a copy of the compiled PDF (rename it)
+    %  1. First Compile
+        % - Compile once without changes — Log should be clean.
+        % - If bibliography errors: Tools > Commands > Biber
+        % TODO [USER:tip] - keep a copy of the compiled PDF (rename to template.pdf)
 
-%   2. Set Language
-%       TODO [USER:lang] - there are multiple!
+    %  2. Set Language
+        % TODO [USER:lang] - there are multiple language selections!
 
-%   3. Enter Your Metadata & Signature
-%       TODO [USER:metadata]
-%    - Change the signature.png or disable it in /preamble/set-signature
+    %  3. Enter Your Metadata & Signature
+        % TODO [USER:metadata]
+        % - Change the signature.png or disable it in /preamble/set-signature
 
-%   4. Remove Demo Content from main.tex BUT KEEP THE FILES AS REFERENCE
+    %  4. Remove Demo Content from main.tex BUT KEEP THE FILES AS REFERENCE
         % TODO [USER:demo]
 
-%   5. Add Your Own Chapters
-%    - Add content in the MAINMATTER section
+    %  5. Add Your Own Chapters
+        % - Add content in the MAINMATTER section
 
-%   6. Compile Again
-%    - Done!
+    %  6. Compile Again
+        % - May the TeX be with you and Good Luck!
 
 %===============================================================================%
 %                                   DOCUMENT
@@ -118,8 +117,8 @@
 
 \begin{document}
     % TODO [USER:lang] - select relevant language
-        \selectlanguage{english} % Use ngmeran for german (new grammar)
-
+        \selectlanguage{english}    % English by default
+        % \selectlanguage{ngerman}  % German (New grammar)
 %-------------------------------------------------------------------------------%
 %                                   FRONTMATTER
 %-------------------------------------------------------------------------------%
@@ -168,7 +167,7 @@
         \include{content/ch-module/demo-tikz-pgf}
         \include{content/ch-module/demo-pgf}
 
-    % TODO [USER] - This is your space define folders and files as needed
+    % TODO [USER:chapters] Add your chapters here, use \include{...} for each file
     % CHAPTER I  - THEORY
         \include{content/ch1/ch1-intro}
 

@@ -1,15 +1,28 @@
-%------------------------------------------------------------%
-% TABLE OF CONTENTS
-%------------------------------------------------------------%
+%===============================================================================%
+%                          HEADINGS AND TABLE OF CONTENTS                       %
+%===============================================================================%
+% Configures sectioning commands and TOC depth.
 
-\setcounter{secnumdepth}{3}          % Set depth of heading numbering, 3 is subsubsection
-\setcounter{tocdepth}{3}             % Set depth of heading displayed in TOC
+%-------------------------------------------------------------------------------%
+%                              TABLE OF CONTENTS DEPTH                          %
+%-------------------------------------------------------------------------------%
 
-% Define custom sectioning for TOC
-    \RedeclareSectionCommand[
+    % Heading depth settings
+    \setcounter{secnumdepth}{3}          % Numbers headings up to subsubsection
+    \setcounter{tocdepth}{3}             % Shows in TOC up to subsubsection
+
+    % Spacing of page number in TOC (Roman numerals are too wide)
+    \DeclareTOCStyleEntry[pagenumberwidth=4em]{tocline}{chapter}
+
+%-------------------------------------------------------------------------------%
+%                        SECTION COMMAND CUSTOMIZATION (TOC)                    %
+%-------------------------------------------------------------------------------%
+
+    \RedeclareSectionCommand[   % TODO: Simplify this crap
         afterskip=1ex,
         beforeskip=0ex,
     ]{chapter}
+
     \RedeclareSectionCommand[
         tocnumwidth=4em,
         indent=0pt,
@@ -17,6 +30,7 @@
         afterskip=1ex,
         tocindent=1.5em
     ]{section}
+
     \RedeclareSectionCommand[
         tocnumwidth=4em,
         indent=0pt,
@@ -24,6 +38,7 @@
         afterskip=0.1ex,
         tocindent=1.5em
     ]{subsection}
+
     \RedeclareSectionCommand[
         tocnumwidth=4em,
         indent=0pt,
@@ -31,6 +46,7 @@
         afterskip=0.1ex,
         tocindent=1.5em
     ]{subsubsection}
+
     \RedeclareSectionCommand[
         tocnumwidth=4em,
         indent=0pt,
@@ -38,6 +54,7 @@
         afterskip=0.1ex,
         tocindent=1.5em
     ]{paragraph}
+
     \RedeclareSectionCommand[
         tocnumwidth=4em,
         indent=0pt,
@@ -45,7 +62,3 @@
         afterskip=0.1ex,
         tocindent=1.5em
     ]{subparagraph}
-
-
-% Adjust TOC for page numbers
-\DeclareTOCStyleEntry[pagenumberwidth=4em]{tocline}{chapter}

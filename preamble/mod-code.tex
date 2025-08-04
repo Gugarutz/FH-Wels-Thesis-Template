@@ -1,134 +1,72 @@
-\usepackage{listings}	% Base package to display code snippets
+%===================================================================%
+% SOURCE CODE LISTINGS
+%===================================================================%
 
-%------------------------------------------------------------%
-% STYLE DEFINITIONS
-%------------------------------------------------------------%
+\usepackage{listings}   % Code snippet rendering
 
-% Python Style
+%-------------------------------------------------------------------%
+% UNIVERSAL STYLE PARAMETERS
+%-------------------------------------------------------------------%
+
+\definecolor{codecommentcol}{HTML}{466733}
+
+\lstset{
+    basicstyle        = \ttfamily\scriptsize,
+    numberstyle       = \tiny\color{gray}\ttfamily,
+    keywordstyle      = \color{violet}\bfseries,
+    commentstyle      = \color{codecommentcol},
+    stringstyle       = \color{brown},
+    numbers           = left,
+    stepnumber        = 5,
+    firstnumber       = 1,
+    numbersep         = 5pt,
+    frame             = single,
+    showstringspaces  = false,
+    breaklines        = true,
+    postbreak         = \mbox{\texttt{\textcolor{blue}{...}}},
+    tabsize           = 2,
+    xleftmargin       = 20pt,
+    xrightmargin      = 10pt,
+}
+
+%-------------------------------------------------------------------%
+% LANGUAGE-SPECIFIC STYLES
+%-------------------------------------------------------------------%
+
+% Python
 \lstdefinestyle{pythonstyle}{
-	language=Python,
-	basicstyle=\ttfamily\scriptsize,
-	keywordstyle=\color{blue}\bfseries,
-	commentstyle=\color{gray},
-	stringstyle=\color{red},
-	numbers=left,
-	numberstyle=\tiny\color{gray}\ttfamily,
-	stepnumber=5,        % Number every 5th line
-	firstnumber=1,       % Start numbering at 1
-	numbersep=5pt,       % Adjust spacing
-	frame=single,
-	showstringspaces=false,
-	xleftmargin=20pt,
-	xrightmargin=10pt,
-	tabsize=2,  % Decrease the tab size (default is 8)
-	breaklines=true, % Enable line wrapping
+    language     = Python,
 }
 
-% C Style
+% C
 \lstdefinestyle{cstyle}{
-	language=C,
-	basicstyle=\ttfamily\scriptsize,
-	keywordstyle=\color{purple}\bfseries,
-	commentstyle=\color{gray},
-	stringstyle=\color{brown},
-	numbers=left,
-	numberstyle=\tiny\color{gray}\ttfamily,
-	stepnumber=5,
-	firstnumber=1,
-	numbersep=5pt,
-	frame=single,
-	showstringspaces=false,
-	xleftmargin=20pt,
-	xrightmargin=10pt,
-	tabsize=2,  % Decrease the tab size (default is 8)
-	breaklines=true, % Enable line wrapping
-	postbreak=\mbox{$\hookrightarrow$\space} % Add arrow to indicate line break
+    language     = C,
 }
 
-% LaTeX Style
+% LaTeX
 \lstdefinestyle{latexstyle}{
-	language=[LaTeX]TeX,
-	basicstyle=\ttfamily\scriptsize,
-	keywordstyle=\color{blue}\bfseries,
-	commentstyle=\color{gray},
-	stringstyle=\color{brown},
-	numbers=left,
-	numberstyle=\tiny\color{gray}\ttfamily,
-	stepnumber=5,
-	firstnumber=1,
-	numbersep=5pt,
-	frame=single,
-	showstringspaces=false,
-	xleftmargin=20pt,
-	xrightmargin=10pt,
-	tabsize=2,  % Decrease the tab size (default is 8)
-	breaklines=true, % Enable line wrapping
+    language     = [LaTeX]TeX,
+    keywordstyle = \color{cyan}\bfseries,
 }
 
+% MATLAB
 \lstdefinestyle{matlabstyle}{
-    language=Matlab,
-    basicstyle=\ttfamily\scriptsize,
-    keywordstyle=\color{blue}\bfseries,
-    commentstyle=\color{gray},
-    stringstyle=\color{red},
-    numbers=left,
-    numberstyle=\tiny\color{gray}\ttfamily,
-    stepnumber=5,        % Number every 5th line
-    firstnumber=1,       % Start numbering at 1
-    numbersep=5pt,       % Adjust spacing
-    frame=single,
-    showstringspaces=false,
-    xleftmargin=20pt,
-    xrightmargin=10pt,
-    tabsize=2,  % Decrease the tab size (default is 8)
-    breaklines=true, % Enable line wrapping
+    language     = Matlab,
 }
 
+% Wolfram / Mathematica
 \lstdefinestyle{wolframstyle}{
-    language=Mathematica,
-    basicstyle=\ttfamily\scriptsize,
-    keywordstyle=\color{blue}\bfseries,
-    commentstyle=\color{gray},
-    stringstyle=\color{red},
-    numbers=left,
-    numberstyle=\tiny\color{gray}\ttfamily,
-    stepnumber=5,        % Number every 5th line
-    firstnumber=1,       % Start numbering at 1
-    numbersep=5pt,       % Adjust spacing
-    frame=single,
-    showstringspaces=false,
-    xleftmargin=20pt,
-    xrightmargin=10pt,
-    tabsize=2,  % Decrease the tab size (default is 8)
-    breaklines=true, % Enable line wrapping
+    language     = Mathematica,
 }
 
-% Define YAML syntax highlighting
+% YAML — manually defined
 \lstdefinelanguage{yaml}{
-    keywords={true,false,null,y,n,yes,no,on,off},
-    keywordstyle=\color{blue}\bfseries,
-    basicstyle=\ttfamily,
-    comment=[l]{\#},
-    commentstyle=\color{gray}\ttfamily,
-    morecomment=[s]{/*}{*/},
-    morestring=[b]',
-    morestring=[b]"
+    keywords     = {true,false,null,y,n,yes,no,on,off},
+    keywordstyle = \color{blue}\bfseries,
+    comment      = [l]{\#},
+    morestring   = [b]',
+    morestring   = [b]"
 }
 \lstdefinestyle{yamlstyle}{
-    language=Yaml,
-    basicstyle=\ttfamily\scriptsize,
-    keywordstyle=\color{blue}\bfseries,
-    commentstyle=\color{gray},
-    stringstyle=\color{red},
-    numbers=left,
-    numberstyle=\tiny\color{gray}\ttfamily,
-    stepnumber=5,        % Number every 5th line
-    firstnumber=1,       % Start numbering at 1
-    numbersep=5pt,       % Adjust spacing
-    frame=single,
-    showstringspaces=false,
-    xleftmargin=20pt,
-    xrightmargin=10pt,
-    tabsize=2,  % Decrease the tab size (default is 8)
-    breaklines=true, % Enable line wrapping
+    language     = yaml,
 }

@@ -1,39 +1,48 @@
-%------------------------------------------------------------%
-% CUSTOM MATH COMMANDS
-%------------------------------------------------------------%
+%===============================================================================%
+%                              CUSTOM MATH COMMANDS                             %
+%===============================================================================%
 
-% CHANGES TO EXISTING COMMANDS
-    % replace normal differential d from physics with Schiefermayr d
+%-------------------------------------------------------------------------------%
+%                        CHANGES TO EXISTING COMMANDS                           %
+%-------------------------------------------------------------------------------%
+
+    % Replace normal differential d from physics with Schiefermayr d
     \renewcommand{\diffd}{\mathrm{d\!I}}
 
+%-------------------------------------------------------------------------------%
+%                           SYMBOLIC MATHEMATICS                                %
+%-------------------------------------------------------------------------------%
 
-%===================================================================
-% SYMBOLIC MATHEMATICS
     \newcommand*{\imag}{\ensuremath{\mathscr{i}}}
     \newcommand*{\jmag}{\ensuremath{\mathscr{j}}}
     \newcommand*{\e}   {\ensuremath{\mathscr{e}}}
-    %
-    \newcommand*{\N}{\ensuremath{\mathds{N}}}
-    \newcommand*{\Z}{\ensuremath{\mathds{Z}}}
-    \newcommand*{\Q}{\ensuremath{\mathds{Q}}}
-    \newcommand*{\R}{\ensuremath{\mathds{R}}}
-    \newcommand*{\I}{\ensuremath{\mathds{I}}}
-    \newcommand*{\C}{\ensuremath{\mathds{C}}}
 
-%===================================================================
-% UMLAUTS
-    % standard umlaut are upright in math mode
+    % Numberspaces
+    \newcommand*{\N}   {\ensuremath{\mathds{N}}}
+    \newcommand*{\Z}   {\ensuremath{\mathds{Z}}}
+    \newcommand*{\Q}   {\ensuremath{\mathds{Q}}}
+    \newcommand*{\R}   {\ensuremath{\mathds{R}}}
+    \newcommand*{\I}   {\ensuremath{\mathds{I}}}
+    \newcommand*{\C}   {\ensuremath{\mathds{C}}}
+
+%-------------------------------------------------------------------------------%
+%                                   UMLAUTS                                     %
+%-------------------------------------------------------------------------------%
+
     % Lower Case
     \newcommand*{\uum}{{\ensuremath{\ddot{u}}}}
     \newcommand*{\oum}{{\ensuremath{\ddot{o}}}}
     \newcommand*{\aum}{{\ensuremath{\ddot{a}}}}
+
     % Upper Case
     \newcommand*{\Uum}{{\ensuremath{\ddot{U}}}}
     \newcommand*{\Oum}{{\ensuremath{\ddot{O}}}}
     \newcommand*{\Aum}{{\ensuremath{\ddot{A}}}}
 
-%===================================================================
-% DIMENSIONLESS NUMBERS
+%-------------------------------------------------------------------------------%
+%                             DIMENSIONLESS NUMBERS                             %
+%-------------------------------------------------------------------------------%
+
     \newcommand*{\Arch}{{\ensuremath{A\kern-.06em r}}} % Archimedes
     \newcommand*{\Biot}{{\ensuremath{B\kern-.08em i}}} % Biot
     \newcommand*{\Cauc}{{\ensuremath{C\kern-.13em a}}} % Cauchy
@@ -60,8 +69,9 @@
     \newcommand*{\Webe}{{\ensuremath{W\kern-.25em e}}} % Weber
 
 % TODO finish kerning
-%===================================================================
-% KERNED ENGINEERING ABBREVIATIONS
+%-------------------------------------------------------------------------------%
+%                          KERNED ENGINEERING ABBREVIATIONS                     %
+%-------------------------------------------------------------------------------%
 
     % THERMODYNAMICS
     \newcommand*{\eff}  {{\ensuremath{\kern-.10em e \kern-.20em f \kern-.30em f}}}   % Effective

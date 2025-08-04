@@ -1,40 +1,49 @@
-%------------------------------------------------------------%
-% "GENERAL" PACKAGES
-%------------------------------------------------------------%
+%===============================================================================%
+%                                   TYPESETTING
+%===============================================================================%
+% This configures languages, fonts, smaller typography and spacing
 
-\usepackage[utf8]{inputenc}         % Input encoding
-\usepackage{cmap}                   % Font encoding for PDF search
-\usepackage[T1]{fontenc}            % Font encoding
-\usepackage[english,ngerman,naustrian]{babel} % Languages
+%-------------------------------------------------------------------------------%
+%                             ENCODING AND LANGUAGE
+%-------------------------------------------------------------------------------%
 
-\usepackage{lmodern}                % Latin Modern fonts
-\usepackage{csquotes}               % Contextual quoting (load after babel)
+    % These packages handle input encoding and language support.
+    \usepackage[utf8]{inputenc}         % Input encoding
+    \usepackage{cmap}                   % Font encoding for PDF search
+    \usepackage[T1]{fontenc}            % Font encoding for output
+    \usepackage[english,ngerman]{babel} % Language support
 
-%------------------------------------------------------------%
-% SYMBOLS AND SPECIAL CHARACTERS
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                         SYMBOLS & SPECIAL CHARACTERS
+%-------------------------------------------------------------------------------%
 
-\usepackage{textcomp}               % Special symbols (Copyright, LaTeX logo, etc.)
-\usepackage{textgreek}              % Greek letters in text mode
+    \usepackage{lmodern}                % Latin Modern fonts
+    \usepackage{csquotes}               % Contextual quoting
+    \usepackage{textcomp}               % Additional text symbols
+    \usepackage{textgreek}              % Greek letters in text mode
 
-%------------------------------------------------------------%
-% SPACING ADJUSTMENTS
-%------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+%                              SPACING ADJUSTMENTS
+%-------------------------------------------------------------------------------%
 
-% Paragraph Spacing and Indentation
-\parskip 1.5ex plus0.5ex minus0.5ex  % Flexible paragraph spacing
-\setlength{\parindent}{0pt}          % No paragraph indentation
-\raggedbottom                        % Prevent vertical stretching
+    \usepackage{setspace}   \onehalfspacing  % 1.5x line spacing
 
-% Adjust spacing before chapter titles
-\renewcommand*\chapterheadstartvskip{\vspace*{-0.8\topskip}}
+    % Adjust paragraph spacing, indentation, and chapter spacing.
+    \parskip 1.5ex plus0.5ex minus0.5ex  % Flexible paragraph spacing
+    \setlength{\parindent}{0pt}          % No paragraph indentation
+    \raggedbottom                        % Prevent vertical page stretching
 
-%------------------------------------------------------------%
-% TYPOGRAPHY IMPROVEMENTS
-%------------------------------------------------------------%
+    % Reduce space before chapter titles
+    \renewcommand*\chapterheadstartvskip{\vspace*{-0.8\topskip}}
 
-\usepackage[protrusion=true, expansion=true]{microtype} % Text justification
-\usepackage{hyphenat}                % Hyphenation management
+%-------------------------------------------------------------------------------%
+%                           TYPOGRAPHY & JUSTIFICATION
+%-------------------------------------------------------------------------------%
 
-\hyphenpenalty=100                   % Lower hyphenation penalty
-\exhyphenpenalty=100                 % Lower penalty for line breaks at hyphens
+    % Micro-typographic enhancements for better justification and hyphenation control.
+    \usepackage[protrusion=true,expansion=true]{microtype} % Improves justification
+    \usepackage{hyphenat}                % Advanced hyphenation controls
+
+    \hyphenpenalty=100                   % Lower penalty for hyphenation
+    \exhyphenpenalty=100                 % Lower penalty for breaks at hyphens
+    % ^^^^ does not seem to have much effect

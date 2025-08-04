@@ -1,56 +1,68 @@
-%-------------------------------------------------------------------------------%
-% KOMA
-%-------------------------------------------------------------------------------%
-
-% Prerequisite settings &
-\usepackage{scrlayer-scrpage}
-\KOMAoptions{
-	fontsize     = 12pt,
-	sfdefaults   = false,
-	headsepline  = true,
-	autooneside  = true,
-	manualmark,
-}%
+%===============================================================================%
+%                                PAGE LAYOUT SETUP
+%===============================================================================%
+% This configures margins, headers/footers, spacing, etc.
+% Based on KOMA-Script scrbook defaults, explicitly overridden as needed.
 
 %-------------------------------------------------------------------------------%
-% Header & Footer setup
+%                                  KOMA OPTIONS
 %-------------------------------------------------------------------------------%
 
-% Modify \chaptermark to include the chapter title in \leftmark (without number for \addchap)
-\renewcommand{\chaptermark}[1]{\markleft{\ifnum\value{chapter}=0 #1\else\thechapter~ #1\fi}}
+    \usepackage{scrlayer-scrpage}
 
-% Modify \sectionmark to include the section title in \rightmark (without number for \addsec)
-\renewcommand{\sectionmark}[1]{\markright{\ifnum\value{section}=0 #1\else\thesection~ #1\fi}}
-
-\clearpairofpagestyles        % Clear default settings (blank slate for new settings)
-\ihead[\empty]{\leftmark}     % Leftmark (chapter title) on the left header
-\ohead[\empty]{\rightmark}    % Rightmark (section title) on the right header
-\ofoot[\pagemark]{\pagemark}  % Page number on the bottom right
-
-%-------------------------------------------------------------------------------%
-% Page spacing and margin setup
-%-------------------------------------------------------------------------------%
-\usepackage{setspace}
-\onehalfspacing               % 1.5 lines of line spacing
-
-\usepackage{geometry}
-\geometry{
-	a4paper,
-	left=3.50cm,
-	right=2.50cm,
-	top=2.5cm,
-	bottom=3cm
-}
-
-% Define head + foot sizes
-% \baselinestretch: dynamically depends on the current line spacing setting
-\setlength{\footskip}   {\baselinestretch\baselineskip}
-\setlength{\footheight} {\baselinestretch\baselineskip}
-\setlength{\headsep}    {\baselinestretch\baselineskip}
-\setlength{\headheight} {\baselinestretch\baselineskip}
+    \KOMAoptions{
+        fontsize     = 12pt,     % Font size for base document
+        sfdefaults   = false,    % Use serif font by default
+        headsepline  = true,     % Horizontal line under header
+        autooneside  = true,     % Auto-detect one-sided layout
+        manualmark,              % Manual control over headers via \markleft etc.
+    }
 
 %-------------------------------------------------------------------------------%
-%                                   OTHER PACKAGES
+%                               HEADERS & FOOTERS
 %-------------------------------------------------------------------------------%
-\usepackage[absolute]{textpos} % Absolute text position for \declaration > \textblock environment
 
+    % Show chapter title in header (exclude number for unnumbered \addchap)
+    \renewcommand{\chaptermark}[1]{%
+      \markleft{\ifnum\value{chapter}=0 #1\else\thechapter~#1\fi}%
+    }
+
+    % Show section title in header (exclude number for unnumbered \addsec)
+    \renewcommand{\sectionmark}[1]{%
+      \markright{\ifnum\value{section}=0 #1\else\thesection~#1\fi}%
+    }
+
+    \clearpairofpagestyles           % Clear all KOMA defaults
+
+    \ihead[\empty]{\leftmark}        % Chapter title (left-aligned)
+    \ohead[\empty]{\rightmark}       % Section title (right-aligned)
+    \ofoot[\pagemark]{\pagemark}     % Page number (right-aligned in footer)
+
+%-------------------------------------------------------------------------------%
+%                                    MARGINS
+%-------------------------------------------------------------------------------%
+
+    \usepackage{geometry}
+        \geometry{
+            a4paper,
+            left  =3.5cm,     % Important: binding edge
+            right =2.0cm,
+            top   =2.5cm,
+            bottom=2.0cm
+        }
+
+%-------------------------------------------------------------------------------%
+%                            HEADER/FOOTER BOX SIZES
+%-------------------------------------------------------------------------------%
+    % Dynamically use \baselinestretch to match line spacing
+
+    \setlength{\footskip}    {\baselinestretch\baselineskip}
+    \setlength{\footheight}  {20pt}
+    \setlength{\headsep}     {\baselinestretch\baselineskip}
+    \setlength{\headheight}  {20pt}
+
+%-------------------------------------------------------------------------------%
+%                                 OTHER PACKAGES
+%-------------------------------------------------------------------------------%
+
+    \usepackage[absolute]{textpos}  % Used for declaration blocks, absolute text positioning

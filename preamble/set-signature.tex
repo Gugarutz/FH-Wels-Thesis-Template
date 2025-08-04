@@ -1,6 +1,25 @@
-% for all lines below: comment to hide signature, uncomment to show signature;
-% -> you can use CTRL + T to comment and uncomment in texstudio, works for all selected lines
+%===============================================================================%
+%                            SIGNATURE CONFIGURATION
+%===============================================================================%
+% TODO [USER:signature] — Uncomment to show a scanned signature.
+% To hide it: Select all lines and press CTRL + T to comment them out.
+%
+% Adjust vertical and horizontal positioning below if needed.
+% Negative values move the signature upward or leftward.
 
-	\vskip -20mm	% vertical positioning; minus positions upwards!
-	\hskip 4mm		% horizontal positioning
-	\includegraphics[width=7cm]{signature}
+%--------------------------
+% SHOW SIGNATURE
+%--------------------------
+    \vskip -20mm         % Move signature upward(-)/down(+)
+    \hskip 4mm           % Move signature left(-)  /right(+)
+    \includegraphics[width=7cm]{graphics/signature} % Path is relative to main.tex
+
+%--------------------------
+% NOTES:
+%--------------------------
+% - Image file must be named 'signature.*'.
+% - Extension does not matter with one file of the same name, otherwise specify .jpg or .png
+% - Delete the original file and insert yours in the same folder
+% - Place it in the 'graphics/' folder (or change the path accordingly)
+% - Preferred format: PNG or PDF with transparent background
+% - Image too dark/light? Tweak contrast in an image editor before importing.
