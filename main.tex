@@ -18,53 +18,53 @@
 %-------------------------------------------------------------------------------%
 
 % MAGIC COMMENTS FOR TeXstudio
-% !TeX root = main.tex
-% !TeX spellcheck = en_GB
+    % !TeX root = main.tex
+    % !TeX spellcheck = en_GB
 
-\documentclass[
-    english,		% TODO: [USER] select language here for cleveref to work
-    oneside,
-    bibliography=totocnumbered,     % Include bibliography in TOC with number
-    listof=totocnumbered,           % Include List of Tables/Figures in TOC with number
-    numbers=noenddot                % Changes heading/caption numbering from 1.1. to 1.1
-]{scrbook}
+    \documentclass[
+        english,    % TODO: [USER] select language here for cleveref to work
+        oneside,                    % only right sided pages
+        bibliography=totocnumbered, % Include bibliography in TOC with number
+        listof=totocnumbered,       % Include List of Tables/Figures in TOC with number
+        numbers=noenddot            % Changes heading/caption numbering from 1.1. to 1.1
+    ]{scrbook}
 
 %-------------------------------------------------------------------------------%
 %                             SETTINGS AND PACKAGES
 %-------------------------------------------------------------------------------%
-    \input{preamble/set-layout}         % General layout and spacing
-    \input{preamble/set-typesetting}	% Typography handling
-    \input{preamble/set-math}			%
-    \input{preamble/set-graphics} 		% Graphics, colour, tables
-    \input{preamble/set-reference}      % Caption, Referencing, Citing
-    \input{preamble/set-toc}		   	% Table of Contents
-    \input{preamble/set-lists}	      	% Lists (enumerate, itemize, outline)
+    % PACKAGES, SETTINGS AND
+        \input{preamble/set-layout}         % General layout and spacing
+        \input{preamble/set-typesetting}	% Typography handling
+        \input{preamble/set-math}			%
+        \input{preamble/set-graphics} 		% Graphics, colour, tables
+        \input{preamble/set-reference}      % Caption, Referencing, Citing
+        \input{preamble/set-toc}		   	% Table of Contents
+        \input{preamble/set-lists}	      	% Lists (enumerate, itemize, outline)
 
-% MODULES (YOU CAN DISABLE THESE, also disable demo chapters below)
-    \input{preample/mod-math}           % Custom math commands
-    \input{preamble/mod-code}           % Display code
-    \input{preamble/mod-data}           % Reading data
-    \input{preamble/mod-pgf}            % Making diagrams & plots
-    \input{preamble/mod-callout}
+    % MODULES: YOU MAY DISABLE THESE - Disable the according demo chapter!
+        \input{preamble/mod-math}           % Custom math commands
+        \input{preamble/mod-code}           % Display code
+        \input{preamble/mod-data}           % Reading data
+        \input{preamble/mod-pgf}            % Making diagrams & plots in LaTeX
+        \input{preamble/mod-callout}        % Callouts/Admonitions (GitHub style)
+            % WARNING: Callouts are used throughout ALL demo chapters!
 
 %-------------------------------------------------------------------------------%
 %                              SETTINGS FOR THE USER
 %-------------------------------------------------------------------------------%
+    % CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
+        \sisetup{ % TODO: [USER] Choose locale and settings
+            locale = US,                % Localization US or DE recommended
+            % per-mode=symbol,          % Display as / fractions
+            separate-uncertainty,
+            exponent-product=\cdot      % Use \times for x multiplier
+        }
 
-% CHOOSE HOW UNITS AND NUMBERS ARE DISPLAYED
-    \sisetup{ % TODO: [USER] Choose locale and settings
-        locale = US,                % Localization US or DE recommended
-        % per-mode=symbol,          % Display as / fractions
-        separate-uncertainty,
-        exponent-product=\cdot      % Use \times for x multiplier
-    }
+    % CHOOSE THE FILE PATH FOR GRAPHICS
+        \graphicspath{{graphics/}} % add relevant paths
 
-% CHOOSE THE FILE PATH FOR GRAPHICS
-    \graphicspath{{graphics/}} % add relevant paths
-
-% CHOOSE THE FILE PATH FOR BIBLIOGRAPHY
-    \addbibresource{bibliography.bib}   % File(s) with your sources
-
+    % CHOOSE THE FILE PATH FOR BIBLIOGRAPHY
+        \addbibresource{bibliography.bib}   % File(s) with your sources
 
 %-------------------------------------------------------------------------------%
 %                                   FRONT PAGE
@@ -87,13 +87,12 @@
 %===============================================================================%
 
 \begin{document}
-    \selectlanguage{english} % Set language -> ngerman for new grammer german
+    \selectlanguage{english}    % Set language -> ngerman for new grammer german
 
 %-------------------------------------------------------------------------------%
 %                                   FRONTMATTER
 %-------------------------------------------------------------------------------%
-    % FRONTMATTER SETTINGS
-        \frontmatter            % Everything before the content of the thesis starts
+    \frontmatter                % Everything before the content of the thesis starts
         \pagenumbering{Roman}   % Uppercase Roman numerals in page number, frontmatter only
 
     % SELECT TITLEPAGE LANGUAGE
@@ -119,37 +118,38 @@
 %-------------------------------------------------------------------------------%
 %                                 MAINMATTER (CONTENT)
 %-------------------------------------------------------------------------------%
-        \mainmatter % Main part of the thesis, from the introduction to the conclusion
+    \mainmatter % Main part of the thesis, from the introduction to the conclusion
 
     % INTRODUCTION
         \include{content/introduction}
 
     % CHAPTER 0 - DEMO
-%        \include{content/ch-demo/ch-demo}
-%        \include{content/ch-demo/demo-tables}
-%        \include{content/ch-demo/demo-graphics}
-%        \include{content/ch-demo/demo-math}
-%        \include{content/ch-demo/demo-item}
+        \include{content/ch-demo/ch-demo}
+        \include{content/ch-demo/demo-tables}
+        \include{content/ch-demo/demo-graphics}
+        \include{content/ch-demo/demo-math}
+        \include{content/ch-demo/demo-item}
 
-    % DEMO - MODULES
-%        \include{content/ch-module/demo-tikz-pgf}
-%        \include{content/ch-module/demo-pgf}
+    % CHAPTER 0 - DEMO: MODULES
+        \include{content/ch-module/demo-tikz-pgf}
+        \include{content/ch-module/demo-pgf}
 
     % CHAPTER I  - THEORY
         \include{content/ch1/ch1-intro}
 
-    % CHAPTER II -
+    % CHAPTER II - PRACTICE
 
 %-------------------------------------------------------------------------------%
 %                                   BACKMATTER
 %-------------------------------------------------------------------------------%
-        % \backmatter % Disables chapter numbering
-        \begingroup
-          \footnotesize % Decreases the fontsize inside group
-          \markright{\empty}
-            \printbibliography
-	        \listoffigures
-	        \listoftables
+%    \backmatter % Disables chapter numbering
+        \begingroup             % Group for layout and sizing control
+            \footnotesize       % Decreases the fontsize inside group
+             \markright{\empty} % Remove section reference in header
+
+          \printbibliography
+          \listoffigures
+          \listoftables
         \endgroup
 
 %-------------------------------------------------------------------------------%
