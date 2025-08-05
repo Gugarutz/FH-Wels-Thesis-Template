@@ -33,18 +33,23 @@
 \pgfplotsset{
     % Global style
     every axis/.style={
+        % sane general defaults
+        width=12cm,
+        height=8cm,
+        thick,
+        samples=400,
         font=\footnotesize,
         line width=0.8pt,
         tick style={line width=0.6pt},
         minor tick num=1,
-        grid=both,
+        grid=major,
               grid style={line width=.1pt, draw=gray!20},
-        major grid style={line width=.2pt, draw=gray!40},
+        major grid style={line width=.2pt, draw=gray!50},
         axis line style={draw=black, ->, >=stealth, thick},
         axis lines=left,
         enlargelimits=false,
         clip=false,
-        legend cell align={left},
+        legend cell align={center},
     },
     % Default line and marker style
     every axis plot/.append style={
