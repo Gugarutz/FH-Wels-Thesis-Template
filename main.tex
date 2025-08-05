@@ -40,7 +40,6 @@
         \input{preamble/set-toc}		   	% Heading & TOC spacings & max depth
         \input{preamble/set-lists}	      	% Lists (enumerate, itemize, outline)
 
-
     % TODO [USER:modules] - YOU MAY DISABLE THESE - Disable according demo chapters!
         \input{preamble/mod-math}           % Custom math commands
         \input{preamble/mod-code}           % Display code
@@ -176,7 +175,7 @@
 %-------------------------------------------------------------------------------%
 %                                   BACKMATTER
 %-------------------------------------------------------------------------------%
-%    \backmatter % Disables chapter numbering
+%    \backmatter                % Disables chapter numbering
         \begingroup             % Group for layout and sizing control
             \footnotesize       % Decreases the fontsize inside group
             \markright{\empty}  % Removea section reference in header
@@ -189,7 +188,7 @@
 %-------------------------------------------------------------------------------%
 %                                   APPENDICES
 %-------------------------------------------------------------------------------%
-        \appendix % Changes chapter numbering to Alphabetic
+    \appendix % Changes chapter numbering to Alphabetic
         \include{appendix/demo-pdf}     % TODO [USER:demo]
         \include{appendix/demo-code}    % TODO [USER:demo]
 
