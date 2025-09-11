@@ -53,7 +53,7 @@
 %-------------------------------------------------------------------------------%
 %                         PACKAGES AND SETTINGS FOR TESTING
 %-------------------------------------------------------------------------------%
-    \usepackage{showframe}  % use to check margins (borders of the page)
+    %\usepackage{showframe}  % use to check margins (borders of the page)
     \usepackage{blindtext}  % TODO [USER:cleanup] - Remove for final version
 
 %-------------------------------------------------------------------------------%
@@ -72,6 +72,8 @@
 
     % CHOOSE THE FILE PATH FOR BIBLIOGRAPHY
         \addbibresource{bibliography.bib}   % TODO [USER:paths]
+        \DeclareNameAlias{author}{last-first} % Lists Authors with Lastname, Firstname
+            % Use {{Company name GmbH}} for company names or double names
 
     % METADATA FOR TITLE AND DECLARATION
         \input{metadata}                    % TODO [USER:metadata] - Fill this out
