@@ -1,4 +1,4 @@
-This is archived. Please use Typst instead. Find the Typst template [here] (https://typst.app/project/retNvitExSugByRMtIJE8K). 
+This is archived. Please use Typst instead. Find the Typst template [here](https://typst.app/project/retNvitExSugByRMtIJE8K). 
 
 # FH-Wels-Thesis-Template
 
