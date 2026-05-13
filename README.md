@@ -1,3 +1,5 @@
+This is archived. Please use Typst instead. Find the Typst template [here] (https://typst.app/project/retNvitExSugByRMtIJE8K). 
+
 # FH-Wels-Thesis-Template
 
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?style=for-the-badge)](https://github.com/Gugarutz/FH-Wels-Thesis-Template/pulls)
